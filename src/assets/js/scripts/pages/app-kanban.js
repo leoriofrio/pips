@@ -23,15 +23,15 @@ $(document).ready(function () {
           comment: 1,
           attachment: 3,
           users: [
-            "../../../app-assets/images/portrait/small/avatar-s-11.jpg",
-            "../../../app-assets/images/portrait/small/avatar-s-12.jpg"
+            "../../../assets/images/portrait/small/avatar-s-11.jpg",
+            "../../../assets/images/portrait/small/avatar-s-12.jpg"
           ]
         },
         {
           id: "12",
           title: "Type Something",
           border: "info",
-          image: "../../../app-assets/images/banner/banner-21.jpg",
+          image: "../../../assets/images/banner/banner-21.jpg",
           dueDate: "Feb 10"
         },
         {
@@ -42,8 +42,8 @@ $(document).ready(function () {
           comment: 23,
           attachment: 4,
           users: [
-            "../../../app-assets/images/portrait/small/avatar-s-1.jpg",
-            "../../../app-assets/images/portrait/small/avatar-s-18.jpg"
+            "../../../assets/images/portrait/small/avatar-s-1.jpg",
+            "../../../assets/images/portrait/small/avatar-s-18.jpg"
           ]
         },
         {
@@ -53,8 +53,8 @@ $(document).ready(function () {
           comment: 56,
           attachment: 2,
           users: [
-            "../../../app-assets/images/portrait/small/avatar-s-26.jpg",
-            "../../../app-assets/images/portrait/small/avatar-s-16.jpg"
+            "../../../assets/images/portrait/small/avatar-s-26.jpg",
+            "../../../assets/images/portrait/small/avatar-s-16.jpg"
           ]
         },
         {
@@ -79,8 +79,8 @@ $(document).ready(function () {
           dueDate: "Jan 1",
           comment: 8,
           users: [
-            "../../../app-assets/images/portrait/small/avatar-s-24.jpg",
-            "../../../app-assets/images/portrait/small/avatar-s-14.jpg"
+            "../../../assets/images/portrait/small/avatar-s-24.jpg",
+            "../../../assets/images/portrait/small/avatar-s-14.jpg"
           ]
         },
         {
@@ -110,9 +110,9 @@ $(document).ready(function () {
           dueDate: "Mar 1",
           comment: 10,
           users: [
-            "../../../app-assets/images/portrait/small/avatar-s-20.jpg",
-            "../../../app-assets/images/portrait/small/avatar-s-22.jpg",
-            "../../../app-assets/images/portrait/small/avatar-s-13.jpg"
+            "../../../assets/images/portrait/small/avatar-s-20.jpg",
+            "../../../assets/images/portrait/small/avatar-s-22.jpg",
+            "../../../assets/images/portrait/small/avatar-s-13.jpg"
           ]
         },
         {
@@ -130,8 +130,8 @@ $(document).ready(function () {
           border: "primary",
           dueDate: "Mar 9",
           users: [
-            "../../../app-assets/images/portrait/small/avatar-s-1.jpg",
-            "../../../app-assets/images/portrait/small/avatar-s-2.jpg"
+            "../../../assets/images/portrait/small/avatar-s-1.jpg",
+            "../../../assets/images/portrait/small/avatar-s-2.jpg"
           ]
         }
       ]
