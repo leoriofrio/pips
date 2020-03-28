@@ -759,7 +759,7 @@ body.footer-hidden footer {
 }
 
 .main-menu .navbar-header .navbar-brand .brand-text {
-  color: #5A8DEE;
+  color: rgb(12, 12, 12);
   padding-left: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.04rem;
