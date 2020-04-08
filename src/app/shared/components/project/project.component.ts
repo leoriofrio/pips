@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChildren, Input } from '@angular/core';
+'use strict';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 
 
 @Component({
@@ -7,19 +8,18 @@ import { Component, OnInit, ViewChildren, Input } from '@angular/core';
   styleUrls: ['./project.component.css']
 })
 export class ProjectComponent implements OnInit {
-  @ViewChildren('content')
-  public context;
-  public frameworkComponents;
+  @ViewChild('content', {static: true})
+  private row;
 
-  @Input()
+  @Input() 
   public gridColumns;
-  @Input()
-  public data: any;
+  @Input() 
+  public data;
 
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(){
   }
 
 }

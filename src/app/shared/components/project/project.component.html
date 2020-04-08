@@ -1,15 +1,11 @@
 <content>  
-        <ag-grid-angular
+    <ag-grid-angular 
         #agGrid
-        style="width: 100%; height: 70%;"
+        style="width: 100%; height: 570px;" 
         id="myGrid"
-        class="ag-theme-balham px-4 pt-4"
-        [columnDefs]="gridColumns"
-        [rowData]="data"
-        [context]="context"
-        [frameworkComponents]="frameworkComponents"
-        [enableCellChangeFlash]="true"
-        [enableCellTextSelection] ="true"
-    ></ag-grid-angular>
+        class="ag-theme-alpine"
+        [rowData]="data" 
+        [columnDefs]="gridColumns" >
+    </ag-grid-angular>
 
 </content>

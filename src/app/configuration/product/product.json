@@ -1,0 +1,7 @@
+[
+    { "id": 1, "subline": "PREESCOLAR", "cod": "129322101", "description": "ALTO RENDIMIENTO KIDS 1 EGB N", "status": "", "stock": 500, "degree": "1B", "businessline": "TEXTO", "isbn": "1201829322101", "region": "SIERRA" },
+    { "id": 2, "subline": "PREESCOLAR", "cod": "129322101", "description": "ALTO RENDIMIENTO KIDS 1 EGB N", "status": "", "stock": 500, "degree": "1B", "businessline": "TEXTO", "isbn": "1201829322101", "region": "SIERRA" },
+    { "id": 3, "subline": "PREESCOLAR", "cod": "129322101", "description": "ALTO RENDIMIENTO KIDS 1 EGB N", "status": "", "stock": 500, "degree": "1B", "businessline": "TEXTO", "isbn": "1201829322101", "region": "SIERRA" },
+    { "id": 4, "subline": "PREESCOLAR", "cod": "129322101", "description": "ALTO RENDIMIENTO KIDS 1 EGB N", "status": "", "stock": 500, "degree": "1B", "businessline": "TEXTO", "isbn": "1201829322101", "region": "SIERRA" }
+    
+]

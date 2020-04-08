@@ -1,0 +1,28 @@
+'use strict';
+import {NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ConfigurationRoutingModule } from './configuration-routing.module';
+import { ProductComponent } from './product/product.component';
+import { SharedModule } from '../shared/shared.module';
+import { AppRoutingModule } from '../app-routing.module';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    FormsModule,
+    BrowserModule,
+    ReactiveFormsModule,
+    ConfigurationRoutingModule,
+    SharedModule,
+    AppRoutingModule
+  ],
+  declarations: [ProductComponent],
+  providers: [],
+  exports: [],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+    ]
+})
+export class ConfigurationModule {}

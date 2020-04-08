@@ -8,6 +8,19 @@ export namespace TitleNames {
   export const PROJECT_NAME = 'Plataforma de Ingreso de Proformas, Muestras y Revisión de productos';
 }
 
+export namespace ProductColumns {
+  export const ID = {prop: 'id', name: 'Id'};
+  export const SUBLINE = {prop: 'subline', name: 'Sublínea'};
+  export const COD = {prop: 'cod', name: 'Cod'};
+  export const DESCRIPTION = {prop: 'description', name: 'Descripción'};
+  export const STATUS = {prop: 'status', name: 'Estado'};
+  export const STOCK = {prop: 'stock', name: 'Stock'};
+  export const DEGREE = {prop: 'degree', name: 'Grado'};
+  export const BUSINESS_LINE = {prop: 'businessLine', name: 'Linea Negocios'};
+  export const ISBN = {prop: 'isbn', name: 'ISBN'};
+  export const REGION_ID = {prop: 'region_id', name: 'Región'}
+}
+
 export namespace WorkflowServiceConstants {
   export const WORKFLOW_STATES = {
     blank: 'BLANK',

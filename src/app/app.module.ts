@@ -3,26 +3,26 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './iu/login/login.component';
-import { MenuComponent } from './iu/menu/menu.component';
-import { AgGridModule } from 'ag-grid-angular';
-import { ProjectComponent } from './shared/components/project/project.component';
-import { ProductComponent } from './configuration/product/product.component';
+import { ConfigurationModule } from './configuration/configuration.modules';
+import { SharedModule } from './shared/shared.module';
+import { AdminModule } from './admin/admin.module';
+import { UIModule } from './ui/ui.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LoginComponent,
-    MenuComponent,
-    ProjectComponent,
-    ProductComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AgGridModule.withComponents([])
+    ConfigurationModule,
+    SharedModule,
+    AdminModule,
+    UIModule
   ],
+  schemas: [  ],  
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: []
 })
 export class AppModule { }
