@@ -21,6 +21,27 @@ export namespace ProductColumns {
   export const REGION_ID = {prop: 'region_id', name: 'Región'}
 }
 
+export namespace ClienteColumns {
+  export const ID = {prop: 'id', name: 'Id'};
+  export const COD_SANTILLANA = {prop: 'codSantillana', name: 'Código Santillana'};
+  export const COD_INSTITUTO = {prop: 'codInstituto', name: 'Código Instituto'};
+  export const STATUS = {prop: 'status', name: 'Status'};
+  export const DELEGATE_TEXT = {prop: 'delegateText', name: 'Delegado Texto y LQL'};
+  export const DELEGATE_ENGLISH = {prop: 'delegateEnglish', name: 'Delegado Inglés'};
+  export const DELEGATE_SHARED = {prop: 'delegateShared', name: 'Delegado Compartir'};
+  export const PROVINCE = {prop: 'province', name: 'Provincia'};
+  export const CANTON = {prop: 'canton', name: 'Cantón'};
+  export const PARISH = {prop: 'parish', name: 'Parroquia'};
+  export const NAME = {prop: 'name', name: 'Nombre Institución'};
+  export const ADDRESS = {prop: 'address', name: 'Dirección Institución'};
+  export const NIVEL = {prop: 'nivel', name: 'Nivel Educación'};
+  export const TYPE = {prop: 'type', name: 'Tipo'};
+  export const SCHOOL_SYSTEM = {prop: 'schoolSystem', name: 'Régimen Escolar'};
+  export const MODALITY = {prop: 'modality', name: 'Modalidad'};
+  export const SCHOOL_DAY = {prop: 'schoolDay', name: 'Jornada'};
+  export const REGION_ID = {prop: 'region_id', name: ''};
+}
+
 export namespace WorkflowServiceConstants {
   export const WORKFLOW_STATES = {
     blank: 'BLANK',

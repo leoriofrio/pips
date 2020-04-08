@@ -4,9 +4,10 @@ import {CommonModule} from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ConfigurationRoutingModule } from './configuration-routing.module';
-import { ProductComponent } from './product/product.component';
 import { SharedModule } from '../shared/shared.module';
 import { AppRoutingModule } from '../app-routing.module';
+import { ProductComponent } from './product/product.component';
+import { ClientComponent } from './client/client.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,7 @@ import { AppRoutingModule } from '../app-routing.module';
     SharedModule,
     AppRoutingModule
   ],
-  declarations: [ProductComponent],
+  declarations: [ProductComponent, ClientComponent],
   providers: [],
   exports: [],
   schemas: [
