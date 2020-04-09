@@ -21,7 +21,7 @@ export namespace ProductColumns {
   export const REGION_ID = {prop: 'region_id', name: 'Región'}
 }
 
-export namespace ClienteColumns {
+export namespace ClientColumns {
   export const ID = {prop: 'id', name: 'Id'};
   export const COD_SANTILLANA = {prop: 'codSantillana', name: 'Código Santillana'};
   export const COD_INSTITUTO = {prop: 'codInstituto', name: 'Código Instituto'};
@@ -41,6 +41,16 @@ export namespace ClienteColumns {
   export const SCHOOL_DAY = {prop: 'schoolDay', name: 'Jornada'};
   export const REGION_ID = {prop: 'region_id', name: ''};
 }
+
+export namespace UserColumns {
+  export const ID = {prop: 'id', name: 'Id'};
+  export const EMAIL = {prop: 'email', name: 'Email'};
+  export const FIRST_NAME = {prop: 'firstName', name: 'Nombre'};
+  export const LAST_NAME = {prop: 'lastName', name: 'Apellido'};
+  export const PASSWORD = {prop: 'password', name: 'Clave'};
+  export const STATUS = {prop: 'status', name: 'Estado'};
+}
+
 
 export namespace WorkflowServiceConstants {
   export const WORKFLOW_STATES = {
