@@ -9,6 +9,8 @@ import { AppRoutingModule } from '../app-routing.module';
 import { ProductComponent } from './product/product.component';
 import { ClientComponent } from './client/client.component';
 import { UserComponent } from './user/user.component';
+import { CollegesComponent } from './colleges/colleges.component';
+import { CampaignComponent } from './campaign/campaign.component';
 
 @NgModule({
   imports: [
@@ -20,7 +22,13 @@ import { UserComponent } from './user/user.component';
     SharedModule,
     AppRoutingModule
   ],
-  declarations: [ProductComponent, ClientComponent, UserComponent],
+  declarations: [
+    ProductComponent, 
+    ClientComponent, 
+    UserComponent, 
+    CollegesComponent,
+    CampaignComponent
+  ],
   providers: [],
   exports: [],
   schemas: [

@@ -1,4 +1,458 @@
 [
-    { "id": 1, "codSantillana": "8537", "codInstituto": "09H00824", "status": "ACTIVO", "delegateText": "CARLOS DE SUCRE", "delegateEnglish": "CARLOS DE SUCRE", "delegateShared": "CARLOS DE SUCRE", "province": "GUAYAS", "canton": "GUAYAQUIL", "parish": "TARQUI", "name": "UNIDAD EDUCATIVA PARTICULAR SAN JOSE DE CALASANZ", "address": "CDLA URDESA NORTE AVENIDA CUARTA Y CALLE SEPTIMA 508 ", "nivel": "Educación Regular", "type": "Inicial, Educación Básica y Bachillerato", "schoolSystem": "Costa", "modality": "Presencial", "schoolDay": "Matutina", "region_id": "" }
-    
-]
+        {
+            "id": "1",
+            "ruc": "1709569588",
+            "name": "AACSB International",
+            "address": "Dirección del Cliente",
+            "phone": "022439694",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "2",
+            "ruc": "1735145317",
+            "name": "Academy of International Business",
+            "address": "Dirección del Cliente",
+            "phone": "022492348",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "3",
+            "ruc": "1732120668",
+            "name": "AcademyHealth",
+            "address": "Dirección del Cliente",
+            "phone": "022554747",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "4",
+            "ruc": "1700098900",
+            "name": "AdvaMed",
+            "address": "Dirección del Cliente",
+            "phone": "022501092",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "5",
+            "ruc": "1701795898",
+            "name": "Agricultural Retailers Assn",
+            "address": "Dirección del Cliente",
+            "phone": "022549023",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "6",
+            "ruc": "1728407709",
+            "name": "Air Traffic Control Assn",
+            "address": "Dirección del Cliente",
+            "phone": "022514300",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "7",
+            "ruc": "1772901989",
+            "name": "Alliance for Academic Internal Medicine",
+            "address": "Dirección del Cliente",
+            "phone": "022543635",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "8",
+            "ruc": "1715500934",
+            "name": "Alpha Phi Alpha",
+            "address": "Dirección del Cliente",
+            "phone": "022505081",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "9",
+            "ruc": "1796702029",
+            "name": "American Assn for Nude Recreation",
+            "address": "Dirección del Cliente",
+            "phone": "022469102",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "10",
+            "ruc": "1744610971",
+            "name": "American Assn for the Advancement of Science",
+            "address": "Dirección del Cliente",
+            "phone": "022535814",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "11",
+            "ruc": "1746195470",
+            "name": "American Assn for Respiratory Care",
+            "address": "Dirección del Cliente",
+            "phone": "022476706",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "12",
+            "ruc": "1787930268",
+            "name": "American Assn of Colleges of Nursing",
+            "address": "Dirección del Cliente",
+            "phone": "022483240",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "13",
+            "ruc": "1795224757",
+            "name": "American Assn of Colleges of Pharmacy",
+            "address": "Dirección del Cliente",
+            "phone": "022568233",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "14",
+            "ruc": "1703282110",
+            "name": "American Assn of Colleges of Osteopathic Medicine",
+            "address": "Dirección del Cliente",
+            "phone": "022487845",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "15",
+            "ruc": "1722234488",
+            "name": "American Assn of Family & Consumer Sciences",
+            "address": "Dirección del Cliente",
+            "phone": "022457517",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "16",
+            "ruc": "1752627525",
+            "name": "American Assn of Museums",
+            "address": "Dirección del Cliente",
+            "phone": "022505894",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "17",
+            "ruc": "1757073457",
+            "name": "American Assn of Motor Vehicle Administrators",
+            "address": "Dirección del Cliente",
+            "phone": "022475050",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "18",
+            "ruc": "1774469071",
+            "name": "American Assn of Professional Landmen",
+            "address": "Dirección del Cliente",
+            "phone": "022434593",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "19",
+            "ruc": "1730532921",
+            "name": "American Assn of Tissue Banks",
+            "address": "Dirección del Cliente",
+            "phone": "022445868",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "20",
+            "ruc": "1773885567",
+            "name": "American Board of Opticianry and the National Contact Lens Examiners",
+            "address": "Dirección del Cliente",
+            "phone": "022479566",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "21",
+            "ruc": "1716266404",
+            "name": "American Ceramic Society",
+            "address": "Dirección del Cliente",
+            "phone": "022542400",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "22",
+            "ruc": "1772251510",
+            "name": "American Chamber of Commerce Executives",
+            "address": "Dirección del Cliente",
+            "phone": "022536343",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "23",
+            "ruc": "1794706240",
+            "name": "American College of Clinical Pharmacology",
+            "address": "Dirección del Cliente",
+            "phone": "022507697",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "24",
+            "ruc": "1746457463",
+            "name": "American College of Nurse Practitioners",
+            "address": "Dirección del Cliente",
+            "phone": "022490453",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "25",
+            "ruc": "1764858442",
+            "name": "American College of Sports Medicine",
+            "address": "Dirección del Cliente",
+            "phone": "022553448",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "26",
+            "ruc": "1736154324",
+            "name": "American Dental Education Association",
+            "address": "Dirección del Cliente",
+            "phone": "022494788",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "27",
+            "ruc": "1710726960",
+            "name": "American Educational Research Association",
+            "address": "Dirección del Cliente",
+            "phone": "022555818",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "28",
+            "ruc": "1706996955",
+            "name": "American Gaming Association",
+            "address": "Dirección del Cliente",
+            "phone": "022578735",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "29",
+            "ruc": "1703216074",
+            "name": "American Health Care Association",
+            "address": "Dirección del Cliente",
+            "phone": "022459964",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "30",
+            "ruc": "1723894388",
+            "name": "American Historical Association",
+            "address": "Dirección del Cliente",
+            "phone": "022534421",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "31",
+            "ruc": "1767383594",
+            "name": "American Hotel & Lodging Association",
+            "address": "Dirección del Cliente",
+            "phone": "022581696",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "32",
+            "ruc": "1725506955",
+            "name": "American Medical Group Association",
+            "address": "Dirección del Cliente",
+            "phone": "022506642",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "33",
+            "ruc": "1748362647",
+            "name": "American Political Science Association",
+            "address": "Dirección del Cliente",
+            "phone": "022450730",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "34",
+            "ruc": "1716426091",
+            "name": "American Oil Chemists’ Society",
+            "address": "Dirección del Cliente",
+            "phone": "022518438",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "35",
+            "ruc": "1711403064",
+            "name": "American Society of Cataract and Refractive Surgery",
+            "address": "Dirección del Cliente",
+            "phone": "022483918",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "36",
+            "ruc": "1784374465",
+            "name": "American Society of Echocardiography",
+            "address": "Dirección del Cliente",
+            "phone": "022564283",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "37",
+            "ruc": "1729170824",
+            "name": "American Society of Hematology",
+            "address": "Dirección del Cliente",
+            "phone": "022505763",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "38",
+            "ruc": "1767055696",
+            "name": "American Society of International Law",
+            "address": "Dirección del Cliente",
+            "phone": "022556938",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "39",
+            "ruc": "1729280525",
+            "name": "American Society for Nutrition",
+            "address": "Dirección del Cliente",
+            "phone": "022485823",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "40",
+            "ruc": "1780256368",
+            "name": "American Sociological Association",
+            "address": "Dirección del Cliente",
+            "phone": "022437610",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "41",
+            "ruc": "1746843356",
+            "name": "Anxiety Disorders Association of America",
+            "address": "Dirección del Cliente",
+            "phone": "022544952",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "42",
+            "ruc": "1703354640",
+            "name": "Asian American Hotel Operators Assn",
+            "address": "Dirección del Cliente",
+            "phone": "022567596",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "43",
+            "ruc": "1772026240",
+            "name": "Associated Bodywork & Massage Professionals",
+            "address": "Dirección del Cliente",
+            "phone": "022566701",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "44",
+            "ruc": "1787694804",
+            "name": "Association for Conflict Resolution",
+            "address": "Dirección del Cliente",
+            "phone": "022452509",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "45",
+            "ruc": "1753875070",
+            "name": "Association for Information Science and Technology",
+            "address": "Dirección del Cliente",
+            "phone": "022443812",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "46",
+            "ruc": "1784482055",
+            "name": "Association for Manufacturing Technology",
+            "address": "Dirección del Cliente",
+            "phone": "022570118",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "47",
+            "ruc": "1798994168",
+            "name": "Association of California School Administrators",
+            "address": "Dirección del Cliente",
+            "phone": "022565998",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "48",
+            "ruc": "1797435566",
+            "name": "Association of Catholic Colleges and Universities",
+            "address": "Dirección del Cliente",
+            "phone": "022563515",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "49",
+            "ruc": "1750202958",
+            "name": "Association of Change Management Professionals",
+            "address": "Dirección del Cliente",
+            "phone": "022573804",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "50",
+            "ruc": "1786040372",
+            "name": "Association of College Unions International",
+            "address": "Dirección del Cliente",
+            "phone": "022479301",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "51",
+            "ruc": "1799354080",
+            "name": "Association of Corporate Contributions Professionals",
+            "address": "Dirección del Cliente",
+            "phone": "022569382",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "52",
+            "ruc": "1708692310",
+            "name": "Association of Equipment Manufacturers",
+            "address": "Dirección del Cliente",
+            "phone": "022462540",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "53",
+            "ruc": "1742550140",
+            "name": "Association of Proposal Management Professionals – National Capital Area",
+            "address": "Dirección del Cliente",
+            "phone": "022548037",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "54",
+            "ruc": "1775698486",
+            "name": "Association of PVO Financial Managers",
+            "address": "Dirección del Cliente",
+            "phone": "022580124",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "55",
+            "ruc": "1777970424",
+            "name": "Association of Washington School Principals",
+            "address": "Dirección del Cliente",
+            "phone": "022499621",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "56",
+            "ruc": "1736320837",
+            "name": "Association of Zoos & Aquariums",
+            "address": "Dirección del Cliente",
+            "phone": "022446457",
+            "mail": "a@mail.com"
+        },
+        {
+            "id": "57",
+            "ruc": "1720658616",
+            "name": "Automotive Aftermarket Industry Association",
+            "address": "Dirección del Cliente",
+            "phone": "022540483",
+            "mail": "a@mail.com"
+        }
+    ]

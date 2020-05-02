@@ -8,6 +8,25 @@ export namespace TitleNames {
   export const PROJECT_NAME = 'Plataforma de Ingreso de Proformas, Muestras y Revisión de productos';
 }
 
+export namespace ExcelKeys {
+  export const EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
+  export const EXCEL_EXTENSION = '.xlsx';
+  export const EXCEL_TITLE_FONT = 'Arial';
+  export const EXCEL_TITLE_FAMILY = 4;
+  export const EXCEL_TITLE_SIZE = 16;
+  export const EXCEL_TITLE_UNDERLINE = 'none';
+  export const EXCEL_HEADER_FGCOLOR = '';
+  export const EXCEL_HEADER_BGCOLOR = '';
+  export const EXCEL_DETAIL_CELL = 'cell';
+  export const EXCEL_DETAIL_METADATA = 'metadata';
+  export const EXCEL_DETAIL_FIELD = 'field';
+  export const EXCEL_DETAIL_COLOR = 'color';
+  export const EXCEL_DETAIL_FORMULA = 'formula';
+  export const EXCEL_CELL_TYPE = 'pattern';
+  export const EXCEL_CELL_PATTERN = 'solid';
+  export const EXCEL_EXPORT_TYPE = 'excel';
+}
+
 export namespace ProductColumns {
   export const ID = {prop: 'id', name: 'Id'};
   export const SUBLINE = {prop: 'subline', name: 'Sublínea'};
@@ -21,7 +40,7 @@ export namespace ProductColumns {
   export const REGION_ID = {prop: 'region_id', name: 'Región'}
 }
 
-export namespace ClientColumns {
+export namespace Colleges {
   export const ID = {prop: 'id', name: 'Id'};
   export const COD_SANTILLANA = {prop: 'codSantillana', name: 'Código Santillana'};
   export const COD_INSTITUTO = {prop: 'codInstituto', name: 'Código Instituto'};
@@ -42,12 +61,22 @@ export namespace ClientColumns {
   export const REGION_ID = {prop: 'region_id', name: ''};
 }
 
-export namespace UserColumns {
+export namespace ClientColumns {
   export const ID = {prop: 'id', name: 'Id'};
-  export const EMAIL = {prop: 'email', name: 'Email'};
+  export const RUC = {prop: 'ruc', name: 'Ruc'};
+  export const NAME = {prop: 'name', name: 'Nombre'};
+  export const ADDRESS = {prop: 'address', name: 'Dirección'};
+  export const PHONE = {prop: 'phone', name: 'Teléfono'};
+  export const MAIL = {prop: 'mail', name: 'Correo Electrónico'};  
+}
+
+export namespace UserColumns {
+  export const ID = {prop: 'codUser', name: 'Cod User'};
+  export const USER = {prop: 'user', name: 'User'};
+  export const EMAIL = {prop: 'mail', name: 'Email'};
   export const FIRST_NAME = {prop: 'firstName', name: 'Nombre'};
   export const LAST_NAME = {prop: 'lastName', name: 'Apellido'};
-  export const PASSWORD = {prop: 'password', name: 'Clave'};
+  export const PASSWORD = {prop: 'pass', name: 'Clave'};
   export const STATUS = {prop: 'status', name: 'Estado'};
 }
 

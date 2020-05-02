@@ -1,4 +1,227 @@
 [
-    { "id": 1, "email": "lriofrio@mushroomsoft-it.com", "firstName": "Leonardo", "lastName": "Riofrio", "password": "123", "status": "Activo"}
-    
-]
+        {
+            "codUser": "AS01",
+            "user": "ALVARO SORNOZA",
+            "pass": "123",
+            "firstName": "ALVARO",
+            "lastName": "SORNOZA",
+            "mail": "asornoza@santillana.com",
+            "status": "Activo"
+        },
+        {
+            "codUser": "CD01",
+            "user": "CARLOS DE SUCRE",
+            "pass": "123",
+            "firstName": "CARLOS",
+            "lastName": "DE SUCRE",
+            "mail": "cdesucre@santillana.com",
+            "status": "Activo"
+        },
+        {
+            "codUser": "DC01",
+            "user": "DIONICIO CEDEÑO",
+            "pass": "123",
+            "firstName": "DIONICIO",
+            "lastName": "CEDEÑO",
+            "mail": "dcedeno@santillana.com",
+            "status": "Activo"
+        },
+        {
+            "codUser": "EP01",
+            "user": "EDISON PAZMIÑO",
+            "pass": "123",
+            "firstName": "EDISON",
+            "lastName": "PAZMIÑO",
+            "mail": "epazmino@santillana.com",
+            "status": "Activo"
+        },
+        {
+            "codUser": "FR01",
+            "user": "FABRICIO ROCHA",
+            "pass": "123",
+            "firstName": "FABRICIO",
+            "lastName": "ROCHA",
+            "mail": "frocha@santillana.com",
+            "status": "Activo"
+        },
+        {
+            "codUser": "GA01",
+            "user": "GUSTAVO AVEIGA",
+            "pass": "123",
+            "firstName": "GUSTAVO",
+            "lastName": "AVEIGA",
+            "mail": "gaveiga@santillana.com",
+            "status": "Activo"
+        },
+        {
+            "codUser": "HZ01",
+            "user": "HUGO ZURITA",
+            "pass": "123",
+            "firstName": "HUGO",
+            "lastName": "ZURITA",
+            "mail": "hzurita@santillana.com",
+            "status": "Activo"
+        },
+        {
+            "codUser": "IM01",
+            "user": "IRENE MONTEVERDE",
+            "pass": "123",
+            "firstName": "IRENE",
+            "lastName": "MONTEVERDE",
+            "mail": "imonteverde@santillana.com",
+            "status": "Activo"
+        },
+        {
+            "codUser": "JV01",
+            "user": "JAVIER VASQUEZ",
+            "pass": "123",
+            "firstName": "JAVIER",
+            "lastName": "VASQUEZ",
+            "mail": "jvasquez@santillana.com",
+            "status": "Activo"
+        },
+        {
+            "codUser": "JV01",
+            "user": "JAVIER VASQUEZ ",
+            "pass": "123",
+            "firstName": "JAVIER",
+            "lastName": "VASQUEZ ",
+            "mail": "jvasquez2@santillana.com",
+            "status": "Activo"
+        },
+        {
+            "codUser": "JV01",
+            "user": "JENNY VARAS",
+            "pass": "123",
+            "firstName": "JENNY",
+            "lastName": "VARAS",
+            "mail": "jvaras@santillana.com",
+            "status": "Activo"
+        },
+        {
+            "codUser": "JD01",
+            "user": "JHONNY DIAZ",
+            "pass": "123",
+            "firstName": "JHONNY",
+            "lastName": "DIAZ",
+            "mail": "jdiaz@santillana.com",
+            "status": "Activo"
+        },
+        {
+            "codUser": "JD01",
+            "user": "JOHNNY DIAZ",
+            "pass": "123",
+            "firstName": "JOHNNY",
+            "lastName": "DIAZ",
+            "mail": "jdiaz2@santillana.com",
+            "status": "Activo"
+        },
+        {
+            "codUser": "JM01",
+            "user": "JORDAN MONTES",
+            "pass": "123",
+            "firstName": "JORDAN",
+            "lastName": "MONTES",
+            "mail": "jmontes@santillana.com",
+            "status": "Activo"
+        },
+        {
+            "codUser": "JC01",
+            "user": "JORGE CASTILLO",
+            "pass": "123",
+            "firstName": "JORGE",
+            "lastName": "CASTILLO",
+            "mail": "jcastillo@santillana.com",
+            "status": "Activo"
+        },
+        {
+            "codUser": "JA01",
+            "user": "JOSE LUIS ANCHUNDIA",
+            "pass": "123",
+            "firstName": "JOSE LUIS",
+            "lastName": "ANCHUNDIA",
+            "mail": "janchundia@santillana.com",
+            "status": "Activo"
+        },
+        {
+            "codUser": "LS01",
+            "user": "LEOPOLDO SUAREZ",
+            "pass": "123",
+            "firstName": "LEOPOLDO",
+            "lastName": "SUAREZ",
+            "mail": "lsuarez@santillana.com",
+            "status": "Activo"
+        },
+        {
+            "codUser": "LC01",
+            "user": "LUIS COELLO",
+            "pass": "123",
+            "firstName": "LUIS",
+            "lastName": "COELLO",
+            "mail": "lcoello@santillana.com",
+            "status": "Activo"
+        },
+        {
+            "codUser": "ML01",
+            "user": "MANUEL LOPEZ",
+            "pass": "123",
+            "firstName": "MANUEL",
+            "lastName": "LOPEZ",
+            "mail": "mlopez@santillana.com",
+            "status": "Activo"
+        },
+        {
+            "codUser": "MB01",
+            "user": "MARCELO BRAVO",
+            "pass": "123",
+            "firstName": "MARCELO",
+            "lastName": "BRAVO",
+            "mail": "mbravo@santillana.com",
+            "status": "Activo"
+        },
+        {
+            "codUser": "MB01",
+            "user": "MARTHA BUENO",
+            "pass": "123",
+            "firstName": "MARTHA",
+            "lastName": "BUENO",
+            "mail": "mbueno@santillana.com",
+            "status": "Activo"
+        },
+        {
+            "codUser": "PC01",
+            "user": "PEDRO CARBO",
+            "pass": "123",
+            "firstName": "PEDRO",
+            "lastName": "CARBO",
+            "mail": "pcarbo@santillana.com",
+            "status": "Activo"
+        },
+        {
+            "codUser": "RE01",
+            "user": "RUBEN ESTUPIÑAN",
+            "pass": "123",
+            "firstName": "RUBEN",
+            "lastName": "ESTUPIÑAN",
+            "mail": "restupinan@santillana.com",
+            "status": "Activo"
+        },
+        {
+            "codUser": "SC01",
+            "user": "SANDRA CEDEÑO",
+            "pass": "123",
+            "firstName": "SANDRA",
+            "lastName": "CEDEÑO",
+            "mail": "scedeño@santillana.com",
+            "status": "Activo"
+        },
+        {
+            "codUser": "VY01",
+            "user": "VICTOR YEPEZ",
+            "pass": "123",
+            "firstName": "VICTOR",
+            "lastName": "YEPEZ",
+            "mail": "vyepez@santillana.com",
+            "status": "Activo"
+        }
+    ]
