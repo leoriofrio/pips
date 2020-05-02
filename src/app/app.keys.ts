@@ -9,6 +9,7 @@ export namespace TitleNames {
 }
 
 export namespace ExcelKeys {
+  export const DEFAULT_EXCEL_NAME = "file";
   export const EXCEL_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
   export const EXCEL_EXTENSION = '.xlsx';
   export const EXCEL_TITLE_FONT = 'Arial';

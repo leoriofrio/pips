@@ -1,5 +1,7 @@
 'use strict';
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, Output, EventEmitter } from '@angular/core';
+import { ExcelExportService } from '../../service/export-excel.service';
+import { AppKeys, ExcelKeys } from 'src/app/app.keys';
 
 
 @Component({
@@ -10,16 +12,27 @@ import { Component, OnInit, Input, ViewChild } from '@angular/core';
 export class ProjectComponent implements OnInit {
   @ViewChild('content', {static: true})
   private row;
+  public enabledSelect: boolean;
+  public allowExcelExport: boolean;
 
   @Input() 
   public gridColumns;
   @Input() 
   public data;
+  @Output()
+  public exportExcel = new EventEmitter<any>();
 
 
-  constructor() { }
+  constructor(private excelExportService: ExcelExportService) { 
+    this.enabledSelect = true;
+    this.allowExcelExport = true;
+  }
 
   ngOnInit(){
+  }
+
+  public exportAsXLSX(): void {
+    this.exportExcel.emit({name: ExcelKeys.DEFAULT_EXCEL_NAME, gridColumns: this.gridColumns, data: this.data});
   }
 
 }
