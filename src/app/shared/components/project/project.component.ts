@@ -12,23 +12,28 @@ import { AppKeys, ExcelKeys } from 'src/app/app.keys';
 export class ProjectComponent implements OnInit {
   @ViewChild('content', {static: true})
   private row;
-  public enabledSelect: boolean;
+  public enabledTitle: boolean;
   public allowExcelExport: boolean;
 
   @Input() 
   public gridColumns;
   @Input() 
   public data;
+  @Input() 
+  public enabledTitleOp: boolean;
+  @Input()
+  public allowExcelExportOp: boolean;
   @Output()
   public exportExcel = new EventEmitter<any>();
 
 
-  constructor(private excelExportService: ExcelExportService) { 
-    this.enabledSelect = true;
-    this.allowExcelExport = true;
+  constructor(private excelExportService: ExcelExportService) {     
+    
   }
 
   ngOnInit(){
+    this.enabledTitle = this.enabledTitleOp;
+    this.allowExcelExport = this.allowExcelExportOp;
   }
 
   public exportAsXLSX(): void {

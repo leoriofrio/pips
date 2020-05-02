@@ -4,6 +4,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ClientColumns } from '../../app.keys';
 import { COLUMNS_CLIENT } from './clientColumns';
 import { ProjectComponent } from '../../shared/components/project/project.component';
+import { ExcelExportService } from '../../shared/service/export-excel.service';
+import * as _ from 'lodash';
 
 const dataVal = require('./client.json');
 
@@ -17,11 +19,32 @@ export class ClientComponent implements OnInit {
   
   public data = dataVal;
   public gridColumns = COLUMNS_CLIENT;
+  public enabledTitle: boolean;
+  public allowExcelExport: boolean;
 
+  constructor(private excelExportService: ExcelExportService) {
 
-  constructor() { }
+   }
 
   ngOnInit(): void {
+    this.enabledTitle = true;
+    this.allowExcelExport = true;
   }
+
+  /**
+   * Export Excel
+   * @param {name, gridColumns, data}
+   *
+   */
+  public onExportExcel(excelData): any {
+    if (!_.isNil(excelData.data) && !_.isEmpty(excelData.data)) {
+      this.excelExportService.generateExcelFromJson(
+        excelData.name,
+        excelData.gridColumns,
+        excelData.data
+      );
+    }
+  }
+
 
 }

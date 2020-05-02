@@ -8,7 +8,9 @@
             <div class="content-header row">Productos
             </div>
             <div class="content-body">
-                <app-project [gridColumns]="gridColumns" [data]="data" ></app-project>
+                <app-project [gridColumns]="gridColumns" [data]="data" [enabledTitleOp] = "enabledTitle"
+                [allowExcelExportOp] = "allowExcelExport"
+                (exportExcel)= "onExportExcel($event)"></app-project>
             </div>
         </div>
     </div>

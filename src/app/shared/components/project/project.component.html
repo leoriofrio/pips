@@ -1,6 +1,5 @@
 <div >
-    <span class="title">Titulo</span>
-    <div class="pr-4 d-flex col-5" *ngIf="enabledSelect">
+    <span class="title" *ngIf="enabledTitle">Titulo</span>
         
     <div class="pr-4">
         <button id="btnExportExcel" *ngIf="allowExcelExport" class="button-title" (click)="exportAsXLSX()">
