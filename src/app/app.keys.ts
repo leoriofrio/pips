@@ -1,7 +1,7 @@
 // All the constants goes here
 export namespace AppKeys {
   export const DEFAULT_PROFORMS_NAME = 'proforma';
-  export const DEFAULT_SAMPLES_NAME = "muestra"
+  export const DEFAULT_SAMPLES_NAME = "muestra";
 }
 
 export namespace TitleNames {
@@ -28,6 +28,44 @@ export namespace ExcelKeys {
   export const EXCEL_EXPORT_TYPE = 'excel';
 }
 
+export namespace Proform {
+  export const ID = {prop: 'id', name: 'Id'};
+  export const USER_ID = {prop: 'user_id', name: 'user_id'};
+  export const COLLEGES_ID = {prop: 'colleges_id', name: 'colleges_id'};
+  export const CLIENT_ID = {prop: 'client_id', name: 'client_id'};
+  export const DATE_PROFORM = {prop: 'date_proform', name: 'Fecha Registro'};
+  export const DATE_DELIVERY = {prop: 'date_delivery', name: 'Fecha Entrega'};
+  export const TYPE_CLIENT_SALE = {prop: 'type_client_sale', name: 'Tipo de Venta'};
+  export const AGREEMENT = {prop: 'agreement', name: 'Convenio'};
+ 
+}
+
+export namespace ProformDetail {
+  export const ID = {prop: 'id', name: 'Id'};
+  export const PROFORM_ID = {prop: 'proform_id', name: 'proform_id'};
+  export const DEGREE = {prop: 'degree', name: 'Grado'};
+  export const PRODUCT_ID = {prop: 'product_id', name: 'product_Id'};
+  export const PRICE = {prop: 'price', name: 'Precio'};
+  export const SALE_DIRECT = {prop: 'sale_direct', name: 'DIRECTO'};
+  export const SALE_EXTERNAL_LIBRARY = {prop: 'sale_external_library', name: 'LIBRERÍA EXTERNA'};
+  export const SALE_EVENT = {prop: 'sale_event', name: 'Material Promocional Premios para eventos'};
+  export const SALE_TEACHER = {prop: 'sale_teacher', name: 'Material Promocional para profesores'};
+  export const SALE_INFRASTRUCTURE = {prop: 'sale_infrastructure', name: 'Infraestructura PLANTEL'};
+  export const SALE_SCHOLARSHIPS = {prop: 'sale_scholarships', name: 'Becas PLANTEL'};
+  export const SALE_STAFF = {prop: 'sale_staff', name: 'Equipos PLANTEL'};
+  export const SALE_TRAINING = {prop: 'sale_training', name: 'Capacitación PLANTEL'};
+}
+
+export namespace TypeCLientSale {
+  export const NEW = 'Conquista';
+  export const RE_SALE = 'Mantener';  
+}
+
+export namespace Agreement {
+  export const NEW = 'Nuevo';
+  export const OLD = 'Anterior';
+}
+
 export namespace ProductColumns {
   export const ID = {prop: 'id', name: 'Id'};
   export const SUBLINE = {prop: 'subline', name: 'Sublínea'};
@@ -38,7 +76,7 @@ export namespace ProductColumns {
   export const DEGREE = {prop: 'degree', name: 'Grado'};
   export const BUSINESS_LINE = {prop: 'businessLine', name: 'Linea Negocios'};
   export const ISBN = {prop: 'isbn', name: 'ISBN'};
-  export const REGION_ID = {prop: 'region_id', name: 'Región'}
+  export const REGION_ID = {prop: 'region_id', name: 'Región'};
 }
 
 export namespace Colleges {
@@ -126,4 +164,3 @@ export namespace RoutePathsKeys {
   export const LOGOUT = '/logout';
   export const REPORT = '/report';    
 }
-  
