@@ -24,10 +24,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": [
-              "src/assets/js/scripts/pages/app-invoice.js"
             ]
           },
           "configurations": {
@@ -90,7 +89,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
+              "src/styles.scss",
               "node_modules/font-awesome/css/font-awesome.css"
             ],
             "scripts": [              

@@ -7,6 +7,9 @@ import { ConfigurationModule } from './configuration/configuration.modules';
 import { SharedModule } from './shared/shared.module';
 import { AdminModule } from './admin/admin.module';
 import { UIModule } from './ui/ui.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 
 
 @NgModule({
@@ -20,7 +23,10 @@ import { UIModule } from './ui/ui.module';
     ConfigurationModule,
     SharedModule,
     AdminModule,
-    UIModule
+    UIModule,
+    ReactiveFormsModule,
+    FormlyModule.forRoot(),
+    FormlyBootstrapModule,
   ],
   schemas: [  ],  
   providers: [],

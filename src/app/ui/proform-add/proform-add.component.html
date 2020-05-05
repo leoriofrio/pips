@@ -1,16 +1,15 @@
 <!-- BEGIN: Content-->
 
 <div class="app-content content">
-    <div class="content-overlay"></div>
     <div class="content-wrapper">
         <div class="content-header row">
         </div>
         <div class="content-body">
             <!-- app invoice View Page -->
-            <section class="invoice-edit-wrapper">
+            <section class="">
                 <div class="row">
                     <!-- invoice view page -->
-                    <div class="col-xl-12 ">
+                    <div class="col-xl-10 ">
                         <div class="card">
                                 <div class="card-body">
                                     <!-- header section -->
@@ -19,12 +18,22 @@
                                             <formly-form [model]="model" [fields]="formFields" [options]="options" [form]="form"></formly-form>
                                         </form>
                                     </div>
-                                    
+                                    <div class="col-xl-4">
+                                        <button type="submit" class="btn btn-primary submit-button">Guardar</button>
+                                        <span></span>
+                                        <button type="submit" class="btn btn-primary submit-button">Cancelar</button>
+                                    </div>
                                 </div>
                                 
                         </div>
                     </div>
-                    
+                    <div class="col-xl-10 ">
+                        <div class="content-body">
+                            <app-project [gridColumns]="gridColumns" [data]="data" [enabledTitleOp] = "enabledTitle"
+                            [allowExcelExportOp] = "allowExcelExport"
+                            (exportExcel)= "onExportExcel($event)"></app-project>
+                        </div>
+                    </div>
                 </div>
             </section>
 
