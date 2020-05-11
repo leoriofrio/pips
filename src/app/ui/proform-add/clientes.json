@@ -1,0 +1,826 @@
+[
+        {
+            "value": "GO0002",
+            "label": "JARAMILLO CONCHA JAIME EDUARDO"
+        },
+        {
+            "value": "GO0006",
+            "label": "IZURIETA CRUZ RUTH ALICE"
+        },
+        {
+            "value": "GO0004",
+            "label": "TIPANTASI TAIPE WILIAN GUILLERMO"
+        },
+        {
+            "value": "GO0003",
+            "label": "HIDALGO ABRIL JIMMY ADALBERTO"
+        },
+        {
+            "value": "Q22936",
+            "label": "ANIBAL XAVIER SOLIS SUAREZ"
+        },
+        {
+            "value": "G22819",
+            "label": "FUNDACION HOGAR DE NAZARET"
+        },
+        {
+            "value": "G22275",
+            "label": "BALLESTEROS CEDEÑO LUIS ALFREDO"
+        },
+        {
+            "value": "GE0010",
+            "label": "MIELES VERA LIGIA CRISTINA"
+        },
+        {
+            "value": "GSD002",
+            "label": "FALCONES MOREIRA NANCY MAGALI"
+        },
+        {
+            "value": "GE0011",
+            "label": "GRANDA ENCALADA VERONICA ELIZABETH"
+        },
+        {
+            "value": "GG0001",
+            "label": "MORALES CAMPUZANO LUIS GONZALO"
+        },
+        {
+            "value": "G00003",
+            "label": "SOLIS QUIÑONEZ GINA MARIBEL"
+        },
+        {
+            "value": "GG0017",
+            "label": "RANGEL GELVEZ NELSON MANUEL"
+        },
+        {
+            "value": "GG0011",
+            "label": "ASESORPED S.A."
+        },
+        {
+            "value": "G00004",
+            "label": "CALI JARA NORMA SOLEDAD"
+        },
+        {
+            "value": "G23544",
+            "label": "EDUCA-PAPEL Y LIBROS S.A. PAPELIB "
+        },
+        {
+            "value": "G00128",
+            "label": "CENTRO CRISTIANO DE GUAYAQUIL"
+        },
+        {
+            "value": "G22997",
+            "label": "PAPELERIA & SUMINISTROS S.A. PAPERSUM"
+        },
+        {
+            "value": "G23575",
+            "label": "SOLUCIONES GLOBALES S.A. GLOBFAST"
+        },
+        {
+            "value": "GG0022",
+            "label": "BARREZUETA COBO IRMA YOLANDA"
+        },
+        {
+            "value": "G20877",
+            "label": "MAPGRAFI S.A."
+        },
+        {
+            "value": "GG0008",
+            "label": "LIBRERIA-JMM S.A. "
+        },
+        {
+            "value": "G01347",
+            "label": "MAGDU S.A."
+        },
+        {
+            "value": "G21387",
+            "label": "EDITORIAL DON BOSCO"
+        },
+        {
+            "value": "G23597",
+            "label": "COELLO FRANCO MARIA ERNESTINA"
+        },
+        {
+            "value": "G22998",
+            "label": "NEGOSTAR S.A."
+        },
+        {
+            "value": "G23568",
+            "label": "RODRIGUEZ GUERRA CARMEN FABIOLA"
+        },
+        {
+            "value": "G23584",
+            "label": "MERVASA S.A."
+        },
+        {
+            "value": "G23084",
+            "label": "SU MARKET S.A. SUMARKETSA"
+        },
+        {
+            "value": "G23016",
+            "label": "UNIESCOLAR S.A."
+        },
+        {
+            "value": "G23015",
+            "label": "JUAN MANUEL ESCOBAR CALDERON"
+        },
+        {
+            "value": "GW1002",
+            "label": "FUNDACION NUEVO MUNDO"
+        },
+        {
+            "value": "G00091",
+            "label": "LEYTON SAN MARTIN NELSON WASHINGTON"
+        },
+        {
+            "value": "GG0086",
+            "label": "MOGOLLON VILLAMAR BRYAN STEVEN"
+        },
+        {
+            "value": "G23006",
+            "label": "LUZ ADALGUIZA SANTANA SANCHEZ"
+        },
+        {
+            "value": "GG0120",
+            "label": "REYES ZAPATIER DENNISSE ANDREA"
+        },
+        {
+            "value": "G22018",
+            "label": "ROSSETTO .S.A."
+        },
+        {
+            "value": "G23100",
+            "label": "SERVICIOS EMPRESARIALES S.A. MEDISERVICIOS"
+        },
+        {
+            "value": "G21800",
+            "label": "RODAS CARRERA EDWIN XAVIER"
+        },
+        {
+            "value": "GG0105",
+            "label": "VALENCIA LOPEZ TOMAS ALFONSO"
+        },
+        {
+            "value": "G00129",
+            "label": "GUAMAN YAURI JULIA LUZMILA"
+        },
+        {
+            "value": "GG0020",
+            "label": "PANDOCEAN S.A."
+        },
+        {
+            "value": "GG0014",
+            "label": "ALAVA RUIZ TATIANA VERONICA"
+        },
+        {
+            "value": "G23093",
+            "label": "DAJUPRI S.A."
+        },
+        {
+            "value": "G22923",
+            "label": "RINCONCITO S.C."
+        },
+        {
+            "value": "GM0049",
+            "label": "NEGOVITAL S.A."
+        },
+        {
+            "value": "G00059",
+            "label": "GAIBOR RIVERA DINA MAGALLY"
+        },
+        {
+            "value": "GI1003",
+            "label": "UNIDAD EDUCATIVA DE LA ASUNCION"
+        },
+        {
+            "value": "Q00013",
+            "label": "SOLORGISTIC S.A."
+        },
+        {
+            "value": "G23590",
+            "label": "CARRION GARZON LENIN MICHAELL"
+        },
+        {
+            "value": "G22083",
+            "label": "SCHOOLL SERVICES S.A. SCSER"
+        },
+        {
+            "value": "G22119",
+            "label": "BAJAÑA SARCOS ORLANDO FELICIANO"
+        },
+        {
+            "value": "G00092",
+            "label": "BAQUERIZO CARRIEL DANIEL RICARDO"
+        },
+        {
+            "value": "GG0081",
+            "label": "ZURITA ARAUJO MARIA FERNANDA"
+        },
+        {
+            "value": "G22728",
+            "label": "CORPORACION DE LA ASOCIACION DE LOS ADVENTISTAS"
+        },
+        {
+            "value": "G21336",
+            "label": "AGRITEPSA S.A."
+        },
+        {
+            "value": "G00115",
+            "label": "DOMINGUEZ BERNAL CARLOS ALBERTO"
+        },
+        {
+            "value": "G00024",
+            "label": "STELASUR S.A."
+        },
+        {
+            "value": "G00087",
+            "label": "SAMANIEGO SAMANIEGO DELFIN DE JESUS"
+        },
+        {
+            "value": "GG0098",
+            "label": "TINOCO ROMERO ROBERTH ARTURO"
+        },
+        {
+            "value": "GG0025",
+            "label": "DISTRIBUIDORA UNILIB"
+        },
+        {
+            "value": "GG0013",
+            "label": "GARCIA RUIZ MARIA CECIBEL"
+        },
+        {
+            "value": "GG0016",
+            "label": "MAYA NAVARRETE JESSICA MERCEDES"
+        },
+        {
+            "value": "G22097",
+            "label": "PESANTES JARA BAYRON OMAR"
+        },
+        {
+            "value": "G23095",
+            "label": "GUILLEN SOLIS MARIANITA DE JESUS"
+        },
+        {
+            "value": "G00113",
+            "label": "PAPELDESK S.A."
+        },
+        {
+            "value": "G22341",
+            "label": "FUNDACION WONG"
+        },
+        {
+            "value": "GG0007",
+            "label": "PRIETO CABRERA LEONIDAS FELIPE "
+        },
+        {
+            "value": "G00008",
+            "label": "RODRIGUEZ PALANGO MARIA SOLEDAD"
+        },
+        {
+            "value": "G22431",
+            "label": "BELLA CRUZ VALLEJO RIOS"
+        },
+        {
+            "value": "GG0080",
+            "label": "CLAVIJO ESCOBAR JESSICA ALEXANDRA"
+        },
+        {
+            "value": "G00103",
+            "label": "DOMINGUEZ ALCIVAR JOSUE ANDRES"
+        },
+        {
+            "value": "G00105",
+            "label": "RODRIGUEZ LEON JENIFER LISETTE"
+        },
+        {
+            "value": "GG0119",
+            "label": "BAQUE GANCHOZO ROBERT STALIN"
+        },
+        {
+            "value": "GG0021",
+            "label": "NAVARRETE MENDOZA DIANA ISABEL"
+        },
+        {
+            "value": "G22176",
+            "label": "CARLOS JAVIER ESTRADA WRAY"
+        },
+        {
+            "value": "G00126",
+            "label": "SAMPEDRO CORAL JULIO RODRIGO"
+        },
+        {
+            "value": "GG0101",
+            "label": "ZUÑA CARCHIPULLA NANCY ANNABELLE"
+        },
+        {
+            "value": "GG0019",
+            "label": "HERRERA PUGA FRANKLIN JOSEPH"
+        },
+        {
+            "value": "GM0051",
+            "label": "REYES LOPEZ DIANA CAROLINA"
+        },
+        {
+            "value": "GG0012",
+            "label": "RONQUILLO DUQUE HECTOR REINALDO"
+        },
+        {
+            "value": "GG0078",
+            "label": "GUERRERO CAICEDO GRACE PATRICIA"
+        },
+        {
+            "value": "Q00013",
+            "label": "SOLORGISTIC S.A."
+        },
+        {
+            "value": "GG0010",
+            "label": "ORTEGA DIAZ WASHINGTON JAVIER "
+        },
+        {
+            "value": "GN6949",
+            "label": "TIPAN BRITO CARLOS HUMBERTO"
+        },
+        {
+            "value": "g",
+            "label": "MOLINA CORTEZ DUFFER ARMANDO"
+        },
+        {
+            "value": "GMI002",
+            "label": "JACOME FREIRE ROSA MARJORIE"
+        },
+        {
+            "value": "GB0010",
+            "label": "ALCOSER PINOS CECIBEL DEL ROCIO"
+        },
+        {
+            "value": "G00120",
+            "label": "SALAZAR SORIANO DIANA LILI"
+        },
+        {
+            "value": "G22230",
+            "label": "GARCIA MENDOZA NURY ILIANA"
+        },
+        {
+            "value": "GS00125",
+            "label": "ASENCIO BAIDAL GLADYS MATILDE"
+        },
+        {
+            "value": "G22461",
+            "label": "ARCE YEPEZ ROSA JOBA"
+        },
+        {
+            "value": "GD0006",
+            "label": "PEÑA BUENO PETITA MAGDALENA"
+        },
+        {
+            "value": "GG0015",
+            "label": "ORTIZ TUTIVEN MARIBEL EULALIA"
+        },
+        {
+            "value": "G21119",
+            "label": "ESPINOZA DE LA TORRE ROBERTO ANDRE"
+        },
+        {
+            "value": "G23570",
+            "label": "TELLO ROMERO ANDREA TERESA"
+        },
+        {
+            "value": "G00049",
+            "label": "SOCIEDAD AGRICOLA E INDUSTRIAL SAN CARLOS S.A."
+        },
+        {
+            "value": "QD0005",
+            "label": "DEXI YESENIA LOY NAVARRETE"
+        },
+        {
+            "value": "G00127",
+            "label": "RODRIGUEZ HERRERA ELIZABETH DEL ROCIO"
+        },
+        {
+            "value": "G00089",
+            "label": "SALAZAR CARAVAJO MIRIAM ALEXANDRA"
+        },
+        {
+            "value": "G22100",
+            "label": "CEDEÑO MOLINA MARIA DEL CARMEN"
+        },
+        {
+            "value": "GMI001",
+            "label": "GARAICOA MOROCHO ERIKA LEA"
+        },
+        {
+            "value": "GMI0002",
+            "label": "MORENO ELIAS MELINA LUCIA"
+        },
+        {
+            "value": "GG0018",
+            "label": "CORDOVA CARRASCO RUTH MARGARITA"
+        },
+        {
+            "value": "G23129",
+            "label": "GUAMAN MUÑOZ PABLO ROBERTO"
+        },
+        {
+            "value": "G00058",
+            "label": "LARA GADBAY ROSA MARLENE"
+        },
+        {
+            "value": "GG0079",
+            "label": "VELASTEGUI LEDESMA LINDA HEIDY"
+        },
+        {
+            "value": "GO0007",
+            "label": "RAMOS ESCOBAR ANA CRISTINA"
+        },
+        {
+            "value": "G00116",
+            "label": "CEDEÑO ANCHUNDIA RUDYS ALEXANDRA"
+        },
+        {
+            "value": "GDU002",
+            "label": "PUNTO SAN FCO DE ASIS DURAN"
+        },
+        {
+            "value": "GS0025",
+            "label": "MURILLO CARRANZA CARLOS LUIS"
+        },
+        {
+            "value": "G22841",
+            "label": "OJEDA LEON NANCY PATRICIA"
+        },
+        {
+            "value": "G23113",
+            "label": "ROBERTO JESUS NUÑEZ TORRES"
+        },
+        {
+            "value": "GT0001",
+            "label": "MIRANDA MELENDRES JENNIFER TATIANA"
+        },
+        {
+            "value": "G23104",
+            "label": "RAMON ANTONIO VELEZ CUSME"
+        },
+        {
+            "value": "GPC001",
+            "label": "MITE GORDILLO FREDDY MOISES"
+        },
+        {
+            "value": "G00035",
+            "label": "RIERA HERMIDA FERNANDO PATRICIO"
+        },
+        {
+            "value": "GD0007",
+            "label": "HIDALGO PALMA GRACIELA PATRICIA"
+        },
+        {
+            "value": "GS0026",
+            "label": "ANZULES GARCIA EFRAIN GONZALO"
+        },
+        {
+            "value": "GLR001",
+            "label": "JARAMILLO CONCHA JOSE AGUSTIN"
+        },
+        {
+            "value": "G22665",
+            "label": "MUNDOFFICE C. LTDA."
+        },
+        {
+            "value": "GQ0000",
+            "label": "ANASTACIO ESPINOZA YOLANDA ROSANA"
+        },
+        {
+            "value": "GR0002",
+            "label": "MACIAS LUNA LORENA BELEN"
+        },
+        {
+            "value": "G22920",
+            "label": "ALARCON TUMBACO TANIA MARIUXY"
+        },
+        {
+            "value": "GL0002",
+            "label": "VITERI CHUSAN DAVID ANTONIO"
+        },
+        {
+            "value": "GC0004",
+            "label": "ORDOÑEZ GARCIA CONSUELO AUXILIADORA"
+        },
+        {
+            "value": "G00099",
+            "label": "SOLIS VELASCO EDGAR FABRICIO"
+        },
+        {
+            "value": "G21806",
+            "label": "CONGREGACION DE PADRES JOSEFINOS DE MURIALDO"
+        },
+        {
+            "value": "G00090",
+            "label": "PEBEXCORP S.A."
+        },
+        {
+            "value": "G00110",
+            "label": "ANDRADE RIVAS ROSA PATRICIA"
+        },
+        {
+            "value": "GLR002",
+            "label": "DONOSO BELTRAN JESSENIA ALEXANDRA"
+        },
+        {
+            "value": "GG0009",
+            "label": "TORRE FUERTE POZOS Y BOMBAS S.C.C."
+        },
+        {
+            "value": "GLR004",
+            "label": "MONTOYA CLAUDIA LORENA"
+        },
+        {
+            "value": "GR0004",
+            "label": "DIOCESIS DE BABAHOYO"
+        },
+        {
+            "value": "GM0048",
+            "label": "CEDEÑO ARAGUNDY WILTON JOSELO"
+        },
+        {
+            "value": "G22229",
+            "label": "AVEIGA SANTANA CONSUELO SOLEDAD"
+        },
+        {
+            "value": "G23073",
+            "label": "ZAMBRANO BARRETO OSCAR EUGENIO"
+        },
+        {
+            "value": "GM0044",
+            "label": "PIN SOLEDISPA IRENE MARIEL"
+        },
+        {
+            "value": "GP0009",
+            "label": "ROJAS CARRERA INES ALEXANDRA"
+        },
+        {
+            "value": "GM0020",
+            "label": "BERMEO MERA OLGA YANETH"
+        },
+        {
+            "value": "GP0002",
+            "label": "GARCIA QUIJIJE TATIANA DE LOS SANTOS"
+        },
+        {
+            "value": "GM0041",
+            "label": "COMPAÑIA MILYSAM S.A. MILYSAMSA"
+        },
+        {
+            "value": "GM0039",
+            "label": "TACURI LOPEZ IRMA HERMOSINA"
+        },
+        {
+            "value": "G20958",
+            "label": "BAYONA TRIVIÑO IDUNA ANNABELLE"
+        },
+        {
+            "value": "GM0043",
+            "label": "CANTOS VERA SILVIA JAZMIN"
+        },
+        {
+            "value": "GM0045",
+            "label": "DE LA ROSA DE LA CRUZ NELLY YOLANDA"
+        },
+        {
+            "value": "GM0029",
+            "label": "VASCONEZ CEVALLOS JIMENA ELIZABETH"
+        },
+        {
+            "value": "GM0037",
+            "label": "IZAGUIRRE MARIN ANGELA MARIA DOLORES"
+        },
+        {
+            "value": "GM0050",
+            "label": "CEVALLOS ZAMBRANO ESPERANZA ELIZABETH"
+        },
+        {
+            "value": "GM0022",
+            "label": "VALDIVIESO ARTEAGA MARIA ELENA"
+        },
+        {
+            "value": "GM0046",
+            "label": "PALACIOS MENDOZA EDGAR ROMEO"
+        },
+        {
+            "value": "GM0052",
+            "label": "ALCIVAR MENDOZA MERCEDES SOLANDA"
+        },
+        {
+            "value": "GM0007",
+            "label": "ASO. DE CUENTAS EN PARTICIPACION PIEDRA LARGA"
+        },
+        {
+            "value": "G23105",
+            "label": "MACIAS MUÑOZ JOSELYN ZULEMA"
+        },
+        {
+            "value": "GS0022",
+            "label": "VALDIVIESO PARRALES VICTOR STALYN"
+        },
+        {
+            "value": "G23081",
+            "label": "FLORES MARTINEZ HUGO IGNACIO"
+        },
+        {
+            "value": "GS0016",
+            "label": "CONGREGACION DE PADRES JOSEFINOS DE MURIALDO"
+        },
+        {
+            "value": "GS0021",
+            "label": "MUÑOZ SAN MIGUEL LUIS ANDRES"
+        },
+        {
+            "value": "GS0023",
+            "label": "MARAZITA VILLARROEL VIRGINIA LISSETTE"
+        },
+        {
+            "value": "GS0018",
+            "label": "CUENCA RAMOS MARGARITA"
+        },
+        {
+            "value": "GS0013",
+            "label": "ABAD BARZOLA MARIA PAULA"
+        },
+        {
+            "value": "GS0024",
+            "label": "CHAMAIDAN CONSUEGRA DENISSE ELIZABETH"
+        },
+        {
+            "value": "GSD029",
+            "label": "MOREIRA CEDEÑO BORIS RAMON"
+        },
+        {
+            "value": "GSD031",
+            "label": "CABEZAS LOOR BETTY VERONICA"
+        },
+        {
+            "value": "GSD011",
+            "label": "VALDEZ LAAZ SILVIA VERONICA"
+        },
+        {
+            "value": "GSD006",
+            "label": "NIETO JACOME ALEX FERNANDO"
+        },
+        {
+            "value": "GSD035",
+            "label": "ARELLANO MUÑOZ DELIA ESMERALDA"
+        },
+        {
+            "value": "GSD030",
+            "label": "NOBOA ESCOBAR LILIANA LORENA"
+        },
+        {
+            "value": "GSD022",
+            "label": "CARRERA CHINCHAY MARY ELIZABETH"
+        },
+        {
+            "value": "Q23419",
+            "label": "CORPORACION DE LA ASOCIACION DE LOS ADVENTISTAS"
+        },
+        {
+            "value": "GSD025",
+            "label": "TAPIA ANDRADE FREDDY CORNELIO"
+        },
+        {
+            "value": "Q33146",
+            "label": "AMADO PINZON MIKE"
+        },
+        {
+            "value": "GSD034",
+            "label": "MUÑOZ YANDUN STALIN RAMIRO "
+        },
+        {
+            "value": "G23088",
+            "label": "PAZMIÑO MARIO HERNAN"
+        },
+        {
+            "value": "GSD033",
+            "label": "TUFIÑO GONZALEZ HANNA ELIZABETH"
+        },
+        {
+            "value": "Q22686",
+            "label": "OLIVEIRA CAMARGO ELOA DO BELEM"
+        },
+        {
+            "value": "GSD026",
+            "label": "HARO VALLEJO JEAN PAUL"
+        },
+        {
+            "value": "GSD008",
+            "label": "BRAVO CARRIEL JULIO CLEMENTE"
+        },
+        {
+            "value": "G23622",
+            "label": "ROMERO CALDERON MICHELLE VIRGINIA"
+        },
+        {
+            "value": "GG0026",
+            "label": "FLORES JIRON DIANA ISABEL"
+        },
+        {
+            "value": "GG0027",
+            "label": "RUPERTI LOOR GONZALO XAVIER"
+        },
+        {
+            "value": "GS0001",
+            "label": "SUAREZ MALAVE LUIS ANGEL"
+        },
+        {
+            "value": "QP0006",
+            "label": "PA-CO COMERCIAL E INDUSTRIAL S.A."
+        },
+        {
+            "value": "GD0008",
+            "label": "BUENDIA NAVARRETE SHIRLEY VANESSA"
+        },
+        {
+            "value": "GG0100",
+            "label": "AYALA MOSQUERA CARLOS MARIA FABIAN"
+        },
+        {
+            "value": "G23553",
+            "label": "FUNDACION D. GARY YOUNG - YOUNG LIVING"
+        },
+        {
+            "value": "GM0054",
+            "label": "CORNEJO ORDOÑEZ CARMEN ELVIRA"
+        },
+        {
+            "value": "GSD036",
+            "label": "VITE BALON MOISES SECUNDINO"
+        },
+        {
+            "value": "GG0084",
+            "label": "RIVERA CUSME YUNNY ALEXANDRA"
+        },
+        {
+            "value": "GG0083",
+            "label": "FALCONÍ BONILLA PATRICIA ELIZABETH"
+        },
+        {
+            "value": "G22813",
+            "label": "PALACIOS MENDOZA PATRICIA LEONOR"
+        },
+        {
+            "value": "G00023",
+            "label": "HUAYAMAVE RONQUILLO VICENTA DEL ROCIO"
+        },
+        {
+            "value": "GDU003",
+            "label": "ALEMAN YEPEZ PATRICIA JOHANNA "
+        },
+        {
+            "value": "GG0103",
+            "label": "MOSQUERA VIEJO ELENA MARISOL"
+        },
+        {
+            "value": "Q23472",
+            "label": "SOLIS OÑA CAROLINA GENESIS"
+        },
+        {
+            "value": "Q23473",
+            "label": "SOLIS OÑA VANESSA ELIZABETH"
+        },
+        {
+            "value": "Q11181",
+            "label": "COLEGIO MENOR CMSFQ S.A."
+        },
+        {
+            "value": "G00065",
+            "label": "LOPEZ JURADO SANTIAGO ANDRES"
+        },
+        {
+            "value": "GG0106",
+            "label": "VARGAS GUERRERO VICTOR EMILIO"
+        },
+        {
+            "value": "GG0107",
+            "label": "PAZMIÑO MONCADA FREDY ERNESTO"
+        },
+        {
+            "value": "GMI003",
+            "label": "VASQUEZ RUGEL JENNY LUCIA"
+        },
+        {
+            "value": "GNA001",
+            "label": "MORAN RAMIREZ ZENEIDA MIRELLA"
+        },
+        {
+            "value": "GMI004",
+            "label": "HIDALGO BONILLA TANIA MAGALI"
+        },
+        {
+            "value": "G22203",
+            "label": "QUIROZ ARTEAGA MIRIAM GUADALUPE"
+        },
+        {
+            "value": "GMA002",
+            "label": "ZAMBRANO SANCHEZ GEORGINA ANABEL"
+        },
+        {
+            "value": "GG0108",
+            "label": "DE GUILHEM CORP S.A."
+        }
+    ]

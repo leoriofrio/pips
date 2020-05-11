@@ -2,18 +2,23 @@
 import { Component, OnInit, Input, ViewChild, Output, EventEmitter } from '@angular/core';
 import { ExcelExportService } from '../../service/export-excel.service';
 import { AppKeys, ExcelKeys } from 'src/app/app.keys';
+import {  Module } from 'ag-grid-community';
 
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-project',
   templateUrl: './project.component.html',
-  styleUrls: ['./project.component.css']
+  styleUrls: ['./project.component.scss']
 })
 export class ProjectComponent implements OnInit {
   @ViewChild('content', {static: true})
   private row;
   public enabledTitle: boolean;
   public allowExcelExport: boolean;
+  private gridApi;
+  private gridColumnApi;
+  
 
   @Input() 
   public gridColumns;
@@ -23,21 +28,86 @@ export class ProjectComponent implements OnInit {
   public enabledTitleOp: boolean;
   @Input()
   public allowExcelExportOp: boolean;
+  @Input()
+  public styleFormat: string;
+  @Input()
+  public pinnedTopRowData;
+  @Input()
+  public pinnedBottomRowData;
+  @Input()
+  public defaultColDef
   @Output()
   public exportExcel = new EventEmitter<any>();
 
 
   constructor(private excelExportService: ExcelExportService) {     
-    
   }
 
   ngOnInit(){
     this.enabledTitle = this.enabledTitleOp;
     this.allowExcelExport = this.allowExcelExportOp;
+    if (_.isNull(this.styleFormat) ) {
+      this.styleFormat = '670px;';
+    }
   }
 
   public exportAsXLSX(): void {
     this.exportExcel.emit({name: ExcelKeys.DEFAULT_EXCEL_NAME, gridColumns: this.gridColumns, data: this.data});
   }
 
+  public processDataFromClipboard(params) {
+    var containsRed;
+    var containsYellow;
+    var data = params.data;
+    for (var i = 0; i < data.length; i++) {
+      var row = data[i];
+      for (var j = 0; j < row.length; j++) {
+        var value = row[j];
+        if (value) {
+          if (value.startsWith('Red')) {
+            containsRed = true;
+          } else if (value.startsWith('Yellow')) {
+            containsYellow = true;
+          }
+        }
+      }
+    }
+    if (containsRed) {
+      return [['Orange', 'Orange'], ['Grey', 'Grey']];
+    }
+    if (containsYellow) {
+      return null;
+    }
+    return data;
+  }
+
+
+  public onGridReady(params) {
+    this.gridApi = params.api;
+    this.gridColumnApi = params.columnApi;
+  }
+  
+
 }
+//  https://www.ag-grid.com/javascript-grid-clipboard/
+
+
+//  https://www.ag-grid.com/javascript-grid-value-getters/
+
+
+
+//  npmjs.com/package/react-data-leo
+//  https://adazzle.github.io/react-data-grid/docs/examples/simple-grid
+
+
+//  https://www.npmjs.com/package/angular-open-datagrid
+//  
+
+//  Examples  
+//          https://www.ngdevelop.tech/best-angular-tables/
+
+
+// Good exampels copy and paste
+//    https://handsontable.com/examples?headers
+//    https://www.npmjs.com/package/handsontable
+//    https://stackblitz.com/edit/handsontable-poc?file=src%2Fapp%2Fbudget-grid%2Fbudget-grid.component.ts

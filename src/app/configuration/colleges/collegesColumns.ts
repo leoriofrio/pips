@@ -1,22 +1,22 @@
-import { Colleges } from '../../app.keys';
+import { CollegesColumns } from '../../app.keys';
 
 export const COLUMNS_COLLEGES = [
-    {field: Colleges.ID.prop, headerName: Colleges.ID.name },
-    {field: Colleges.COD_SANTILLANA.prop , headerName: Colleges.COD_SANTILLANA.name },
-    {field: Colleges.COD_INSTITUTO.prop , headerName: Colleges.COD_INSTITUTO.name },
-    {field: Colleges.STATUS.prop , headerName: Colleges.STATUS.name },
-    {field: Colleges.DELEGATE_TEXT.prop , headerName: Colleges.DELEGATE_TEXT.name },
-    {field: Colleges.DELEGATE_ENGLISH.prop , headerName: Colleges.DELEGATE_ENGLISH.name },
-    {field: Colleges.DELEGATE_SHARED.prop , headerName: Colleges.DELEGATE_SHARED.name },
-    {field: Colleges.PROVINCE.prop , headerName: Colleges.PROVINCE.name },
-    {field: Colleges.CANTON.prop , headerName: Colleges.CANTON.name },
-    {field: Colleges.PARISH.prop , headerName: Colleges.PARISH.name },
-    {field: Colleges.NAME.prop , headerName: Colleges.NAME.name },
-    {field: Colleges.ADDRESS.prop , headerName: Colleges.ADDRESS.name },
-    {field: Colleges.NIVEL.prop , headerName: Colleges.NIVEL.name },
-    {field: Colleges.TYPE.prop , headerName: Colleges.TYPE.name },
-    {field: Colleges.SCHOOL_SYSTEM.prop , headerName: Colleges.SCHOOL_SYSTEM.name },
-    {field: Colleges.MODALITY.prop , headerName: Colleges.MODALITY.name },
-    {field: Colleges.SCHOOL_DAY.prop , headerName: Colleges.SCHOOL_DAY.name },
-    {field: Colleges.REGION_ID.prop , headerName: Colleges.REGION_ID.name }
+    {field: CollegesColumns.ID.prop, headerName: CollegesColumns.ID.name },
+    {field: CollegesColumns.COD_SANTILLANA.prop , headerName: CollegesColumns.COD_SANTILLANA.name },
+    {field: CollegesColumns.COD_INSTITUTO.prop , headerName: CollegesColumns.COD_INSTITUTO.name },
+    {field: CollegesColumns.STATUS.prop , headerName: CollegesColumns.STATUS.name },
+    {field: CollegesColumns.DELEGATE_TEXT.prop , headerName: CollegesColumns.DELEGATE_TEXT.name },
+    {field: CollegesColumns.DELEGATE_ENGLISH.prop , headerName: CollegesColumns.DELEGATE_ENGLISH.name },
+    {field: CollegesColumns.DELEGATE_SHARED.prop , headerName: CollegesColumns.DELEGATE_SHARED.name },
+    {field: CollegesColumns.PROVINCE.prop , headerName: CollegesColumns.PROVINCE.name },
+    {field: CollegesColumns.CANTON.prop , headerName: CollegesColumns.CANTON.name },
+    {field: CollegesColumns.PARISH.prop , headerName: CollegesColumns.PARISH.name },
+    {field: CollegesColumns.NAME.prop , headerName: CollegesColumns.NAME.name },
+    {field: CollegesColumns.ADDRESS.prop , headerName: CollegesColumns.ADDRESS.name },
+    {field: CollegesColumns.NIVEL.prop , headerName: CollegesColumns.NIVEL.name },
+    {field: CollegesColumns.TYPE.prop , headerName: CollegesColumns.TYPE.name },
+    {field: CollegesColumns.SCHOOL_SYSTEM.prop , headerName: CollegesColumns.SCHOOL_SYSTEM.name },
+    {field: CollegesColumns.MODALITY.prop , headerName: CollegesColumns.MODALITY.name },
+    {field: CollegesColumns.SCHOOL_DAY.prop , headerName: CollegesColumns.SCHOOL_DAY.name },
+    {field: CollegesColumns.REGION_ID.prop , headerName: CollegesColumns.REGION_ID.name }
   ];

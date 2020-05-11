@@ -1,458 +1,2055 @@
 [
         {
             "id": "1",
-            "ruc": "1709569588",
-            "name": "AACSB International",
-            "address": "Dirección del Cliente",
-            "phone": "022439694",
-            "mail": "a@mail.com"
+            "codClient": "GO0002",
+            "province": "EL ORO",
+            "city": "MACHALA",
+            "name": "JARAMILLO CONCHA JAIME EDUARDO",
+            "nickName": "DISTRIBUIDORA J C",
+            "type": "Detallista",
+            "status": "Habilitado"
         },
         {
             "id": "2",
-            "ruc": "1735145317",
-            "name": "Academy of International Business",
-            "address": "Dirección del Cliente",
-            "phone": "022492348",
-            "mail": "a@mail.com"
+            "codClient": "GO0006",
+            "province": "EL ORO",
+            "city": "EL GUABO",
+            "name": "IZURIETA CRUZ RUTH ALICE",
+            "nickName": "BAZAR Y LIBRERIA SOFI-PUNTO LUCERITO",
+            "type": "Detallista",
+            "status": "Habilitado"
         },
         {
             "id": "3",
-            "ruc": "1732120668",
-            "name": "AcademyHealth",
-            "address": "Dirección del Cliente",
-            "phone": "022554747",
-            "mail": "a@mail.com"
+            "codClient": "GO0004",
+            "province": "EL ORO",
+            "city": "HUAQUILLAS",
+            "name": "TIPANTASI TAIPE WILIAN GUILLERMO",
+            "nickName": "COMERCIAL PATHIDAY PUNTO DON BOSCO",
+            "type": "Detallista",
+            "status": "No va "
         },
         {
             "id": "4",
-            "ruc": "1700098900",
-            "name": "AdvaMed",
-            "address": "Dirección del Cliente",
-            "phone": "022501092",
-            "mail": "a@mail.com"
+            "codClient": "GO0003",
+            "province": "EL ORO",
+            "city": "HUAQUILLAS",
+            "name": "HIDALGO ABRIL JIMMY ADALBERTO",
+            "nickName": "NIDO DEL SABER PUNTO JUAN XXIII",
+            "type": "Especialista",
+            "status": "Actualizar datos"
         },
         {
             "id": "5",
-            "ruc": "1701795898",
-            "name": "Agricultural Retailers Assn",
-            "address": "Dirección del Cliente",
-            "phone": "022549023",
-            "mail": "a@mail.com"
+            "codClient": "Q22936",
+            "province": "EL ORO",
+            "city": "MACHALA",
+            "name": "ANIBAL XAVIER SOLIS SUAREZ",
+            "nickName": "XAVIER SOLIS",
+            "type": "Mayorista",
+            "status": "Habilitado"
         },
         {
             "id": "6",
-            "ruc": "1728407709",
-            "name": "Air Traffic Control Assn",
-            "address": "Dirección del Cliente",
-            "phone": "022514300",
-            "mail": "a@mail.com"
+            "codClient": "G22819",
+            "province": "ESMERALDAS",
+            "city": "QUININDÉ",
+            "name": "FUNDACION HOGAR DE NAZARET",
+            "nickName": "JENNY CALDERON",
+            "type": "Detallista",
+            "status": "Habilitado"
         },
         {
             "id": "7",
-            "ruc": "1772901989",
-            "name": "Alliance for Academic Internal Medicine",
-            "address": "Dirección del Cliente",
-            "phone": "022543635",
-            "mail": "a@mail.com"
+            "codClient": "G22275",
+            "province": "ESMERALDAS",
+            "city": "ATACAMES",
+            "name": "BALLESTEROS CEDEÑO LUIS ALFREDO",
+            "nickName": "PAPELERIA FUTURO",
+            "type": "Detallista",
+            "status": "Habilitado"
         },
         {
             "id": "8",
-            "ruc": "1715500934",
-            "name": "Alpha Phi Alpha",
-            "address": "Dirección del Cliente",
-            "phone": "022505081",
-            "mail": "a@mail.com"
+            "codClient": "GE0010",
+            "province": "ESMERALDAS",
+            "city": "ESMERALDAS",
+            "name": "MIELES VERA LIGIA CRISTINA",
+            "nickName": "PUNTO SEMILLITAS",
+            "type": "Especialista",
+            "status": "Habilitado"
         },
         {
             "id": "9",
-            "ruc": "1796702029",
-            "name": "American Assn for Nude Recreation",
-            "address": "Dirección del Cliente",
-            "phone": "022469102",
-            "mail": "a@mail.com"
+            "codClient": "GSD002",
+            "province": "ESMERALDAS",
+            "city": "ESMERALDAS",
+            "name": "FALCONES MOREIRA NANCY MAGALI",
+            "nickName": "PUNTO LA INMACULADA",
+            "type": "Mayorista",
+            "status": "Habilitado"
         },
         {
             "id": "10",
-            "ruc": "1744610971",
-            "name": "American Assn for the Advancement of Science",
-            "address": "Dirección del Cliente",
-            "phone": "022535814",
-            "mail": "a@mail.com"
+            "codClient": "GE0011",
+            "province": "ESMERALDAS",
+            "city": "QUININDÉ",
+            "name": "GRANDA ENCALADA VERONICA ELIZABETH",
+            "nickName": "CYBER CABINAS MATHIAS PUNTO NTRA SRA DEL CISNE",
+            "type": "Mayorista",
+            "status": "No confirma"
         },
         {
             "id": "11",
-            "ruc": "1746195470",
-            "name": "American Assn for Respiratory Care",
-            "address": "Dirección del Cliente",
-            "phone": "022476706",
-            "mail": "a@mail.com"
+            "codClient": "GG0001",
+            "province": "GALÁPAGOS",
+            "city": "ISABELA",
+            "name": "MORALES CAMPUZANO LUIS GONZALO",
+            "nickName": "PUNTO JACINTO GORDILLO",
+            "type": "Especialista"
         },
         {
             "id": "12",
-            "ruc": "1787930268",
-            "name": "American Assn of Colleges of Nursing",
-            "address": "Dirección del Cliente",
-            "phone": "022483240",
-            "mail": "a@mail.com"
+            "codClient": "G00003",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "SOLIS QUIÑONEZ GINA MARIBEL",
+            "nickName": "INDIARYS",
+            "type": "Detallista",
+            "status": "Habilitado"
         },
         {
             "id": "13",
-            "ruc": "1795224757",
-            "name": "American Assn of Colleges of Pharmacy",
-            "address": "Dirección del Cliente",
-            "phone": "022568233",
-            "mail": "a@mail.com"
+            "codClient": "GG0017",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "RANGEL GELVEZ NELSON MANUEL",
+            "nickName": "PUNTO NUESTRA SEÑORA DEL CARMEN",
+            "type": "Detallista",
+            "status": "GG0106"
         },
         {
             "id": "14",
-            "ruc": "1703282110",
-            "name": "American Assn of Colleges of Osteopathic Medicine",
-            "address": "Dirección del Cliente",
-            "phone": "022487845",
-            "mail": "a@mail.com"
+            "codClient": "GG0011",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "ASESORPED S.A.",
+            "nickName": "LIBRARY STUDIUM & MARKET ",
+            "type": "Detallista",
+            "status": "No va "
         },
         {
             "id": "15",
-            "ruc": "1722234488",
-            "name": "American Assn of Family & Consumer Sciences",
-            "address": "Dirección del Cliente",
-            "phone": "022457517",
-            "mail": "a@mail.com"
+            "codClient": "G00004",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "CALI JARA NORMA SOLEDAD",
+            "nickName": "EL ESTUDIANTE",
+            "type": "Detallista",
+            "status": "Habilitado"
         },
         {
             "id": "16",
-            "ruc": "1752627525",
-            "name": "American Assn of Museums",
-            "address": "Dirección del Cliente",
-            "phone": "022505894",
-            "mail": "a@mail.com"
+            "codClient": "G23544",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "EDUCA-PAPEL Y LIBROS S.A. PAPELIB ",
+            "nickName": "EDUCA-PAPEL Y LIBROS S.A. PAPELIB PUNTO COPOL",
+            "type": "Detallista",
+            "status": "Habilitado"
         },
         {
             "id": "17",
-            "ruc": "1757073457",
-            "name": "American Assn of Motor Vehicle Administrators",
-            "address": "Dirección del Cliente",
-            "phone": "022475050",
-            "mail": "a@mail.com"
+            "codClient": "G00128",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "CENTRO CRISTIANO DE GUAYAQUIL",
+            "nickName": "ALMACEN ANTORCHA (LC)",
+            "type": "Especialista",
+            "status": "Habilitado"
         },
         {
             "id": "18",
-            "ruc": "1774469071",
-            "name": "American Assn of Professional Landmen",
-            "address": "Dirección del Cliente",
-            "phone": "022434593",
-            "mail": "a@mail.com"
+            "codClient": "G22997",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "PAPELERIA & SUMINISTROS S.A. PAPERSUM",
+            "nickName": "PAPERSUM",
+            "type": "Especialista",
+            "status": "Habilitado"
         },
         {
             "id": "19",
-            "ruc": "1730532921",
-            "name": "American Assn of Tissue Banks",
-            "address": "Dirección del Cliente",
-            "phone": "022445868",
-            "mail": "a@mail.com"
+            "codClient": "G23575",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "SOLUCIONES GLOBALES S.A. GLOBFAST",
+            "nickName": "GLOBFAST",
+            "type": "Especialista",
+            "status": "Habilitado"
         },
         {
             "id": "20",
-            "ruc": "1773885567",
-            "name": "American Board of Opticianry and the National Contact Lens Examiners",
-            "address": "Dirección del Cliente",
-            "phone": "022479566",
-            "mail": "a@mail.com"
+            "codClient": "GG0022",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "BARREZUETA COBO IRMA YOLANDA",
+            "nickName": "PAPELERIA SANTA TERESITA P. INMACULADA",
+            "type": "Especialista",
+            "status": "Habilitado"
         },
         {
             "id": "21",
-            "ruc": "1716266404",
-            "name": "American Ceramic Society",
-            "address": "Dirección del Cliente",
-            "phone": "022542400",
-            "mail": "a@mail.com"
+            "codClient": "G20877",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "MAPGRAFI S.A.",
+            "nickName": "IPAC",
+            "type": "Especialista",
+            "status": "Habilitado"
         },
         {
             "id": "22",
-            "ruc": "1772251510",
-            "name": "American Chamber of Commerce Executives",
-            "address": "Dirección del Cliente",
-            "phone": "022536343",
-            "mail": "a@mail.com"
+            "codClient": "GG0008",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "LIBRERIA-JMM S.A. ",
+            "nickName": "SANTA ANA",
+            "type": "Especialista",
+            "status": "Habilitado"
         },
         {
             "id": "23",
-            "ruc": "1794706240",
-            "name": "American College of Clinical Pharmacology",
-            "address": "Dirección del Cliente",
-            "phone": "022507697",
-            "mail": "a@mail.com"
+            "codClient": "G01347",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "MAGDU S.A.",
+            "nickName": "MAGDU S.A. LOS ANDES",
+            "type": "Especialista",
+            "status": "Habilitado"
         },
         {
             "id": "24",
-            "ruc": "1746457463",
-            "name": "American College of Nurse Practitioners",
-            "address": "Dirección del Cliente",
-            "phone": "022490453",
-            "mail": "a@mail.com"
+            "codClient": "G21387",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "EDITORIAL DON BOSCO",
+            "nickName": "EDITORIAL DON BOSCO",
+            "type": "Especialista",
+            "status": "Habilitado"
         },
         {
             "id": "25",
-            "ruc": "1764858442",
-            "name": "American College of Sports Medicine",
-            "address": "Dirección del Cliente",
-            "phone": "022553448",
-            "mail": "a@mail.com"
+            "codClient": "G23597",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "COELLO FRANCO MARIA ERNESTINA",
+            "nickName": "AC ARMIJOS COELLO",
+            "type": "Especialista",
+            "status": "No va "
         },
         {
             "id": "26",
-            "ruc": "1736154324",
-            "name": "American Dental Education Association",
-            "address": "Dirección del Cliente",
-            "phone": "022494788",
-            "mail": "a@mail.com"
+            "codClient": "G22998",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "NEGOSTAR S.A.",
+            "nickName": "JAVIER",
+            "type": "Especialista",
+            "status": "Habilitado"
         },
         {
             "id": "27",
-            "ruc": "1710726960",
-            "name": "American Educational Research Association",
-            "address": "Dirección del Cliente",
-            "phone": "022555818",
-            "mail": "a@mail.com"
+            "codClient": "G23568",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "RODRIGUEZ GUERRA CARMEN FABIOLA",
+            "nickName": "PUNTO PASIONISTA",
+            "type": "Especialista",
+            "status": "GD0008"
         },
         {
             "id": "28",
-            "ruc": "1706996955",
-            "name": "American Gaming Association",
-            "address": "Dirección del Cliente",
-            "phone": "022578735",
-            "mail": "a@mail.com"
+            "codClient": "G23584",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "MERVASA S.A.",
+            "nickName": "PUNTO CLAIRE BUCARAN DE AIVAS",
+            "type": "Especialista",
+            "status": "Habilitado"
         },
         {
             "id": "29",
-            "ruc": "1703216074",
-            "name": "American Health Care Association",
-            "address": "Dirección del Cliente",
-            "phone": "022459964",
-            "mail": "a@mail.com"
+            "codClient": "G23084",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "SU MARKET S.A. SUMARKETSA",
+            "nickName": "PUNTO DE LOGOS",
+            "type": "LIBRERIA-JMM S.A.",
+            "status": "Habilitado"
         },
         {
             "id": "30",
-            "ruc": "1723894388",
-            "name": "American Historical Association",
-            "address": "Dirección del Cliente",
-            "phone": "022534421",
-            "mail": "a@mail.com"
+            "codClient": "G23016",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "UNIESCOLAR S.A.",
+            "nickName": "PUNTO LEMAS",
+            "type": "Especialista",
+            "status": "Habilitado"
         },
         {
             "id": "31",
-            "ruc": "1767383594",
-            "name": "American Hotel & Lodging Association",
-            "address": "Dirección del Cliente",
-            "phone": "022581696",
-            "mail": "a@mail.com"
+            "codClient": "G23015",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "JUAN MANUEL ESCOBAR CALDERON",
+            "nickName": "FUENTE DEL SABER PUNTO BIBLICA CRISTIANA",
+            "type": "Especialista",
+            "status": "Habilitado"
         },
         {
             "id": "32",
-            "ruc": "1725506955",
-            "name": "American Medical Group Association",
-            "address": "Dirección del Cliente",
-            "phone": "022506642",
-            "mail": "a@mail.com"
+            "codClient": "GW1002",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "FUNDACION NUEVO MUNDO",
+            "nickName": "LIBRERIA PACHAMAMA PUNTO  NUEVO MUNDO",
+            "type": "Especialista",
+            "status": "Habilitado"
         },
         {
             "id": "33",
-            "ruc": "1748362647",
-            "name": "American Political Science Association",
-            "address": "Dirección del Cliente",
-            "phone": "022450730",
-            "mail": "a@mail.com"
+            "codClient": "G00091",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "LEYTON SAN MARTIN NELSON WASHINGTON",
+            "nickName": "ALMACEN PAPELITO PUNTO MARISCAL SUCRE/TORREMOLINOS",
+            "type": "Especialista",
+            "status": "Habilitado"
         },
         {
             "id": "34",
-            "ruc": "1716426091",
-            "name": "American Oil Chemists’ Society",
-            "address": "Dirección del Cliente",
-            "phone": "022518438",
-            "mail": "a@mail.com"
+            "codClient": "GG0086",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "MOGOLLON VILLAMAR BRYAN STEVEN",
+            "nickName": "LIBRERIA MARIANITA PUNTO NELA MARTINEZ",
+            "type": "Especialista",
+            "status": "No trabajó con Santillana"
         },
         {
             "id": "35",
-            "ruc": "1711403064",
-            "name": "American Society of Cataract and Refractive Surgery",
-            "address": "Dirección del Cliente",
-            "phone": "022483918",
-            "mail": "a@mail.com"
+            "codClient": "G23006",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "LUZ ADALGUIZA SANTANA SANCHEZ",
+            "nickName": "PUNTO JEAN PIAGET- ALBOHISPANO",
+            "type": "Especialista",
+            "status": "Actualizar datos"
         },
         {
             "id": "36",
-            "ruc": "1784374465",
-            "name": "American Society of Echocardiography",
-            "address": "Dirección del Cliente",
-            "phone": "022564283",
-            "mail": "a@mail.com"
+            "codClient": "GG0120",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "REYES ZAPATIER DENNISSE ANDREA",
+            "nickName": "PUNTO HISPANOAMERICANO",
+            "type": "Especialista",
+            "status": "Cambia a punto de venta"
         },
         {
             "id": "37",
-            "ruc": "1729170824",
-            "name": "American Society of Hematology",
-            "address": "Dirección del Cliente",
-            "phone": "022505763",
-            "mail": "a@mail.com"
+            "codClient": "G22018",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "ROSSETTO .S.A.",
+            "nickName": "ROSSETTO .S.A. PUNTO SIR THOMAS MORE",
+            "type": "Especialista",
+            "status": "Cambia a punto de venta"
         },
         {
             "id": "38",
-            "ruc": "1767055696",
-            "name": "American Society of International Law",
-            "address": "Dirección del Cliente",
-            "phone": "022556938",
-            "mail": "a@mail.com"
+            "codClient": "G23100",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "SERVICIOS EMPRESARIALES S.A. MEDISERVICIOS",
+            "nickName": "PUNTO ALEMAN HUMBOLD",
+            "type": "Especialista",
+            "status": "Se va por Solorgistic"
         },
         {
             "id": "39",
-            "ruc": "1729280525",
-            "name": "American Society for Nutrition",
-            "address": "Dirección del Cliente",
-            "phone": "022485823",
-            "mail": "a@mail.com"
+            "codClient": "G21800",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "RODAS CARRERA EDWIN XAVIER",
+            "nickName": "PUNTO AZUCENA CARRERA LOOR",
+            "type": "Especialista",
+            "status": "No va "
         },
         {
             "id": "40",
-            "ruc": "1780256368",
-            "name": "American Sociological Association",
-            "address": "Dirección del Cliente",
-            "phone": "022437610",
-            "mail": "a@mail.com"
+            "codClient": "GG0105",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "VALENCIA LOPEZ TOMAS ALFONSO",
+            "nickName": "PUNTO BRISAS DEL RIO",
+            "type": "Especialista",
+            "status": "Habilitado"
         },
         {
             "id": "41",
-            "ruc": "1746843356",
-            "name": "Anxiety Disorders Association of America",
-            "address": "Dirección del Cliente",
-            "phone": "022544952",
-            "mail": "a@mail.com"
+            "codClient": "G00129",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "GUAMAN YAURI JULIA LUZMILA",
+            "nickName": "PUNTO NTRA. SRA. DEL ROSARIO DE POMPEYA",
+            "type": "Especialista",
+            "status": "No va "
         },
         {
             "id": "42",
-            "ruc": "1703354640",
-            "name": "Asian American Hotel Operators Assn",
-            "address": "Dirección del Cliente",
-            "phone": "022567596",
-            "mail": "a@mail.com"
+            "codClient": "GG0020",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "PANDOCEAN S.A.",
+            "nickName": "PANDOCEAN PUNTO BALANDRA",
+            "type": "Especialista",
+            "status": "Actualizar datos"
         },
         {
             "id": "43",
-            "ruc": "1772026240",
-            "name": "Associated Bodywork & Massage Professionals",
-            "address": "Dirección del Cliente",
-            "phone": "022566701",
-            "mail": "a@mail.com"
+            "codClient": "GG0014",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "ALAVA RUIZ TATIANA VERONICA",
+            "nickName": "PUNTO GABRIELA MISTRAL",
+            "type": "Especialista",
+            "status": "No va "
         },
         {
             "id": "44",
-            "ruc": "1787694804",
-            "name": "Association for Conflict Resolution",
-            "address": "Dirección del Cliente",
-            "phone": "022452509",
-            "mail": "a@mail.com"
+            "codClient": "G23093",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "DAJUPRI S.A.",
+            "nickName": "PUNTO THOMAS JEFFERSON",
+            "type": "Especialista",
+            "status": "Habilitado"
         },
         {
             "id": "45",
-            "ruc": "1753875070",
-            "name": "Association for Information Science and Technology",
-            "address": "Dirección del Cliente",
-            "phone": "022443812",
-            "mail": "a@mail.com"
+            "codClient": "G22923",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "RINCONCITO S.C.",
+            "nickName": "RINCONCITO S.C.",
+            "type": "Especialista",
+            "status": "Actualizar datos"
         },
         {
             "id": "46",
-            "ruc": "1784482055",
-            "name": "Association for Manufacturing Technology",
-            "address": "Dirección del Cliente",
-            "phone": "022570118",
-            "mail": "a@mail.com"
+            "codClient": "GM0049",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "NEGOVITAL S.A.",
+            "nickName": "PUNTO PRAGA",
+            "type": "Especialista",
+            "status": "Se va por Solorgistic"
         },
         {
             "id": "47",
-            "ruc": "1798994168",
-            "name": "Association of California School Administrators",
-            "address": "Dirección del Cliente",
-            "phone": "022565998",
-            "mail": "a@mail.com"
+            "codClient": "G00059",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "GAIBOR RIVERA DINA MAGALLY",
+            "nickName": "PUNTO AGUSTIN CUEVA TAMARIZ",
+            "type": "Especialista",
+            "status": "Habilitado"
         },
         {
             "id": "48",
-            "ruc": "1797435566",
-            "name": "Association of Catholic Colleges and Universities",
-            "address": "Dirección del Cliente",
-            "phone": "022563515",
-            "mail": "a@mail.com"
+            "codClient": "GI1003",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "UNIDAD EDUCATIVA DE LA ASUNCION",
+            "nickName": "UNIDAD EDUCATIVA DE LA ASUNCION",
+            "type": "Especialista",
+            "status": "Habilitado"
         },
         {
             "id": "49",
-            "ruc": "1750202958",
-            "name": "Association of Change Management Professionals",
-            "address": "Dirección del Cliente",
-            "phone": "022573804",
-            "mail": "a@mail.com"
+            "codClient": "Q00013",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "SOLORGISTIC S.A.",
+            "nickName": "SOLORGISTIC COSTA",
+            "type": "Mayorista",
+            "status": "Habilitado"
         },
         {
             "id": "50",
-            "ruc": "1786040372",
-            "name": "Association of College Unions International",
-            "address": "Dirección del Cliente",
-            "phone": "022479301",
-            "mail": "a@mail.com"
+            "codClient": "G23590",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "CARRION GARZON LENIN MICHAELL",
+            "nickName": "CARRION GARZON LENIN ",
+            "type": "Mayorista",
+            "status": "Habilitado"
         },
         {
             "id": "51",
-            "ruc": "1799354080",
-            "name": "Association of Corporate Contributions Professionals",
-            "address": "Dirección del Cliente",
-            "phone": "022569382",
-            "mail": "a@mail.com"
+            "codClient": "G22083",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "SCHOOLL SERVICES S.A. SCSER",
+            "nickName": "SCHOOLL SERVICES S.A. ",
+            "type": "Mayorista",
+            "status": "Habilitado"
         },
         {
             "id": "52",
-            "ruc": "1708692310",
-            "name": "Association of Equipment Manufacturers",
-            "address": "Dirección del Cliente",
-            "phone": "022462540",
-            "mail": "a@mail.com"
+            "codClient": "G22119",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "BAJAÑA SARCOS ORLANDO FELICIANO",
+            "nickName": "SUPERAMIGOS",
+            "type": "Mayorista",
+            "status": "Habilitado"
         },
         {
             "id": "53",
-            "ruc": "1742550140",
-            "name": "Association of Proposal Management Professionals – National Capital Area",
-            "address": "Dirección del Cliente",
-            "phone": "022548037",
-            "mail": "a@mail.com"
+            "codClient": "G00092",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "BAQUERIZO CARRIEL DANIEL RICARDO",
+            "nickName": "ANAI SECUNDARIA",
+            "type": "Mayorista",
+            "status": "Habilitado"
         },
         {
             "id": "54",
-            "ruc": "1775698486",
-            "name": "Association of PVO Financial Managers",
-            "address": "Dirección del Cliente",
-            "phone": "022580124",
-            "mail": "a@mail.com"
+            "codClient": "GG0081",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "ZURITA ARAUJO MARIA FERNANDA",
+            "nickName": "PUNTO HORACIO ZURITA",
+            "type": "Mayorista",
+            "status": "Por confirmar"
         },
         {
             "id": "55",
-            "ruc": "1777970424",
-            "name": "Association of Washington School Principals",
-            "address": "Dirección del Cliente",
-            "phone": "022499621",
-            "mail": "a@mail.com"
+            "codClient": "G22728",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "CORPORACION DE LA ASOCIACION DE LOS ADVENTISTAS",
+            "nickName": "CORPORACION ADVENTISTAS",
+            "type": "Mayorista",
+            "status": "Habilitado"
         },
         {
             "id": "56",
-            "ruc": "1736320837",
-            "name": "Association of Zoos & Aquariums",
-            "address": "Dirección del Cliente",
-            "phone": "022446457",
-            "mail": "a@mail.com"
+            "codClient": "G21336",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "AGRITEPSA S.A.",
+            "nickName": "CEBI",
+            "type": "Mayorista",
+            "status": "Habilitado"
         },
         {
             "id": "57",
-            "ruc": "1720658616",
-            "name": "Automotive Aftermarket Industry Association",
-            "address": "Dirección del Cliente",
-            "phone": "022540483",
-            "mail": "a@mail.com"
+            "codClient": "G00115",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "DOMINGUEZ BERNAL CARLOS ALBERTO",
+            "nickName": "COMERCIAL DOMINGUEZ  COELLO/SPEDWRITHING",
+            "type": "Mayorista",
+            "status": "GG0084"
+        },
+        {
+            "id": "58",
+            "codClient": "G00024",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "STELASUR S.A.",
+            "nickName": "STELASUR S.A.",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "59",
+            "codClient": "G00087",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "SAMANIEGO SAMANIEGO DELFIN DE JESUS",
+            "nickName": "Luz y saber",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "60",
+            "codClient": "GG0098",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "TINOCO ROMERO ROBERTH ARTURO",
+            "nickName": "PUNTO HARVEST SCHOOL",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "61",
+            "codClient": "GG0025",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "DISTRIBUIDORA UNILIB",
+            "nickName": "DISTRIBUIDORA UNILIB",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "62",
+            "codClient": "GG0013",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "GARCIA RUIZ MARIA CECIBEL",
+            "nickName": "TIENDA CLIPO Y SUS AMIGOS PAUL RIVET",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "63",
+            "codClient": "GG0016",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "MAYA NAVARRETE JESSICA MERCEDES",
+            "nickName": "PUNTO INVESCIENCIAS",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "64",
+            "codClient": "G22097",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "PESANTES JARA BAYRON OMAR",
+            "nickName": "PUNTO OLIMPIA",
+            "type": "Mayorista",
+            "status": "GG0103"
+        },
+        {
+            "id": "65",
+            "codClient": "G23095",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "GUILLEN SOLIS MARIANITA DE JESUS",
+            "nickName": "COMERCIAL MARIANITA PUNTO EMANUEL",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "66",
+            "codClient": "G00113",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "PAPELDESK S.A.",
+            "nickName": "PUNTO INTERNACIONAL SCHOOL",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "67",
+            "codClient": "G22341",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "FUNDACION WONG",
+            "nickName": "FUNDACION WONG",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "68",
+            "codClient": "GG0007",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "PRIETO CABRERA LEONIDAS FELIPE ",
+            "nickName": "PUNTO ZOILA CABRERA",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "69",
+            "codClient": "G00008",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "RODRIGUEZ PALANGO MARIA SOLEDAD",
+            "nickName": "PUNTO MERCEDES JESUS MOLINA",
+            "type": "Mayorista",
+            "status": "GG0026"
+        },
+        {
+            "id": "70",
+            "codClient": "G22431",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "BELLA CRUZ VALLEJO RIOS",
+            "nickName": "PUNTO NACIONES UNIDAS",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "71",
+            "codClient": "GG0080",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "CLAVIJO ESCOBAR JESSICA ALEXANDRA",
+            "nickName": "PUNTO CONTINENTE AMERICANO/PITUSA",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "72",
+            "codClient": "G00103",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "DOMINGUEZ ALCIVAR JOSUE ANDRES",
+            "nickName": "PUNTO SAMAN",
+            "type": "Mayorista",
+            "status": "Actualizar datos"
+        },
+        {
+            "id": "73",
+            "codClient": "G00105",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "RODRIGUEZ LEON JENIFER LISETTE",
+            "nickName": "PUNTO JOHAN HERBARTH",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "74",
+            "codClient": "GG0119",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "BAQUE GANCHOZO ROBERT STALIN",
+            "nickName": "PUNTO FUNDACION KAIROS",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "75",
+            "codClient": "GG0021",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "NAVARRETE MENDOZA DIANA ISABEL",
+            "nickName": "PUNTO ISLAS GALAPAGOS",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "76",
+            "codClient": "G22176",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "CARLOS JAVIER ESTRADA WRAY",
+            "nickName": "FUTBOLYS PUNTO ANTARES",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "77",
+            "codClient": "G00126",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "SAMPEDRO CORAL JULIO RODRIGO",
+            "nickName": "PUNTO BATALLA DE JAMBELI",
+            "type": "Mayorista",
+            "status": "No va "
+        },
+        {
+            "id": "78",
+            "codClient": "GG0101",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "ZUÑA CARCHIPULLA NANCY ANNABELLE",
+            "nickName": "LIBRERIA CAMILA-PUNTO SADOWINSKI",
+            "type": "Mayorista",
+            "status": "Por confirmar"
+        },
+        {
+            "id": "79",
+            "codClient": "GG0019",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "HERRERA PUGA FRANKLIN JOSEPH",
+            "nickName": "BAZAR Y PAPELERÍA GUAYAQUIL-PUNTO INSTITUTO SUAREZ",
+            "type": "Mayorista",
+            "status": "Cambia a punto de venta"
+        },
+        {
+            "id": "80",
+            "codClient": "GM0051",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "REYES LOPEZ DIANA CAROLINA",
+            "nickName": "PUNTO NUEVO OESTE",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "81",
+            "codClient": "GG0012",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "RONQUILLO DUQUE HECTOR REINALDO",
+            "nickName": "HECTOR RONQUILLO PUNTO LAS CUMBRES",
+            "type": "Mayorista",
+            "status": "Cambia a punto de venta"
+        },
+        {
+            "id": "82",
+            "codClient": "GG0078",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "GUERRERO CAICEDO GRACE PATRICIA",
+            "nickName": "BAZAR GUERRERO PUNTO ABRAHAM CHANCAY",
+            "type": "Mayorista",
+            "status": "Actualizar datos"
+        },
+        {
+            "id": "83",
+            "codClient": "Q00013",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "SOLORGISTIC S.A.",
+            "nickName": "BOOK POINT",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "84",
+            "codClient": "GG0010",
+            "province": "GUAYAS",
+            "city": "DURÁN",
+            "name": "ORTEGA DIAZ WASHINGTON JAVIER ",
+            "nickName": "BOOKSTORE EDICIONES ORTEGA  ",
+            "type": "Detallista",
+            "status": "GDU003"
+        },
+        {
+            "id": "85",
+            "codClient": "GN6949",
+            "province": "GUAYAS",
+            "city": "MILAGRO",
+            "name": "TIPAN BRITO CARLOS HUMBERTO",
+            "nickName": "LIBRERIA DINAMICA 1",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "86",
+            "codClient": "g",
+            "province": "GUAYAS",
+            "city": "DAULE",
+            "name": "MOLINA CORTEZ DUFFER ARMANDO",
+            "nickName": "COMPUTWORK",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "87",
+            "codClient": "GMI002",
+            "province": "GUAYAS",
+            "city": "MILAGRO",
+            "name": "JACOME FREIRE ROSA MARJORIE",
+            "nickName": "LIBRERIA CENTRAL",
+            "type": "Detallista",
+            "status": "No va "
+        },
+        {
+            "id": "88",
+            "codClient": "GB0010",
+            "province": "GUAYAS",
+            "city": "BUCAY",
+            "name": "ALCOSER PINOS CECIBEL DEL ROCIO",
+            "nickName": "JAKEY PUNTO MADRE BERNARDA",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "89",
+            "codClient": "G00120",
+            "province": "GUAYAS",
+            "city": "PEDRO CARBO",
+            "name": "SALAZAR SORIANO DIANA LILI",
+            "nickName": "PUNTO AUSTRIACO",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "90",
+            "codClient": "G22230",
+            "province": "GUAYAS",
+            "city": "EL EMPALME",
+            "name": "GARCIA MENDOZA NURY ILIANA",
+            "nickName": "LIB EL ESTUDIANTE",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "91",
+            "codClient": "GS00125",
+            "province": "GUAYAS",
+            "city": "POSORJA",
+            "name": "ASENCIO BAIDAL GLADYS MATILDE",
+            "nickName": "BAZAR ELIZABETH/SANTO TOMAS",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "92",
+            "codClient": "G22461",
+            "province": "GUAYAS",
+            "city": "MILAGRO",
+            "name": "ARCE YEPEZ ROSA JOBA",
+            "nickName": "Q NOTA",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "93",
+            "codClient": "GD0006",
+            "province": "GUAYAS",
+            "city": "DAULE",
+            "name": "PEÑA BUENO PETITA MAGDALENA",
+            "nickName": "LIBRERIA ROSNIE PUNTO MANUEL CHAGUAY",
+            "type": "Detallista",
+            "status": "Actualizar datos"
+        },
+        {
+            "id": "94",
+            "codClient": "GG0015",
+            "province": "GUAYAS",
+            "city": "LOMAS DE SARGENTILLO",
+            "name": "ORTIZ TUTIVEN MARIBEL EULALIA",
+            "nickName": "PAPELERIA/BAZAR DIVINO NIÑO - CONTINENTE AMERICANO",
+            "type": "Detallista",
+            "status": "Actualizar datos"
+        },
+        {
+            "id": "95",
+            "codClient": "G21119",
+            "province": "GUAYAS",
+            "city": "SAMBORONDÓN",
+            "name": "ESPINOZA DE LA TORRE ROBERTO ANDRE",
+            "nickName": "PUNTO EDUCAMUNDO",
+            "type": "Especialista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "96",
+            "codClient": "G23570",
+            "province": "GUAYAS",
+            "city": "DURÁN",
+            "name": "TELLO ROMERO ANDREA TERESA",
+            "nickName": "PUNTO MONS. EDMUNDO CARMODY",
+            "type": "Especialista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "97",
+            "codClient": "G00049",
+            "province": "GUAYAS",
+            "city": "CORONEL MARCELINO MARIDUEÑA",
+            "name": "SOCIEDAD AGRICOLA E INDUSTRIAL SAN CARLOS S.A.",
+            "nickName": "INGENIO SAN CARLOS-UE LUIS VERNAZA",
+            "type": "Especialista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "98",
+            "codClient": "QD0005",
+            "province": "GUAYAS",
+            "city": "DAULE",
+            "name": "DEXI YESENIA LOY NAVARRETE",
+            "nickName": "PUNTO RIBERAS DEL DAULE",
+            "type": "Especialista",
+            "status": "G22203"
+        },
+        {
+            "id": "99",
+            "codClient": "G00127",
+            "province": "GUAYAS",
+            "city": "DURÁN",
+            "name": "RODRIGUEZ HERRERA ELIZABETH DEL ROCIO",
+            "nickName": "PUNTO DEMETRIO AGUILERA MALTA",
+            "type": "Especialista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "100",
+            "codClient": "G00089",
+            "province": "GUAYAS",
+            "city": "MILAGRO",
+            "name": "SALAZAR CARAVAJO MIRIAM ALEXANDRA",
+            "nickName": "TALLER DE GUAYAMIN STA TERESITA NIÑO JESÚS",
+            "type": "Especialista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "101",
+            "codClient": "G22100",
+            "province": "GUAYAS",
+            "city": "DURÁN",
+            "name": "CEDEÑO MOLINA MARIA DEL CARMEN",
+            "nickName": "LIBRERIA LEON PUNTO EDUARDO KIGMAN",
+            "type": "Especialista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "102",
+            "codClient": "GMI001",
+            "province": "GUAYAS",
+            "city": "MILAGRO",
+            "name": "GARAICOA MOROCHO ERIKA LEA",
+            "nickName": "PUNTO LCRISTIANO",
+            "type": "Especialista",
+            "status": "No va "
+        },
+        {
+            "id": "103",
+            "codClient": "GMI0002",
+            "province": "GUAYAS",
+            "city": "DAULE",
+            "name": "MORENO ELIAS MELINA LUCIA",
+            "nickName": "PUNTO MODERNA MILAGRO",
+            "type": "Especialista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "104",
+            "codClient": "GG0018",
+            "province": "GUAYAS",
+            "city": "SAN JACINTO DE YAGUACHI",
+            "name": "CORDOVA CARRASCO RUTH MARGARITA",
+            "nickName": "PUNTO SAN RAFAEL",
+            "type": "Especialista",
+            "status": "No va "
+        },
+        {
+            "id": "105",
+            "codClient": "G23129",
+            "province": "GUAYAS",
+            "city": "LOMAS DE SARGENTILLO",
+            "name": "GUAMAN MUÑOZ PABLO ROBERTO",
+            "nickName": "PUNTO PARTICULAR GARCIA MORENO",
+            "type": "Especialista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "106",
+            "codClient": "G00058",
+            "province": "GUAYAS",
+            "city": "MILAGRO",
+            "name": "LARA GADBAY ROSA MARLENE",
+            "nickName": "LIBRERIA LA ECONOMICA PUNTO EDUARDO KIGMAN",
+            "type": "Especialista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "107",
+            "codClient": "GG0079",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "VELASTEGUI LEDESMA LINDA HEIDY",
+            "nickName": "PUNTO NUESTRA MADRE ALBORADA",
+            "type": "Especialista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "108",
+            "codClient": "GO0007",
+            "province": "GUAYAS",
+            "city": "GUARANDA",
+            "name": "RAMOS ESCOBAR ANA CRISTINA",
+            "nickName": "CYBER 2 HERMANOS-PUNTO JESUS DEL GRAN PODER",
+            "type": "Especialista",
+            "status": "Actualizar datos"
+        },
+        {
+            "id": "109",
+            "codClient": "G00116",
+            "province": "GUAYAS",
+            "city": "MILAGRO",
+            "name": "CEDEÑO ANCHUNDIA RUDYS ALEXANDRA",
+            "nickName": "ALMACEN  SAN FRANCISCO ",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "110",
+            "codClient": "GDU002",
+            "province": "GUAYAS",
+            "city": "DURÁN",
+            "name": "PUNTO SAN FCO DE ASIS DURAN",
+            "nickName": "PAGUAY CARDENAS MIRIAN ",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "111",
+            "codClient": "GS0025",
+            "province": "GUAYAS",
+            "city": "POSORJA",
+            "name": "MURILLO CARRANZA CARLOS LUIS",
+            "nickName": "PUNTO LUIS CHIRIBOGA",
+            "type": "Mayorista",
+            "status": "No va "
+        },
+        {
+            "id": "112",
+            "codClient": "G22841",
+            "province": "GUAYAS",
+            "city": "DURÁN",
+            "name": "OJEDA LEON NANCY PATRICIA",
+            "nickName": "PUNTO DE FEDERICO GONZALEZ SUAREZ",
+            "type": "Mayorista",
+            "status": "No va "
+        },
+        {
+            "id": "113",
+            "codClient": "G23113",
+            "province": "GUAYAS",
+            "city": "SAMBORONDÓN",
+            "name": "ROBERTO JESUS NUÑEZ TORRES",
+            "nickName": "PAPELERIA RJ PUNTO KYRIOS",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "114",
+            "codClient": "GT0001",
+            "province": "GUAYAS",
+            "city": "MILAGRO",
+            "name": "MIRANDA MELENDRES JENNIFER TATIANA",
+            "nickName": "PUNTO CESAR CORDERO",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "115",
+            "codClient": "G23104",
+            "province": "GUAYAS",
+            "city": "LA TRONCAL",
+            "name": "RAMON ANTONIO VELEZ CUSME",
+            "nickName": "U.E. MATOVELLE NOVEDADES EDUCATIVAS Y CONFECCIONES",
+            "type": "Mayorista",
+            "status": "Por confirmar"
+        },
+        {
+            "id": "116",
+            "codClient": "GPC001",
+            "province": "GUAYAS",
+            "city": "PEDRO CARBO",
+            "name": "MITE GORDILLO FREDDY MOISES",
+            "nickName": "COPIA Y PAPE MITE PUNTO STUDIO Y PROGRESO",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "117",
+            "codClient": "G00035",
+            "province": "GUAYAS",
+            "city": "MILAGRO",
+            "name": "RIERA HERMIDA FERNANDO PATRICIO",
+            "nickName": "PUNTO HUELLAS DEL CONOCIMIENTO",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "118",
+            "codClient": "GD0007",
+            "province": "GUAYAS",
+            "city": "DAULE",
+            "name": "HIDALGO PALMA GRACIELA PATRICIA",
+            "nickName": "PUNTO LOS DAULIS",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "119",
+            "codClient": "GS0026",
+            "province": "GUAYAS",
+            "city": "MILAGRO",
+            "name": "ANZULES GARCIA EFRAIN GONZALO",
+            "nickName": "PUNTO  ALBERTH EINSTEN",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "120",
+            "codClient": "GLR001",
+            "province": "LOS RÍOS",
+            "city": "QUEVEDO",
+            "name": "JARAMILLO CONCHA JOSE AGUSTIN",
+            "nickName": "DISTRIBUIDORA J&D",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "121",
+            "codClient": "G22665",
+            "province": "LOS RÍOS",
+            "city": "QUEVEDO",
+            "name": "MUNDOFFICE C. LTDA.",
+            "nickName": "MUNDOFFICE C. LTDA.",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "122",
+            "codClient": "GQ0000",
+            "province": "LOS RÍOS",
+            "city": "QUEVEDO",
+            "name": "ANASTACIO ESPINOZA YOLANDA ROSANA",
+            "nickName": "ROSS STORE ",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "123",
+            "codClient": "GR0002",
+            "province": "LOS RÍOS",
+            "city": "QUEVEDO",
+            "name": "MACIAS LUNA LORENA BELEN",
+            "nickName": "PUNTO",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "124",
+            "codClient": "G22920",
+            "province": "LOS RÍOS",
+            "city": "VALENCIA",
+            "name": "ALARCON TUMBACO TANIA MARIUXY",
+            "nickName": "MAJOVA",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "125",
+            "codClient": "GL0002",
+            "province": "LOS RÍOS",
+            "city": "BABAHOYO",
+            "name": "VITERI CHUSAN DAVID ANTONIO",
+            "nickName": "PUNTO UEMA LIBROS Y UNIFORMES",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "126",
+            "codClient": "GC0004",
+            "province": "LOS RÍOS",
+            "city": "LA MANÁ",
+            "name": "ORDOÑEZ GARCIA CONSUELO AUXILIADORA",
+            "nickName": "LIBRERIA ORDOÑEZ N.-2",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "127",
+            "codClient": "G00099",
+            "province": "LOS RÍOS",
+            "city": "CALUMA",
+            "name": "SOLIS VELASCO EDGAR FABRICIO",
+            "nickName": "SERVICOPIAS CHOCLITO",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "128",
+            "codClient": "G21806",
+            "province": "LOS RÍOS",
+            "city": "BABAHOYO",
+            "name": "CONGREGACION DE PADRES JOSEFINOS DE MURIALDO",
+            "nickName": "BENETAZZO",
+            "type": "Especialista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "129",
+            "codClient": "G00090",
+            "province": "LOS RÍOS",
+            "city": "QUEVEDO",
+            "name": "PEBEXCORP S.A.",
+            "nickName": "PUNTO GENESIS",
+            "type": "Especialista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "130",
+            "codClient": "G00110",
+            "province": "LOS RÍOS",
+            "city": "QUEVEDO",
+            "name": "ANDRADE RIVAS ROSA PATRICIA",
+            "nickName": "PUNTO BENJAMIN FRANKLIN",
+            "type": "Especialista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "131",
+            "codClient": "GLR002",
+            "province": "LOS RÍOS",
+            "city": "VENTANAS",
+            "name": "DONOSO BELTRAN JESSENIA ALEXANDRA",
+            "nickName": "LIBRERIA ATLAS PUNTO CAMILO GALLEGOS",
+            "type": "Especialista",
+            "status": "No va "
+        },
+        {
+            "id": "132",
+            "codClient": "GG0009",
+            "province": "LOS RÍOS",
+            "city": "QUEVEDO",
+            "name": "TORRE FUERTE POZOS Y BOMBAS S.C.C.",
+            "nickName": "TORRE FUERTE POZOS Y BOMBAS S.C.C.",
+            "type": "Especialista",
+            "status": "Actualizar datos"
+        },
+        {
+            "id": "133",
+            "codClient": "GLR004",
+            "province": "LOS RÍOS",
+            "city": "QUEVEDO",
+            "name": "MONTOYA CLAUDIA LORENA",
+            "nickName": "PUNTO DESPERTAR",
+            "type": "Especialista",
+            "status": "Actualizar datos"
+        },
+        {
+            "id": "134",
+            "codClient": "GR0004",
+            "province": "LOS RÍOS",
+            "city": "BABAHOYO",
+            "name": "DIOCESIS DE BABAHOYO",
+            "nickName": "LIBRERIA DIOCESANA ",
+            "type": "Mayorista",
+            "status": "No va "
+        },
+        {
+            "id": "135",
+            "codClient": "GM0048",
+            "province": "MANABÍ",
+            "city": "MANTA",
+            "name": "CEDEÑO ARAGUNDY WILTON JOSELO",
+            "nickName": "LIBRERIA CRAYOLA",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "136",
+            "codClient": "G22229",
+            "province": "MANABÍ",
+            "city": "PEDERNALES",
+            "name": "AVEIGA SANTANA CONSUELO SOLEDAD",
+            "nickName": "YAVIME",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "137",
+            "codClient": "G23073",
+            "province": "MANABÍ",
+            "city": "CHONE",
+            "name": "ZAMBRANO BARRETO OSCAR EUGENIO",
+            "nickName": "LIBRERIA DON OSCAR",
+            "type": "Detallista",
+            "status": "GM0054"
+        },
+        {
+            "id": "138",
+            "codClient": "GM0044",
+            "province": "MANABÍ",
+            "city": "JIPIJAPA",
+            "name": "PIN SOLEDISPA IRENE MARIEL",
+            "nickName": "BAZAR Y LIBRERIA ARIKRIS",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "139",
+            "codClient": "GP0009",
+            "province": "MANABÍ",
+            "city": "SUCRE",
+            "name": "ROJAS CARRERA INES ALEXANDRA",
+            "nickName": "LA INMACULADA BAHIA",
+            "type": "Detallista",
+            "status": "Cambio de punto"
+        },
+        {
+            "id": "140",
+            "codClient": "GM0020",
+            "province": "MANABÍ",
+            "city": "PORTOVIEJO",
+            "name": "BERMEO MERA OLGA YANETH",
+            "nickName": "MARIA JOSE DISTRIBUCIONES",
+            "type": "Detallista",
+            "status": "No va "
+        },
+        {
+            "id": "141",
+            "codClient": "GP0002",
+            "province": "MANABÍ",
+            "city": "BAHIA",
+            "name": "GARCIA QUIJIJE TATIANA DE LOS SANTOS",
+            "nickName": "MULTISERVICIOS ELECZAM",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "142",
+            "codClient": "GM0041",
+            "province": "MANABÍ",
+            "city": "MANTA",
+            "name": "COMPAÑIA MILYSAM S.A. MILYSAMSA",
+            "nickName": "PAPELERIA SAMI ",
+            "type": "Especialista",
+            "status": "No va "
+        },
+        {
+            "id": "143",
+            "codClient": "GM0039",
+            "province": "MANABÍ",
+            "city": "MANTA",
+            "name": "TACURI LOPEZ IRMA HERMOSINA",
+            "nickName": "PUNTO STELLA MARIS",
+            "type": "Especialista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "144",
+            "codClient": "G20958",
+            "province": "MANABÍ",
+            "city": "PORTOVIEJO",
+            "name": "BAYONA TRIVIÑO IDUNA ANNABELLE",
+            "nickName": "PUNTO ARCO IRIS",
+            "type": "Especialista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "145",
+            "codClient": "GM0043",
+            "province": "MANABÍ",
+            "city": "PAJÁN",
+            "name": "CANTOS VERA SILVIA JAZMIN",
+            "nickName": "PUNTO NTRA SRA DE LA MERCED",
+            "type": "Especialista",
+            "status": "Cambia a punto de venta"
+        },
+        {
+            "id": "146",
+            "codClient": "GM0045",
+            "province": "MANABÍ",
+            "city": "ROCAFUERTE",
+            "name": "DE LA ROSA DE LA CRUZ NELLY YOLANDA",
+            "nickName": "NELLY DE LA ROSA PUNTO SAN FCO SALES",
+            "type": "Especialista",
+            "status": "Cambia de razon social"
+        },
+        {
+            "id": "147",
+            "codClient": "GM0029",
+            "province": "MANABÍ",
+            "city": "MANTA",
+            "name": "VASCONEZ CEVALLOS JIMENA ELIZABETH",
+            "nickName": "COPY PRINT PUNTO PIERRE DEL HIERRO",
+            "type": "Especialista",
+            "status": "No va "
+        },
+        {
+            "id": "148",
+            "codClient": "GM0037",
+            "province": "MANABÍ",
+            "city": "PORTOVIEJO",
+            "name": "IZAGUIRRE MARIN ANGELA MARIA DOLORES",
+            "nickName": "PUNTO SANTO THOMAS",
+            "type": "Especialista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "149",
+            "codClient": "GM0050",
+            "province": "MANABÍ",
+            "city": "TOSAGUA",
+            "name": "CEVALLOS ZAMBRANO ESPERANZA ELIZABETH",
+            "nickName": "BAZAR Y NOVEDADES BRAZU-PUNTO MA LUISA ALDAZ",
+            "type": "Especialista",
+            "status": "No va "
+        },
+        {
+            "id": "150",
+            "codClient": "GM0022",
+            "province": "MANABÍ",
+            "city": "SUCRE",
+            "name": "VALDIVIESO ARTEAGA MARIA ELENA",
+            "nickName": "U.E. INTERAMERICANO",
+            "type": "Especialista",
+            "status": "Por confirmar"
+        },
+        {
+            "id": "151",
+            "codClient": "GM0046",
+            "province": "MANABÍ",
+            "city": "MONTECRISTI",
+            "name": "PALACIOS MENDOZA EDGAR ROMEO",
+            "nickName": "ARY HELADERIA PUNTO MONTECRISTI",
+            "type": "Mayorista",
+            "status": "G22813"
+        },
+        {
+            "id": "152",
+            "codClient": "GM0052",
+            "province": "MANABÍ",
+            "city": "EL CARMEN",
+            "name": "ALCIVAR MENDOZA MERCEDES SOLANDA",
+            "nickName": "BAZAR Y PAPELERIA MARIA JULIETH P. JESUCRISTO REY",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "153",
+            "codClient": "GM0007",
+            "province": "MANABÍ",
+            "city": "MANTA",
+            "name": "ASO. DE CUENTAS EN PARTICIPACION PIEDRA LARGA",
+            "nickName": "PUNTO LEONARDO DA VINCI",
+            "type": "Mayorista",
+            "status": "No va "
+        },
+        {
+            "id": "154",
+            "codClient": "G23105",
+            "province": "MANABÍ",
+            "city": "EL CARMEN",
+            "name": "MACIAS MUÑOZ JOSELYN ZULEMA",
+            "nickName": "PAPELERIA ELOHIM PUNTO MARANATHA",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "155",
+            "codClient": "GS0022",
+            "province": "SANTA ELENA",
+            "city": "LA LIBERTAD",
+            "name": "VALDIVIESO PARRALES VICTOR STALYN",
+            "nickName": "COMECSA S.A.",
+            "type": "Detallista",
+            "status": "Actualizar datos"
+        },
+        {
+            "id": "156",
+            "codClient": "G23081",
+            "province": "SANTA ELENA",
+            "city": "SALINAS",
+            "name": "FLORES MARTINEZ HUGO IGNACIO",
+            "nickName": "PUNTO N°13 DEL PACIFICO",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "157",
+            "codClient": "GS0016",
+            "province": "SANTA ELENA",
+            "city": "SALINAS",
+            "name": "CONGREGACION DE PADRES JOSEFINOS DE MURIALDO",
+            "nickName": "PUNTO RUBIRA",
+            "type": "Especialista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "158",
+            "codClient": "GS0021",
+            "province": "SANTA ELENA",
+            "city": "LA LIBERTAD",
+            "name": "MUÑOZ SAN MIGUEL LUIS ANDRES",
+            "nickName": "NUESTRO MUNDO",
+            "type": "Especialista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "159",
+            "codClient": "GS0023",
+            "province": "SANTA ELENA",
+            "city": "LA LIBERTAD",
+            "name": "MARAZITA VILLARROEL VIRGINIA LISSETTE",
+            "nickName": "DISBARCHA - PUNTO EDUCA",
+            "type": "Especialista",
+            "status": "No va "
+        },
+        {
+            "id": "160",
+            "codClient": "GS0018",
+            "province": "SANTA ELENA",
+            "city": "LA LIBERTAD",
+            "name": "CUENCA RAMOS MARGARITA",
+            "nickName": "BAZAR DIVINO NIÑO SANTA TERESITA",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "161",
+            "codClient": "GS0013",
+            "province": "SANTA ELENA",
+            "city": "LA LIBERTAD",
+            "name": "ABAD BARZOLA MARIA PAULA",
+            "nickName": "ECONOTEX CAP LEONARDO ABAD",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "162",
+            "codClient": "GS0024",
+            "province": "SANTA ELENA",
+            "city": "CERECITA",
+            "name": "CHAMAIDAN CONSUEGRA DENISSE ELIZABETH",
+            "nickName": "PAPELERIA ELIZABETH",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "163",
+            "codClient": "GSD029",
+            "province": "SANTO DOMINGO DE LOS TSÁCHILAS",
+            "city": "LA CONCORDIA",
+            "name": "MOREIRA CEDEÑO BORIS RAMON",
+            "nickName": "LIBRERIA CRISTIANA VIDA NUEVA",
+            "type": "Detallista",
+            "status": "No va "
+        },
+        {
+            "id": "164",
+            "codClient": "GSD031",
+            "province": "SANTO DOMINGO DE LOS TSÁCHILAS",
+            "city": "SANTO DOMINGO",
+            "name": "CABEZAS LOOR BETTY VERONICA",
+            "nickName": "PRENTA LIBRERIA Y TEXTILES HERBET",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "165",
+            "codClient": "GSD011",
+            "province": "SANTO DOMINGO DE LOS TSÁCHILAS",
+            "city": "SANTO DOMINGO",
+            "name": "VALDEZ LAAZ SILVIA VERONICA",
+            "nickName": "BAZAR Y PAPELERIA D´ TODO PUNTO DARIO KANYAT",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "166",
+            "codClient": "GSD006",
+            "province": "SANTO DOMINGO DE LOS TSÁCHILAS",
+            "city": "SANTO DOMINGO",
+            "name": "NIETO JACOME ALEX FERNANDO",
+            "nickName": "LIBERIA Y PAPELERIA DISNI",
+            "type": "Detallista",
+            "status": "No va "
+        },
+        {
+            "id": "167",
+            "codClient": "GSD035",
+            "province": "SANTO DOMINGO DE LOS TSÁCHILAS",
+            "city": "SANTO DOMINGO",
+            "name": "ARELLANO MUÑOZ DELIA ESMERALDA",
+            "nickName": "PUNTO VALLE HERMOSO",
+            "type": "Especialista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "168",
+            "codClient": "GSD030",
+            "province": "SANTO DOMINGO DE LOS TSÁCHILAS",
+            "city": "SANTO DOMINGO",
+            "name": "NOBOA ESCOBAR LILIANA LORENA",
+            "nickName": "PUNTO ASTUDILLO",
+            "type": "Especialista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "169",
+            "codClient": "GSD022",
+            "province": "SANTO DOMINGO DE LOS TSÁCHILAS",
+            "city": "LA CONCORDIA",
+            "name": "CARRERA CHINCHAY MARY ELIZABETH",
+            "nickName": "PUNTO SAGRADOS CORAZONES",
+            "type": "Especialista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "170",
+            "codClient": "Q23419",
+            "province": "SANTO DOMINGO DE LOS TSÁCHILAS",
+            "city": "SANTO DOMINGO",
+            "name": "CORPORACION DE LA ASOCIACION DE LOS ADVENTISTAS",
+            "nickName": "CORPORACION DE LA ASOCIACION DE LOS ADVENTISTAS",
+            "type": "Especialista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "171",
+            "codClient": "GSD025",
+            "province": "SANTO DOMINGO DE LOS TSÁCHILAS",
+            "city": "SANTO DOMINGO DE LOS TSÁCHILAS",
+            "name": "TAPIA ANDRADE FREDDY CORNELIO",
+            "nickName": "PUNTO DANTE ALIGHIERI",
+            "type": "Especialista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "172",
+            "codClient": "Q33146",
+            "province": "SANTO DOMINGO DE LOS TSÁCHILAS",
+            "city": "SANTO DOMINGO",
+            "name": "AMADO PINZON MIKE",
+            "nickName": "SOLUCIONES EDUCATIVAS /PUNTO MARISTA",
+            "type": "Mayorista",
+            "status": "Por confirmar"
+        },
+        {
+            "id": "173",
+            "codClient": "GSD034",
+            "province": "SANTO DOMINGO DE LOS TSÁCHILAS",
+            "city": "LA CONCORDIA",
+            "name": "MUÑOZ YANDUN STALIN RAMIRO ",
+            "nickName": "PUNTO EL ESPAÑOL",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "174",
+            "codClient": "G23088",
+            "province": "SANTO DOMINGO DE LOS TSÁCHILAS",
+            "city": "SANTO DOMINGO",
+            "name": "PAZMIÑO MARIO HERNAN",
+            "nickName": "BAZAR Y PAPELERIA CAROLINA PUNTO ANTONIO NEUMANE",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "175",
+            "codClient": "GSD033",
+            "province": "SANTO DOMINGO DE LOS TSÁCHILAS",
+            "city": "LA CONCORDIA",
+            "name": "TUFIÑO GONZALEZ HANNA ELIZABETH",
+            "nickName": "PUNTO LUZ DEL EVANGELIO",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "176",
+            "codClient": "Q22686",
+            "province": "SANTO DOMINGO DE LOS TSÁCHILAS",
+            "city": "SANTO DOMINGO",
+            "name": "OLIVEIRA CAMARGO ELOA DO BELEM",
+            "nickName": "PUNTO CAVANIS BORJA 3",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "177",
+            "codClient": "GSD026",
+            "province": "SANTO DOMINGO DE LOS TSÁCHILAS",
+            "city": "SANTO DOMINGO",
+            "name": "HARO VALLEJO JEAN PAUL",
+            "nickName": "PUNTO. DE LAS AMERICAS",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "178",
+            "codClient": "GSD008",
+            "province": "SANTO DOMINGO DE LOS TSÁCHILAS",
+            "city": "SANTO DOMINGO",
+            "name": "BRAVO CARRIEL JULIO CLEMENTE",
+            "nickName": "PAPELERIA GENESIS PUNTO LUZ DE AMERICA",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "179",
+            "codClient": "G23622",
+            "province": "COTOPAXI",
+            "city": "LA MANÁ",
+            "name": "ROMERO CALDERON MICHELLE VIRGINIA",
+            "nickName": "PUNTO AMERICANO",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "180",
+            "codClient": "GG0026",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "FLORES JIRON DIANA ISABEL",
+            "nickName": "PUNTO MERCEDES DE JESUS MOLINA",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "181",
+            "codClient": "GG0027",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "RUPERTI LOOR GONZALO XAVIER",
+            "nickName": "DISTRIBUCIONES RUMAR PUNTO ESPIRITU SANTO",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "182",
+            "codClient": "GS0001",
+            "province": "SANTA ELENA",
+            "city": "LA LIBERTAD",
+            "name": "SUAREZ MALAVE LUIS ANGEL",
+            "nickName": "LIBRERÍA Y PAPELERÍA  ANGELINO",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "183",
+            "codClient": "QP0006",
+            "province": "PICHINCHA",
+            "city": "QUITO",
+            "name": "PA-CO COMERCIAL E INDUSTRIAL S.A.",
+            "nickName": "PACO",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "184",
+            "codClient": "GD0008",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "BUENDIA NAVARRETE SHIRLEY VANESSA",
+            "nickName": "PUNTO PASIONISTA",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "185",
+            "codClient": "GG0100",
+            "province": "GUAYAS",
+            "city": "SAMBORONDÓN",
+            "name": "AYALA MOSQUERA CARLOS MARIA FABIAN",
+            "nickName": "LIBRERIA ESTEROS PUNTO DELTA/TORREMAR",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "186",
+            "codClient": "G23553",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "FUNDACION D. GARY YOUNG - YOUNG LIVING",
+            "nickName": "YOUNG LIVING ACADEMY",
+            "type": "Especialista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "187",
+            "codClient": "GM0054",
+            "province": "MANABÍ",
+            "city": "CHONE",
+            "name": "CORNEJO ORDOÑEZ CARMEN ELVIRA",
+            "nickName": "LIBRERIA PAPELERIA Y NOVEDADES DON OSCAR",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "188",
+            "codClient": "GSD036",
+            "province": "SANTO DOMINGO DE LOS TSÁCHILAS",
+            "city": "LA CONCORDIA",
+            "name": "VITE BALON MOISES SECUNDINO",
+            "nickName": "PUNTO LUZ Y LIBERTAD",
+            "type": "Especialista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "189",
+            "codClient": "GG0084",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "RIVERA CUSME YUNNY ALEXANDRA",
+            "nickName": "LIBRERIA  LM PUNTO COELLO/SPEDWRITHING",
+            "type": "Especialista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "190",
+            "codClient": "GG0083",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "FALCONÍ BONILLA PATRICIA ELIZABETH",
+            "nickName": "PUNTO NUEVO CONTINENTE",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "191",
+            "codClient": "G22813",
+            "province": "MANABÍ",
+            "city": "MONTECRISTI",
+            "name": "PALACIOS MENDOZA PATRICIA LEONOR",
+            "nickName": "HELADERIA PEPE TUCAN PUNTO MONTECRISTI",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "192",
+            "codClient": "G00023",
+            "province": "GUAYAS",
+            "city": "DAULE",
+            "name": "HUAYAMAVE RONQUILLO VICENTA DEL ROCIO",
+            "nickName": "CYBER SAN CRISTOBAL PUNTO DOLERA",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "193",
+            "codClient": "GDU003",
+            "province": "GUAYAS",
+            "city": "DURÁN",
+            "name": "ALEMAN YEPEZ PATRICIA JOHANNA ",
+            "nickName": "BOOKSTORE EDICIONES ORTEGA",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "194",
+            "codClient": "GG0103",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "MOSQUERA VIEJO ELENA MARISOL",
+            "nickName": "ARCOIRIS  PUNTO OLIMPIA",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "195",
+            "codClient": "Q23472",
+            "name": "SOLIS OÑA CAROLINA GENESIS",
+            "nickName": "DISTRIBUCION DE LIBROS EDUCATEX",
+            "type": "Mayorista"
+        },
+        {
+            "id": "196",
+            "codClient": "Q23473",
+            "name": "SOLIS OÑA VANESSA ELIZABETH",
+            "nickName": "XAVIER SOLIS",
+            "type": "Mayorista"
+        },
+        {
+            "id": "197",
+            "codClient": "Q11181",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "COLEGIO MENOR CMSFQ S.A.",
+            "nickName": "COLEGIO MENOR CMSFQ S.A.",
+            "type": "Especialista",
+            "status": "En proceso"
+        },
+        {
+            "id": "198",
+            "codClient": "G00065",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "LOPEZ JURADO SANTIAGO ANDRES",
+            "nickName": "PUNTO DOLOROSA",
+            "type": "Mayorista",
+            "status": "En proceso"
+        },
+        {
+            "id": "199",
+            "codClient": "GG0106",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "VARGAS GUERRERO VICTOR EMILIO",
+            "nickName": "LA BODEGUITA PUNTO NUESTRA SRA DEL CARMEN",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "200",
+            "codClient": "GG0107",
+            "province": "GUAYAS",
+            "city": "SALITRE",
+            "name": "PAZMIÑO MONCADA FREDY ERNESTO",
+            "nickName": "LIBRERÍA MARIA JOSÉ",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "201",
+            "codClient": "GMI003",
+            "province": "GUAYAS",
+            "city": "MILAGRO",
+            "name": "VASQUEZ RUGEL JENNY LUCIA",
+            "nickName": "PUNTO DE VENTA U E \"SAN FRANCISCO DE MILAGRO\"",
+            "type": "Detallista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "202",
+            "codClient": "GNA001",
+            "province": "GUAYAS",
+            "city": "NARANJAL",
+            "name": "MORAN RAMIREZ ZENEIDA MIRELLA",
+            "nickName": "PUNTO DE SAN ESTEBAN",
+            "type": "Mayorista",
+            "status": "Habilitado"
+        },
+        {
+            "id": "203",
+            "codClient": "GMI004",
+            "province": "GUAYAS",
+            "city": "MILAGRO",
+            "name": "HIDALGO BONILLA TANIA MAGALI",
+            "nickName": "PUNTO SAN JOSE",
+            "type": "Especialista",
+            "status": "En proceso"
+        },
+        {
+            "id": "204",
+            "codClient": "G22203",
+            "province": "GUAYAS",
+            "city": "DAULE",
+            "name": "QUIROZ ARTEAGA MIRIAM GUADALUPE",
+            "nickName": "PUNTO RIBERAS DEL DAULE",
+            "type": "Especialista",
+            "status": "En proceso"
+        },
+        {
+            "id": "205",
+            "codClient": "GMA002",
+            "province": "MANABÍ",
+            "city": "MONTECRISTI",
+            "name": "ZAMBRANO SANCHEZ GEORGINA ANABEL",
+            "nickName": "LIBRERIA BEE PUNTO 24 DE MAYO",
+            "type": "Detallista",
+            "status": "En proceso"
+        },
+        {
+            "id": "206",
+            "codClient": "GG0108",
+            "province": "GUAYAQUIL",
+            "city": "GUAYAQUIL",
+            "name": "DE GUILHEM CORP S.A.",
+            "nickName": "CENTRO DE ESTUDIO Y CAPACITACION DGR",
+            "type": "Especialista",
+            "status": "En proceso"
         }
     ]

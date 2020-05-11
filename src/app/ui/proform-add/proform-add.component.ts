@@ -2,13 +2,27 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ProjectComponent } from '../../shared/components/project/project.component';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
-import { FIELDS, states, COLUMNS_DETAIL_PROFORM } from './model/proformColumns.model';
+import { FIELDS, COLUMNS_DETAIL_PROFORM } from './model/proformColumns.model';
 import { Proform } from 'src/app/app.keys';
-import { of } from 'rxjs';
 import { ExcelExportService } from 'src/app/shared/service/export-excel.service';
 import * as _ from 'lodash';
+import { of as observableOf } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+
 
 const dataVal = require('./proformList.json');
+const vendedores = require('./vendedores.json');
+const clientes = require('./clientes.json');
+const colegios = require('./colegios.json');
+
+const states = ['Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'California', 'Colorado',
+  'Connecticut', 'Delaware', 'District Of Columbia', 'Federated States Of Micronesia', 'Florida', 'Georgia',
+  'Guam', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine',
+  'Marshall Islands', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana',
+  'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
+  'Northern Mariana Islands', 'Ohio', 'Oklahoma', 'Oregon', 'Palau', 'Pennsylvania', 'Puerto Rico', 'Rhode Island',
+  'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virgin Islands', 'Virginia',
+  'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
 
 @Component({
   selector: 'app-proform-add',
@@ -18,18 +32,37 @@ const dataVal = require('./proformList.json');
 export class ProformAddComponent implements OnInit {
   @ViewChild(ProjectComponent, {static: true}) child: ProjectComponent;
   
-  public data = dataVal;
+  public data: any;
   public gridColumns = COLUMNS_DETAIL_PROFORM;
   public enabledTitle: boolean;
   public allowExcelExport: boolean;
+  public condition: string;
+  public enableEdit: boolean;
+  public validation: string;
 
-  constructor(private excelExportService: ExcelExportService) { 
+  constructor(private excelExportService: ExcelExportService, private route: ActivatedRoute) { 
 
   }
 
   ngOnInit() {
     this.enabledTitle = false;
     this.allowExcelExport = false;
+
+    this.route.queryParams.subscribe(
+      params => {
+        console.log('Got the JWT as: ', params['val']);
+        this.condition =  params['val'];
+        this.condition == 'EDT' ? this.enableEdit = true : this.enableEdit = false;        
+      }
+    )
+    
+    if (!this.enableEdit){
+      this.validation = '!model.text';      
+    } else {
+      this.validation = 'model.text';
+      //this.data = {};
+    }
+    this.data = dataVal;
   }
 
   form = new FormGroup({});
@@ -40,107 +73,159 @@ export class ProformAddComponent implements OnInit {
   public formFields: FormlyFieldConfig[] = [
     {
       className: 'section-label',
-      template: '<hr /><div><strong>Datos Generales:</strong></div>',
+      template: '<h3><strong>Registro de Proforma</strong></h3><div><strong>Datos Generales:</strong></div>',
     },
     {
       fieldGroupClassName: 'row',
       fieldGroup: [
         {
-          className: 'col-4',
+          className: 'col-2',
           type: 'input',
           key: Proform.ID.prop,
           templateOptions: {
             label: Proform.ID.name,
-            required: true
-          }
+          },
+        expressionProperties: {
+          'templateOptions.disabled': this.validation,
+          },
         },
         {
-          className: 'col-4',
+          className: 'col-2',
           type: 'input',
           key: Proform.NUMBER_PROFORM.prop,
           templateOptions: {
             label: Proform.NUMBER_PROFORM.name,
             required: true            
-          }
+          },
+          expressionProperties: {
+            'templateOptions.disabled': this.validation,
+            }
         },  
         {
-          className: 'col-4',
+          className: 'col-3',
           type: 'select',
           key: Proform.USER_ID.prop,
           templateOptions: {
             label: Proform.USER_ID.name,
             required: true,
-            options: [
-              { label: 'Snickers', value: 'snickers' },
-              { label: 'Baby Ruth', value: 'baby_ruth' },
-              { label: 'Milky Way', value: 'milky_way' },
-            ],
-          }
-        },         
+            options: vendedores,
+          },
+          expressionProperties: {
+            'templateOptions.disabled': this.validation,
+            }
+        },  
+        {
+          type: 'input',
+          key: Proform.DATE_PROFORM.prop,
+          className: 'col-sm-2',
+          templateOptions: {
+            type: 'date',
+            label: Proform.DATE_PROFORM.name ,
+          },
+          expressionProperties: {
+            'templateOptions.disabled': this.validation,
+            }
+        },
+        {
+          type: 'input',
+          key: Proform.DATE_DELIVERY.prop,
+          className: 'col-sm-2',
+          templateOptions: {
+            type: 'date',
+            label: Proform.DATE_DELIVERY.name,
+          },
+          expressionProperties: {
+            'templateOptions.disabled': this.validation,
+            }
+        },       
       ],      
     },
     {
       className: 'section-label',
-      template: '<hr /><div><strong>Datos del Colegio y del Cliente</strong></div>',
+      template: '<div><strong>Datos del Colegio y del Cliente</strong></div>',
     },
     {
       fieldGroupClassName: 'row',
       fieldGroup: [        
         {
-          className: 'col-6',
+          className: 'col-4',
           type: 'select',
           key: Proform.COLLEGES_ID.prop,
           templateOptions: {
             label: Proform.COLLEGES_ID.name,
-            options: [
-              { label: 'Snickers', value: 'snickers' },
-              { label: 'Baby Ruth', value: 'baby_ruth' },
-              { label: 'Milky Way', value: 'milky_way' },
-            ],
-          }
-        },        
+            options: _.sortBy(colegios, "label"),
+          },
+          expressionProperties: {
+            'templateOptions.disabled': this.validation,
+            }
+        },       
         {
-          className: 'col-6',
+          className: 'col-3',
           type: 'select',
           key: Proform.CLIENT_ID.prop,
           templateOptions: {
             label: Proform.CLIENT_ID.name,
-            options: [
-              { label: 'Snickers', value: 'snickers' },
-              { label: 'Baby Ruth', value: 'baby_ruth' },
-              { label: 'Milky Way', value: 'milky_way' },
-            ],
-          }
+            options: _.sortBy(clientes, "label"),
+          },
+          expressionProperties: {
+            'templateOptions.disabled': this.validation,
+            }
+        },
+        {
+          className: 'col-2',
+          type: 'checkbox',
+          key: Proform.TYPE_CLIENT_SALE.prop,
+          defaultValue: false,
+          templateOptions: {
+            label: Proform.TYPE_CLIENT_SALE.name,
+          },
+          expressionProperties: {
+            'templateOptions.disabled': this.validation,
+            }
         },        
+        {
+          className: 'col-2',
+          type: 'checkbox',
+          key: Proform.AGREEMENT.prop,
+          defaultValue: false,
+          templateOptions: {
+            label: Proform.AGREEMENT.name,
+          },
+          expressionProperties: {
+            'templateOptions.disabled': this.validation,
+            }
+        },     
       ],      
     },
     {
       fieldGroupClassName: 'row',
       fieldGroup: [
-        {
-          type: 'input',
-          key: Proform.DATE_PROFORM.prop,
-          className: 'col-sm-4',
-          templateOptions: {
-            type: 'date',
-            label: Proform.DATE_PROFORM.name ,
-          },
-        },
-        {
-          type: 'input',
-          key: Proform.DATE_DELIVERY.prop,
-          className: 'col-sm-4',
-          templateOptions: {
-            type: 'date',
-            label: Proform.DATE_DELIVERY.name,
-          },
-        },
+        
+        
                 
       ],
       
     },
   ];
   
+  /*
+  {
+          key: 'state',
+          type: 'typeahead',
+          className: 'col-sm-6',
+          templateOptions: {
+            label: 'Estados',
+            placeholder: 'Search for a state:',
+            search$: (term) => {
+              if ((!term || term === '')) {
+                return observableOf(states);
+              }
+    
+              
+            },
+          }
+        },
+  */
 
   public filterStates(name: string) {
     return states.filter(state =>

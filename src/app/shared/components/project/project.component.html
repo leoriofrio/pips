@@ -12,11 +12,24 @@
 <content>  
     <ag-grid-angular 
         #agGrid
-        style="width: 100%; height: 570px;" 
+        style="width: 100%; height: 670px;  box-sizing: border-box;" 
         id="myGrid"
-        class="ag-theme-alpine"
+        class="ag-theme-alpine px-4 pt-4 height-70"
         [rowData]="data" 
-        [columnDefs]="gridColumns" >
+        [columnDefs]="gridColumns"
+        [enableSorting]="true"
+        [enableFilter]="true"
+        [enableCellChangeFlash]="true"
+        [enableCellTextSelection]="true"
+        [defaultColDef]="defaultColDef"
+        [pinnedTopRowData]="pinnedTopRowData"
+        [pinnedBottomRowData]="pinnedBottomRowData"
+        [enterMovesDown]="true"
+        [enterMovesDownAfterEdit]="true"
+        [enableRangeSelection]="true"
+        [processDataFromClipboard]="processDataFromClipboard"
+        (gridReady)="onGridReady($event)"
+         >
     </ag-grid-angular>
 
 </content>

@@ -72,18 +72,19 @@ export namespace Agreement {
 
 export namespace ProductColumns {
   export const ID = {prop: 'id', name: 'Id'};
-  export const SUBLINE = {prop: 'subline', name: 'Sublínea'};
   export const COD = {prop: 'cod', name: 'Cod'};
+  export const SUBLINE = {prop: 'subline', name: 'Sublínea'};  
   export const DESCRIPTION = {prop: 'description', name: 'Descripción'};
-  export const STATUS = {prop: 'status', name: 'Estado'};
-  export const STOCK = {prop: 'stock', name: 'Stock'};
-  export const DEGREE = {prop: 'degree', name: 'Grado'};
+  export const SERIE = {prop: 'serie', name: 'Serie'};
+  export const NIVEL = {prop: 'nivel', name: 'Nivel Educación'};
+  export const DEGREE = {prop: 'degree', name: 'Grado'};  
   export const BUSINESS_LINE = {prop: 'businessLine', name: 'Linea Negocios'};
   export const ISBN = {prop: 'isbn', name: 'ISBN'};
-  export const REGION_ID = {prop: 'region_id', name: 'Región'};
+  export const REGION = {prop: 'region', name: 'Región'};
+  
 }
 
-export namespace Colleges {
+export namespace CollegesColumns {
   export const ID = {prop: 'id', name: 'Id'};
   export const COD_SANTILLANA = {prop: 'codSantillana', name: 'Código Santillana'};
   export const COD_INSTITUTO = {prop: 'codInstituto', name: 'Código Instituto'};
@@ -106,21 +107,26 @@ export namespace Colleges {
 
 export namespace ClientColumns {
   export const ID = {prop: 'id', name: 'Id'};
-  export const RUC = {prop: 'ruc', name: 'Ruc'};
-  export const NAME = {prop: 'name', name: 'Nombre'};
-  export const ADDRESS = {prop: 'address', name: 'Dirección'};
-  export const PHONE = {prop: 'phone', name: 'Teléfono'};
-  export const MAIL = {prop: 'mail', name: 'Correo Electrónico'};  
+  export const COD_CLIENT = {prop: 'codClient', name: 'Código'};
+  export const PROVINCE = {prop: 'province', name: 'Provincia'};
+  export const CITY = {prop: 'city', name: 'Ciudad'};
+  export const NAME = {prop: 'name', name: 'Nombre cliente'};
+  export const NICKNAME = {prop: 'nickName', name: 'Alias'};
+  export const TYPE = {prop: 'type', name: 'Tipo'};
+  export const STATUS = {prop: 'status', name: 'Status'};
 }
 
 export namespace UserColumns {
-  export const ID = {prop: 'codUser', name: 'Cod User'};
-  export const USER = {prop: 'user', name: 'User'};
-  export const EMAIL = {prop: 'mail', name: 'Email'};
-  export const FIRST_NAME = {prop: 'firstName', name: 'Nombre'};
-  export const LAST_NAME = {prop: 'lastName', name: 'Apellido'};
-  export const PASSWORD = {prop: 'pass', name: 'Clave'};
-  export const STATUS = {prop: 'status', name: 'Estado'};
+  export const ID = {prop: 'id', name: 'Id'};
+  export const COD_USER = {prop: 'codUser', name: 'Código'};
+  export const REGION = {prop: 'region', name: 'Región'};
+  export const NAME = {prop: 'name', name: 'Nombre Completo'};
+  export const USER_NAME = {prop: 'userName', name: 'Delegado'};
+  export const PASSWORD = {prop: 'password', name: 'Clave'};
+  export const ZONE = {prop: 'zone', name: 'Zona'};
+  export const PHONE = {prop: 'phone', name: 'Teléfono'};
+  export const MAIL = {prop: 'mail', name: 'Correo'};
+  export const POSITION = {prop: 'position', name: 'Cargo'};  
 }
 
 

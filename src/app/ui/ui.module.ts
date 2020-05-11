@@ -7,10 +7,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { FormlyModule } from '@ngx-formly/core';
 import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
-import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { AutocompleteTypeComponent } from  './proform-add/autocomplete-type.component';
 
 
 @NgModule({
@@ -23,20 +20,15 @@ import { AutocompleteTypeComponent } from  './proform-add/autocomplete-type.comp
     AppRoutingModule,
     FormlyBootstrapModule,
     MatInputModule,
-    MatAutocompleteModule,
     FormlyModule.forRoot({
-      types: [{
-        name: 'autocomplete',
-        component: AutocompleteTypeComponent,
-        wrappers: ['form-field'],
-      }],
+      types: [],
       validationMessages: [        
         { name: 'required', message: 'This field is required' },
-      ],
+      ]
     }),
-    MatNativeDateModule    
+        
   ],
-  declarations: [ProformAddComponent, AutocompleteTypeComponent],
+  declarations: [ProformAddComponent],
   providers: [],
   exports: [ProformAddComponent]
 })

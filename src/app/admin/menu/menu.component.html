@@ -53,33 +53,23 @@
             
             <li class=" navigation-header"><span>Menú</span>
             </li>
-            <li class=" nav-item"><a routerLink=""><i class="bx bx-file"></i><span class="menu-title" data-i18n="Invoice">Proformas</span></a>
+            <li class=" nav-item"><a ><i class="bx bx-file"></i><span class="menu-title" data-i18n="Invoice">Proformas</span></a>
                 <ul class="menu-content">
-                    <li><a routerLink="/"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Invoice List">Lista de Proformas</span></a>
-                    </li>
-                    <li><a routerLink="/"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Invoice">Proforma</span></a>
-                    </li>
-                    <li><a routerLink="/"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Invoice Edit">Editar</span></a>
-                    </li>
-                    <li><a routerLink="/proform"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Invoice Add">Ingresar</span></a>
-                    </li>
+                    <li><a routerLink="/"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Invoice List">Lista de Proformas</span></a></li>
+                    <li><a [routerLink]="['/proform']"  [queryParams]="{ val: 'IMP'}"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Invoice">Proforma</span></a></li>
+                    <li><a [routerLink]="['/proform']"  [queryParams]="{ val: 'EDT'}"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Invoice Add">Ingresar</span></a></li>
                 </ul>
             </li>
-            <li class=" nav-item"><a routerLink=""><i class="bx bx-file"></i><span class="menu-title" data-i18n="Invoice">Muestras</span></a>
+            <li class=" nav-item"><a ><i class="bx bx-file"></i><span class="menu-title" data-i18n="Invoice">Muestras</span></a>
                 <ul class="menu-content">
-                    <li><a routerLink="/"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Invoice List">Lista de Muestras</span></a>
-                    </li>
-                    <li><a routerLink="/"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Invoice">Muestras</span></a>
-                    </li>
-                    <li><a routerLink="/"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Invoice Edit">Editar</span></a>
-                    </li>
-                    <li><a routerLink="/"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Invoice Add">Ingresar</span></a>
-                    </li>
+                    <li><a routerLink="/"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Invoice List">Lista de Muestras</span></a></li>
+                    <li><a routerLink="/"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Invoice">Muestras</span></a></li>
+                    <li><a routerLink="/"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="Invoice Add">Ingresar</span></a></li>
                 </ul>
             </li>
             <li class=" navigation-header"><span>Administración</span>
             </li>
-            <li class=" nav-item"><a routerLink=""><i class="bx bx-user-plus"></i><span class="menu-title" data-i18n="User">Usuarios</span></a>
+            <li class=" nav-item"><a ><i class="bx bx-user-plus"></i><span class="menu-title" data-i18n="User">Usuarios</span></a>
                 <ul class="menu-content">
                     <li><a routerLink="/user"><i class="bx bx-right-arrow-alt"></i><span class="menu-item" data-i18n="List">Lista</span></a>
                     </li>

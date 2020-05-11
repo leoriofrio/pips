@@ -3,7 +3,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProductColumns } from '../../app.keys';
 import { ProjectComponent } from '../../shared/components/project/project.component';
-import { COLUMNS_PRODUCT } from './productColumns';
+import { COLUMNS_PRODUCT, COLUMNS_PINNED_TOP_DATA } from './productColumns';
 import { ExcelExportService } from '../../shared/service/export-excel.service';
 import * as _ from 'lodash';
 
@@ -21,6 +21,10 @@ export class ProductComponent implements OnInit {
   public gridColumns = COLUMNS_PRODUCT;
   public enabledTitle: boolean;
   public allowExcelExport: boolean;
+  public val: string;
+  public pinnedTopRowDataVal: any;
+  public pinnedBottomRowDataVal: any;
+  public defaultColDefVal: any;
 
   constructor(private excelExportService: ExcelExportService) {
 
@@ -29,6 +33,25 @@ export class ProductComponent implements OnInit {
   ngOnInit() {
     this.enabledTitle = true;
     this.allowExcelExport = true;
+    this.pinnedTopRowDataVal = [
+      COLUMNS_PINNED_TOP_DATA
+    ];
+    this.pinnedBottomRowDataVal = [
+      COLUMNS_PINNED_TOP_DATA
+    ];
+
+    this.defaultColDefVal = {
+      editable: true,
+      resizable: true,
+      cellClassRules: {
+        'cell-green': 'value.startsWith("Green")',
+        'cell-blue': 'value.startsWith("Blue")',
+        'cell-red': 'value.startsWith("Red")',
+        'cell-yellow': 'value.startsWith("Yellow")',
+        'cell-orange': 'value.startsWith("Orange")',
+        'cell-grey': 'value.startsWith("Grey")',
+      },
+    };
   }
   
   /**
