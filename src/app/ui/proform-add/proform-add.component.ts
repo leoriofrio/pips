@@ -1,13 +1,15 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ProjectComponent } from '../../shared/components/project/project.component';
+import { GridComponent } from '../../shared/components/grid/grid.component';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
-import { FIELDS, COLUMNS_DETAIL_PROFORM } from './model/proformColumns.model';
+import { FIELDS, COLUMNS_DETAIL_PROFORM, COLUMNS_DETAIL, COLUMNS_HEADER } from './model/proformColumns.model';
 import { Proform } from 'src/app/app.keys';
 import { ExcelExportService } from 'src/app/shared/service/export-excel.service';
 import * as _ from 'lodash';
 import { of as observableOf } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { GridRecord } from 'src/app/app.type';
 
 
 const dataVal = require('./proformList.json');
@@ -31,22 +33,34 @@ const states = ['Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'C
 })
 export class ProformAddComponent implements OnInit {
   @ViewChild(ProjectComponent, {static: true}) child: ProjectComponent;
+  @ViewChild('container') container: ElementRef;
   
   public data: any;
+  public dataOfBank: any[] = [];
+  public dataset: any[] = [];
   public gridColumns = COLUMNS_DETAIL_PROFORM;
+  public columnsGrid = COLUMNS_DETAIL;
+  public columnsHeader = COLUMNS_HEADER;
   public enabledTitle: boolean;
   public allowExcelExport: boolean;
   public condition: string;
   public enableEdit: boolean;
   public validation: string;
+  public defaultColDefVal: any;
 
   constructor(private excelExportService: ExcelExportService, private route: ActivatedRoute) { 
-
+    this.data = dataVal;
+    this.dataOfBank = dataVal;
+    for (let value = 0; value < this.dataOfBank.length; value++) {
+      let row = this.dataOfBank[value];
+      this.dataset.push(row);
+    };
   }
 
   ngOnInit() {
     this.enabledTitle = false;
     this.allowExcelExport = false;
+    
 
     this.route.queryParams.subscribe(
       params => {
@@ -62,13 +76,23 @@ export class ProformAddComponent implements OnInit {
       this.validation = 'model.text';
       //this.data = {};
     }
-    this.data = dataVal;
+
+    this.defaultColDefVal = {
+      editable: true,
+      resizable: true
+    };
+    
+    
   }
 
   form = new FormGroup({});
   model = {};
 
   options = {};
+
+  public onChange(data: GridRecord[]): void {
+    console.log(data);
+  }
 
   public formFields: FormlyFieldConfig[] = [
     {

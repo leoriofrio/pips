@@ -7,7 +7,7 @@ import { of } from 'rxjs';
 
 export const COLUMNS_DETAIL_PROFORM = [
     {field: ProformDetail.ID.prop, headerName: ProformDetail.ID.name, resizable: true, width: 60  },
-    {field: ProformDetail.DEGREE.prop, headerName: ProformDetail.DEGREE.name, resizable: true, width: 100  },
+    {field: ProformDetail.DEGREE.prop, headerName: ProformDetail.DEGREE.name, resizable: true, width: 100 },  //, cellRenderer: 'selectionRender'
     {field: ProformDetail.PRODUCT_ID.prop, headerName: ProformDetail.PRODUCT_ID.name, resizable: true, width: 400 }, 
     {field: ProformDetail.QUANTITY.prop, headerName: ProformDetail.QUANTITY.name, resizable: true, width: 100},
     {field: ProformDetail.PRICE.prop, headerName: ProformDetail.PRICE.name, resizable: true, width: 100}, 
@@ -22,6 +22,32 @@ export const COLUMNS_DETAIL_PROFORM = [
     {field: ProformDetail.SALE_TRAINING.prop, headerName: ProformDetail.SALE_TRAINING.name, resizable: true, width: 100},
     {field: ProformDetail.TOTAL.prop, headerName: ProformDetail.TOTAL.name, resizable: true, width: 100}
   ];
+
+export const COLUMNS_DETAIL = [
+  { data: ProformDetail.ID.prop, readOnly: true },
+  { type: 'text', data: ProformDetail.DEGREE.prop, readOnly: true },
+  { type: 'text', data: ProformDetail.PRODUCT_ID.prop, renderer: 'currency' },
+  { type: 'numeric', data: ProformDetail.QUANTITY.prop, renderer: 'currency' },
+  { type: 'numeric', data: ProformDetail.PRICE.prop, renderer: 'currency' },
+  { type: 'numeric', data: ProformDetail.SUB_TOTAL.prop, renderer: 'currency' },
+  { type: 'numeric', data: ProformDetail.SALE_DIRECT.prop, renderer: 'currency' },
+  { type: 'numeric', data: ProformDetail.SALE_EXTERNAL_LIBRARY.prop, renderer: 'currency' },
+  { type: 'numeric', data: ProformDetail.SALE_EVENT.prop, renderer: 'currency' },
+  { type: 'numeric', data: ProformDetail.SALE_TEACHER.prop, renderer: 'currency' },
+  { type: 'numeric', data: ProformDetail.SALE_INFRASTRUCTURE.prop, renderer: 'currency' },
+  { type: 'numeric', data: ProformDetail.SALE_SCHOLARSHIPS.prop, renderer: 'currency' },
+  { type: 'numeric', data: ProformDetail.SALE_STAFF.prop, renderer: 'currency' },
+  { type: 'numeric', data: ProformDetail.SALE_TRAINING.prop, renderer: 'currency' },
+  { type: 'numeric', data: ProformDetail.TOTAL.prop, renderer: 'currency' },
+]
+
+export const COLUMNS_HEADER = [
+  ProformDetail.ID.prop, ProformDetail.DEGREE.prop, ProformDetail.PRODUCT_ID.prop, ProformDetail.QUANTITY.prop, 
+  ProformDetail.PRICE.prop, ProformDetail.SUB_TOTAL.prop, ProformDetail.SALE_DIRECT.prop, 
+  ProformDetail.SALE_EXTERNAL_LIBRARY.prop, ProformDetail.SALE_EVENT.prop, ProformDetail.SALE_TEACHER.prop, 
+  ProformDetail.SALE_INFRASTRUCTURE.prop, ProformDetail.SALE_SCHOLARSHIPS.prop, 
+  ProformDetail.SALE_STAFF.prop, ProformDetail.SALE_TRAINING.prop, ProformDetail.TOTAL.prop
+];
 
 
 export const states = [

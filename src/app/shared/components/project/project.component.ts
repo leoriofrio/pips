@@ -4,7 +4,9 @@ import { ExcelExportService } from '../../service/export-excel.service';
 import { AppKeys, ExcelKeys } from 'src/app/app.keys';
 import {  Module } from 'ag-grid-community';
 
+
 import * as _ from 'lodash';
+import { selectionRenderComponent } from '../../render/selection-render.component';
 
 @Component({
   selector: 'app-project',
@@ -18,6 +20,7 @@ export class ProjectComponent implements OnInit {
   public allowExcelExport: boolean;
   private gridApi;
   private gridColumnApi;
+  public frameworkComponents; // framework component
   
 
   @Input() 
@@ -44,11 +47,16 @@ export class ProjectComponent implements OnInit {
   }
 
   ngOnInit(){
+    this.frameworkComponents = {
+      selectionRender : selectionRenderComponent  
+    };
+    
     this.enabledTitle = this.enabledTitleOp;
     this.allowExcelExport = this.allowExcelExportOp;
     if (_.isNull(this.styleFormat) ) {
       this.styleFormat = '670px;';
     }
+   
   }
 
   public exportAsXLSX(): void {
@@ -86,6 +94,8 @@ export class ProjectComponent implements OnInit {
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;
   }
+
+  
   
 
 }
@@ -111,3 +121,7 @@ export class ProjectComponent implements OnInit {
 //    https://handsontable.com/examples?headers
 //    https://www.npmjs.com/package/handsontable
 //    https://stackblitz.com/edit/handsontable-poc?file=src%2Fapp%2Fbudget-grid%2Fbudget-grid.component.ts
+
+
+//  https://www.grapecity.com/wijmo/flexgrid-javascript-data-grid
+//    https://www.grapecity.com/wijmo/demos/Grid/Overview/angular
