@@ -174,3 +174,16 @@ export namespace RoutePathsKeys {
   export const LOGOUT = '/logout';
   export const REPORT = '/report';    
 }
+
+export const FilesType = {
+  images: ["jpg", "jpeg", "png", "bmp", "gif"],
+  documents: ["odt", "txt", "doc", "docx", "ppt", "pptx", "xls", "xlsx","pdf"],
+  get all() {
+    return [...this.images, ...this.documents]
+  },
+  mockImage: "https://mdbootstrap.com/img/Photos/Others/forest-sm.jpg"
+}
+
+export const ValidatesPattern = {
+  alphanumeric: "[a-zA-Z0-9\\s]+"
+}

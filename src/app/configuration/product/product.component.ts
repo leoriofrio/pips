@@ -7,6 +7,7 @@ import { COLUMNS_PRODUCT, COLUMNS_PINNED_TOP_DATA } from './productColumns';
 import { ExcelExportService } from '../../shared/service/export-excel.service';
 import * as _ from 'lodash';
 
+
 const dataVal = require('./product.json');
 
 @Component({
@@ -16,6 +17,7 @@ const dataVal = require('./product.json');
 })
 export class ProductComponent implements OnInit {
   @ViewChild(ProjectComponent, {static: true}) child: ProjectComponent;
+  
   
   public data = dataVal;
   public gridColumns = COLUMNS_PRODUCT;

@@ -21,7 +21,7 @@ export class ProjectComponent implements OnInit {
   private gridApi;
   private gridColumnApi;
   public frameworkComponents; // framework component
-  
+  public uploadFile: boolean = true;
 
   @Input() 
   public gridColumns;
@@ -61,6 +61,10 @@ export class ProjectComponent implements OnInit {
 
   public exportAsXLSX(): void {
     this.exportExcel.emit({name: ExcelKeys.DEFAULT_EXCEL_NAME, gridColumns: this.gridColumns, data: this.data});
+  }
+
+  public changeView() {
+    this.uploadFile = !this.uploadFile;
   }
 
   public processDataFromClipboard(params) {

@@ -7,18 +7,18 @@ import { ConfigurationModule } from './configuration/configuration.modules';
 import { SharedModule } from './shared/shared.module';
 import { AdminModule } from './admin/admin.module';
 import { UIModule } from './ui/ui.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormlyModule } from '@ngx-formly/core';
 import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 import { MatInputModule } from '@angular/material/input';
-import { FormlyFieldTypeahead } from './shared/types/typeahead.type.component';
-
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { UploadDirective } from './directives/upload.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormlyFieldTypeahead
+    UploadDirective
   ],
   imports: [
     BrowserModule,
@@ -28,13 +28,14 @@ import { FormlyFieldTypeahead } from './shared/types/typeahead.type.component';
     SharedModule,
     AdminModule,
     UIModule,
-    ReactiveFormsModule,
     NgSelectModule,
     FormlyBootstrapModule,
     MatInputModule,
+    NoopAnimationsModule,
+    FormsModule,
     FormlyModule.forRoot({
       types: [
-        { name: 'typeahead', component: FormlyFieldTypeahead }],
+        ],
       validationMessages: [        
         { name: 'required', message: 'Este campo es requerido' },
       ]

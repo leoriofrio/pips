@@ -5,6 +5,7 @@ import {AgGridModule} from 'ag-grid-angular';
 import { ProjectComponent } from './components/project/project.component';
 import { GridComponent } from './components/grid/grid.component';
 import { selectionRenderComponent } from './render/selection-render.component';
+import { DataImportComponent } from './components/data-import/data-import.component';
 
 @NgModule({
   imports: [
@@ -16,12 +17,14 @@ import { selectionRenderComponent } from './render/selection-render.component';
   declarations: [
     ProjectComponent,
     GridComponent,
-    selectionRenderComponent
+    selectionRenderComponent,
+    DataImportComponent
   ],
   providers: [],
   exports: [
     ProjectComponent,
-    GridComponent
+    GridComponent,
+    DataImportComponent
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

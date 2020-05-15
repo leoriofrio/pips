@@ -1,0 +1,49 @@
+<ng-template [ngIf]="complete" [ngIfElse]="notComplete">
+    <div class="complete-zone zone" libUpload (fileDropped)="loadProcess($event)">
+        <input class="file-class" type="file"  #fileDropRef id="fileDropRef"  (change)="loadProcess($event.target.files)"  [multiple]="multiple" />
+        <span class="upload-icon">
+            <i class="fa fa-cloud-upload fa-3x" aria-hidden="true"></i>
+        </span>
+        <h3>Drag and drop files here</h3>
+        <h3>or</h3>
+        <label for="fileDropRef">Browse for files</label>
+    </div>
+    <div class="files-list" *ngIf="files.length">
+        <form #formFiles="ngForm" (ngSubmit)="addDescriptions(formFiles)">
+        <div class="single-file" *ngFor="let file of files; let i = index">
+          <div class="info">
+            <h6 class="name">
+              {{ file.name }}
+            </h6>
+            <div class="form-group">
+                <label for="{{file.uid}}">Add Description</label>
+                <input id="{{file.uid}}" name="{{file.uid}}" type="text" class="form-control" ngModel [pattern]="pattern">
+            </div>
+          </div>
+          <span class="remove-file" (click)="deleteFile(i)">
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </span>
+        </div>
+        <button class="btn btn-files rounded-pill" type="submit" [disabled]="formFiles.invalid">Upload Files</button>
+        </form>
+    </div>
+  </ng-template>
+  <ng-template #notComplete>
+    <div class="container-upload">
+    <img [src]="imageUrl" class="img-background" *ngIf="imageUrl">
+    <div class="zone zone-upload" libUpload (fileDropped)="loadProcess($event)">
+      <div>
+      <input class="file-class" type="file"  #fileDropRef id="fileDropRef"  (change)="loadProcess($event.target.files)"  [multiple]="multiple" />
+      <span class="upload-icon">
+          <i class="fa fa-cloud-upload fa-3x" aria-hidden="true"></i>
+      </span>
+      <h6>Drag and drop Image here</h6>
+    </div>
+      <div class="footer-zone">
+        <span>
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        </span>
+      </div>
+  </div>
+  </div>
+  </ng-template>
