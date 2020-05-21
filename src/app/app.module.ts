@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {HttpClientModule, HttpClient, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,8 @@ import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 import { MatInputModule } from '@angular/material/input';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { UploadDirective } from './directives/upload.directive';
+
+
 
 @NgModule({
   declarations: [
@@ -33,6 +36,7 @@ import { UploadDirective } from './directives/upload.directive';
     MatInputModule,
     NoopAnimationsModule,
     FormsModule,
+    HttpClientModule,
     FormlyModule.forRoot({
       types: [
         ],

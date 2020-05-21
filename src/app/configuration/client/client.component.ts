@@ -12,7 +12,7 @@ const dataVal = require('./client.json');
 @Component({
   selector: 'app-client',
   templateUrl: './client.component.html',
-  styleUrls: ['./client.component.css']
+  styleUrls: ['./client.component.scss']
 })
 export class ClientComponent implements OnInit {
   @ViewChild(ProjectComponent, {static: true}) child: ProjectComponent;

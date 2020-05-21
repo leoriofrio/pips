@@ -1,826 +1,826 @@
 [
         {
-            "value": "GO0002",
-            "label": "JARAMILLO CONCHA JAIME EDUARDO"
+            "value": "1",
+            "label": " GO0002- DISTRIBUIDORA J C"
         },
         {
-            "value": "GO0006",
-            "label": "IZURIETA CRUZ RUTH ALICE"
+            "value": "2",
+            "label": " GO0006- BAZAR Y LIBRERIA SOFI-PUNTO LUCERITO"
         },
         {
-            "value": "GO0004",
-            "label": "TIPANTASI TAIPE WILIAN GUILLERMO"
+            "value": "3",
+            "label": " GO0004- COMERCIAL PATHIDAY PUNTO DON BOSCO"
         },
         {
-            "value": "GO0003",
-            "label": "HIDALGO ABRIL JIMMY ADALBERTO"
+            "value": "4",
+            "label": " GO0003- NIDO DEL SABER PUNTO JUAN XXIII"
         },
         {
-            "value": "Q22936",
-            "label": "ANIBAL XAVIER SOLIS SUAREZ"
+            "value": "5",
+            "label": " Q22936- XAVIER SOLIS"
         },
         {
-            "value": "G22819",
-            "label": "FUNDACION HOGAR DE NAZARET"
+            "value": "6",
+            "label": " G22819- JENNY CALDERON"
         },
         {
-            "value": "G22275",
-            "label": "BALLESTEROS CEDEÑO LUIS ALFREDO"
+            "value": "7",
+            "label": " G22275- PAPELERIA FUTURO"
         },
         {
-            "value": "GE0010",
-            "label": "MIELES VERA LIGIA CRISTINA"
+            "value": "8",
+            "label": " GE0010- PUNTO SEMILLITAS"
         },
         {
-            "value": "GSD002",
-            "label": "FALCONES MOREIRA NANCY MAGALI"
+            "value": "9",
+            "label": " GSD002- PUNTO LA INMACULADA"
         },
         {
-            "value": "GE0011",
-            "label": "GRANDA ENCALADA VERONICA ELIZABETH"
+            "value": "10",
+            "label": " GE0011- CYBER CABINAS MATHIAS PUNTO NTRA SRA DEL CISNE"
         },
         {
-            "value": "GG0001",
-            "label": "MORALES CAMPUZANO LUIS GONZALO"
+            "value": "11",
+            "label": " GG0001- PUNTO JACINTO GORDILLO"
         },
         {
-            "value": "G00003",
-            "label": "SOLIS QUIÑONEZ GINA MARIBEL"
+            "value": "12",
+            "label": " G00003- INDIARYS"
         },
         {
-            "value": "GG0017",
-            "label": "RANGEL GELVEZ NELSON MANUEL"
+            "value": "13",
+            "label": " GG0017- PUNTO NUESTRA SEÑORA DEL CARMEN"
         },
         {
-            "value": "GG0011",
-            "label": "ASESORPED S.A."
+            "value": "14",
+            "label": " GG0011- LIBRARY STUDIUM &amp; MARKET "
         },
         {
-            "value": "G00004",
-            "label": "CALI JARA NORMA SOLEDAD"
+            "value": "15",
+            "label": " G00004- EL ESTUDIANTE"
         },
         {
-            "value": "G23544",
-            "label": "EDUCA-PAPEL Y LIBROS S.A. PAPELIB "
+            "value": "16",
+            "label": " G23544- EDUCA-PAPEL Y LIBROS S.A. PAPELIB PUNTO COPOL"
         },
         {
-            "value": "G00128",
-            "label": "CENTRO CRISTIANO DE GUAYAQUIL"
+            "value": "17",
+            "label": " G00128- ALMACEN ANTORCHA (LC)"
         },
         {
-            "value": "G22997",
-            "label": "PAPELERIA & SUMINISTROS S.A. PAPERSUM"
+            "value": "18",
+            "label": " G22997- PAPERSUM"
         },
         {
-            "value": "G23575",
-            "label": "SOLUCIONES GLOBALES S.A. GLOBFAST"
+            "value": "19",
+            "label": " G23575- GLOBFAST"
         },
         {
-            "value": "GG0022",
-            "label": "BARREZUETA COBO IRMA YOLANDA"
+            "value": "20",
+            "label": " GG0022- PAPELERIA SANTA TERESITA P. INMACULADA"
         },
         {
-            "value": "G20877",
-            "label": "MAPGRAFI S.A."
+            "value": "21",
+            "label": " G20877- IPAC"
         },
         {
-            "value": "GG0008",
-            "label": "LIBRERIA-JMM S.A. "
+            "value": "22",
+            "label": " GG0008- SANTA ANA"
         },
         {
-            "value": "G01347",
-            "label": "MAGDU S.A."
+            "value": "23",
+            "label": " G01347- MAGDU S.A. LOS ANDES"
         },
         {
-            "value": "G21387",
-            "label": "EDITORIAL DON BOSCO"
+            "value": "24",
+            "label": " G21387- EDITORIAL DON BOSCO"
         },
         {
-            "value": "G23597",
-            "label": "COELLO FRANCO MARIA ERNESTINA"
+            "value": "25",
+            "label": " G23597- AC ARMIJOS COELLO"
         },
         {
-            "value": "G22998",
-            "label": "NEGOSTAR S.A."
+            "value": "26",
+            "label": " G22998- JAVIER"
         },
         {
-            "value": "G23568",
-            "label": "RODRIGUEZ GUERRA CARMEN FABIOLA"
+            "value": "27",
+            "label": " G23568- PUNTO PASIONISTA"
         },
         {
-            "value": "G23584",
-            "label": "MERVASA S.A."
+            "value": "28",
+            "label": " G23584- PUNTO CLAIRE BUCARAN DE AIVAS"
         },
         {
-            "value": "G23084",
-            "label": "SU MARKET S.A. SUMARKETSA"
+            "value": "29",
+            "label": " G23084- PUNTO DE LOGOS"
         },
         {
-            "value": "G23016",
-            "label": "UNIESCOLAR S.A."
+            "value": "30",
+            "label": " G23016- PUNTO LEMAS"
         },
         {
-            "value": "G23015",
-            "label": "JUAN MANUEL ESCOBAR CALDERON"
+            "value": "31",
+            "label": " G23015- FUENTE DEL SABER PUNTO BIBLICA CRISTIANA"
         },
         {
-            "value": "GW1002",
-            "label": "FUNDACION NUEVO MUNDO"
+            "value": "32",
+            "label": " GW1002- LIBRERIA PACHAMAMA PUNTO  NUEVO MUNDO"
         },
         {
-            "value": "G00091",
-            "label": "LEYTON SAN MARTIN NELSON WASHINGTON"
+            "value": "33",
+            "label": " G00091- ALMACEN PAPELITO PUNTO MARISCAL SUCRE/TORREMOLINOS"
         },
         {
-            "value": "GG0086",
-            "label": "MOGOLLON VILLAMAR BRYAN STEVEN"
+            "value": "34",
+            "label": " GG0086- LIBRERIA MARIANITA PUNTO NELA MARTINEZ"
         },
         {
-            "value": "G23006",
-            "label": "LUZ ADALGUIZA SANTANA SANCHEZ"
+            "value": "35",
+            "label": " G23006- PUNTO JEAN PIAGET- ALBOHISPANO"
         },
         {
-            "value": "GG0120",
-            "label": "REYES ZAPATIER DENNISSE ANDREA"
+            "value": "36",
+            "label": " GG0120- PUNTO HISPANOAMERICANO"
         },
         {
-            "value": "G22018",
-            "label": "ROSSETTO .S.A."
+            "value": "37",
+            "label": " G22018- ROSSETTO .S.A. PUNTO SIR THOMAS MORE"
         },
         {
-            "value": "G23100",
-            "label": "SERVICIOS EMPRESARIALES S.A. MEDISERVICIOS"
+            "value": "38",
+            "label": " G23100- PUNTO ALEMAN HUMBOLD"
         },
         {
-            "value": "G21800",
-            "label": "RODAS CARRERA EDWIN XAVIER"
+            "value": "39",
+            "label": " G21800- PUNTO AZUCENA CARRERA LOOR"
         },
         {
-            "value": "GG0105",
-            "label": "VALENCIA LOPEZ TOMAS ALFONSO"
+            "value": "40",
+            "label": " GG0105- PUNTO BRISAS DEL RIO"
         },
         {
-            "value": "G00129",
-            "label": "GUAMAN YAURI JULIA LUZMILA"
+            "value": "41",
+            "label": " G00129- PUNTO NTRA. SRA. DEL ROSARIO DE POMPEYA"
         },
         {
-            "value": "GG0020",
-            "label": "PANDOCEAN S.A."
+            "value": "42",
+            "label": " GG0020- PANDOCEAN PUNTO BALANDRA"
         },
         {
-            "value": "GG0014",
-            "label": "ALAVA RUIZ TATIANA VERONICA"
+            "value": "43",
+            "label": " GG0014- PUNTO GABRIELA MISTRAL"
         },
         {
-            "value": "G23093",
-            "label": "DAJUPRI S.A."
+            "value": "44",
+            "label": " G23093- PUNTO THOMAS JEFFERSON"
         },
         {
-            "value": "G22923",
-            "label": "RINCONCITO S.C."
+            "value": "45",
+            "label": " G22923- RINCONCITO S.C."
         },
         {
-            "value": "GM0049",
-            "label": "NEGOVITAL S.A."
+            "value": "46",
+            "label": " GM0049- PUNTO PRAGA"
         },
         {
-            "value": "G00059",
-            "label": "GAIBOR RIVERA DINA MAGALLY"
+            "value": "47",
+            "label": " G00059- PUNTO AGUSTIN CUEVA TAMARIZ"
         },
         {
-            "value": "GI1003",
-            "label": "UNIDAD EDUCATIVA DE LA ASUNCION"
+            "value": "48",
+            "label": " GI1003- UNIDAD EDUCATIVA DE LA ASUNCION"
         },
         {
-            "value": "Q00013",
-            "label": "SOLORGISTIC S.A."
+            "value": "49",
+            "label": " Q00013- SOLORGISTIC COSTA"
         },
         {
-            "value": "G23590",
-            "label": "CARRION GARZON LENIN MICHAELL"
+            "value": "50",
+            "label": " G23590- CARRION GARZON LENIN "
         },
         {
-            "value": "G22083",
-            "label": "SCHOOLL SERVICES S.A. SCSER"
+            "value": "51",
+            "label": " G22083- SCHOOLL SERVICES S.A. "
         },
         {
-            "value": "G22119",
-            "label": "BAJAÑA SARCOS ORLANDO FELICIANO"
+            "value": "52",
+            "label": " G22119- SUPERAMIGOS"
         },
         {
-            "value": "G00092",
-            "label": "BAQUERIZO CARRIEL DANIEL RICARDO"
+            "value": "53",
+            "label": " G00092- ANAI SECUNDARIA"
         },
         {
-            "value": "GG0081",
-            "label": "ZURITA ARAUJO MARIA FERNANDA"
+            "value": "54",
+            "label": " GG0081- PUNTO HORACIO ZURITA"
         },
         {
-            "value": "G22728",
-            "label": "CORPORACION DE LA ASOCIACION DE LOS ADVENTISTAS"
+            "value": "55",
+            "label": " G22728- CORPORACION ADVENTISTAS"
         },
         {
-            "value": "G21336",
-            "label": "AGRITEPSA S.A."
+            "value": "56",
+            "label": " G21336- CEBI"
         },
         {
-            "value": "G00115",
-            "label": "DOMINGUEZ BERNAL CARLOS ALBERTO"
+            "value": "57",
+            "label": " G00115- COMERCIAL DOMINGUEZ  COELLO/SPEDWRITHING"
         },
         {
-            "value": "G00024",
-            "label": "STELASUR S.A."
+            "value": "58",
+            "label": " G00024- STELASUR S.A."
         },
         {
-            "value": "G00087",
-            "label": "SAMANIEGO SAMANIEGO DELFIN DE JESUS"
+            "value": "59",
+            "label": " G00087- Luz y saber"
         },
         {
-            "value": "GG0098",
-            "label": "TINOCO ROMERO ROBERTH ARTURO"
+            "value": "60",
+            "label": " GG0098- PUNTO HARVEST SCHOOL"
         },
         {
-            "value": "GG0025",
-            "label": "DISTRIBUIDORA UNILIB"
+            "value": "61",
+            "label": " GG0025- DISTRIBUIDORA UNILIB"
         },
         {
-            "value": "GG0013",
-            "label": "GARCIA RUIZ MARIA CECIBEL"
+            "value": "62",
+            "label": " GG0013- TIENDA CLIPO Y SUS AMIGOS PAUL RIVET"
         },
         {
-            "value": "GG0016",
-            "label": "MAYA NAVARRETE JESSICA MERCEDES"
+            "value": "63",
+            "label": " GG0016- PUNTO INVESCIENCIAS"
         },
         {
-            "value": "G22097",
-            "label": "PESANTES JARA BAYRON OMAR"
+            "value": "64",
+            "label": " G22097- PUNTO OLIMPIA"
         },
         {
-            "value": "G23095",
-            "label": "GUILLEN SOLIS MARIANITA DE JESUS"
+            "value": "65",
+            "label": " G23095- COMERCIAL MARIANITA PUNTO EMANUEL"
         },
         {
-            "value": "G00113",
-            "label": "PAPELDESK S.A."
+            "value": "66",
+            "label": " G00113- PUNTO INTERNACIONAL SCHOOL"
         },
         {
-            "value": "G22341",
-            "label": "FUNDACION WONG"
+            "value": "67",
+            "label": " G22341- FUNDACION WONG"
         },
         {
-            "value": "GG0007",
-            "label": "PRIETO CABRERA LEONIDAS FELIPE "
+            "value": "68",
+            "label": " GG0007- PUNTO ZOILA CABRERA"
         },
         {
-            "value": "G00008",
-            "label": "RODRIGUEZ PALANGO MARIA SOLEDAD"
+            "value": "69",
+            "label": " G00008- PUNTO MERCEDES JESUS MOLINA"
         },
         {
-            "value": "G22431",
-            "label": "BELLA CRUZ VALLEJO RIOS"
+            "value": "70",
+            "label": " G22431- PUNTO NACIONES UNIDAS"
         },
         {
-            "value": "GG0080",
-            "label": "CLAVIJO ESCOBAR JESSICA ALEXANDRA"
+            "value": "71",
+            "label": " GG0080- PUNTO CONTINENTE AMERICANO/PITUSA"
         },
         {
-            "value": "G00103",
-            "label": "DOMINGUEZ ALCIVAR JOSUE ANDRES"
+            "value": "72",
+            "label": " G00103- PUNTO SAMAN"
         },
         {
-            "value": "G00105",
-            "label": "RODRIGUEZ LEON JENIFER LISETTE"
+            "value": "73",
+            "label": " G00105- PUNTO JOHAN HERBARTH"
         },
         {
-            "value": "GG0119",
-            "label": "BAQUE GANCHOZO ROBERT STALIN"
+            "value": "74",
+            "label": " GG0119- PUNTO FUNDACION KAIROS"
         },
         {
-            "value": "GG0021",
-            "label": "NAVARRETE MENDOZA DIANA ISABEL"
+            "value": "75",
+            "label": " GG0021- PUNTO ISLAS GALAPAGOS"
         },
         {
-            "value": "G22176",
-            "label": "CARLOS JAVIER ESTRADA WRAY"
+            "value": "76",
+            "label": " G22176- FUTBOLYS PUNTO ANTARES"
         },
         {
-            "value": "G00126",
-            "label": "SAMPEDRO CORAL JULIO RODRIGO"
+            "value": "77",
+            "label": " G00126- PUNTO BATALLA DE JAMBELI"
         },
         {
-            "value": "GG0101",
-            "label": "ZUÑA CARCHIPULLA NANCY ANNABELLE"
+            "value": "78",
+            "label": " GG0101- LIBRERIA CAMILA-PUNTO SADOWINSKI"
         },
         {
-            "value": "GG0019",
-            "label": "HERRERA PUGA FRANKLIN JOSEPH"
+            "value": "79",
+            "label": " GG0019- BAZAR Y PAPELERÍA GUAYAQUIL-PUNTO INSTITUTO SUAREZ"
         },
         {
-            "value": "GM0051",
-            "label": "REYES LOPEZ DIANA CAROLINA"
+            "value": "80",
+            "label": " GM0051- PUNTO NUEVO OESTE"
         },
         {
-            "value": "GG0012",
-            "label": "RONQUILLO DUQUE HECTOR REINALDO"
+            "value": "81",
+            "label": " GG0012- HECTOR RONQUILLO PUNTO LAS CUMBRES"
         },
         {
-            "value": "GG0078",
-            "label": "GUERRERO CAICEDO GRACE PATRICIA"
+            "value": "82",
+            "label": " GG0078- BAZAR GUERRERO PUNTO ABRAHAM CHANCAY"
         },
         {
-            "value": "Q00013",
-            "label": "SOLORGISTIC S.A."
+            "value": "83",
+            "label": " Q00013- BOOK POINT"
         },
         {
-            "value": "GG0010",
-            "label": "ORTEGA DIAZ WASHINGTON JAVIER "
+            "value": "84",
+            "label": " GG0010- BOOKSTORE EDICIONES ORTEGA  "
         },
         {
-            "value": "GN6949",
-            "label": "TIPAN BRITO CARLOS HUMBERTO"
+            "value": "85",
+            "label": " GN6949- LIBRERIA DINAMICA 1"
         },
         {
-            "value": "g",
-            "label": "MOLINA CORTEZ DUFFER ARMANDO"
+            "value": "86",
+            "label": " g- COMPUTWORK"
         },
         {
-            "value": "GMI002",
-            "label": "JACOME FREIRE ROSA MARJORIE"
+            "value": "87",
+            "label": " GMI002- LIBRERIA CENTRAL"
         },
         {
-            "value": "GB0010",
-            "label": "ALCOSER PINOS CECIBEL DEL ROCIO"
+            "value": "88",
+            "label": " GB0010- JAKEY PUNTO MADRE BERNARDA"
         },
         {
-            "value": "G00120",
-            "label": "SALAZAR SORIANO DIANA LILI"
+            "value": "89",
+            "label": " G00120- PUNTO AUSTRIACO"
         },
         {
-            "value": "G22230",
-            "label": "GARCIA MENDOZA NURY ILIANA"
+            "value": "90",
+            "label": " G22230- LIB EL ESTUDIANTE"
         },
         {
-            "value": "GS00125",
-            "label": "ASENCIO BAIDAL GLADYS MATILDE"
+            "value": "91",
+            "label": " GS00125- BAZAR ELIZABETH/SANTO TOMAS"
         },
         {
-            "value": "G22461",
-            "label": "ARCE YEPEZ ROSA JOBA"
+            "value": "92",
+            "label": " G22461- Q NOTA"
         },
         {
-            "value": "GD0006",
-            "label": "PEÑA BUENO PETITA MAGDALENA"
+            "value": "93",
+            "label": " GD0006- LIBRERIA ROSNIE PUNTO MANUEL CHAGUAY"
         },
         {
-            "value": "GG0015",
-            "label": "ORTIZ TUTIVEN MARIBEL EULALIA"
+            "value": "94",
+            "label": " GG0015- PAPELERIA/BAZAR DIVINO NIÑO - CONTINENTE AMERICANO"
         },
         {
-            "value": "G21119",
-            "label": "ESPINOZA DE LA TORRE ROBERTO ANDRE"
+            "value": "95",
+            "label": " G21119- PUNTO EDUCAMUNDO"
         },
         {
-            "value": "G23570",
-            "label": "TELLO ROMERO ANDREA TERESA"
+            "value": "96",
+            "label": " G23570- PUNTO MONS. EDMUNDO CARMODY"
         },
         {
-            "value": "G00049",
-            "label": "SOCIEDAD AGRICOLA E INDUSTRIAL SAN CARLOS S.A."
+            "value": "97",
+            "label": " G00049- INGENIO SAN CARLOS-UE LUIS VERNAZA"
         },
         {
-            "value": "QD0005",
-            "label": "DEXI YESENIA LOY NAVARRETE"
+            "value": "98",
+            "label": " QD0005- PUNTO RIBERAS DEL DAULE"
         },
         {
-            "value": "G00127",
-            "label": "RODRIGUEZ HERRERA ELIZABETH DEL ROCIO"
+            "value": "99",
+            "label": " G00127- PUNTO DEMETRIO AGUILERA MALTA"
         },
         {
-            "value": "G00089",
-            "label": "SALAZAR CARAVAJO MIRIAM ALEXANDRA"
+            "value": "100",
+            "label": " G00089- TALLER DE GUAYAMIN STA TERESITA NIÑO JESÚS"
         },
         {
-            "value": "G22100",
-            "label": "CEDEÑO MOLINA MARIA DEL CARMEN"
+            "value": "101",
+            "label": " G22100- LIBRERIA LEON PUNTO EDUARDO KIGMAN"
         },
         {
-            "value": "GMI001",
-            "label": "GARAICOA MOROCHO ERIKA LEA"
+            "value": "102",
+            "label": " GMI001- PUNTO LCRISTIANO"
         },
         {
-            "value": "GMI0002",
-            "label": "MORENO ELIAS MELINA LUCIA"
+            "value": "103",
+            "label": " GMI0002- PUNTO MODERNA MILAGRO"
         },
         {
-            "value": "GG0018",
-            "label": "CORDOVA CARRASCO RUTH MARGARITA"
+            "value": "104",
+            "label": " GG0018- PUNTO SAN RAFAEL"
         },
         {
-            "value": "G23129",
-            "label": "GUAMAN MUÑOZ PABLO ROBERTO"
+            "value": "105",
+            "label": " G23129- PUNTO PARTICULAR GARCIA MORENO"
         },
         {
-            "value": "G00058",
-            "label": "LARA GADBAY ROSA MARLENE"
+            "value": "106",
+            "label": " G00058- LIBRERIA LA ECONOMICA PUNTO EDUARDO KIGMAN"
         },
         {
-            "value": "GG0079",
-            "label": "VELASTEGUI LEDESMA LINDA HEIDY"
+            "value": "107",
+            "label": " GG0079- PUNTO NUESTRA MADRE ALBORADA"
         },
         {
-            "value": "GO0007",
-            "label": "RAMOS ESCOBAR ANA CRISTINA"
+            "value": "108",
+            "label": " GO0007- CYBER 2 HERMANOS-PUNTO JESUS DEL GRAN PODER"
         },
         {
-            "value": "G00116",
-            "label": "CEDEÑO ANCHUNDIA RUDYS ALEXANDRA"
+            "value": "109",
+            "label": " G00116- ALMACEN  SAN FRANCISCO "
         },
         {
-            "value": "GDU002",
-            "label": "PUNTO SAN FCO DE ASIS DURAN"
+            "value": "110",
+            "label": " GDU002- PAGUAY CARDENAS MIRIAN "
         },
         {
-            "value": "GS0025",
-            "label": "MURILLO CARRANZA CARLOS LUIS"
+            "value": "111",
+            "label": " GS0025- PUNTO LUIS CHIRIBOGA"
         },
         {
-            "value": "G22841",
-            "label": "OJEDA LEON NANCY PATRICIA"
+            "value": "112",
+            "label": " G22841- PUNTO DE FEDERICO GONZALEZ SUAREZ"
         },
         {
-            "value": "G23113",
-            "label": "ROBERTO JESUS NUÑEZ TORRES"
+            "value": "113",
+            "label": " G23113- PAPELERIA RJ PUNTO KYRIOS"
         },
         {
-            "value": "GT0001",
-            "label": "MIRANDA MELENDRES JENNIFER TATIANA"
+            "value": "114",
+            "label": " GT0001- PUNTO CESAR CORDERO"
         },
         {
-            "value": "G23104",
-            "label": "RAMON ANTONIO VELEZ CUSME"
+            "value": "115",
+            "label": " G23104- U.E. MATOVELLE NOVEDADES EDUCATIVAS Y CONFECCIONES"
         },
         {
-            "value": "GPC001",
-            "label": "MITE GORDILLO FREDDY MOISES"
+            "value": "116",
+            "label": " GPC001- COPIA Y PAPE MITE PUNTO STUDIO Y PROGRESO"
         },
         {
-            "value": "G00035",
-            "label": "RIERA HERMIDA FERNANDO PATRICIO"
+            "value": "117",
+            "label": " G00035- PUNTO HUELLAS DEL CONOCIMIENTO"
         },
         {
-            "value": "GD0007",
-            "label": "HIDALGO PALMA GRACIELA PATRICIA"
+            "value": "118",
+            "label": " GD0007- PUNTO LOS DAULIS"
         },
         {
-            "value": "GS0026",
-            "label": "ANZULES GARCIA EFRAIN GONZALO"
+            "value": "119",
+            "label": " GS0026- PUNTO  ALBERTH EINSTEN"
         },
         {
-            "value": "GLR001",
-            "label": "JARAMILLO CONCHA JOSE AGUSTIN"
+            "value": "120",
+            "label": " GLR001- DISTRIBUIDORA J&amp;D"
         },
         {
-            "value": "G22665",
-            "label": "MUNDOFFICE C. LTDA."
+            "value": "121",
+            "label": " G22665- MUNDOFFICE C. LTDA."
         },
         {
-            "value": "GQ0000",
-            "label": "ANASTACIO ESPINOZA YOLANDA ROSANA"
+            "value": "122",
+            "label": " GQ0000- ROSS STORE "
         },
         {
-            "value": "GR0002",
-            "label": "MACIAS LUNA LORENA BELEN"
+            "value": "123",
+            "label": " GR0002- PUNTO"
         },
         {
-            "value": "G22920",
-            "label": "ALARCON TUMBACO TANIA MARIUXY"
+            "value": "124",
+            "label": " G22920- MAJOVA"
         },
         {
-            "value": "GL0002",
-            "label": "VITERI CHUSAN DAVID ANTONIO"
+            "value": "125",
+            "label": " GL0002- PUNTO UEMA LIBROS Y UNIFORMES"
         },
         {
-            "value": "GC0004",
-            "label": "ORDOÑEZ GARCIA CONSUELO AUXILIADORA"
+            "value": "126",
+            "label": " GC0004- LIBRERIA ORDOÑEZ N.-2"
         },
         {
-            "value": "G00099",
-            "label": "SOLIS VELASCO EDGAR FABRICIO"
+            "value": "127",
+            "label": " G00099- SERVICOPIAS CHOCLITO"
         },
         {
-            "value": "G21806",
-            "label": "CONGREGACION DE PADRES JOSEFINOS DE MURIALDO"
+            "value": "128",
+            "label": " G21806- BENETAZZO"
         },
         {
-            "value": "G00090",
-            "label": "PEBEXCORP S.A."
+            "value": "129",
+            "label": " G00090- PUNTO GENESIS"
         },
         {
-            "value": "G00110",
-            "label": "ANDRADE RIVAS ROSA PATRICIA"
+            "value": "130",
+            "label": " G00110- PUNTO BENJAMIN FRANKLIN"
         },
         {
-            "value": "GLR002",
-            "label": "DONOSO BELTRAN JESSENIA ALEXANDRA"
+            "value": "131",
+            "label": " GLR002- LIBRERIA ATLAS PUNTO CAMILO GALLEGOS"
         },
         {
-            "value": "GG0009",
-            "label": "TORRE FUERTE POZOS Y BOMBAS S.C.C."
+            "value": "132",
+            "label": " GG0009- TORRE FUERTE POZOS Y BOMBAS S.C.C."
         },
         {
-            "value": "GLR004",
-            "label": "MONTOYA CLAUDIA LORENA"
+            "value": "133",
+            "label": " GLR004- PUNTO DESPERTAR"
         },
         {
-            "value": "GR0004",
-            "label": "DIOCESIS DE BABAHOYO"
+            "value": "134",
+            "label": " GR0004- LIBRERIA DIOCESANA "
         },
         {
-            "value": "GM0048",
-            "label": "CEDEÑO ARAGUNDY WILTON JOSELO"
+            "value": "135",
+            "label": " GM0048- LIBRERIA CRAYOLA"
         },
         {
-            "value": "G22229",
-            "label": "AVEIGA SANTANA CONSUELO SOLEDAD"
+            "value": "136",
+            "label": " G22229- YAVIME"
         },
         {
-            "value": "G23073",
-            "label": "ZAMBRANO BARRETO OSCAR EUGENIO"
+            "value": "137",
+            "label": " G23073- LIBRERIA DON OSCAR"
         },
         {
-            "value": "GM0044",
-            "label": "PIN SOLEDISPA IRENE MARIEL"
+            "value": "138",
+            "label": " GM0044- BAZAR Y LIBRERIA ARIKRIS"
         },
         {
-            "value": "GP0009",
-            "label": "ROJAS CARRERA INES ALEXANDRA"
+            "value": "139",
+            "label": " GP0009- LA INMACULADA BAHIA"
         },
         {
-            "value": "GM0020",
-            "label": "BERMEO MERA OLGA YANETH"
+            "value": "140",
+            "label": " GM0020- MARIA JOSE DISTRIBUCIONES"
         },
         {
-            "value": "GP0002",
-            "label": "GARCIA QUIJIJE TATIANA DE LOS SANTOS"
+            "value": "141",
+            "label": " GP0002- MULTISERVICIOS ELECZAM"
         },
         {
-            "value": "GM0041",
-            "label": "COMPAÑIA MILYSAM S.A. MILYSAMSA"
+            "value": "142",
+            "label": " GM0041- PAPELERIA SAMI "
         },
         {
-            "value": "GM0039",
-            "label": "TACURI LOPEZ IRMA HERMOSINA"
+            "value": "143",
+            "label": " GM0039- PUNTO STELLA MARIS"
         },
         {
-            "value": "G20958",
-            "label": "BAYONA TRIVIÑO IDUNA ANNABELLE"
+            "value": "144",
+            "label": " G20958- PUNTO ARCO IRIS"
         },
         {
-            "value": "GM0043",
-            "label": "CANTOS VERA SILVIA JAZMIN"
+            "value": "145",
+            "label": " GM0043- PUNTO NTRA SRA DE LA MERCED"
         },
         {
-            "value": "GM0045",
-            "label": "DE LA ROSA DE LA CRUZ NELLY YOLANDA"
+            "value": "146",
+            "label": " GM0045- NELLY DE LA ROSA PUNTO SAN FCO SALES"
         },
         {
-            "value": "GM0029",
-            "label": "VASCONEZ CEVALLOS JIMENA ELIZABETH"
+            "value": "147",
+            "label": " GM0029- COPY PRINT PUNTO PIERRE DEL HIERRO"
         },
         {
-            "value": "GM0037",
-            "label": "IZAGUIRRE MARIN ANGELA MARIA DOLORES"
+            "value": "148",
+            "label": " GM0037- PUNTO SANTO THOMAS"
         },
         {
-            "value": "GM0050",
-            "label": "CEVALLOS ZAMBRANO ESPERANZA ELIZABETH"
+            "value": "149",
+            "label": " GM0050- BAZAR Y NOVEDADES BRAZU-PUNTO MA LUISA ALDAZ"
         },
         {
-            "value": "GM0022",
-            "label": "VALDIVIESO ARTEAGA MARIA ELENA"
+            "value": "150",
+            "label": " GM0022- U.E. INTERAMERICANO"
         },
         {
-            "value": "GM0046",
-            "label": "PALACIOS MENDOZA EDGAR ROMEO"
+            "value": "151",
+            "label": " GM0046- ARY HELADERIA PUNTO MONTECRISTI"
         },
         {
-            "value": "GM0052",
-            "label": "ALCIVAR MENDOZA MERCEDES SOLANDA"
+            "value": "152",
+            "label": " GM0052- BAZAR Y PAPELERIA MARIA JULIETH P. JESUCRISTO REY"
         },
         {
-            "value": "GM0007",
-            "label": "ASO. DE CUENTAS EN PARTICIPACION PIEDRA LARGA"
+            "value": "153",
+            "label": " GM0007- PUNTO LEONARDO DA VINCI"
         },
         {
-            "value": "G23105",
-            "label": "MACIAS MUÑOZ JOSELYN ZULEMA"
+            "value": "154",
+            "label": " G23105- PAPELERIA ELOHIM PUNTO MARANATHA"
         },
         {
-            "value": "GS0022",
-            "label": "VALDIVIESO PARRALES VICTOR STALYN"
+            "value": "155",
+            "label": " GS0022- COMECSA S.A."
         },
         {
-            "value": "G23081",
-            "label": "FLORES MARTINEZ HUGO IGNACIO"
+            "value": "156",
+            "label": " G23081- PUNTO N°13 DEL PACIFICO"
         },
         {
-            "value": "GS0016",
-            "label": "CONGREGACION DE PADRES JOSEFINOS DE MURIALDO"
+            "value": "157",
+            "label": " GS0016- PUNTO RUBIRA"
         },
         {
-            "value": "GS0021",
-            "label": "MUÑOZ SAN MIGUEL LUIS ANDRES"
+            "value": "158",
+            "label": " GS0021- NUESTRO MUNDO"
         },
         {
-            "value": "GS0023",
-            "label": "MARAZITA VILLARROEL VIRGINIA LISSETTE"
+            "value": "159",
+            "label": " GS0023- DISBARCHA - PUNTO EDUCA"
         },
         {
-            "value": "GS0018",
-            "label": "CUENCA RAMOS MARGARITA"
+            "value": "160",
+            "label": " GS0018- BAZAR DIVINO NIÑO SANTA TERESITA"
         },
         {
-            "value": "GS0013",
-            "label": "ABAD BARZOLA MARIA PAULA"
+            "value": "161",
+            "label": " GS0013- ECONOTEX CAP LEONARDO ABAD"
         },
         {
-            "value": "GS0024",
-            "label": "CHAMAIDAN CONSUEGRA DENISSE ELIZABETH"
+            "value": "162",
+            "label": " GS0024- PAPELERIA ELIZABETH"
         },
         {
-            "value": "GSD029",
-            "label": "MOREIRA CEDEÑO BORIS RAMON"
+            "value": "163",
+            "label": " GSD029- LIBRERIA CRISTIANA VIDA NUEVA"
         },
         {
-            "value": "GSD031",
-            "label": "CABEZAS LOOR BETTY VERONICA"
+            "value": "164",
+            "label": " GSD031- PRENTA LIBRERIA Y TEXTILES HERBET"
         },
         {
-            "value": "GSD011",
-            "label": "VALDEZ LAAZ SILVIA VERONICA"
+            "value": "165",
+            "label": " GSD011- BAZAR Y PAPELERIA D´ TODO PUNTO DARIO KANYAT"
         },
         {
-            "value": "GSD006",
-            "label": "NIETO JACOME ALEX FERNANDO"
+            "value": "166",
+            "label": " GSD006- LIBERIA Y PAPELERIA DISNI"
         },
         {
-            "value": "GSD035",
-            "label": "ARELLANO MUÑOZ DELIA ESMERALDA"
+            "value": "167",
+            "label": " GSD035- PUNTO VALLE HERMOSO"
         },
         {
-            "value": "GSD030",
-            "label": "NOBOA ESCOBAR LILIANA LORENA"
+            "value": "168",
+            "label": " GSD030- PUNTO ASTUDILLO"
         },
         {
-            "value": "GSD022",
-            "label": "CARRERA CHINCHAY MARY ELIZABETH"
+            "value": "169",
+            "label": " GSD022- PUNTO SAGRADOS CORAZONES"
         },
         {
-            "value": "Q23419",
-            "label": "CORPORACION DE LA ASOCIACION DE LOS ADVENTISTAS"
+            "value": "170",
+            "label": " Q23419- CORPORACION DE LA ASOCIACION DE LOS ADVENTISTAS"
         },
         {
-            "value": "GSD025",
-            "label": "TAPIA ANDRADE FREDDY CORNELIO"
+            "value": "171",
+            "label": " GSD025- PUNTO DANTE ALIGHIERI"
         },
         {
-            "value": "Q33146",
-            "label": "AMADO PINZON MIKE"
+            "value": "172",
+            "label": " Q33146- SOLUCIONES EDUCATIVAS /PUNTO MARISTA"
         },
         {
-            "value": "GSD034",
-            "label": "MUÑOZ YANDUN STALIN RAMIRO "
+            "value": "173",
+            "label": " GSD034- PUNTO EL ESPAÑOL"
         },
         {
-            "value": "G23088",
-            "label": "PAZMIÑO MARIO HERNAN"
+            "value": "174",
+            "label": " G23088- BAZAR Y PAPELERIA CAROLINA PUNTO ANTONIO NEUMANE"
         },
         {
-            "value": "GSD033",
-            "label": "TUFIÑO GONZALEZ HANNA ELIZABETH"
+            "value": "175",
+            "label": " GSD033- PUNTO LUZ DEL EVANGELIO"
         },
         {
-            "value": "Q22686",
-            "label": "OLIVEIRA CAMARGO ELOA DO BELEM"
+            "value": "176",
+            "label": " Q22686- PUNTO CAVANIS BORJA 3"
         },
         {
-            "value": "GSD026",
-            "label": "HARO VALLEJO JEAN PAUL"
+            "value": "177",
+            "label": " GSD026- PUNTO. DE LAS AMERICAS"
         },
         {
-            "value": "GSD008",
-            "label": "BRAVO CARRIEL JULIO CLEMENTE"
+            "value": "178",
+            "label": " GSD008- PAPELERIA GENESIS PUNTO LUZ DE AMERICA"
         },
         {
-            "value": "G23622",
-            "label": "ROMERO CALDERON MICHELLE VIRGINIA"
+            "value": "179",
+            "label": " G23622- PUNTO AMERICANO"
         },
         {
-            "value": "GG0026",
-            "label": "FLORES JIRON DIANA ISABEL"
+            "value": "180",
+            "label": " GG0026- PUNTO MERCEDES DE JESUS MOLINA"
         },
         {
-            "value": "GG0027",
-            "label": "RUPERTI LOOR GONZALO XAVIER"
+            "value": "181",
+            "label": " GG0027- DISTRIBUCIONES RUMAR PUNTO ESPIRITU SANTO"
         },
         {
-            "value": "GS0001",
-            "label": "SUAREZ MALAVE LUIS ANGEL"
+            "value": "182",
+            "label": " GS0001- LIBRERÍA Y PAPELERÍA  ANGELINO"
         },
         {
-            "value": "QP0006",
-            "label": "PA-CO COMERCIAL E INDUSTRIAL S.A."
+            "value": "183",
+            "label": " QP0006- PACO"
         },
         {
-            "value": "GD0008",
-            "label": "BUENDIA NAVARRETE SHIRLEY VANESSA"
+            "value": "184",
+            "label": " GD0008- PUNTO PASIONISTA"
         },
         {
-            "value": "GG0100",
-            "label": "AYALA MOSQUERA CARLOS MARIA FABIAN"
+            "value": "185",
+            "label": " GG0100- LIBRERIA ESTEROS PUNTO DELTA/TORREMAR"
         },
         {
-            "value": "G23553",
-            "label": "FUNDACION D. GARY YOUNG - YOUNG LIVING"
+            "value": "186",
+            "label": " G23553- YOUNG LIVING ACADEMY"
         },
         {
-            "value": "GM0054",
-            "label": "CORNEJO ORDOÑEZ CARMEN ELVIRA"
+            "value": "187",
+            "label": " GM0054- LIBRERIA PAPELERIA Y NOVEDADES DON OSCAR"
         },
         {
-            "value": "GSD036",
-            "label": "VITE BALON MOISES SECUNDINO"
+            "value": "188",
+            "label": " GSD036- PUNTO LUZ Y LIBERTAD"
         },
         {
-            "value": "GG0084",
-            "label": "RIVERA CUSME YUNNY ALEXANDRA"
+            "value": "189",
+            "label": " GG0084- LIBRERIA  LM PUNTO COELLO/SPEDWRITHING"
         },
         {
-            "value": "GG0083",
-            "label": "FALCONÍ BONILLA PATRICIA ELIZABETH"
+            "value": "190",
+            "label": " GG0083- PUNTO NUEVO CONTINENTE"
         },
         {
-            "value": "G22813",
-            "label": "PALACIOS MENDOZA PATRICIA LEONOR"
+            "value": "191",
+            "label": " G22813- HELADERIA PEPE TUCAN PUNTO MONTECRISTI"
         },
         {
-            "value": "G00023",
-            "label": "HUAYAMAVE RONQUILLO VICENTA DEL ROCIO"
+            "value": "192",
+            "label": " G00023- CYBER SAN CRISTOBAL PUNTO DOLERA"
         },
         {
-            "value": "GDU003",
-            "label": "ALEMAN YEPEZ PATRICIA JOHANNA "
+            "value": "193",
+            "label": " GDU003- BOOKSTORE EDICIONES ORTEGA"
         },
         {
-            "value": "GG0103",
-            "label": "MOSQUERA VIEJO ELENA MARISOL"
+            "value": "194",
+            "label": " GG0103- ARCOIRIS  PUNTO OLIMPIA"
         },
         {
-            "value": "Q23472",
-            "label": "SOLIS OÑA CAROLINA GENESIS"
+            "value": "195",
+            "label": " Q23472- DISTRIBUCION DE LIBROS EDUCATEX"
         },
         {
-            "value": "Q23473",
-            "label": "SOLIS OÑA VANESSA ELIZABETH"
+            "value": "196",
+            "label": " Q23473- XAVIER SOLIS"
         },
         {
-            "value": "Q11181",
-            "label": "COLEGIO MENOR CMSFQ S.A."
+            "value": "197",
+            "label": " Q11181- COLEGIO MENOR CMSFQ S.A."
         },
         {
-            "value": "G00065",
-            "label": "LOPEZ JURADO SANTIAGO ANDRES"
+            "value": "198",
+            "label": " G00065- PUNTO DOLOROSA"
         },
         {
-            "value": "GG0106",
-            "label": "VARGAS GUERRERO VICTOR EMILIO"
+            "value": "199",
+            "label": " GG0106- LA BODEGUITA PUNTO NUESTRA SRA DEL CARMEN"
         },
         {
-            "value": "GG0107",
-            "label": "PAZMIÑO MONCADA FREDY ERNESTO"
+            "value": "200",
+            "label": " GG0107- LIBRERÍA MARIA JOSÉ"
         },
         {
-            "value": "GMI003",
-            "label": "VASQUEZ RUGEL JENNY LUCIA"
+            "value": "201",
+            "label": " GMI003- PUNTO DE VENTA U E \\&quot;SAN FRANCISCO DE MILAGRO\\&quot;"
         },
         {
-            "value": "GNA001",
-            "label": "MORAN RAMIREZ ZENEIDA MIRELLA"
+            "value": "202",
+            "label": " GNA001- PUNTO DE SAN ESTEBAN"
         },
         {
-            "value": "GMI004",
-            "label": "HIDALGO BONILLA TANIA MAGALI"
+            "value": "203",
+            "label": " GMI004- PUNTO SAN JOSE"
         },
         {
-            "value": "G22203",
-            "label": "QUIROZ ARTEAGA MIRIAM GUADALUPE"
+            "value": "204",
+            "label": " G22203- PUNTO RIBERAS DEL DAULE"
         },
         {
-            "value": "GMA002",
-            "label": "ZAMBRANO SANCHEZ GEORGINA ANABEL"
+            "value": "205",
+            "label": " GMA002- LIBRERIA BEE PUNTO 24 DE MAYO"
         },
         {
-            "value": "GG0108",
-            "label": "DE GUILHEM CORP S.A."
+            "value": "206",
+            "label": " GG0108- CENTRO DE ESTUDIO Y CAPACITACION DGR"
         }
     ]

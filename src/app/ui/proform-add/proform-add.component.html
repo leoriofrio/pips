@@ -19,11 +19,9 @@
                                         </form>
                                     </div>
                                     <div class="col-xl-4">
-                                        <button type="button" class="btn btn-primary submit-button">Añadir</button>
+                                        <button type="submit" class="btn btn-primary submit-button" (click)="save()">Guardar</button>
                                         <span></span>
-                                        <button type="submit" class="btn btn-primary submit-button">Guardar</button>
-                                        <span></span>
-                                        <button type="submit" class="btn btn-primary submit-button">Cancelar</button>
+                                        <button type="submit" class="btn btn-primary submit-button" (click)="close()">Cancelar</button>
                                     </div>
                                 </div>
                                 
@@ -41,6 +39,8 @@
                             -->
                             <app-grid [budgetRecords]="dataset" [columnsGrid]="columnsGrid" [columnsHeader] = "columnsHeader" 
                             (change)="onChange($event)"></app-grid>
+
+                            
                         </div>
                     </div>
                 </div>

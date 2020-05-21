@@ -17,6 +17,8 @@ export class GridComponent implements OnInit, OnDestroy {
   public columnsHeader: any[];
   @Output() 
   public change = new EventEmitter<GridRecord[]>();
+  @Output()
+  public addRow = new  EventEmitter<any>();
 
   private hot: Handsontable;
 
@@ -26,14 +28,16 @@ export class GridComponent implements OnInit, OnDestroy {
     (Handsontable.renderers as any).registerRenderer('currency', this.currencyRenderer);
 
     const containerVal = this.container.nativeElement;
-    this.hot = new Handsontable(containerVal, {
+    var container = document.getElementById('example');
+    console.log(containerVal);
+    this.hot = new Handsontable(container, {
       data: this.budgetRecords,
-      contextMenu: ['cut', 'copy'],
+      contextMenu: ['row_above','row_below','remove_row', 'copy'],
       colHeaders:  this.columnsHeader ,
-      rowHeaders: false,
+      rowHeaders: true,
       stretchH: 'all',
-      width: 880,
-      height: 487,
+      width: 1450,
+      height: 400,
       autoWrapRow: true,
       manualRowResize: true,
       manualColumnResize: true,
@@ -41,13 +45,25 @@ export class GridComponent implements OnInit, OnDestroy {
       manualColumnMove: true,
       filters: true,
       dropdownMenu: true,
+      outsideClickDeselects: false,
       licenseKey: 'non-commercial-and-evaluation',
       columns: this.columnsGrid,
+      viewportRowRenderingOffset: "auto",
     });
   }
 
+  
+
   ngOnDestroy(): void {
     this.hot.destroy();
+  }
+
+  public add() {
+    this.hot.alter('insert_row', 0);
+  }
+
+  public remove() {
+    
   }
 
   private currencyRenderer(instance, td, row, col, prop, value, cellProperties) {
@@ -63,3 +79,5 @@ export class GridComponent implements OnInit, OnDestroy {
 
 
 //  https://stackblitz.com/edit/handsontable-angular-vtnhyk?file=app%2Fapp.component.ts
+
+//http://jsfiddle.net/t79u4w66/

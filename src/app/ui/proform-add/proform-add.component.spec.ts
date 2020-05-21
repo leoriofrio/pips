@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ProformAddComponent } from './proform-add.component';
+import { HotableComponent } from '../../shared/components/hotable/hotable.component';
 
 describe('ProformAddComponent', () => {
   let component: ProformAddComponent;

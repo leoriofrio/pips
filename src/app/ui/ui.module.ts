@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { FormlyModule } from '@ngx-formly/core';
 import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 import { MatInputModule } from '@angular/material/input';
+import { ProformListComponent } from './proform-list/proform-list.component';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { MatInputModule } from '@angular/material/input';
     }),
         
   ],
-  declarations: [ProformAddComponent],
+  declarations: [ProformAddComponent, ProformListComponent],
   providers: [],
   exports: [ProformAddComponent]
 })

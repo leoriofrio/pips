@@ -4,6 +4,10 @@ export namespace AppKeys {
   export const DEFAULT_SAMPLES_NAME = "muestra";
 }
 
+export namespace ApiKeys {
+  export const API_URL = "http://localhost:3000/";
+}
+
 export namespace TitleNames {
   export const PROJECT_NAME = 'Plataforma de Ingreso de Proformas, Muestras y Revisión de productos';
 }
@@ -57,7 +61,7 @@ export namespace ProformDetail {
   export const SALE_SCHOLARSHIPS = {prop: 'sale_scholarships', name: 'Becas PLANTEL'};
   export const SALE_STAFF = {prop: 'sale_staff', name: 'Equipos PLANTEL'};
   export const SALE_TRAINING = {prop: 'sale_training', name: 'Capacitación PLANTEL'};
-  export const TOTAL = {prop: 'total', name: 'Ttotal'};
+  export const TOTAL = {prop: 'total', name: 'Total'};
 }
 
 export namespace TypeCLientSale {
@@ -102,7 +106,7 @@ export namespace CollegesColumns {
   export const SCHOOL_SYSTEM = {prop: 'schoolSystem', name: 'Régimen Escolar'};
   export const MODALITY = {prop: 'modality', name: 'Modalidad'};
   export const SCHOOL_DAY = {prop: 'schoolDay', name: 'Jornada'};
-  export const REGION_ID = {prop: 'region_id', name: ''};
+  export const REGION_ID = {prop: 'region', name: ''};
 }
 
 export namespace ClientColumns {
@@ -126,7 +130,8 @@ export namespace UserColumns {
   export const ZONE = {prop: 'zone', name: 'Zona'};
   export const PHONE = {prop: 'phone', name: 'Teléfono'};
   export const MAIL = {prop: 'mail', name: 'Correo'};
-  export const POSITION = {prop: 'position', name: 'Cargo'};  
+  export const POSITION = {prop: 'position', name: 'Cargo'};
+  export const STATUS = {prop: 'status', name: 'Estado'};
 }
 
 

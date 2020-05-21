@@ -3,13 +3,16 @@ import { FormGroup } from '@angular/forms';
 import { ProjectComponent } from '../../shared/components/project/project.component';
 import { GridComponent } from '../../shared/components/grid/grid.component';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
-import { FIELDS, COLUMNS_DETAIL_PROFORM, COLUMNS_DETAIL, COLUMNS_HEADER } from './model/proformColumns.model';
+import { COLUMNS_DETAIL_PROFORM, COLUMNS_DETAIL, COLUMNS_HEADER } from './model/proformColumns.model';
 import { Proform } from 'src/app/app.keys';
 import { ExcelExportService } from 'src/app/shared/service/export-excel.service';
 import * as _ from 'lodash';
 import { of as observableOf } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { GridRecord } from 'src/app/app.type';
+import Handsontable from 'handsontable';
+import { ProformService } from '../../shared/service/proform.service';
+import { Router } from '@angular/router';
 
 
 const dataVal = require('./proformList.json');
@@ -17,14 +20,6 @@ const vendedores = require('./vendedores.json');
 const clientes = require('./clientes.json');
 const colegios = require('./colegios.json');
 
-const states = ['Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'California', 'Colorado',
-  'Connecticut', 'Delaware', 'District Of Columbia', 'Federated States Of Micronesia', 'Florida', 'Georgia',
-  'Guam', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine',
-  'Marshall Islands', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana',
-  'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
-  'Northern Mariana Islands', 'Ohio', 'Oklahoma', 'Oregon', 'Palau', 'Pennsylvania', 'Puerto Rico', 'Rhode Island',
-  'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virgin Islands', 'Virginia',
-  'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
 
 @Component({
   selector: 'app-proform-add',
@@ -47,19 +42,32 @@ export class ProformAddComponent implements OnInit {
   public enableEdit: boolean;
   public validation: string;
   public defaultColDefVal: any;
+  public dataService: any;
 
-  constructor(private excelExportService: ExcelExportService, private route: ActivatedRoute) { 
+  public dateProform: any;
+  currentDate: {};
+
+  constructor(
+    private excelExportService: ExcelExportService, 
+    private route: ActivatedRoute,
+    private proformService: ProformService,
+    private router: Router
+  ) { 
+    
     this.data = dataVal;
     this.dataOfBank = dataVal;
     for (let value = 0; value < this.dataOfBank.length; value++) {
       let row = this.dataOfBank[value];
-      this.dataset.push(row);
+      //this.dataset.push(row);
     };
   }
 
   ngOnInit() {
     this.enabledTitle = false;
     this.allowExcelExport = false;
+
+    this.currentDate = new Date();
+    console.log(this.currentDate);
     
 
     this.route.queryParams.subscribe(
@@ -81,6 +89,9 @@ export class ProformAddComponent implements OnInit {
       editable: true,
       resizable: true
     };
+
+    
+    
     
     
   }
@@ -90,10 +101,7 @@ export class ProformAddComponent implements OnInit {
 
   options = {};
 
-  public onChange(data: GridRecord[]): void {
-    console.log(data);
-  }
-
+  
   public formFields: FormlyFieldConfig[] = [
     {
       className: 'section-label',
@@ -110,13 +118,14 @@ export class ProformAddComponent implements OnInit {
             label: Proform.ID.name,
           },
         expressionProperties: {
-          'templateOptions.disabled': this.validation,
+          'templateOptions.disabled': '!model.text',
           },
         },
         {
           className: 'col-2',
           type: 'input',
           key: Proform.NUMBER_PROFORM.prop,
+          defaultValue: 'PROSIERRA-',
           templateOptions: {
             label: Proform.NUMBER_PROFORM.name,
             required: true            
@@ -154,6 +163,7 @@ export class ProformAddComponent implements OnInit {
           type: 'input',
           key: Proform.DATE_DELIVERY.prop,
           className: 'col-sm-2',
+          defaultValue: new Date(),
           templateOptions: {
             type: 'date',
             label: Proform.DATE_DELIVERY.name,
@@ -232,29 +242,7 @@ export class ProformAddComponent implements OnInit {
     },
   ];
   
-  /*
-  {
-          key: 'state',
-          type: 'typeahead',
-          className: 'col-sm-6',
-          templateOptions: {
-            label: 'Estados',
-            placeholder: 'Search for a state:',
-            search$: (term) => {
-              if ((!term || term === '')) {
-                return observableOf(states);
-              }
-    
-              
-            },
-          }
-        },
-  */
 
-  public filterStates(name: string) {
-    return states.filter(state =>
-      state.toLowerCase().indexOf(name.toLowerCase()) === 0);
-  }
   
 /**
    * Export Excel
@@ -270,5 +258,24 @@ export class ProformAddComponent implements OnInit {
       );
     }
   }
+
+  public save() {
+    if (this.form.valid) {
+      console.log(JSON.stringify(this.model));
+      console.log(JSON.stringify(this.dataset));
+    }
+    alert('Se ha guardado la Proforma correctamente');
+    this.router.navigate(['/']);
+  }
+
+  public onChange(data: GridRecord[]): void {
+    console.log(data);
+  }
+
+
+  public close() {
+    
+  }
+
 
 }
