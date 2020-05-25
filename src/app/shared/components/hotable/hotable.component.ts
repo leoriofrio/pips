@@ -73,8 +73,8 @@ export class HotableComponent implements OnInit {
     dropdownMenu: true,
     afterValidate: function(isValid, value, row, prop){
       if(value == false){
-        	console.log( value, row, prop)    
-          alert("Invalid")
+        //console.log( value, row, prop)    
+            //alert("Invalid")
           //Value = isValid
           // row = inserted invalid value
           //prop = row index changed
@@ -112,7 +112,7 @@ export class HotableComponent implements OnInit {
   }
 
   detectChanges = (hotInstance, changes, source) => {
-    console.log(changes);
+    //console.log(changes);
   };
 
   

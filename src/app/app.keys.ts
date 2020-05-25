@@ -4,12 +4,24 @@ export namespace AppKeys {
   export const DEFAULT_SAMPLES_NAME = "muestra";
 }
 
+export enum AppStatusForm {
+  active = 'Active',
+  inactive = 'Inactive',
+  inProgress = 'In Progress',
+  acepted = 'Acepted'
+}
+
 export namespace ApiKeys {
   export const API_URL = "http://localhost:3000/";
 }
 
 export namespace TitleNames {
   export const PROJECT_NAME = 'Plataforma de Ingreso de Proformas, Muestras y Revisión de productos';
+}
+
+export namespace TypeRegion {
+  export const SIERRA = 'Sierra';
+  export const COSTA = 'Costa';
 }
 
 export namespace ExcelKeys {
@@ -40,8 +52,10 @@ export namespace Proform {
   export const CLIENT_ID = {prop: 'client_id', name: 'Clientes'};
   export const DATE_PROFORM = {prop: 'date_proform', name: 'Fecha Registro'};
   export const DATE_DELIVERY = {prop: 'date_delivery', name: 'Fecha Entrega'};
-  export const TYPE_CLIENT_SALE = {prop: 'type_client_sale', name: 'Tipo de Venta'};
+  export const TYPE_CLIENT_SALE = {prop: 'type_client_sale', name: 'Canal de Venta'};
   export const AGREEMENT = {prop: 'agreement', name: 'Convenio'};
+  export const STATUS = {prop: 'status', name: 'Estado'};
+  export const STATE_NUMBER = {prop: 'state_number', name: 'Versión'};
  
 }
 
@@ -64,14 +78,18 @@ export namespace ProformDetail {
   export const TOTAL = {prop: 'total', name: 'Total'};
 }
 
-export namespace TypeCLientSale {
-  export const NEW = 'Conquista';
-  export const RE_SALE = 'Mantener';  
+export namespace TypeClientSale {
+  export const TYPE_SALE = [
+    {label: 'Directa',  value: 'Directa'},
+    {label: 'Libreria',  value: 'Libreria'}
+  ];
 }
 
 export namespace Agreement {
-  export const NEW = 'Nuevo';
-  export const OLD = 'Anterior';
+  export const TYPE_AGREEMENT = [
+    {label: 'Nuevo',  value: 'Nuevo'},
+    {label: 'Anterior',  value: 'Anterior'}
+  ];
 }
 
 export namespace ProductColumns {

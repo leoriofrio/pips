@@ -35,7 +35,7 @@ export class ProformListComponent implements OnInit {
   }
 
   public getProform(): void {
-    this.proformService.getProject().subscribe( proform => {
+    this.proformService.getProform().subscribe( proform => {
       this.data = proform;
     });
   }

@@ -4,15 +4,17 @@ import { ProjectComponent } from '../../shared/components/project/project.compon
 import { GridComponent } from '../../shared/components/grid/grid.component';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 import { COLUMNS_DETAIL_PROFORM, COLUMNS_DETAIL, COLUMNS_HEADER } from './model/proformColumns.model';
-import { Proform } from 'src/app/app.keys';
+import { Proform, TypeClientSale, Agreement, AppStatusForm, TypeRegion } from 'src/app/app.keys';
 import { ExcelExportService } from 'src/app/shared/service/export-excel.service';
 import * as _ from 'lodash';
 import { of as observableOf } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
-import { GridRecord } from 'src/app/app.type';
+import { GridRecord, IProform } from 'src/app/app.type';
 import Handsontable from 'handsontable';
 import { ProformService } from '../../shared/service/proform.service';
 import { Router } from '@angular/router';
+import { ProductService } from 'src/app/shared/service/product.service';
+
 
 
 const dataVal = require('./proformList.json');
@@ -43,14 +45,15 @@ export class ProformAddComponent implements OnInit {
   public validation: string;
   public defaultColDefVal: any;
   public dataService: any;
-
-  public dateProform: any;
+  public dataProduct: any;
+  public dataProformId;
   currentDate: {};
 
   constructor(
     private excelExportService: ExcelExportService, 
     private route: ActivatedRoute,
     private proformService: ProformService,
+    private productService: ProductService,
     private router: Router
   ) { 
     
@@ -60,19 +63,19 @@ export class ProformAddComponent implements OnInit {
       let row = this.dataOfBank[value];
       //this.dataset.push(row);
     };
+    this.productService.getProductByRegion(TypeRegion.SIERRA).subscribe(product => {
+      this.dataProduct = product;
+    });
   }
 
   ngOnInit() {
     this.enabledTitle = false;
     this.allowExcelExport = false;
 
-    this.currentDate = new Date();
-    console.log(this.currentDate);
-    
+    this.currentDate = new Date();    
 
     this.route.queryParams.subscribe(
       params => {
-        console.log('Got the JWT as: ', params['val']);
         this.condition =  params['val'];
         this.condition == 'EDT' ? this.enableEdit = true : this.enableEdit = false;        
       }
@@ -90,10 +93,6 @@ export class ProformAddComponent implements OnInit {
       resizable: true
     };
 
-    
-    
-    
-    
   }
 
   form = new FormGroup({});
@@ -122,10 +121,26 @@ export class ProformAddComponent implements OnInit {
           },
         },
         {
+          key: Proform.STATUS.prop,
+          type: 'input',
+          templateOptions: {
+            label: Proform.TYPE_CLIENT_SALE.name,
+          },
+          hideExpression: '!model.name',
+        },
+        {
+          key: Proform.STATE_NUMBER.prop,
+          type: 'input',
+          templateOptions: {
+            label: Proform.STATE_NUMBER.name,
+          },
+          hideExpression: '!model.name',
+        },
+        {
           className: 'col-2',
           type: 'input',
           key: Proform.NUMBER_PROFORM.prop,
-          defaultValue: 'PROSIERRA-',
+          defaultValue: '2020-1-',
           templateOptions: {
             label: Proform.NUMBER_PROFORM.name,
             required: true            
@@ -151,6 +166,7 @@ export class ProformAddComponent implements OnInit {
           type: 'input',
           key: Proform.DATE_PROFORM.prop,
           className: 'col-sm-2',
+          defaultValue: this.currentDate,
           templateOptions: {
             type: 'date',
             label: Proform.DATE_PROFORM.name ,
@@ -158,7 +174,7 @@ export class ProformAddComponent implements OnInit {
           expressionProperties: {
             'templateOptions.disabled': this.validation,
             }
-        },
+        },       
         {
           type: 'input',
           key: Proform.DATE_DELIVERY.prop,
@@ -207,11 +223,11 @@ export class ProformAddComponent implements OnInit {
         },
         {
           className: 'col-2',
-          type: 'checkbox',
+          type: 'select',
           key: Proform.TYPE_CLIENT_SALE.prop,
-          defaultValue: false,
           templateOptions: {
             label: Proform.TYPE_CLIENT_SALE.name,
+            options: TypeClientSale.TYPE_SALE
           },
           expressionProperties: {
             'templateOptions.disabled': this.validation,
@@ -219,11 +235,11 @@ export class ProformAddComponent implements OnInit {
         },        
         {
           className: 'col-2',
-          type: 'checkbox',
+          type: 'select',
           key: Proform.AGREEMENT.prop,
-          defaultValue: false,
           templateOptions: {
             label: Proform.AGREEMENT.name,
+            options: Agreement.TYPE_AGREEMENT
           },
           expressionProperties: {
             'templateOptions.disabled': this.validation,
@@ -242,8 +258,6 @@ export class ProformAddComponent implements OnInit {
     },
   ];
   
-
-  
 /**
    * Export Excel
    * @param {name, gridColumns, data}
@@ -261,20 +275,42 @@ export class ProformAddComponent implements OnInit {
 
   public save() {
     if (this.form.valid) {
-      console.log(JSON.stringify(this.model));
-      console.log(JSON.stringify(this.dataset));
+      this.model['date_delivery'] = new Date(this.model['date_delivery']).toISOString();
+      this.model['date_proform'] = new Date(this.model['date_proform']).toISOString();
+      this.model['user_id'] = Number(this.model['user_id']);
+      this.model['colleges_id'] = Number(this.model['colleges_id']);
+      this.model['client_id'] = Number(this.model['client_id']);
+      this.model['state_number'] = 0;
+      this.model['status'] = AppStatusForm.active;
+
+      //Detail
+      this.proformService.createProform(this.model).subscribe(response => {
+        this.dataProformId = Number(response.id);
+        for (const row of this.dataset) {
+          row['product_id'] = this.matchProduct(row['product_id'], this.dataProduct);
+        }
+        this.proformService.createProformDetail(this.dataProformId.toString(), JSON.stringify(this.dataset)).subscribe();
+      });      
     }
-    alert('Se ha guardado la Proforma correctamente');
+    alert('Se ha guardado la Proforma correctamente ');
     this.router.navigate(['/']);
   }
 
   public onChange(data: GridRecord[]): void {
-    console.log(data);
+    //console.log(data);
   }
-
 
   public close() {
     
+  }
+
+  public matchProduct(description: string, product: any[]): number | undefined {
+    let productObj = _.find(product, (x) => x.description === description);
+    if (_.isNil(productObj)) {
+      productObj.id = null;
+    }
+    return productObj.id;
+
   }
 
 

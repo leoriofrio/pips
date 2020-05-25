@@ -29,7 +29,7 @@ export class GridComponent implements OnInit, OnDestroy {
 
     const containerVal = this.container.nativeElement;
     var container = document.getElementById('example');
-    console.log(containerVal);
+    //console.log(containerVal);
     this.hot = new Handsontable(container, {
       data: this.budgetRecords,
       contextMenu: ['row_above','row_below','remove_row', 'copy'],

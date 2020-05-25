@@ -25,3 +25,17 @@ export type GridRecord = {
     payPlanPeriod: any;
     route?: string;
   }
+
+  export interface IProform {
+    id: number;
+    number_proform: string;
+    user_id: number;
+    colleges_id: string;
+    client_id: string;
+    date_proform: string;
+    date_delivery: string;
+    type_client_sale: string;
+    agreement: string;
+    status: string;
+    state_number: number;
+  }

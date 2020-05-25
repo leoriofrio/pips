@@ -8,14 +8,14 @@ import { ConfigurationModule } from './configuration/configuration.modules';
 import { SharedModule } from './shared/shared.module';
 import { AdminModule } from './admin/admin.module';
 import { UIModule } from './ui/ui.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormlyModule } from '@ngx-formly/core';
 import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 import { MatInputModule } from '@angular/material/input';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { UploadDirective } from './directives/upload.directive';
-
+import { FormlyFieldNgbDatePicker } from './shared/components/form/ngb-date-picker.type.component';
 
 
 @NgModule({
@@ -37,8 +37,10 @@ import { UploadDirective } from './directives/upload.directive';
     NoopAnimationsModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     FormlyModule.forRoot({
       types: [
+        {name: 'ngb-date-picker', component: FormlyFieldNgbDatePicker},
         ],
       validationMessages: [        
         { name: 'required', message: 'Este campo es requerido' },
