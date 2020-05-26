@@ -48,7 +48,7 @@ export namespace Proform {
   export const ID = {prop: 'id', name: 'Id Proforma Interna'};
   export const NUMBER_PROFORM = {prop: 'number_proform', name: 'Número Proforma'};
   export const USER_ID = {prop: 'user_id', name: 'Vendedor'};
-  export const COLLEGES_ID = {prop: 'colleges_id', name: 'Colegios'};
+  export const COLLEGE_ID = {prop: 'college_id', name: 'Colegios'};
   export const CLIENT_ID = {prop: 'client_id', name: 'Clientes'};
   export const DATE_PROFORM = {prop: 'date_proform', name: 'Fecha Registro'};
   export const DATE_DELIVERY = {prop: 'date_delivery', name: 'Fecha Entrega'};

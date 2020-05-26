@@ -30,7 +30,7 @@ export type GridRecord = {
     id: number;
     number_proform: string;
     user_id: number;
-    colleges_id: string;
+    college_id: string;
     client_id: string;
     date_proform: string;
     date_delivery: string;

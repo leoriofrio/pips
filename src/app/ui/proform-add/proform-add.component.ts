@@ -200,9 +200,9 @@ export class ProformAddComponent implements OnInit {
         {
           className: 'col-4',
           type: 'select',
-          key: Proform.COLLEGES_ID.prop,
+          key: Proform.COLLEGE_ID.prop,
           templateOptions: {
-            label: Proform.COLLEGES_ID.name,
+            label: Proform.COLLEGE_ID.name,
             options: _.sortBy(colegios, "label"),
           },
           expressionProperties: {
@@ -278,11 +278,11 @@ export class ProformAddComponent implements OnInit {
       this.model['date_delivery'] = new Date(this.model['date_delivery']).toISOString();
       this.model['date_proform'] = new Date(this.model['date_proform']).toISOString();
       this.model['user_id'] = Number(this.model['user_id']);
-      this.model['colleges_id'] = Number(this.model['colleges_id']);
+      this.model['college_id'] = Number(this.model['college_id']);
       this.model['client_id'] = Number(this.model['client_id']);
       this.model['state_number'] = 0;
       this.model['status'] = AppStatusForm.active;
-
+      debugger;
       //Detail
       this.proformService.createProform(this.model).subscribe(response => {
         this.dataProformId = Number(response.id);
