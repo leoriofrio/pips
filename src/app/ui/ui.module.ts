@@ -9,6 +9,7 @@ import { FormlyModule } from '@ngx-formly/core';
 import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 import { MatInputModule } from '@angular/material/input';
 import { ProformListComponent } from './proform-list/proform-list.component';
+import { ProformEditComponent } from './proform-edit/proform-edit.component';
 
 
 @NgModule({
@@ -29,7 +30,7 @@ import { ProformListComponent } from './proform-list/proform-list.component';
     }),
         
   ],
-  declarations: [ProformAddComponent, ProformListComponent],
+  declarations: [ProformAddComponent, ProformListComponent, ProformEditComponent],
   providers: [],
   exports: [ProformAddComponent]
 })
