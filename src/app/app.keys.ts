@@ -12,7 +12,7 @@ export enum AppStatusForm {
 }
 
 export namespace ApiKeys {
-  export const API_URL = "http://localhost:3000/";
+  export const API_URL = "http://104.210.146.134:3000/";
 }
 
 export namespace TitleNames {
