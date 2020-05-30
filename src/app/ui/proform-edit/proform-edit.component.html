@@ -14,14 +14,14 @@
                                 <div class="card-body">
                                     <!-- header section -->
                                     <div class="edit">
-                                        <input id="txtProforma" name="nameProforma" type="text"><button type="submit" class="btn btn-primary submit-button" (click)="editar()">Proforma</button> 
+                                        <input id="txtProforma" name="txtProforma" type="text"><button type="button" class="btn btn-primary submit-button" (click)="editar()">Proforma</button> 
                                     </div>
-                                    <div class="" >
+                                    <div class="" *ngIf="editProform" >
                                         <form [formGroup]="form">
                                             <formly-form [model]="model" [fields]="formFields" [options]="options" [form]="form"></formly-form>
                                         </form>
                                     </div>
-                                    <div class="col-xl-4">
+                                    <div class="col-xl-4" *ngIf="editProform">
                                         <button type="submit" class="btn btn-primary submit-button" (click)="save()">Guardar</button>
                                         <span></span>
                                         <button type="submit" class="btn btn-primary submit-button" (click)="close()">Cancelar</button>
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                     <div class="col-xl-12 ">
-                        <div class="content-body">
+                        <div class="content-body" *ngIf="editProform">
                             
                             <!--                            
                             <app-project  [gridColumns]="gridColumns" [data]="data" [enabledTitleOp] = "enabledTitle"

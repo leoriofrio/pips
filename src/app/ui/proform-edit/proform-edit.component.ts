@@ -7,9 +7,9 @@ import { COLUMNS_DETAIL_PROFORM, COLUMNS_DETAIL, COLUMNS_HEADER } from './model/
 import { Proform, TypeClientSale, Agreement, AppStatusForm, TypeRegion } from 'src/app/app.keys';
 import { ExcelExportService } from 'src/app/shared/service/export-excel.service';
 import * as _ from 'lodash';
-import { of as observableOf } from 'rxjs';
+import { of as observableOf, of } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
-import { GridRecord, IProform } from 'src/app/app.type';
+import { GridRecord, IProform, MODEL_DETAIL } from 'src/app/app.type';
 import Handsontable from 'handsontable';
 import { ProformService } from '../../shared/service/proform.service';
 import { Router } from '@angular/router';
@@ -48,6 +48,7 @@ export class ProformEditComponent implements OnInit {
   public dataService: any;
   public dataProduct: any;
   public dataProformId;
+  public editProform: boolean = true;
   currentDate: {};
 
   constructor(
@@ -58,12 +59,7 @@ export class ProformEditComponent implements OnInit {
     private router: Router
   ) { 
     
-    this.data = dataVal;
-    this.dataOfBank = dataVal;
-    for (let value = 0; value < this.dataOfBank.length; value++) {
-      let row = this.dataOfBank[value];
-      //this.dataset.push(row);
-    };
+    
     this.productService.getProductByRegion(TypeRegion.SIERRA).subscribe(product => {
       this.dataProduct = product;
     });
@@ -75,12 +71,7 @@ export class ProformEditComponent implements OnInit {
 
     this.currentDate = new Date();    
 
-    this.route.queryParams.subscribe(
-      params => {
-        this.condition =  params['val'];
-        this.condition == 'EDT' ? this.enableEdit = true : this.enableEdit = false;        
-      }
-    )
+  
     
     if (!this.enableEdit){
       this.validation = '!model.text';      
@@ -93,7 +84,19 @@ export class ProformEditComponent implements OnInit {
       editable: true,
       resizable: true
     };
+    //this.editar();
 
+    if ( !_.isNil(this.data) ) {
+      this.dataOfBank = this.data;
+
+      for (let value = 0; value < this.dataOfBank.length; value++) {          
+        let row = _.pick(this.dataOfBank[value], _.keys(MODEL_DETAIL) );
+        this.dataset.push(row);
+      };
+      
+    }
+      
+   
   }
 
   form = new FormGroup({});
@@ -283,7 +286,7 @@ export class ProformEditComponent implements OnInit {
       this.model['client_id'] = Number(this.model['client_id']);
       this.model['state_number'] = 0;
       this.model['status'] = AppStatusForm.active;
-      debugger;
+
       //Detail
       this.proformService.createProform(this.model).subscribe(response => {
         this.dataProformId = Number(response.id);
@@ -315,9 +318,37 @@ export class ProformEditComponent implements OnInit {
   }
 
   public editar() {
-
+    const etb = this;
+    this.editProform = true;
+    let tempoData:any;
+    //const idProform = (<HTMLInputElement>document.getElementById("txtProforma")).value;
+    const idProform = 45;
     
-  }
+    
+    this.proformService.getProformById(idProform).subscribe( params => {
+      this.data = params[0]['proformDetail'];
+      
+      const proformDetail : any [] = params[0]['proformDetail'];
 
+      
+      etb.data = proformDetail;
+      etb.dataOfBank = proformDetail;
+      tempoData = proformDetail;
+
+      for (let value = 0; value < etb.dataOfBank.length; value++) {          
+        let row = _.pick(etb.dataOfBank[value], _.keys(MODEL_DETAIL) );
+        etb.dataset.push(row);
+      };
+
+    });
+    
+    
+    this.data = etb.dataset;
+    this.dataset = this.data;
+    //console.log(this.data);
+    this.ngOnInit();
+        
+  }
+  
   
 }

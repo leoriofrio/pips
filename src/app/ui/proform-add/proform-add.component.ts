@@ -9,7 +9,7 @@ import { ExcelExportService } from 'src/app/shared/service/export-excel.service'
 import * as _ from 'lodash';
 import { of as observableOf } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
-import { GridRecord, IProform } from 'src/app/app.type';
+import { GridRecord, IProform, IProformDetail } from 'src/app/app.type';
 import Handsontable from 'handsontable';
 import { ProformService } from '../../shared/service/proform.service';
 import { Router } from '@angular/router';
@@ -282,22 +282,54 @@ export class ProformAddComponent implements OnInit {
       this.model['client_id'] = Number(this.model['client_id']);
       this.model['state_number'] = 0;
       this.model['status'] = AppStatusForm.active;
-      debugger;
+            
+      
+      //debugger;
       //Detail
       this.proformService.createProform(this.model).subscribe(response => {
         this.dataProformId = Number(response.id);
         for (const row of this.dataset) {
           row['product_id'] = this.matchProduct(row['product_id'], this.dataProduct);
         }
-        this.proformService.createProformDetail(this.dataProformId.toString(), JSON.stringify(this.dataset)).subscribe();
-      });      
+
+        let grid = _.cloneDeep(this.dataset);
+        let objTemp =[];
+        const model = {
+          "id": 0,
+          "degree": "string",
+          "quantity": 0,
+          "price": 0,
+          "sale_direct": 0,
+          "sale_external_library": 0,
+          "sale_event": 0,
+          "sale_teacher": 0,
+          "sale_infrastructure": 0,
+          "sale_scholarships": 0,
+          "sale_staff": 0,
+          "sale_training": 0,
+          "proform_id": 0,
+          "product_id": 0
+        };
+        
+       // debugger;
+        for( let obj of grid  ) {
+          objTemp.push(_.pick(obj, _.keys(model) ));
+        }
+        
+        //console.log(objTemp);
+
+        this.proformService.createProformDetail(this.dataProformId.toString(), _.replace(JSON.stringify(objTemp), '\r\n', 0)).subscribe();
+        //console.log(JSON.stringify(objTemp));
+      });
+      
     }
     alert('Se ha guardado la Proforma correctamente ');
     this.router.navigate(['/']);
   }
 
   public onChange(data: GridRecord[]): void {
-    //console.log(data);
+    console.log(data.indexOf);
+    
   }
 
   public close() {

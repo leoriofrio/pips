@@ -29,6 +29,11 @@ export class ProformService {
     return this.http.get<any>(url);
   }
 
+  public getProformById(id: any) {
+    const url = this.baseUrl+`proform/`+id.toString();
+    return this.http.get<any>(url);
+  }
+
   public createProform(proform: any): Observable<any> {
     const url = this.baseUrl+`proform/create`;
     return this.http.post<any>(url, proform);

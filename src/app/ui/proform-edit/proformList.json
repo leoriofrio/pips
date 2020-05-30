@@ -1,15 +1,12 @@
 [
         {
-            "quantity": "25",
-            "codProduct": "STER-EC010000",
-            "product_id": "ALTO RENDIMIENTO 2ED KIDS 3 AÑOS",
-            "businessLine": "TEXTO",
-            "price": "57,25",
-            "total": "1.431,25",
-            "sale_direct": "27%",
-            "sale_teacher": "2%",
-            "sale_staff": "18%",
-            "total_sale": "747,83"
+            "quantity": 25,
+            "product_id": 1,
+            "price": 57.25,
+            "sale_direct": 27,
+            "sale_teacher": 2,
+            "sale_staff": 18,
+            "total_sale": 747.83
         },
         {
             "quantity": "153",

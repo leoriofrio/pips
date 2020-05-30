@@ -25,7 +25,7 @@ export const COLUMNS_DETAIL_PROFORM = [
 
 export const COLUMNS_DETAIL = [
   { data: ProformDetail.ID.prop, readOnly: true },
-  { type: 'text', data: ProformDetail.DEGREE.prop, readOnly: true },
+  { type: 'text', data: ProformDetail.DEGREE.prop},
   { type: 'autocomplete', 
     data: ProformDetail.PRODUCT_ID.prop, 
     renderer: 'currency', 
