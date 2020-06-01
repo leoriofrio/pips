@@ -45,6 +45,7 @@ export namespace ExcelKeys {
   export const EXCEL_EXPORT_TYPE = 'excel';
 }
 
+
 export namespace Proform {
   export const ID = {prop: 'id', name: 'Id Proforma Interna'};
   export const NUMBER_PROFORM = {prop: 'number_proform', name: 'Número Proforma'};
