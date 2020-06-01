@@ -74,3 +74,5 @@ export type GridRecord = {
     "sale_staff": 0,
     "sale_training": 0
   };
+
+  
