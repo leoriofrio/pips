@@ -15,7 +15,7 @@ phases:
   post_build:
      commands:
       - aws s3 ls
-      - aws s3 sync dist/pips s3://pipes.ec
+      - aws s3 sync dist/pips s3://pips.ec
       - echo Build completed on `date`
 artifacts:
   files:
