@@ -8,7 +8,7 @@ import { ProformEditComponent } from './proform-edit/proform-edit.component';
 const configurationRoutes: Routes = [
   { path: 'proform', component: ProformAddComponent },
   { path: 'proform-list', component: ProformListComponent },
-  { path: 'proform-edit', component: ProformEditComponent }
+  { path: 'proform-edit/:id', component: ProformEditComponent }
 ];
 @NgModule({
   imports: [RouterModule.forChild(configurationRoutes)],

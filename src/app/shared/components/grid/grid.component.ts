@@ -23,7 +23,7 @@ export class GridComponent implements OnInit, OnDestroy {
   public change = new EventEmitter<GridRecord[]>();
   @Output()
   public addRow = new  EventEmitter<any>();
-
+  
   private hot: Handsontable;
 
   private  setter = false;
@@ -48,8 +48,8 @@ export class GridComponent implements OnInit, OnDestroy {
         if( !changes ) {
           return;
         }
-
-        //console.log(changes, src);
+        debugger;
+        console.log(changes, src);
         
         if (!this.setter) { 
           for(const row of changes) {
@@ -152,7 +152,7 @@ export class GridComponent implements OnInit, OnDestroy {
       },
       rowHeaders: true,
       stretchH: 'all',
-      width: 1450,
+      width: 950,
       height: 400,
       autoWrapRow: true,
       manualRowResize: true,
@@ -161,11 +161,12 @@ export class GridComponent implements OnInit, OnDestroy {
       manualColumnMove: true,
       filters: true,
       dropdownMenu: true,
-      outsideClickDeselects: false,
+      outsideClickDeselects: true,
       licenseKey: 'non-commercial-and-evaluation',
       columns: this.columnsGrid,
       viewportRowRenderingOffset: "auto",
     });
+    
   }
 
   
@@ -176,6 +177,10 @@ export class GridComponent implements OnInit, OnDestroy {
 
   public add() {
     this.hot.alter('insert_row', 0);
+  }
+
+  public reloadData() {
+    this.hot.render();
   }
 
   public remove() {

@@ -60,8 +60,11 @@ export type GridRecord = {
   export const MODEL_DETAIL = {
     "id": 0,
     "degree": "string",
+    "codigo": "",
+    "product_id": 0,
     "quantity": 0,
     "price": 0,
+    "total":0,
     "sale_direct": 0,
     "sale_external_library": 0,
     "sale_event": 0,
@@ -69,7 +72,5 @@ export type GridRecord = {
     "sale_infrastructure": 0,
     "sale_scholarships": 0,
     "sale_staff": 0,
-    "sale_training": 0,
-    "proform_id": 0,
-    "product_id": 0
+    "sale_training": 0
   };

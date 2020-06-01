@@ -9,11 +9,12 @@ import { ExcelExportService } from 'src/app/shared/service/export-excel.service'
 import * as _ from 'lodash';
 import { of as observableOf } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
-import { GridRecord, IProform, IProformDetail } from 'src/app/app.type';
+import { GridRecord, IProform, IProformDetail, MODEL_DETAIL } from 'src/app/app.type';
 import Handsontable from 'handsontable';
 import { ProformService } from '../../shared/service/proform.service';
 import { Router } from '@angular/router';
 import { ProductService } from 'src/app/shared/service/product.service';
+import { map } from 'rxjs/operators';
 
 
 
@@ -286,6 +287,32 @@ export class ProformAddComponent implements OnInit {
       
       //debugger;
       //Detail
+      /*
+      this.proformService.createProform(this.model).pipe(
+        map( proform => {
+          this.dataProformId = Number(proform.id);
+          for (const row of this.dataset) {
+            row['product_id'] = this.matchProduct(row['product_id'], this.dataProduct);
+          }
+
+          let grid = _.cloneDeep(this.dataset);
+          let objTemp =[];          
+
+          for( let obj of grid  ) {
+            objTemp.push(_.pick(obj, _.keys(MODEL_DETAIL) ));
+          }
+
+          return this.proformService.createProformDetail(this.dataProformId.toString(), _.replace(JSON.stringify(objTemp), '\r\n', 0));
+          
+        } )
+      ).subscribe(
+        response => {
+          alert('Se ha guardado la Proforma correctamente ');
+          this.router.navigate(['/']);
+        }
+      );
+        */
+      
       this.proformService.createProform(this.model).subscribe(response => {
         this.dataProformId = Number(response.id);
         for (const row of this.dataset) {
@@ -311,20 +338,18 @@ export class ProformAddComponent implements OnInit {
           "product_id": 0
         };
         
-       // debugger;
+
         for( let obj of grid  ) {
           objTemp.push(_.pick(obj, _.keys(model) ));
         }
-        
-        //console.log(objTemp);
 
         this.proformService.createProformDetail(this.dataProformId.toString(), _.replace(JSON.stringify(objTemp), '\r\n', 0)).subscribe();
-        //console.log(JSON.stringify(objTemp));
+        alert('Se ha guardado la Proforma correctamente ');
+        this.router.navigate(['/']);
       });
       
-    }
-    alert('Se ha guardado la Proforma correctamente ');
-    this.router.navigate(['/']);
+      
+    }   
   }
 
   public onChange(data: GridRecord[]): void {

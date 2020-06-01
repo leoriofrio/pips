@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ProjectComponent } from '../../shared/components/project/project.component';
 import { GridComponent } from '../../shared/components/grid/grid.component';
@@ -14,6 +14,8 @@ import Handsontable from 'handsontable';
 import { ProformService } from '../../shared/service/proform.service';
 import { Router } from '@angular/router';
 import { ProductService } from 'src/app/shared/service/product.service';
+import { switchMap } from 'rxjs/operators';
+import { SetLeftFeature } from 'ag-grid-community';
 
 
 
@@ -21,21 +23,24 @@ const dataVal = require('./proformList.json');
 const vendedores = require('./vendedores.json');
 const clientes = require('./clientes.json');
 const colegios = require('./colegios.json');
-
+const cabecera = require('./cabecera.json');
 
 @Component({
   selector: 'app-proform-edit',
   templateUrl: './proform-edit.component.html',
-  styleUrls: ['./proform-edit.component.scss']
+  styleUrls: ['./proform-edit.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProformEditComponent implements OnInit {
 
   @ViewChild(ProjectComponent, {static: true}) child: ProjectComponent;
   @ViewChild('container') container: ElementRef;
   
-  public data: any;
+  public data: any[];
   public dataOfBank: any[] = [];
   public dataset: any[] = [];
+  public dataTransform: any[];
+  public dataTransformTempo: any[];
   public gridColumns = COLUMNS_DETAIL_PROFORM;
   public columnsGrid = COLUMNS_DETAIL;
   public columnsHeader = COLUMNS_HEADER;
@@ -48,7 +53,9 @@ export class ProformEditComponent implements OnInit {
   public dataService: any;
   public dataProduct: any;
   public dataProformId;
-  public editProform: boolean = true;
+  public editProform: boolean = false;
+  public proformId: any;
+  public model: any;
   currentDate: {};
 
   constructor(
@@ -56,51 +63,16 @@ export class ProformEditComponent implements OnInit {
     private route: ActivatedRoute,
     private proformService: ProformService,
     private productService: ProductService,
-    private router: Router
+    private router: Router,
+    private cd : ChangeDetectorRef
   ) { 
-    
-    
-    this.productService.getProductByRegion(TypeRegion.SIERRA).subscribe(product => {
-      this.dataProduct = product;
-    });
+          
   }
-
-  ngOnInit() {
-    this.enabledTitle = false;
-    this.allowExcelExport = false;
-
-    this.currentDate = new Date();    
 
   
-    
-    if (!this.enableEdit){
-      this.validation = '!model.text';      
-    } else {
-      this.validation = 'model.text';
-      //this.data = {};
-    }
-
-    this.defaultColDefVal = {
-      editable: true,
-      resizable: true
-    };
-    //this.editar();
-
-    if ( !_.isNil(this.data) ) {
-      this.dataOfBank = this.data;
-
-      for (let value = 0; value < this.dataOfBank.length; value++) {          
-        let row = _.pick(this.dataOfBank[value], _.keys(MODEL_DETAIL) );
-        this.dataset.push(row);
-      };
-      
-    }
-      
-   
-  }
 
   form = new FormGroup({});
-  model = {};
+  
 
   options = {};
 
@@ -108,7 +80,7 @@ export class ProformEditComponent implements OnInit {
   public formFields: FormlyFieldConfig[] = [
     {
       className: 'section-label',
-      template: '<h3><strong>Registro de Proforma</strong></h3><div><strong>Datos Generales:</strong></div>',
+      template: '<h3><strong>Editar de Proforma</strong></h3><div><strong>Datos Generales:</strong></div>',
     },
     {
       fieldGroupClassName: 'row',
@@ -117,6 +89,7 @@ export class ProformEditComponent implements OnInit {
           className: 'col-2',
           type: 'input',
           key: Proform.ID.prop,
+          defaultValue: this.proformId,
           templateOptions: {
             label: Proform.ID.name,
           },
@@ -261,6 +234,60 @@ export class ProformEditComponent implements OnInit {
       
     },
   ];
+
+  ngOnInit() {
+    this.enabledTitle = false;
+    this.allowExcelExport = false;
+
+    this.currentDate = new Date();    
+    
+    this.proformId = this.route.snapshot.paramMap.get("id");
+      
+    
+    if (!this.enableEdit){
+      this.validation = '!model.text';      
+    } else {
+      this.validation = 'model.text';
+      //this.data = {};
+    }
+
+    this.defaultColDefVal = {
+      editable: true,
+      resizable: true
+    };
+    
+    const self = this;
+    //self.dataset = [];
+    //self.dataOfBank = [];
+
+/*   
+    self.data = dataVal;
+    self.dataOfBank = dataVal;
+    for (let value = 0; value < self.dataOfBank.length; value++) {     
+      let row = self.dataOfBank[value];
+      self.dataset.push(row);
+    };
+    console.log('inicial data',dataVal);
+*/
+    if( _.size(self.dataset) === 0 ) {
+      this.getDataById(Number(this.proformId)).subscribe( data => {      
+        self.dataTransform = data['proformDetail'];
+        if( _.size(self.dataTransform) > 0 ) {
+          for (let value = 0; value < self.dataTransform.length; value++) {          
+            let row = _.pick(this.dataTransform[value], _.keys(MODEL_DETAIL) );
+            //let row = self.dataOfBank[value];
+            self.dataset.push(row);
+          };
+        }
+        //self.ngOnInit();
+        
+      });
+    }
+
+    this.model = cabecera;
+    this.cd.detectChanges();
+
+  }
   
 /**
    * Export Excel
@@ -294,10 +321,11 @@ export class ProformEditComponent implements OnInit {
           row['product_id'] = this.matchProduct(row['product_id'], this.dataProduct);
         }
         this.proformService.createProformDetail(this.dataProformId.toString(), JSON.stringify(this.dataset)).subscribe();
+        alert('Se ha guardado la Proforma correctamente ');
+        this.router.navigate(['/']);
       });      
     }
-    alert('Se ha guardado la Proforma correctamente ');
-    this.router.navigate(['/']);
+    
   }
 
   public onChange(data: GridRecord[]): void {
@@ -317,17 +345,49 @@ export class ProformEditComponent implements OnInit {
 
   }
 
-  public editar() {
-    const etb = this;
+  public getDataById(id: any) {
+    
+    return this.proformService.getProformById(Number(id)).pipe(
+      switchMap(params => { return params } )
+    );
+/*
+    this.proformService.getProformById(Number(id)).subscribe( params => {
+      self.data = params[0]['proformDetail'];
+      console.log('datos',self.data);
+    });
+    console.log('inicio',this.data);
+*/
+  }
+
+  public edit() {
+    const self = this;
     this.editProform = true;
     let tempoData:any;
-    //const idProform = (<HTMLInputElement>document.getElementById("txtProforma")).value;
+
+    
+
+    const idProform = (<HTMLInputElement>document.getElementById("txtProforma")).value;
+
+    this.getDataById(Number(idProform)).subscribe( data => {      
+      self.dataTransform = data['proformDetail'];
+      if( _.size(self.dataTransform) > 0 ) {
+        for (let value = 0; value < self.dataTransform.length; value++) {          
+          let row = _.pick(this.dataTransform[value], _.keys(MODEL_DETAIL) );
+          //let row = self.dataOfBank[value];
+          self.dataset.push(row);
+        };
+      }
+    });
+
+
+    this.ngOnInit();
+
+    console.log('Edit', self.dataset);
+    /*
     const idProform = 45;
-    
-    
-    this.proformService.getProformById(idProform).subscribe( params => {
+        
+    this.proformService.getProformById(Number(idProform)).subscribe( params => {
       this.data = params[0]['proformDetail'];
-      
       const proformDetail : any [] = params[0]['proformDetail'];
 
       
@@ -336,18 +396,21 @@ export class ProformEditComponent implements OnInit {
       tempoData = proformDetail;
 
       for (let value = 0; value < etb.dataOfBank.length; value++) {          
-        let row = _.pick(etb.dataOfBank[value], _.keys(MODEL_DETAIL) );
+        let row = _.pick(etb.dataOfBank[value], _.keys(MODEL_DETAIL) );
         etb.dataset.push(row);
       };
 
     });
+    console.log('entro', etb.dataset);
     
-    
+    this.data = null;
     this.data = etb.dataset;
-    this.dataset = this.data;
+
+    return this.data;
+    //this.dataset = this.data;
     //console.log(this.data);
-    this.ngOnInit();
-        
+    //this.ngOnInit();
+        */
   }
   
   

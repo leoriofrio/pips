@@ -14,7 +14,7 @@
                                 <div class="card-body">
                                     <!-- header section -->
                                     <div class="edit">
-                                        <input id="txtProforma" name="txtProforma" type="text"><button type="button" class="btn btn-primary submit-button" (click)="editar()">Proforma</button> 
+                                        <input id="txtProforma" name="txtProforma" value="{{proformId}}" disabled type="text"><button type="button" class="btn btn-primary submit-button" (click)="edit()">Editar Proforma</button> 
                                     </div>
                                     <div class="" *ngIf="editProform" >
                                         <form [formGroup]="form">

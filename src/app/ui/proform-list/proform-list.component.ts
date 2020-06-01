@@ -6,6 +6,7 @@ import { COLUMNS_PROFORM } from './proformColumns';
 import * as _ from 'lodash';
 import { ProjectComponent } from 'src/app/shared/components/project/project.component';
 import { ProformService } from '../../shared/service/proform.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-proform-list',
@@ -22,7 +23,8 @@ export class ProformListComponent implements OnInit {
 
   constructor(
     private excelExportService: ExcelExportService,
-    private proformService: ProformService
+    private proformService: ProformService,
+    private router: Router,
     ) {
 
    }
@@ -53,6 +55,10 @@ export class ProformListComponent implements OnInit {
         excelData.data
       );
     }
+  }
+
+  public edit() {
+    this.router.navigate(['proform-edit',45]) ;
   }
 
 }
