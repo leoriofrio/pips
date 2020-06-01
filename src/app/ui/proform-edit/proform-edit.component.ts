@@ -246,7 +246,6 @@ export class ProformEditComponent implements OnInit {
       this.validation = '!model.text';      
     } else {
       this.validation = 'model.text';
-      //this.data = {};
     }
 
     this.defaultColDefVal = {
