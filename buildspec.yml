@@ -14,10 +14,10 @@ phases:
       - ng build --prod --aot
   post_build:
      commands:
-      - aws s3 sync dist/pips ${pips.ec}
+      - aws s3 sync dist/pips ${S3_BUCKET}
       - echo Build completed on `date`
 artifacts:
   files:
       - '**/*'
-  base-directory: 'dist/pips'
+  base-directory: 'dist*'
   discard-paths: yes
