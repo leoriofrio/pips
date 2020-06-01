@@ -238,9 +238,7 @@ export class ProformEditComponent implements OnInit {
   ngOnInit() {
     this.enabledTitle = false;
     this.allowExcelExport = false;
-
-    this.currentDate = new Date();    
-    
+    this.currentDate = new Date();        
     this.proformId = this.route.snapshot.paramMap.get("id");
       
     
