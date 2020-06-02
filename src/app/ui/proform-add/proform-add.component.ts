@@ -9,17 +9,17 @@ import { ExcelExportService } from 'src/app/shared/service/export-excel.service'
 import * as _ from 'lodash';
 import { of as observableOf } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
-import { GridRecord, IProform, IProformDetail, MODEL_DETAIL } from 'src/app/app.type';
+import { GridRecord, IProform, IProformDetail, MODEL_DETAIL, DataType } from 'src/app/app.type';
 import Handsontable from 'handsontable';
 import { ProformService } from '../../shared/service/proform.service';
 import { Router } from '@angular/router';
 import { ProductService } from 'src/app/shared/service/product.service';
-import { map } from 'rxjs/operators';
+import { UtilsService  } from 'src/app/shared/service/utils.service';
+import { map, switchMap } from 'rxjs/operators';
 
 
 
 const dataVal = require('./proformList.json');
-const vendedores = require('./vendedores.json');
 const clientes = require('./clientes.json');
 const colegios = require('./colegios.json');
 
@@ -32,6 +32,10 @@ const colegios = require('./colegios.json');
 export class ProformAddComponent implements OnInit {
   @ViewChild(ProjectComponent, {static: true}) child: ProjectComponent;
   @ViewChild('container') container: ElementRef;
+
+  public userData: any;
+  public collegeDataType: DataType ;
+  public listCollegeDataType: DataType[];
   
   public data: any;
   public dataOfBank: any[] = [];
@@ -48,30 +52,46 @@ export class ProformAddComponent implements OnInit {
   public dataService: any;
   public dataProduct: any;
   public dataProformId;
-  currentDate: {};
+  public currentDate: {};
+  public form = new FormGroup({});
+  public model = {};
+  public options = {};
 
   constructor(
     private excelExportService: ExcelExportService, 
     private route: ActivatedRoute,
     private proformService: ProformService,
     private productService: ProductService,
+    private utilsService: UtilsService,
     private router: Router
   ) { 
-    
+    const self = this;
     this.data = dataVal;
     this.dataOfBank = dataVal;
     for (let value = 0; value < this.dataOfBank.length; value++) {
       let row = this.dataOfBank[value];
       //this.dataset.push(row);
     };
+    /*
     this.productService.getProductByRegion(TypeRegion.SIERRA).subscribe(product => {
-      this.dataProduct = product;
+      self.dataProduct = product;      
     });
+    */
+   
+   
+   
+    
   }
 
   ngOnInit() {
+    const self = this;
     this.enabledTitle = false;
     this.allowExcelExport = false;
+
+    this.getDataProduct().subscribe(data => {
+      self.dataProduct = data;
+     });
+    console.log(this.dataProduct);
 
     this.currentDate = new Date();    
 
@@ -94,12 +114,11 @@ export class ProformAddComponent implements OnInit {
       resizable: true
     };
 
+    
+
   }
 
-  form = new FormGroup({});
-  model = {};
-
-  options = {};
+  
 
   
   public formFields: FormlyFieldConfig[] = [
@@ -157,7 +176,21 @@ export class ProformAddComponent implements OnInit {
           templateOptions: {
             label: Proform.USER_ID.name,
             required: true,
-            options: vendedores,
+            valueProp: 'id',
+            labelProp: 'userName',
+            //options: vendedores,
+          },
+          lifecycle: {
+            onInit: (form, field) => {
+              this.utilsService
+                .getUsers()
+                .pipe()
+                .subscribe(data => {
+                  field.templateOptions.options = _.sortBy(data, "userName");
+                  this.userData = data;
+                });
+              
+            }
           },
           expressionProperties: {
             'templateOptions.disabled': this.validation,
@@ -204,7 +237,19 @@ export class ProformAddComponent implements OnInit {
           key: Proform.COLLEGE_ID.prop,
           templateOptions: {
             label: Proform.COLLEGE_ID.name,
-            options: _.sortBy(colegios, "label"),
+            valueProp: 'id',
+            labelProp: 'name',
+            //options: _.sortBy(colegios, "label"),
+          },
+          lifecycle: {
+            onInit: (form, field) => {
+              this.utilsService
+                .getCollegesByRegion(TypeRegion.SIERRA)
+                .pipe()
+                .subscribe(data => {                  
+                  field.templateOptions.options = _.sortBy(data, "name");                  
+                });
+              }
           },
           expressionProperties: {
             'templateOptions.disabled': this.validation,
@@ -216,7 +261,19 @@ export class ProformAddComponent implements OnInit {
           key: Proform.CLIENT_ID.prop,
           templateOptions: {
             label: Proform.CLIENT_ID.name,
-            options: _.sortBy(clientes, "label"),
+            valueProp: 'id',
+            labelProp: 'name',
+            //options: _.sortBy(clientes, "label"),
+          },
+          lifecycle: {
+            onInit: (form, field) => {
+              this.utilsService
+                .getClientsAll()
+                .pipe()
+                .subscribe(data => {                  
+                  field.templateOptions.options = _.sortBy(data, "name");                  
+                });
+              }
           },
           expressionProperties: {
             'templateOptions.disabled': this.validation,
@@ -359,6 +416,10 @@ export class ProformAddComponent implements OnInit {
 
   public close() {
     
+  }
+
+  public getDataProduct() {
+    return this.productService.getProductByRegion(TypeRegion.SIERRA);
   }
 
   public matchProduct(description: string, product: any[]): number | undefined {

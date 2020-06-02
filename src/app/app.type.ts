@@ -26,6 +26,11 @@ export type GridRecord = {
     route?: string;
   }
 
+  export interface DataType {
+    label: any,
+    value: any;
+  }
+
   export interface IProform {
     id: number;
     number_proform: string;
@@ -74,5 +79,7 @@ export type GridRecord = {
     "sale_staff": 0,
     "sale_training": 0
   };
+
+  
 
   

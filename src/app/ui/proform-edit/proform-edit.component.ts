@@ -280,6 +280,7 @@ export class ProformEditComponent implements OnInit {
         
       });
     }
+    console.log(self.dataTransform);
 
     this.model = cabecera;
     this.cd.detectChanges();
@@ -364,7 +365,7 @@ export class ProformEditComponent implements OnInit {
     
 
     const idProform = (<HTMLInputElement>document.getElementById("txtProforma")).value;
-
+/*
     this.getDataById(Number(idProform)).subscribe( data => {      
       self.dataTransform = data['proformDetail'];
       if( _.size(self.dataTransform) > 0 ) {
@@ -375,11 +376,11 @@ export class ProformEditComponent implements OnInit {
         };
       }
     });
+*/
 
+    //this.ngOnInit();
 
-    this.ngOnInit();
-
-    console.log('Edit', self.dataset);
+    console.log('Edit', this.dataset);
     /*
     const idProform = 45;
         
