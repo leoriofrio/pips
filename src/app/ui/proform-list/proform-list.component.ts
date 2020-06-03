@@ -20,6 +20,7 @@ export class ProformListComponent implements OnInit {
   public gridColumns = COLUMNS_PROFORM;
   public enabledTitle: boolean;
   public allowExcelExport: boolean;
+  public proformId: any;
 
   constructor(
     private excelExportService: ExcelExportService,
@@ -58,7 +59,7 @@ export class ProformListComponent implements OnInit {
   }
 
   public edit() {
-    this.router.navigate(['proform-edit',45]) ;
+    this.router.navigate(['proform-edit',62]) ;
   }
 
 }
