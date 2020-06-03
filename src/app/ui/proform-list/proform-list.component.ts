@@ -59,7 +59,8 @@ export class ProformListComponent implements OnInit {
   }
 
   public edit() {
-    this.router.navigate(['proform-edit',62]) ;
+    const idProform = (<HTMLInputElement>document.getElementById("txtProforma")).value;
+    this.router.navigate(['proform-edit',idProform]) ;
   }
 
 }
