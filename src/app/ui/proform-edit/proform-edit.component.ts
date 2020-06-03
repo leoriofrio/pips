@@ -4,7 +4,7 @@ import { ProjectComponent } from '../../shared/components/project/project.compon
 import { GridComponent } from '../../shared/components/grid/grid.component';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 import { COLUMNS_DETAIL_PROFORM, COLUMNS_DETAIL, COLUMNS_HEADER } from './model/proformColumns.model';
-import { Proform, TypeClientSale, Agreement, AppStatusForm, TypeRegion } from 'src/app/app.keys';
+import { Proform, TypeClientSale, Agreement, AppStatusForm, TypeRegion, ProformDetail } from 'src/app/app.keys';
 import { ExcelExportService } from 'src/app/shared/service/export-excel.service';
 import * as _ from 'lodash';
 import { of as observableOf, of } from 'rxjs';
@@ -14,15 +14,15 @@ import Handsontable from 'handsontable';
 import { ProformService } from '../../shared/service/proform.service';
 import { Router } from '@angular/router';
 import { ProductService } from 'src/app/shared/service/product.service';
-import { switchMap } from 'rxjs/operators';
 import { SetLeftFeature } from 'ag-grid-community';
+import { UtilsService  } from 'src/app/shared/service/utils.service';
+import { map, switchMap } from 'rxjs/operators';
 
 
-
-const dataVal = require('./proformList.json');
-const vendedores = require('./vendedores.json');
-const clientes = require('./clientes.json');
-const colegios = require('./colegios.json');
+//const dataVal = require('./proformList.json');
+//const vendedores = require('./vendedores.json');
+//const clientes = require('./clientes.json');
+//const colegios = require('./colegios.json');
 const cabecera = require('./cabecera.json');
 
 @Component({
@@ -35,6 +35,10 @@ export class ProformEditComponent implements OnInit {
 
   @ViewChild(ProjectComponent, {static: true}) child: ProjectComponent;
   @ViewChild('container') container: ElementRef;
+
+  public userData: any;
+  public productCod: any[] = [];
+  public productDescription: any[] = [];
   
   public data: any[];
   public dataOfBank: any[] = [];
@@ -42,7 +46,7 @@ export class ProformEditComponent implements OnInit {
   public dataTransform: any[];
   public dataTransformTempo: any[];
   public gridColumns = COLUMNS_DETAIL_PROFORM;
-  public columnsGrid = COLUMNS_DETAIL;
+  public columnsGrid: any;  // = COLUMNS_DETAIL;
   public columnsHeader = COLUMNS_HEADER;
   public enabledTitle: boolean;
   public allowExcelExport: boolean;
@@ -64,9 +68,26 @@ export class ProformEditComponent implements OnInit {
     private proformService: ProformService,
     private productService: ProductService,
     private router: Router,
-    private cd : ChangeDetectorRef
+    private cd : ChangeDetectorRef,
+    private utilsService: UtilsService,
   ) { 
+    const self = this;
+
+    this.getDataProduct().subscribe(data => {
+      self.dataProduct = data;
+      _.forEach(self.dataProduct, function(value, key) {
+        _.forEach(value, function(valueProduct, keyProduct) {
+          if ( keyProduct === 'description' ) {
+            self.productDescription.push(valueProduct);
+          }
+          if ( keyProduct === 'cod' ) {
+            self.productCod.push(valueProduct);
+          }
           
+        });
+      });
+      
+     });
   }
 
   
@@ -133,7 +154,21 @@ export class ProformEditComponent implements OnInit {
           templateOptions: {
             label: Proform.USER_ID.name,
             required: true,
-            options: vendedores,
+            valueProp: 'id',
+            labelProp: 'userName',
+            //options: vendedores,
+          },
+          lifecycle: {
+            onInit: (form, field) => {
+              this.utilsService
+                .getUsers()
+                .pipe()
+                .subscribe(data => {
+                  field.templateOptions.options = _.sortBy(data, "userName");
+                  this.userData = data;
+                });
+              
+            }
           },
           expressionProperties: {
             'templateOptions.disabled': this.validation,
@@ -180,7 +215,24 @@ export class ProformEditComponent implements OnInit {
           key: Proform.COLLEGE_ID.prop,
           templateOptions: {
             label: Proform.COLLEGE_ID.name,
-            options: _.sortBy(colegios, "label"),
+            valueProp: 'id',
+            labelProp: 'name',
+            required: true,
+            //options: _.sortBy(colegios, "label"),
+          },
+          lifecycle: {
+            onInit: (form, field) => {              
+              this.utilsService
+                .getCollegesByRegion(TypeRegion.SIERRA)
+                .pipe()
+                .subscribe(data => { 
+                  let dataCollege: any[] = [];
+                  _.forEach(data, function(value, key) {
+                    dataCollege.push({'id': value['id'], 'name': value['codSantillana'] + ' - ' + value['name'], 'codSantillana': Number(value['codSantillana'])});
+                  });
+                  field.templateOptions.options = _.sortBy(dataCollege, "codSantillana");                  
+                });
+              }
           },
           expressionProperties: {
             'templateOptions.disabled': this.validation,
@@ -192,7 +244,24 @@ export class ProformEditComponent implements OnInit {
           key: Proform.CLIENT_ID.prop,
           templateOptions: {
             label: Proform.CLIENT_ID.name,
-            options: _.sortBy(clientes, "label"),
+            valueProp: 'id',
+            labelProp: 'name',
+            required: true,
+            //options: _.sortBy(clientes, "label"),
+          },
+          lifecycle: {
+            onInit: (form, field) => {
+              this.utilsService
+                .getClientsAll()
+                .pipe()
+                .subscribe(data => {  
+                  let dataClient: any[] = [];
+                  _.forEach(data, function(value, key) {
+                    dataClient.push({'id': value['id'], 'name': value['codClient'] + ' - ' + value['name'], 'codClient': value['codClient']});
+                  });                
+                  field.templateOptions.options = _.sortBy(dataClient, "codClient");                  
+                });
+              }
           },
           expressionProperties: {
             'templateOptions.disabled': this.validation,
@@ -240,7 +309,35 @@ export class ProformEditComponent implements OnInit {
     this.allowExcelExport = false;
     this.currentDate = new Date();        
     this.proformId = this.route.snapshot.paramMap.get("id");
-      
+
+    this.columnsGrid = [
+      { data: ProformDetail.ID.prop, readOnly: true },
+      { type: 'text', data: ProformDetail.DEGREE.prop,  },
+      { type: 'autocomplete', 
+        data: 'codigo', 
+        renderer: 'currency', 
+        source:  this.productCod, 
+        strict: true, 
+        filter: false},
+      { type: 'autocomplete', 
+        data: ProformDetail.PRODUCT_ID.prop, 
+        renderer: 'currency', 
+        source:  this.productDescription, 
+        strict: true, 
+        filter: false},
+      { type: 'numeric', data: ProformDetail.QUANTITY.prop, renderer: 'currency' },
+      { type: 'numeric', data: ProformDetail.PRICE.prop, renderer: 'currency' },
+      { type: 'numeric', data: ProformDetail.SUB_TOTAL.prop, renderer: 'currency' , readOnly: true  },
+      { type: 'numeric', data: ProformDetail.SALE_DIRECT.prop, renderer: 'currency' },
+      { type: 'numeric', data: ProformDetail.SALE_EXTERNAL_LIBRARY.prop, renderer: 'currency' },
+      { type: 'numeric', data: ProformDetail.SALE_EVENT.prop, renderer: 'currency' },
+      { type: 'numeric', data: ProformDetail.SALE_TEACHER.prop, renderer: 'currency' },
+      { type: 'numeric', data: ProformDetail.SALE_INFRASTRUCTURE.prop, renderer: 'currency' },
+      { type: 'numeric', data: ProformDetail.SALE_SCHOLARSHIPS.prop, renderer: 'currency' },
+      { type: 'numeric', data: ProformDetail.SALE_STAFF.prop, renderer: 'currency' },
+      { type: 'numeric', data: ProformDetail.SALE_TRAINING.prop, renderer: 'currency' },
+      { type: 'numeric', data: ProformDetail.TOTAL.prop, renderer: 'currency' , readOnly: true  },
+    ]
     
     if (!this.enableEdit){
       this.validation = '!model.text';      
@@ -266,25 +363,40 @@ export class ProformEditComponent implements OnInit {
     };
 */
     if( _.size(self.dataset) === 0 ) {
-      this.getDataById(Number(this.proformId)).subscribe( data => {      
+      this.getDataById(Number(this.proformId)).subscribe( data => {
         self.dataTransform = data['proformDetail'];
-        if( _.size(self.dataTransform) > 0 ) {
-          for (let value = 0; value < self.dataTransform.length; value++) {          
-            let row = _.pick(this.dataTransform[value], _.keys(MODEL_DETAIL) );
-            //let row = self.dataOfBank[value];
-            self.dataset.push(row);
-          };
-        }
-        //self.ngOnInit();
+        this.productService.getProductByRegion(TypeRegion.SIERRA).subscribe(data => {
+          if( _.size(self.dataTransform) > 0 ) {
+            for (let value = 0; value < self.dataTransform.length; value++) {
+              let row = _.pick(this.dataTransform[value], _.keys(MODEL_DETAIL) );
+              
+              let rowId = row['product_id'];
+              let descount = Number(row['sale_direct']) + Number(row['sale_external_library']) + Number(row['sale_event']) + Number(row['sale_teacher']) + Number(row['sale_infrastructure']) + Number(row['sale_scholarships']) + Number(row['sale_staff']) + Number(row['sale_training']);
+              row['codigo'] = self.matchProductCodById(rowId,  data);
+              row['product_id'] = self.matchProductDescriptionById(rowId,  data);
+              row['subtotal'] = Number(row['quantity']) * Number(row['price'])
+              row['total'] = Number(row['subtotal']) - Number(row['subtotal']) * descount / 100;
+              //let row = self.dataOfBank[value];
+              self.dataset.push(row);            
+            };
+          }
+        });
+        
         
       });
     }
+
+    
 
     this.model = cabecera;
     this.cd.detectChanges();
 
   }
   
+  public getDataProduct() {
+    return this.productService.getProductByRegion(TypeRegion.SIERRA);
+  }
+
 /**
    * Export Excel
    * @param {name, gridColumns, data}
@@ -335,9 +447,27 @@ export class ProformEditComponent implements OnInit {
   public matchProduct(description: string, product: any[]): number | undefined {
     let productObj = _.find(product, (x) => x.description === description);
     if (_.isNil(productObj)) {
-      productObj.id = null;
+      return null;
     }
     return productObj.id;
+
+  }
+
+  public matchProductCodById(id: any, product: any[]): number | undefined {
+    let productObj = _.find(product, (x) => x.id === Number(id));
+    if (_.isNil(productObj)) {
+      return null;
+    }
+    return productObj.cod;
+
+  }
+
+  public matchProductDescriptionById(id: any, product: any[]): number | undefined {
+    let productObj = _.find(product, (x) => x.id === Number(id));
+    if (_.isNil(productObj)) {
+      return null;
+    }
+    return productObj.description;
 
   }
 

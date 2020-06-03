@@ -69,6 +69,7 @@ export type GridRecord = {
     "product_id": 0,
     "quantity": 0,
     "price": 0,
+    "subtotal":0,
     "total":0,
     "sale_direct": 0,
     "sale_external_library": 0,
