@@ -40,7 +40,7 @@ export const COLUMNS_DETAIL = [
     strict: true, 
     filter: false},
   { type: 'numeric', data: ProformDetail.QUANTITY.prop, renderer: 'currency' },
-  { type: 'numeric', data: ProformDetail.PRICE.prop, renderer: 'currency' },
+  { type: 'numeric', data: ProformDetail.PRICE.prop, renderer: 'currency', readOnly: true },
   { type: 'numeric', data: ProformDetail.SUB_TOTAL.prop, renderer: 'currency' , readOnly: true  },
   { type: 'numeric', data: ProformDetail.SALE_DIRECT.prop, renderer: 'currency' },
   { type: 'numeric', data: ProformDetail.SALE_EXTERNAL_LIBRARY.prop, renderer: 'currency' },

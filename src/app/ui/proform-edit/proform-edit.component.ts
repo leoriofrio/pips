@@ -264,7 +264,6 @@ export class ProformEditComponent implements OnInit {
       let row = self.dataOfBank[value];
       self.dataset.push(row);
     };
-    console.log('inicial data',dataVal);
 */
     if( _.size(self.dataset) === 0 ) {
       this.getDataById(Number(this.proformId)).subscribe( data => {      
@@ -280,7 +279,6 @@ export class ProformEditComponent implements OnInit {
         
       });
     }
-    console.log(self.dataTransform);
 
     this.model = cabecera;
     this.cd.detectChanges();
@@ -327,7 +325,7 @@ export class ProformEditComponent implements OnInit {
   }
 
   public onChange(data: GridRecord[]): void {
-    //console.log(data);
+
   }
 
   public close() {
@@ -351,9 +349,9 @@ export class ProformEditComponent implements OnInit {
 /*
     this.proformService.getProformById(Number(id)).subscribe( params => {
       self.data = params[0]['proformDetail'];
-      console.log('datos',self.data);
+
     });
-    console.log('inicio',this.data);
+
 */
   }
 
@@ -380,7 +378,7 @@ export class ProformEditComponent implements OnInit {
 
     //this.ngOnInit();
 
-    console.log('Edit', this.dataset);
+    
     /*
     const idProform = 45;
         
@@ -406,7 +404,7 @@ export class ProformEditComponent implements OnInit {
 
     return this.data;
     //this.dataset = this.data;
-    //console.log(this.data);
+
     //this.ngOnInit();
         */
   }

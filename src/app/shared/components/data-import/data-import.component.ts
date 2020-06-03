@@ -28,7 +28,7 @@ export class DataImportComponent implements OnInit {
 
   ngOnInit() {
     this.pattern = ValidatesPattern.alphanumeric;
-    //console.log('Nuevos' + this.files);
+
   }
 
   loadProcess(files: Array<any>) {
@@ -57,7 +57,6 @@ export class DataImportComponent implements OnInit {
       });
     }, 3000);
     this.uploadService.refreshCurrentPayPlanPeriod(this.files,'dataimport/dataimport');
-    //console.log(this.files);
   }
 
   addDescriptions(form: NgForm) {

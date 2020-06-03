@@ -24,7 +24,7 @@ export class GridComponent implements OnInit, OnDestroy {
   @Output()
   public addRow = new  EventEmitter<any>();
   
-  private hot: Handsontable;
+  public hot: Handsontable;
 
   private  setter = false;
 
@@ -48,8 +48,7 @@ export class GridComponent implements OnInit, OnDestroy {
         if( !changes ) {
           return;
         }
-        debugger;
-        console.log(changes, src);
+
         
         if (!this.setter) { 
           for(const row of changes) {
@@ -148,12 +147,12 @@ export class GridComponent implements OnInit, OnDestroy {
           this.setter = false;
         }
         */
-
       },
       rowHeaders: true,
       stretchH: 'all',
       width: 950,
       height: 400,
+      colWidths: [45, 75, 120, 330, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
       autoWrapRow: true,
       manualRowResize: true,
       manualColumnResize: true,
@@ -161,15 +160,33 @@ export class GridComponent implements OnInit, OnDestroy {
       manualColumnMove: true,
       filters: true,
       dropdownMenu: true,
+      renderAllRows: false,
       outsideClickDeselects: true,
       licenseKey: 'non-commercial-and-evaluation',
       columns: this.columnsGrid,
-      viewportRowRenderingOffset: "auto",
+      viewportRowRenderingOffset: "auto"
     });
+
+    //this.addCalc();
     
   }
 
-  
+  public addCalc() {
+    //adding row and pushing new data
+    this.hot.setDataAtCell(this.hot.countRows(), 0, '');
+    //changing header to AVE for the last row  
+    this.hot.updateSettings({
+      afterGetRowHeader: function(row, TH) {
+        if (row === this.hot.countRows() - 1) {
+          TH.textContent = 'SUM';       
+        }
+      }
+    })
+    
+    let lastRow = this.hot.countRows() - 1;
+    console.log(lastRow);
+    this.hot.setDataAtCell(this.hot.countRows() - 1, 0, '=SUM(E1:E'+lastRow+')');
+  }
 
   ngOnDestroy(): void {
     this.hot.destroy();
