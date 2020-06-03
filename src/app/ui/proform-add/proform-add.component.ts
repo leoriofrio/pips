@@ -63,7 +63,7 @@ export class ProformAddComponent implements OnInit {
     private proformService: ProformService,
     private productService: ProductService,
     private utilsService: UtilsService,
-    private router: Router
+    private router: Router,
   ) { 
     const self = this;
     this.data = dataVal;
@@ -305,6 +305,7 @@ export class ProformAddComponent implements OnInit {
             label: Proform.CLIENT_ID.name,
             valueProp: 'id',
             labelProp: 'name',
+            required: true,
             //options: _.sortBy(clientes, "label"),
           },
           lifecycle: {
@@ -417,6 +418,10 @@ export class ProformAddComponent implements OnInit {
         }
       );
         */
+
+      if (!this.validateFields()) {
+        return;
+      }
       
       this.proformService.createProform(this.model).subscribe(response => {        
         this.dataProformId = Number(response.id);
@@ -437,7 +442,33 @@ export class ProformAddComponent implements OnInit {
       });
       
       
-    }   
+    } else {
+      alert('Antes de guardar debe llenar todos los campos requeridos del formulario');
+    }  
+  }
+
+  public validateFields (): any {
+debugger;
+    let grid = _.cloneDeep(this.dataset);
+
+    if ( _.size(grid) <= 0 ) {
+      alert('Antes de guardar debe ingresar el detalle de los productos');
+      return false;
+    }
+
+    if ( _.isNil(this.model['client_id']) || _.isNaN(this.model['client_id']) ) {
+      this.model['client_id'] = null;
+    }
+
+    for (const row of grid) {
+      if( _.isNil(this.matchProduct(row['product_id'], this.dataProduct)) ) {
+        alert('No existe el producto ' + row['product_id']);
+        return false;
+      }
+       
+    }
+
+    return true;
   }
 
   public onChange(data: GridRecord[]): void {

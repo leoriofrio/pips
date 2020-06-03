@@ -64,12 +64,21 @@ export class GridComponent implements OnInit, OnDestroy {
             if ( row[1] === 'quantity' || row[1] === 'price' ) {
               this.setDataAtCell(row[0], 6, Number(this.getDataAtCell(row[0],4)) * Number(this.getDataAtCell(row[0],5))  );
             }
-
-            if ( row[1] === 'product_id' && !_.isNil(row[2]) ) {
+            
+            if ( row[1] === 'product_id' ) {
               varField = et.matchProductByName(row[3],dataVal);
-              if ( varField !== this.getDataAtCell(row[0],2) ) {
-                this.setDataAtCell(row[0], 2, et.matchProductByName(row[3],dataVal)  );
-              }              
+              if ( _.isNil(varField)  ) {
+                if (  this.getDataAtCell(row[0],3) === 'undefined' && !_.isNil(row[2]) ) {
+                  this.setDataAtCell(row[0], 3, row[2]  );
+                } else if ( !_.isNil(row[3])) {
+                  this.setDataAtCell(row[0], 3, null  );
+                }                
+              } else {
+                if ( varField !== this.getDataAtCell(row[0],2)  ) {
+                  this.setDataAtCell(row[0], 2, et.matchProductByName(row[3],dataVal)  );
+                }  
+              }
+              
             }
             
             switch(row[1]) { 
@@ -226,7 +235,7 @@ export class GridComponent implements OnInit, OnDestroy {
 public matchProductByName(description: string, product: any[]): string | undefined {
   let productObj = _.find(product, (x) => x.description === description);
   if (_.isNil(productObj)) {
-    productObj.cod = null;
+    return null;
   }
   return productObj.cod;
 
