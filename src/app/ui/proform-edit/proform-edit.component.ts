@@ -59,7 +59,7 @@ export class ProformEditComponent implements OnInit {
   public dataProformId;
   public editProform: boolean = false;
   public proformId: any;
-  public model: any;
+  public model: any = {};
   currentDate: {};
 
   constructor(
@@ -138,42 +138,26 @@ export class ProformEditComponent implements OnInit {
           className: 'col-2',
           type: 'input',
           key: Proform.NUMBER_PROFORM.prop,
-          defaultValue: '2020-1-',
           templateOptions: {
             label: Proform.NUMBER_PROFORM.name,
             required: true            
           },
           expressionProperties: {
-            'templateOptions.disabled': this.validation,
-            }
+            'templateOptions.disabled': '!model.text',
+            },
         },  
         {
           className: 'col-3',
-          type: 'select',
+          type: 'input',
           key: Proform.USER_ID.prop,
           templateOptions: {
             label: Proform.USER_ID.name,
-            required: true,
-            valueProp: 'id',
-            labelProp: 'userName',
-            //options: vendedores,
-          },
-          lifecycle: {
-            onInit: (form, field) => {
-              this.utilsService
-                .getUsers()
-                .pipe()
-                .subscribe(data => {
-                  field.templateOptions.options = _.sortBy(data, "userName");
-                  this.userData = data;
-                });
-              
-            }
+            required: true,            
           },
           expressionProperties: {
-            'templateOptions.disabled': this.validation,
-            }
-        },  
+            'templateOptions.disabled': '!model.text',
+            },
+        },
         {
           type: 'input',
           key: Proform.DATE_PROFORM.prop,
@@ -184,7 +168,7 @@ export class ProformEditComponent implements OnInit {
             label: Proform.DATE_PROFORM.name ,
           },
           expressionProperties: {
-            'templateOptions.disabled': this.validation,
+            'templateOptions.disabled': '!model.text',
             }
         },       
         {
@@ -197,7 +181,7 @@ export class ProformEditComponent implements OnInit {
             label: Proform.DATE_DELIVERY.name,
           },
           expressionProperties: {
-            'templateOptions.disabled': this.validation,
+            'templateOptions.disabled': '!model.text',
             }
         },       
       ],      
@@ -211,31 +195,13 @@ export class ProformEditComponent implements OnInit {
       fieldGroup: [        
         {
           className: 'col-4',
-          type: 'select',
+          type: 'input',
           key: Proform.COLLEGE_ID.prop,
           templateOptions: {
-            label: Proform.COLLEGE_ID.name,
-            valueProp: 'id',
-            labelProp: 'name',
-            required: true,
-            //options: _.sortBy(colegios, "label"),
-          },
-          lifecycle: {
-            onInit: (form, field) => {              
-              this.utilsService
-                .getCollegesByRegion(TypeRegion.SIERRA)
-                .pipe()
-                .subscribe(data => { 
-                  let dataCollege: any[] = [];
-                  _.forEach(data, function(value, key) {
-                    dataCollege.push({'id': value['id'], 'name': value['codSantillana'] + ' - ' + value['name'], 'codSantillana': Number(value['codSantillana'])});
-                  });
-                  field.templateOptions.options = _.sortBy(dataCollege, "codSantillana");                  
-                });
-              }
+            label: Proform.COLLEGE_ID.name,            
           },
           expressionProperties: {
-            'templateOptions.disabled': this.validation,
+            'templateOptions.disabled': '!model.text',
             }
         },       
         {
@@ -269,26 +235,24 @@ export class ProformEditComponent implements OnInit {
         },
         {
           className: 'col-2',
-          type: 'select',
+          type: 'input',
           key: Proform.TYPE_CLIENT_SALE.prop,
           templateOptions: {
             label: Proform.TYPE_CLIENT_SALE.name,
-            options: TypeClientSale.TYPE_SALE
           },
           expressionProperties: {
-            'templateOptions.disabled': this.validation,
+            'templateOptions.disabled': '!model.text',
             }
         },        
         {
           className: 'col-2',
-          type: 'select',
+          type: 'input',
           key: Proform.AGREEMENT.prop,
           templateOptions: {
             label: Proform.AGREEMENT.name,
-            options: Agreement.TYPE_AGREEMENT
           },
           expressionProperties: {
-            'templateOptions.disabled': this.validation,
+            'templateOptions.disabled': '!model.text',
             }
         },     
       ],      
@@ -364,6 +328,18 @@ export class ProformEditComponent implements OnInit {
 */
     if( _.size(self.dataset) === 0 ) {
       this.getDataById(Number(this.proformId)).subscribe( data => {
+        self.model =  {
+            "id":data['id'],
+            "number_proform": data['number_proform'],
+            "user_id":data['user']['userName'],
+            "college_id": data['college']['codSantillana'] + ' - ' + data['college']['name'],
+            "client_id":data['client_id'],
+            "date_proform": new Date(data['date_proform']).getFullYear() + '-0' + new Date(data['date_proform']).getMonth() + '-' + new Date(data['date_proform']).getDate(),
+            "date_delivery": new Date(data['date_delivery']).getFullYear() + '-0' + new Date(data['date_delivery']).getMonth() + '-' + new Date(data['date_delivery']).getDate(),
+            "type_client_sale": data['type_client_sale'],
+            "agreement": data['agreement']
+        };
+        console.log(JSON.stringify(self.model));
         self.dataTransform = data['proformDetail'];
         this.productService.getProductByRegion(TypeRegion.SIERRA).subscribe(data => {
           if( _.size(self.dataTransform) > 0 ) {
@@ -388,9 +364,9 @@ export class ProformEditComponent implements OnInit {
 
     
 
-    this.model = cabecera;
+    
     this.cd.detectChanges();
-
+    
   }
   
   public getDataProduct() {
@@ -413,6 +389,9 @@ export class ProformEditComponent implements OnInit {
   }
 
   public save() {
+      alert('Se ha guardado la Proforma');
+      this.router.navigate(['/']);
+    /*
     if (this.form.valid) {
       this.model['date_delivery'] = new Date(this.model['date_delivery']).toISOString();
       this.model['date_proform'] = new Date(this.model['date_proform']).toISOString();
@@ -433,6 +412,7 @@ export class ProformEditComponent implements OnInit {
         this.router.navigate(['/']);
       });      
     }
+    */
     
   }
 

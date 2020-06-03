@@ -5,7 +5,7 @@
         <button id="btnExportExcel" [disabled]="!uploadFile" *ngIf="allowExcelExport" class="button-title" (click)="exportAsXLSX()">
             Exportar a Excel
         </button>
-        <button id="btnUploadFile"  class="button-title" (click)="changeView()">
+        <button id="btnUploadFile" *ngIf="allowExcelExport"  class="button-title" (click)="changeView()">
             Cargar Archivo
         </button>
     </div>
