@@ -73,7 +73,6 @@ export class HotableComponent implements OnInit {
     dropdownMenu: true,
     afterValidate: function(isValid, value, row, prop){
       if(value == false){
-        //console.log( value, row, prop)    
             //alert("Invalid")
           //Value = isValid
           // row = inserted invalid value

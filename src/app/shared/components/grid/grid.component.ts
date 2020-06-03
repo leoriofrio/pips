@@ -24,7 +24,7 @@ export class GridComponent implements OnInit, OnDestroy {
   @Output()
   public addRow = new  EventEmitter<any>();
   
-  private hot: Handsontable;
+  public hot: Handsontable;
 
   private  setter = false;
 
@@ -48,8 +48,7 @@ export class GridComponent implements OnInit, OnDestroy {
         if( !changes ) {
           return;
         }
-        debugger;
-        console.log(changes, src);
+
         
         if (!this.setter) { 
           for(const row of changes) {
@@ -65,12 +64,21 @@ export class GridComponent implements OnInit, OnDestroy {
             if ( row[1] === 'quantity' || row[1] === 'price' ) {
               this.setDataAtCell(row[0], 6, Number(this.getDataAtCell(row[0],4)) * Number(this.getDataAtCell(row[0],5))  );
             }
-
-            if ( row[1] === 'product_id' && !_.isNil(row[2]) ) {
+            
+            if ( row[1] === 'product_id' ) {
               varField = et.matchProductByName(row[3],dataVal);
-              if ( varField !== this.getDataAtCell(row[0],2) ) {
-                this.setDataAtCell(row[0], 2, et.matchProductByName(row[3],dataVal)  );
-              }              
+              if ( _.isNil(varField)  ) {
+                if (  this.getDataAtCell(row[0],3) === 'undefined' && !_.isNil(row[2]) ) {
+                  this.setDataAtCell(row[0], 3, row[2]  );
+                } else if ( !_.isNil(row[3])) {
+                  this.setDataAtCell(row[0], 3, null  );
+                }                
+              } else {
+                if ( varField !== this.getDataAtCell(row[0],2)  ) {
+                  this.setDataAtCell(row[0], 2, et.matchProductByName(row[3],dataVal)  );
+                }  
+              }
+              
             }
             
             switch(row[1]) { 
@@ -148,12 +156,12 @@ export class GridComponent implements OnInit, OnDestroy {
           this.setter = false;
         }
         */
-
       },
       rowHeaders: true,
       stretchH: 'all',
       width: 950,
       height: 400,
+      colWidths: [45, 75, 120, 330, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
       autoWrapRow: true,
       manualRowResize: true,
       manualColumnResize: true,
@@ -161,15 +169,33 @@ export class GridComponent implements OnInit, OnDestroy {
       manualColumnMove: true,
       filters: true,
       dropdownMenu: true,
+      renderAllRows: false,
       outsideClickDeselects: true,
       licenseKey: 'non-commercial-and-evaluation',
       columns: this.columnsGrid,
-      viewportRowRenderingOffset: "auto",
+      viewportRowRenderingOffset: "auto"
     });
+
+    //this.addCalc();
     
   }
 
-  
+  public addCalc() {
+    //adding row and pushing new data
+    this.hot.setDataAtCell(this.hot.countRows(), 0, '');
+    //changing header to AVE for the last row  
+    this.hot.updateSettings({
+      afterGetRowHeader: function(row, TH) {
+        if (row === this.hot.countRows() - 1) {
+          TH.textContent = 'SUM';       
+        }
+      }
+    })
+    
+    let lastRow = this.hot.countRows() - 1;
+    console.log(lastRow);
+    this.hot.setDataAtCell(this.hot.countRows() - 1, 0, '=SUM(E1:E'+lastRow+')');
+  }
 
   ngOnDestroy(): void {
     this.hot.destroy();
@@ -200,7 +226,7 @@ export class GridComponent implements OnInit, OnDestroy {
  public matchProduct(cod: string, product: any[]): string | undefined {
   let productObj = _.find(product, (x) => x.cod === cod);
   if (_.isNil(productObj)) {
-    productObj.description = null;
+    return null;
   }
   return productObj.description;
 
@@ -209,7 +235,7 @@ export class GridComponent implements OnInit, OnDestroy {
 public matchProductByName(description: string, product: any[]): string | undefined {
   let productObj = _.find(product, (x) => x.description === description);
   if (_.isNil(productObj)) {
-    productObj.cod = null;
+    return null;
   }
   return productObj.cod;
 
@@ -218,17 +244,17 @@ public matchProductByName(description: string, product: any[]): string | undefin
 public matchDegreeByProduct(cod: string, product: any[]): string | undefined {
   let productObj = _.find(product, (x) => x.cod === cod);
   if (_.isNil(productObj)) {
-    productObj.degree = null;
+    return null;
   }
   return productObj.degree;
 
 }
 
 
-public matchPrice(cod: string, product: any[]): string | undefined {
+public matchPrice(cod: string, product: any[]): any | undefined {
   let productObj = _.find(product, (x) => x.cod === cod);
   if (_.isNil(productObj)) {
-    productObj.price = null;
+    return 0;
   }
   return productObj.price;
 
