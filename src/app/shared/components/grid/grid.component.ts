@@ -226,7 +226,7 @@ export class GridComponent implements OnInit, OnDestroy {
  public matchProduct(cod: string, product: any[]): string | undefined {
   let productObj = _.find(product, (x) => x.cod === cod);
   if (_.isNil(productObj)) {
-    productObj.description = null;
+    return null;
   }
   return productObj.description;
 
@@ -244,17 +244,17 @@ public matchProductByName(description: string, product: any[]): string | undefin
 public matchDegreeByProduct(cod: string, product: any[]): string | undefined {
   let productObj = _.find(product, (x) => x.cod === cod);
   if (_.isNil(productObj)) {
-    productObj.degree = null;
+    return null;
   }
   return productObj.degree;
 
 }
 
 
-public matchPrice(cod: string, product: any[]): string | undefined {
+public matchPrice(cod: string, product: any[]): any | undefined {
   let productObj = _.find(product, (x) => x.cod === cod);
   if (_.isNil(productObj)) {
-    productObj.price = null;
+    return 0;
   }
   return productObj.price;
 
