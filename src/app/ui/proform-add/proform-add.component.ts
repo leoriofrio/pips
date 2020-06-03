@@ -19,9 +19,9 @@ import { map, switchMap } from 'rxjs/operators';
 
 
 
-const dataVal = require('./proformList.json');
-const clientes = require('./clientes.json');
-const colegios = require('./colegios.json');
+//const dataVal = require('./proformList.json');
+//const clientes = require('./clientes.json');
+//const colegios = require('./colegios.json');
 
 
 @Component({
@@ -66,8 +66,8 @@ export class ProformAddComponent implements OnInit {
     private router: Router,
   ) { 
     const self = this;
-    this.data = dataVal;
-    this.dataOfBank = dataVal;
+    //this.data = dataVal;
+    //this.dataOfBank = dataVal;
     for (let value = 0; value < this.dataOfBank.length; value++) {
       let row = this.dataOfBank[value];
       //this.dataset.push(row);
@@ -448,7 +448,7 @@ export class ProformAddComponent implements OnInit {
   }
 
   public validateFields (): any {
-debugger;
+
     let grid = _.cloneDeep(this.dataset);
 
     if ( _.size(grid) <= 0 ) {
@@ -460,11 +460,28 @@ debugger;
       this.model['client_id'] = null;
     }
 
+    console.log(JSON.stringify(this.dataProduct));
     for (const row of grid) {
-      if( _.isNil(this.matchProduct(row['product_id'], this.dataProduct)) ) {
-        alert('No existe el producto ' + row['product_id']);
+      if ( !_.isNil(row['product_id'])) {
+        if( _.isNil(this.matchProduct(row['product_id'], this.dataProduct)) ) {
+          alert('No existe el producto ' + row['product_id']);
+          return false;
+        }
+      } else {
+        alert('No existe el código del producto ' + row['cod']);
         return false;
       }
+
+      if ( Number(row['quantity']) <= 0 ) {
+        alert('No puede tener valor 0 el producto ' + row['product_id']);
+        return false;
+      }
+
+      if ( Number(row['price']) <= 0 ) {
+        alert('No puede tener valor 0 el producto ' + row['product_id']);
+        return false;
+      }
+      
        
     }
 
@@ -487,7 +504,7 @@ debugger;
 
     let productObj = _.find(product, (x) => x.description === description);
     if (_.isNil(productObj)) {
-      productObj.id = null;
+      return null;
     }
     return productObj.id;
 
