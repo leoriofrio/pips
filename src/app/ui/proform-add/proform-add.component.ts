@@ -426,7 +426,7 @@ export class ProformAddComponent implements OnInit {
       this.proformService.createProform(this.model).subscribe(response => {        
         this.dataProformId = Number(response.id);
         for (const row of this.dataset) {
-          row['product_id'] = this.matchProduct(row['product_id'], this.dataProduct);
+          row['product_id'] = this.matchProduct(row['codigo'], this.dataProduct);
         }
 
         let grid = _.cloneDeep(this.dataset);
@@ -462,8 +462,8 @@ export class ProformAddComponent implements OnInit {
 
     console.log(JSON.stringify(this.dataProduct));
     for (const row of grid) {
-      if ( !_.isNil(row['product_id'])) {
-        if( _.isNil(this.matchProduct(row['product_id'], this.dataProduct)) ) {
+      if ( !_.isNil(row['codigo'])) {
+        if( _.isNil(this.matchProduct(row['codigo'], this.dataProduct)) ) {
           alert('No existe el producto ' + row['product_id']);
           return false;
         }
@@ -500,9 +500,9 @@ export class ProformAddComponent implements OnInit {
     return this.productService.getProductByRegion(TypeRegion.SIERRA);
   }
 
-  public matchProduct(description: string, product: any[]): number | undefined {
+  public matchProduct(codigo: string, product: any[]): number | undefined {
 
-    let productObj = _.find(product, (x) => x.description === description);
+    let productObj = _.find(product, (x) => x.cod === codigo);
     if (_.isNil(productObj)) {
       return null;
     }
