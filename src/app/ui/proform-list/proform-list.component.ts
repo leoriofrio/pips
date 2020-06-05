@@ -58,6 +58,10 @@ export class ProformListComponent implements OnInit {
     }
   }
 
+  public selectProject(row): any {
+    this.router.navigate(['proform-edit',row['data']['id']]) ;
+  }
+
   public edit() {
     const idProform = (<HTMLInputElement>document.getElementById("txtProforma")).value;
     this.router.navigate(['proform-edit',idProform]) ;

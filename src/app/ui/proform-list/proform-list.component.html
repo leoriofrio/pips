@@ -10,11 +10,11 @@
             </div>
             <div class="content-body">
                 <div class="edit">
-                    <input id="txtProforma" name="txtProforma" value="{{proformId}}" type="text"><button type="button" class="btn btn-primary submit-button" (click)="edit()">Editar Proforma</button> 
+                    <input id="txtProforma" name="txtProforma" value="{{proformId}}" type="text"><button type="button" class="btn btn-primary submit-button" (click)="edit()">Buscar</button> 
                 </div>
                 <app-project [gridColumns]="gridColumns" [data]="data" [enabledTitleOp] = "enabledTitle"
                 [allowExcelExportOp] = "allowExcelExport"
-                (exportExcel)= "onExportExcel($event)"></app-project>
+                (exportExcel)= "onExportExcel($event)" (projectSelected)= "selectProject($event)"></app-project>
             </div>
         </div>
     </div>

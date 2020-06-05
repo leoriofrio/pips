@@ -1,6 +1,13 @@
 import { Proform } from '../../app.keys';
 
 export const COLUMNS_PROFORM = [
+  {
+    headerName: ' ',
+    field: 'value',
+    cellRenderer: 'selectProjectRenderer',
+    colId: 'params',
+    width: 85
+  },
     {field: Proform.ID.prop, headerName: Proform.ID.name, resizable: true, width: 160  },
     {field: Proform.NUMBER_PROFORM.prop , headerName: Proform.NUMBER_PROFORM.name, resizable: true, width: 150 },
     {field: Proform.DATE_PROFORM.prop , headerName: Proform.DATE_PROFORM.name, resizable: true, width: 120 },

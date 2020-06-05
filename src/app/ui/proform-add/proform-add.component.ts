@@ -482,6 +482,10 @@ export class ProformAddComponent implements OnInit {
         return false;
       }
       
+      if ( Number(row['total']) <= 0 ) {
+        alert('No puede tener el valor total menor a 0 en el producto ' + row['product_id']);
+        return false;
+      }
        
     }
 

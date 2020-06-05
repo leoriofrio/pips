@@ -5,8 +5,10 @@ import { AppKeys, ExcelKeys } from 'src/app/app.keys';
 import {  Module } from 'ag-grid-community';
 
 
+
 import * as _ from 'lodash';
 import { selectionRenderComponent } from '../../render/selection-render.component';
+import { SelectProjectRendererComponent } from './select-project-renderer.component';
 
 @Component({
   selector: 'app-project',
@@ -20,6 +22,7 @@ export class ProjectComponent implements OnInit {
   public allowExcelExport: boolean;
   private gridApi;
   private gridColumnApi;
+  private context; // ag-grid's parent context
   public frameworkComponents; // framework component
   public uploadFile: boolean = true;
 
@@ -41,15 +44,20 @@ export class ProjectComponent implements OnInit {
   public defaultColDef
   @Output()
   public exportExcel = new EventEmitter<any>();
+  @Output()
+  public projectSelected = new EventEmitter<any>();
 
 
-  constructor(private excelExportService: ExcelExportService) {     
+  constructor(private excelExportService: ExcelExportService) {  
+    this.context = {componentParent: this};
+    this.frameworkComponents = {
+      selectionRender : selectionRenderComponent,
+      selectProjectRenderer: SelectProjectRendererComponent,
+    };
   }
 
   ngOnInit(){
-    this.frameworkComponents = {
-      selectionRender : selectionRenderComponent  
-    };
+    
     
     this.enabledTitle = this.enabledTitleOp;
     this.allowExcelExport = this.allowExcelExportOp;
@@ -62,6 +70,12 @@ export class ProjectComponent implements OnInit {
   public exportAsXLSX(): void {
     this.exportExcel.emit({name: ExcelKeys.DEFAULT_EXCEL_NAME, gridColumns: this.gridColumns, data: this.data});
   }
+
+  public selectProject(row) {
+    this.projectSelected.emit(row);
+    
+  }
+  
 
   public changeView() {
     this.uploadFile = !this.uploadFile;
@@ -99,7 +113,6 @@ export class ProjectComponent implements OnInit {
     this.gridColumnApi = params.columnApi;
   }
 
-  
   
 
 }

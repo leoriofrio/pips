@@ -339,7 +339,7 @@ export class ProformEditComponent implements OnInit {
             "type_client_sale": data['type_client_sale'],
             "agreement": data['agreement']
         };
-        console.log(JSON.stringify(self.model));
+
         self.dataTransform = data['proformDetail'];
         this.productService.getProductByRegion(TypeRegion.SIERRA).subscribe(data => {
           if( _.size(self.dataTransform) > 0 ) {
