@@ -16,6 +16,7 @@ import { Router } from '@angular/router';
 export class ProformListComponent implements OnInit {
   @ViewChild(ProjectComponent, {static: true}) child: ProjectComponent;
   
+  
   public data: any ;
   public gridColumns = COLUMNS_PROFORM;
   public enabledTitle: boolean;
@@ -25,22 +26,22 @@ export class ProformListComponent implements OnInit {
   constructor(
     private excelExportService: ExcelExportService,
     private proformService: ProformService,
-    private router: Router,
+    private router: Router,    
     ) {
 
    }
 
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
     this.enabledTitle = false;
     this.allowExcelExport = false;
     this.getProform();
   }
 
-  public getProform(): void {
+  public getProform(): void {    
     this.proformService.getProform().subscribe( proform => {
       this.data = proform;
-    });
+    });    
   }
 
   /**

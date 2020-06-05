@@ -22,7 +22,7 @@ export class ProjectComponent implements OnInit {
   public allowExcelExport: boolean;
   private gridApi;
   private gridColumnApi;
-  private context; // ag-grid's parent context
+  public context; // ag-grid's parent context
   public frameworkComponents; // framework component
   public uploadFile: boolean = true;
 

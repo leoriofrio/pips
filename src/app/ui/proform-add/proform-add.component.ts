@@ -129,13 +129,7 @@ export class ProformAddComponent implements OnInit {
 
 
     this.currentDate = new Date();    
-
-    this.route.queryParams.subscribe(
-      params => {
-        this.condition =  params['val'];
-        this.condition == 'EDT' ? this.enableEdit = true : this.enableEdit = false;        
-      }
-    )
+    
     
     if (!this.enableEdit){
       this.validation = '!model.text';      

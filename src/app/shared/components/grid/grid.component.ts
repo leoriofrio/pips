@@ -31,6 +31,8 @@ export class GridComponent implements OnInit, OnDestroy {
   constructor() { }
 
   ngOnInit(): void {
+
+
     (Handsontable.renderers as any).registerRenderer('currency', this.currencyRenderer);
 
     const et = this;
