@@ -98,6 +98,7 @@ export class GridComponent implements OnInit, OnDestroy {
 
                 if (_.includes(row[3], '%')) {
                   varField = _.replace(row[3], '%', '');
+                  varField = _.replace(varField, ',', '.');
                   varRow = (row[1] === 'sale_direct' && varRow === 0 ) ? varRow = 7 : varRow = varRow;
                   varRow = (row[1] === 'sale_external_library' && varRow === 0 ) ? varRow = 8 : varRow = varRow;
                   varRow = (row[1] === 'sale_event' && varRow === 0 ) ? varRow = 9 : varRow = varRow;
