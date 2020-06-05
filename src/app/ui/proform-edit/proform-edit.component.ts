@@ -17,6 +17,7 @@ import { ProductService } from 'src/app/shared/service/product.service';
 import { SetLeftFeature } from 'ag-grid-community';
 import { UtilsService  } from 'src/app/shared/service/utils.service';
 import { map, switchMap } from 'rxjs/operators';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 
 //const dataVal = require('./proformList.json');
@@ -36,6 +37,9 @@ export class ProformEditComponent implements OnInit {
   @ViewChild(ProjectComponent, {static: true}) child: ProjectComponent;
   @ViewChild('container') container: ElementRef;
 
+
+  public loaderProjectForm = 'loader-list-proform';
+  
   public userData: any;
   public productCod: any[] = [];
   public productDescription: any[] = [];
@@ -70,6 +74,7 @@ export class ProformEditComponent implements OnInit {
     private router: Router,
     private cd : ChangeDetectorRef,
     private utilsService: UtilsService,
+    private loaderService: NgxUiLoaderService,
   ) { 
     const self = this;
 
@@ -269,6 +274,7 @@ export class ProformEditComponent implements OnInit {
   ];
 
   ngOnInit() {
+    this.loaderService.startLoader(this.loaderProjectForm);
     this.enabledTitle = false;
     this.allowExcelExport = false;
     this.currentDate = new Date();        
@@ -339,7 +345,7 @@ export class ProformEditComponent implements OnInit {
             "type_client_sale": data['type_client_sale'],
             "agreement": data['agreement']
         };
-        console.log(JSON.stringify(self.model));
+
         self.dataTransform = data['proformDetail'];
         this.productService.getProductByRegion(TypeRegion.SIERRA).subscribe(data => {
           if( _.size(self.dataTransform) > 0 ) {
@@ -362,7 +368,12 @@ export class ProformEditComponent implements OnInit {
       });
     }
 
-    
+    window.scrollTo(0, 0);
+    this.form.enable();
+    setTimeout(() => {
+      this.loaderService.stopLoader('loader-list-proform');
+    }, 2000);
+
 
     
     this.cd.detectChanges();
@@ -466,11 +477,16 @@ export class ProformEditComponent implements OnInit {
   }
 
   public edit() {
+    this.loaderService.startLoader('loader-list-proform');
     const self = this;
     this.editProform = true;
     let tempoData:any;
 
-    
+    window.scrollTo(0, 0);
+    this.form.enable();
+    setTimeout(() => {
+      this.loaderService.stopLoader('loader-list-proform');
+    }, 1000);
 
     const idProform = (<HTMLInputElement>document.getElementById("txtProforma")).value;
 /*

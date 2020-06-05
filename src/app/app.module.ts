@@ -16,6 +16,7 @@ import { MatInputModule } from '@angular/material/input';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { UploadDirective } from './directives/upload.directive';
 import { FormlyFieldNgbDatePicker } from './shared/components/form/ngb-date-picker.type.component';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { FormlyFieldNgbDatePicker } from './shared/components/form/ngb-date-pick
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgxUiLoaderModule,
     FormlyModule.forRoot({
       types: [
         {name: 'ngb-date-picker', component: FormlyFieldNgbDatePicker},

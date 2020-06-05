@@ -129,13 +129,7 @@ export class ProformAddComponent implements OnInit {
 
 
     this.currentDate = new Date();    
-
-    this.route.queryParams.subscribe(
-      params => {
-        this.condition =  params['val'];
-        this.condition == 'EDT' ? this.enableEdit = true : this.enableEdit = false;        
-      }
-    )
+    
     
     if (!this.enableEdit){
       this.validation = '!model.text';      
@@ -482,6 +476,10 @@ export class ProformAddComponent implements OnInit {
         return false;
       }
       
+      if ( Number(row['total']) <= 0 ) {
+        alert('No puede tener el valor total menor a 0 en el producto ' + row['product_id']);
+        return false;
+      }
        
     }
 

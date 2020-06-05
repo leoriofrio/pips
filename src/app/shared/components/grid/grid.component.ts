@@ -31,6 +31,8 @@ export class GridComponent implements OnInit, OnDestroy {
   constructor() { }
 
   ngOnInit(): void {
+
+
     (Handsontable.renderers as any).registerRenderer('currency', this.currencyRenderer);
 
     const et = this;
@@ -194,7 +196,6 @@ export class GridComponent implements OnInit, OnDestroy {
     })
     
     let lastRow = this.hot.countRows() - 1;
-    console.log(lastRow);
     this.hot.setDataAtCell(this.hot.countRows() - 1, 0, '=SUM(E1:E'+lastRow+')');
   }
 
