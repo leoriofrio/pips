@@ -143,7 +143,13 @@ export class ProformAddComponent implements OnInit {
       resizable: true
     };
 
+    let date_now = new Date();
     
+    self.model =  {
+      "date_proform": date_now.getFullYear() + '-' + _.padStart(date_now.getMonth().toString(), 2, '0') + '-' + _.padStart(date_now.getDate().toString(), 2, '0'),
+      "date_delivery": date_now.getFullYear() + '-' + _.padStart(date_now.getMonth().toString(), 2, '0') + '-' + _.padStart(date_now.getDate().toString(), 2, '0'),
+    
+    };
 
   }
 
@@ -228,7 +234,7 @@ export class ProformAddComponent implements OnInit {
         {
           type: 'input',
           key: Proform.DATE_PROFORM.prop,
-          className: 'col-sm-2',
+          className: 'col-m-1',
           defaultValue: this.currentDate,
           templateOptions: {
             type: 'date',
@@ -242,7 +248,7 @@ export class ProformAddComponent implements OnInit {
         {
           type: 'input',
           key: Proform.DATE_DELIVERY.prop,
-          className: 'col-sm-2',
+          className: 'col-m-1',
           defaultValue: new Date(),
           templateOptions: {
             type: 'date',

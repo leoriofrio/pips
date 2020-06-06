@@ -47,8 +47,8 @@ export namespace ExcelKeys {
 
 
 export namespace Proform {
-  export const ID = {prop: 'id', name: 'Id Proforma Interna'};
-  export const NUMBER_PROFORM = {prop: 'number_proform', name: 'Número Proforma'};
+  export const ID = {prop: 'id', name: 'Id'};
+  export const NUMBER_PROFORM = {prop: 'number_proform', name: 'Número'};
   export const USER_ID = {prop: 'user_id', name: 'Vendedor'};
   export const COLLEGE_ID = {prop: 'college_id', name: 'Colegios'};
   export const CLIENT_ID = {prop: 'client_id', name: 'Clientes'};

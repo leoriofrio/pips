@@ -340,8 +340,8 @@ export class ProformEditComponent implements OnInit {
             "user_id":data['user']['userName'],
             "college_id": data['college']['codSantillana'] + ' - ' + data['college']['name'],
             "client_id":data['client_id'],
-            "date_proform": new Date(data['date_proform']).getFullYear() + '-0' + new Date(data['date_proform']).getMonth() + '-' + new Date(data['date_proform']).getDate(),
-            "date_delivery": new Date(data['date_delivery']).getFullYear() + '-0' + new Date(data['date_delivery']).getMonth() + '-' + new Date(data['date_delivery']).getDate(),
+            "date_proform": new Date(data['date_proform']).getFullYear() + '-' + _.padStart(new Date(data['date_proform']).getMonth().toString(), 2, '0') + '-' + _.padStart(new Date(data['date_proform']).getDate().toString(), 2, '0'),
+            "date_delivery": new Date(data['date_delivery']).getFullYear() + '-' + _.padStart(new Date(data['date_delivery']).getMonth().toString(), 2, '0') + '-' + _.padStart(new Date(data['date_delivery']).getDate().toString(), 2, '0'),
             "type_client_sale": data['type_client_sale'],
             "agreement": data['agreement']
         };
