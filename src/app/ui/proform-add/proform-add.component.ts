@@ -9,7 +9,7 @@ import { ExcelExportService } from 'src/app/shared/service/export-excel.service'
 import * as _ from 'lodash';
 import { of as observableOf } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
-import { GridRecord, IProform, IProformDetail, MODEL_DETAIL, DataType, MODEL_DETAIL_SAVE } from 'src/app/app.type';
+import { GridRecord, PROFORM_SUMMARY, MODEL_DETAIL_SAVE } from 'src/app/app.type';
 import Handsontable from 'handsontable';
 import { ProformService } from '../../shared/service/proform.service';
 import { Router } from '@angular/router';
@@ -40,6 +40,7 @@ export class ProformAddComponent implements OnInit {
   public data: any;
   public dataOfBank: any[] = [];
   public dataset: any[] = [];
+  public datasetSummary: PROFORM_SUMMARY ;
   public gridColumns = COLUMNS_DETAIL_PROFORM;
   public columnsGrid: any;  // = COLUMNS_DETAIL;
   public columnsHeader = COLUMNS_HEADER;
@@ -93,6 +94,7 @@ export class ProformAddComponent implements OnInit {
     
   }
 
+  
   ngOnInit() {
     const self = this;
     this.enabledTitle = false;
@@ -150,6 +152,8 @@ export class ProformAddComponent implements OnInit {
       "date_delivery": date_now.getFullYear() + '-' + _.padStart(date_now.getMonth().toString(), 2, '0') + '-' + _.padStart(date_now.getDate().toString(), 2, '0'),
     
     };
+
+    this.refreshData();
 
   }
 
@@ -460,7 +464,7 @@ export class ProformAddComponent implements OnInit {
       this.model['client_id'] = null;
     }
 
-    console.log(JSON.stringify(this.dataProduct));
+    
     for (const row of grid) {
       if ( !_.isNil(row['codigo'])) {
         if( _.isNil(this.matchProduct(row['codigo'], this.dataProduct)) ) {
@@ -492,7 +496,32 @@ export class ProformAddComponent implements OnInit {
     return true;
   }
 
+  public refreshData(){
+    const self = this;
+    self.datasetSummary = {    
+      quantity: 0,
+      subtotal:0,
+      sale_direct: 0,
+      sale_external_library: 0,
+      sale_event: 0,
+      sale_teacher: 0,
+      sale_infrastructure: 0,
+      sale_scholarships: 0,
+      sale_staff: 0,
+      sale_training: 0,
+      total:0,
+    };
+
+    _.forEach(this.dataset, function(value, key) {     
+      self.datasetSummary.quantity = Number(self.datasetSummary.quantity) +  value['quantity'];
+      self.datasetSummary.subtotal = Number(self.datasetSummary.subtotal) +  value['subtotal'];
+      self.datasetSummary.total = Number(self.datasetSummary.total) +  value['total'];
+      self.datasetSummary.sale_direct = (Number(self.datasetSummary.subtotal) *  value['sale_direct'] / 100) as any;
+   });
+  }
+
   public onChange(data: GridRecord[]): void {
+    this.refreshData();
    
   }
 

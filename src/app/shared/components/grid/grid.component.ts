@@ -27,6 +27,7 @@ export class GridComponent implements OnInit, OnDestroy {
   public hot: Handsontable;
 
   private  setter = false;
+  public addProform: boolean = false;
 
   constructor() { }
 
@@ -39,7 +40,7 @@ export class GridComponent implements OnInit, OnDestroy {
     let varField: any;
     let varRow: any;
 
-    const containerVal = this.container.nativeElement;
+    //const containerVal = this.container.nativeElement;
     var container = document.getElementById('example');
 
     this.hot = new Handsontable(container, {
@@ -204,6 +205,8 @@ export class GridComponent implements OnInit, OnDestroy {
   }
 
   public add() {
+    this.addProform = false;
+    this.addProform = true;
     this.hot.alter('insert_row', 0);
   }
 

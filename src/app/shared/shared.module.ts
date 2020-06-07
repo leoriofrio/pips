@@ -14,6 +14,7 @@ import { FormlyFieldNgbDatePicker } from './components/form/ngb-date-picker.type
 import { FormlyFieldNgbTimePicker  } from './components/form/ngb-time-picker.type.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { SelectProjectRendererComponent } from './components/project/select-project-renderer.component';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
 
 @NgModule({
   imports: [
@@ -21,6 +22,7 @@ import { SelectProjectRendererComponent } from './components/project/select-proj
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxUiLoaderModule,
     AgGridModule.withComponents([selectionRenderComponent, SelectProjectRendererComponent]),
     HotTableModule.forRoot(),
     FormlyModule.forRoot({

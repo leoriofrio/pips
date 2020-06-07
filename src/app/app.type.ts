@@ -62,6 +62,20 @@ export type GridRecord = {
     product_id: 0
   };
 
+  export interface PROFORM_SUMMARY  {    
+    quantity: 0,
+    subtotal:0,
+    sale_direct: 0,
+    sale_external_library: 0,
+    sale_event: 0,
+    sale_teacher: 0,
+    sale_infrastructure: 0,
+    sale_scholarships: 0,
+    sale_staff: 0,
+    sale_training: 0,
+    total:0,
+  };
+
   export const MODEL_DETAIL = {
     "id": 0,
     "degree": "string",

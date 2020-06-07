@@ -9,7 +9,7 @@ import { ExcelExportService } from 'src/app/shared/service/export-excel.service'
 import * as _ from 'lodash';
 import { of as observableOf, of } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
-import { GridRecord, IProform, MODEL_DETAIL } from 'src/app/app.type';
+import { GridRecord, IProform, MODEL_DETAIL, PROFORM_SUMMARY } from 'src/app/app.type';
 import Handsontable from 'handsontable';
 import { ProformService } from '../../shared/service/proform.service';
 import { Router } from '@angular/router';
@@ -47,6 +47,7 @@ export class ProformEditComponent implements OnInit {
   public data: any[];
   public dataOfBank: any[] = [];
   public dataset: any[] = [];
+  public datasetSummary: PROFORM_SUMMARY ;
   public dataTransform: any[];
   public dataTransformTempo: any[];
   public gridColumns = COLUMNS_DETAIL_PROFORM;
@@ -362,6 +363,7 @@ export class ProformEditComponent implements OnInit {
               self.dataset.push(row);            
             };
           }
+          this.refreshData();
         });
         
         
@@ -372,11 +374,11 @@ export class ProformEditComponent implements OnInit {
     this.form.enable();
     setTimeout(() => {
       this.loaderService.stopLoader('loader-list-proform');
-    }, 2000);
+    }, 2500);
 
 
     
-    this.cd.detectChanges();
+    this.cd.detectChanges();    
     
   }
   
@@ -427,8 +429,32 @@ export class ProformEditComponent implements OnInit {
     
   }
 
-  public onChange(data: GridRecord[]): void {
+  public refreshData(){
+    const self = this;
+    self.datasetSummary = {    
+      quantity: 0,
+      subtotal:0,
+      sale_direct: 0,
+      sale_external_library: 0,
+      sale_event: 0,
+      sale_teacher: 0,
+      sale_infrastructure: 0,
+      sale_scholarships: 0,
+      sale_staff: 0,
+      sale_training: 0,
+      total:0,
+    };
 
+    _.forEach(this.dataset, function(value, key) {     
+      self.datasetSummary.quantity = Number(self.datasetSummary.quantity) +  value['quantity'];
+      self.datasetSummary.subtotal = Number(self.datasetSummary.subtotal) +  value['subtotal'];
+      self.datasetSummary.total = Number(self.datasetSummary.total) +  value['total'];
+      self.datasetSummary.sale_direct = (Number(self.datasetSummary.subtotal) *  value['sale_direct'] / 100) as any;
+   });
+  }
+
+  public onChange(data: GridRecord[]): void {
+    this.refreshData();
   }
 
   public close() {
