@@ -106,3 +106,20 @@ div.ag-root .ag-cell-focus {
   -ms-user-select: text;
   user-select: text;
 }
+
+$header-background-color: var(--header-background-color);
+.complete-zone {
+    width: 450px;
+    height: 200px;
+    border: dashed 1px #979797;
+    margin: 0px auto;
+    h3 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #38424c;
+    }
+    label {
+      color: white;
+      background-color: $header-background-color;
+    }
+  }
