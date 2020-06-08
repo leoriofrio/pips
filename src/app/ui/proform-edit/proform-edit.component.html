@@ -43,14 +43,18 @@
                                         <tr>
                                             <th>Unidades</th>
                                             <th>Subtotal</th>
+                                            <th>% Descuento</th>
+                                            <th>Descuento</th>
                                             <th>Total</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td>{{ datasetSummary.quantity }}</td>
-                                            <td>{{ datasetSummary.subtotal }}</td>
-                                            <td>{{ datasetSummary.total }}</td>
+                                            <td>{{ datasetSummary.subtotal.toFixed(2) }}</td>
+                                            <td>{{ ( ( 1 -datasetSummary.total / datasetSummary.subtotal) * 100 ).toFixed(2) }} %</td>
+                                            <td>{{ (datasetSummary.subtotal - datasetSummary.total).toFixed(2) }}</td>
+                                            <td>{{ datasetSummary.total.toFixed(2) }}</td>
                                         </tr>
                                     </tbody>
                                 </table>
