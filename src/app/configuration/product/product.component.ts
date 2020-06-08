@@ -71,6 +71,8 @@ export class ProductComponent implements OnInit {
     }
   }
 
-
+  public onJsonData(jsonData){
+    console.log('data de Producto es', jsonData);
+  }
 
 }
