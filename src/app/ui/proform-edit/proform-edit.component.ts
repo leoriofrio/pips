@@ -9,7 +9,7 @@ import { ExcelExportService } from 'src/app/shared/service/export-excel.service'
 import * as _ from 'lodash';
 import { of as observableOf, of } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
-import { GridRecord, IProform, MODEL_DETAIL, PROFORM_SUMMARY } from 'src/app/app.type';
+import { GridRecord, IProform, MODEL_DETAIL, PROFORM_SUMMARY, MODEL_DETAIL_SAVE } from 'src/app/app.type';
 import Handsontable from 'handsontable';
 import { ProformService } from '../../shared/service/proform.service';
 import { Router } from '@angular/router';
@@ -307,6 +307,7 @@ export class ProformEditComponent implements OnInit {
       { type: 'numeric', data: ProformDetail.SALE_SCHOLARSHIPS.prop, renderer: 'currency', headerName: ProformDetail.SALE_SCHOLARSHIPS.name, field: ProformDetail.SALE_SCHOLARSHIPS.prop },
       { type: 'numeric', data: ProformDetail.SALE_STAFF.prop, renderer: 'currency', headerName: ProformDetail.SALE_STAFF.name, field: ProformDetail.SALE_STAFF.prop },
       { type: 'numeric', data: ProformDetail.SALE_TRAINING.prop, renderer: 'currency', headerName: ProformDetail.SALE_TRAINING.name, field: ProformDetail.SALE_TRAINING.prop },
+      { type: 'numeric', data: ProformDetail.CAPEX.prop, renderer: 'currency', headerName: ProformDetail.CAPEX.name, field: ProformDetail.CAPEX.prop },
       { type: 'numeric', data: ProformDetail.TOTAL.prop, renderer: 'currency' , readOnly: true, headerName: ProformDetail.TOTAL.name, field: ProformDetail.TOTAL.prop  },
     ]
     
@@ -354,7 +355,7 @@ export class ProformEditComponent implements OnInit {
               let row = _.pick(this.dataTransform[value], _.keys(MODEL_DETAIL) );
               
               let rowId = row['product_id'];
-              let descount = Number(row['sale_direct']) + Number(row['sale_external_library']) + Number(row['sale_event']) + Number(row['sale_teacher']) + Number(row['sale_infrastructure']) + Number(row['sale_scholarships']) + Number(row['sale_staff']) + Number(row['sale_training']);
+              let descount = Number(row['sale_direct']) + Number(row['sale_external_library']) + Number(row['sale_event']) + Number(row['sale_teacher']) + Number(row['sale_infrastructure']) + Number(row['sale_scholarships']) + Number(row['sale_staff']) + Number(row['sale_training'])+ Number(row['capex']);
               row['codigo'] = self.matchProductCodById(rowId,  data);
               row['product_id'] = self.matchProductDescriptionById(rowId,  data);
               row['subtotal'] = Number(row['quantity']) * Number(row['price'])
@@ -401,32 +402,82 @@ export class ProformEditComponent implements OnInit {
     }
   }
 
-  public save() {
-      alert('Se ha guardado la Proforma');
-      this.router.navigate(['/']);
-    /*
+  public save() {      
     if (this.form.valid) {
+      this.model['id'] = Number(this.model['id']);
       this.model['date_delivery'] = new Date(this.model['date_delivery']).toISOString();
       this.model['date_proform'] = new Date(this.model['date_proform']).toISOString();
       this.model['user_id'] = Number(this.model['user_id']);
       this.model['college_id'] = Number(this.model['college_id']);
       this.model['client_id'] = Number(this.model['client_id']);
       this.model['state_number'] = 0;
-      this.model['status'] = AppStatusForm.active;
-
-      //Detail
-      this.proformService.createProform(this.model).subscribe(response => {
-        this.dataProformId = Number(response.id);
-        for (const row of this.dataset) {
-          row['product_id'] = this.matchProduct(row['product_id'], this.dataProduct);
-        }
-        this.proformService.createProformDetail(this.dataProformId.toString(), JSON.stringify(this.dataset)).subscribe();
-        alert('Se ha guardado la Proforma correctamente ');
-        this.router.navigate(['/']);
-      });      
-    }
-    */
+      this.model['status'] = AppStatusForm.active; 
     
+    }
+
+    if (!this.validateFields()) {
+      return;
+    }
+    
+    for (const row of this.dataset) {
+      row['product_id'] = this.matchProduct(row['codigo'], this.dataProduct);
+    }
+
+    let grid = _.cloneDeep(this.dataset);
+    let objTemp =[];
+    
+    for( let obj of grid  ) {
+      objTemp.push(_.pick(obj, _.keys(MODEL_DETAIL_SAVE) ));
+    }
+
+    this.proformService.updateProformDetail(this.model['id'].toString(), _.replace(JSON.stringify(objTemp), '\r\n', 0)).subscribe();
+    alert('Se ha guardado la Proforma ' + this.model['id'].toString() + ' correctamente ');
+    this.router.navigate(['/']);
+    
+  }
+
+  public validateFields (): any {
+
+    let grid = _.cloneDeep(this.dataset);
+
+    if ( _.size(grid) <= 0 ) {
+      alert('Antes de guardar debe ingresar el detalle de los productos');
+      return false;
+    }
+
+    if ( _.isNil(this.model['client_id']) || _.isNaN(this.model['client_id']) ) {
+      this.model['client_id'] = null;
+    }
+
+    for (const row of grid) {
+      if ( !_.isNil(row['codigo'])) {
+        if( _.isNil(this.matchProduct(row['codigo'], this.dataProduct)) ) {
+          alert('No existe el producto ' + row['product_id']);
+          return false;
+        }
+      } else {
+        alert('No existe el código del producto ' + row['cod']);
+        return false;
+      }
+
+      if ( Number(row['quantity']) <= 0 ) {
+        alert('No puede tener valor 0 el producto ' + row['product_id']);
+        return false;
+      }
+
+      if ( Number(row['price']) <= 0 ) {
+        alert('No puede tener valor 0 el producto ' + row['product_id']);
+        return false;
+      }
+      
+      if ( Number(row['total']) <= 0 ) {
+        alert('No puede tener el valor total menor a 0 en el producto ' + row['product_id']);
+        return false;
+      }
+       
+    }
+
+    return true;
   }
 
   public refreshData(){
@@ -442,6 +493,7 @@ export class ProformEditComponent implements OnInit {
       sale_scholarships: 0,
       sale_staff: 0,
       sale_training: 0,
+      capex: 0,
       total:0,
     };
 
@@ -462,7 +514,6 @@ export class ProformEditComponent implements OnInit {
   }
 
   public exportExcel() {    
-    debugger;
     this.excelExportService.generateExcelFromJson(      
       "Proforma",
       this.columnsGrid,
@@ -470,14 +521,16 @@ export class ProformEditComponent implements OnInit {
     );
   }
 
-  public matchProduct(description: string, product: any[]): number | undefined {
-    let productObj = _.find(product, (x) => x.description === description);
+  public matchProduct(codigo: string, product: any[]): number | undefined {
+
+    let productObj = _.find(product, (x) => x.cod === codigo);
     if (_.isNil(productObj)) {
       return null;
     }
     return productObj.id;
 
   }
+
 
   public matchProductCodById(id: any, product: any[]): number | undefined {
     let productObj = _.find(product, (x) => x.id === Number(id));

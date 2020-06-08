@@ -77,6 +77,7 @@ export namespace ProformDetail {
   export const SALE_SCHOLARSHIPS = {prop: 'sale_scholarships', name: 'Becas PLANTEL'};
   export const SALE_STAFF = {prop: 'sale_staff', name: 'Equipos PLANTEL'};
   export const SALE_TRAINING = {prop: 'sale_training', name: 'Capacitación PLANTEL'};
+  export const CAPEX = {prop: 'capex', name: 'Beneficio'};
   export const TOTAL = {prop: 'total', name: 'Total'};
 }
 

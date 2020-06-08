@@ -58,6 +58,7 @@ export type GridRecord = {
     sale_scholarships: 0,
     sale_staff: 0,
     sale_training: 0,
+    capex: 0,
     proform_id: 0,
     product_id: 0
   };
@@ -73,6 +74,7 @@ export type GridRecord = {
     sale_scholarships: 0,
     sale_staff: 0,
     sale_training: 0,
+    capex:0,
     total:0,
   };
 
@@ -92,7 +94,8 @@ export type GridRecord = {
     "sale_infrastructure": 0,
     "sale_scholarships": 0,
     "sale_staff": 0,
-    "sale_training": 0
+    "sale_training": 0,
+    "capex": 0
   };
 
 
@@ -109,6 +112,7 @@ export type GridRecord = {
     "sale_scholarships": 0,
     "sale_staff": 0,
     "sale_training": 0,
+    "capex": 0,
     "proform_id": 0,
     "product_id": 0
   };

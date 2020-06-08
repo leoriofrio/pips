@@ -126,6 +126,7 @@ export class ProformAddComponent implements OnInit {
       { type: 'numeric', data: ProformDetail.SALE_SCHOLARSHIPS.prop, renderer: 'currency' },
       { type: 'numeric', data: ProformDetail.SALE_STAFF.prop, renderer: 'currency' },
       { type: 'numeric', data: ProformDetail.SALE_TRAINING.prop, renderer: 'currency' },
+      { type: 'numeric', data: ProformDetail.CAPEX.prop, renderer: 'currency' },
       { type: 'numeric', data: ProformDetail.TOTAL.prop, renderer: 'currency' , readOnly: true  },
     ]
 
@@ -216,7 +217,7 @@ export class ProformAddComponent implements OnInit {
             label: Proform.USER_ID.name,
             required: true,
             valueProp: 'id',
-            labelProp: 'userName',
+            labelProp: 'name',
             //options: vendedores,
           },
           lifecycle: {
@@ -225,16 +226,23 @@ export class ProformAddComponent implements OnInit {
                 .getUsers()
                 .pipe()
                 .subscribe(data => {
-                  field.templateOptions.options = _.sortBy(data, "userName");
+                  //field.templateOptions.options = _.sortBy(data, "userName");
+                  let dataUser: any[] = [];
+                  _.forEach(data, function(value, key) {
+                    dataUser.push({'id': value['id'], 'name': value['userName'] + ' - ' + value['codUser'], 'codUser': Number(value['codUser'])});
+                  });
+                  field.templateOptions.options = _.sortBy(dataUser, "name");
                   this.userData = data;
                 });
                 const numberProform = this.form.get(Proform.NUMBER_PROFORM.prop);
                 form
-                .get(Proform.NUMBER_PROFORM.prop)
+                .get(Proform.USER_ID.prop)
                 .valueChanges.pipe(
                   tap(value => {
                     if (value) {
-                      field.formControl.setValue(' ');
+                      //field.formControl.setValue(' ');
+                      console.log(this.userData);
+                      numberProform.setValue('2020-1-' + this.userData['codUser'].value);
                     }
                   })
                 )
@@ -303,7 +311,7 @@ export class ProformAddComponent implements OnInit {
                   _.forEach(data, function(value, key) {
                     dataCollege.push({'id': value['id'], 'name': value['codSantillana'] + ' - ' + value['name'], 'codSantillana': Number(value['codSantillana'])});
                   });
-                  field.templateOptions.options = _.sortBy(dataCollege, "codSantillana");                  
+                  field.templateOptions.options = _.sortBy(dataCollege, "codSantillana");
                 });
               }
           },
@@ -519,6 +527,7 @@ export class ProformAddComponent implements OnInit {
       sale_scholarships: 0,
       sale_staff: 0,
       sale_training: 0,
+      capex: 0,
       total:0,
     };
 

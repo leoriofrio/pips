@@ -40,6 +40,12 @@ export class ProformListComponent implements OnInit {
 
   public getProform(): void {    
     this.proformService.getProform().subscribe( proform => {
+      _.forEach(proform, function(value, key) {
+        value['number_proform'] = value['number_proform'] + ' - ' + value['state_number'];
+        value['user_id'] = value['user']['codUser'] + ' - ' + value['user']['userName'];
+        value['college_id'] = value['college']['codSantillana'] + ' - ' + value['college']['name'];
+        value['client_id'] = value['client']['codClient'] + ' - ' + value['client']['name'];
+      });
       this.data = proform;
     });    
   }
