@@ -9,7 +9,7 @@ import { ExcelExportService } from 'src/app/shared/service/export-excel.service'
 import * as _ from 'lodash';
 import { of as observableOf, of } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
-import { GridRecord, IProform, MODEL_DETAIL } from 'src/app/app.type';
+import { GridRecord, IProform, MODEL_DETAIL, PROFORM_SUMMARY, MODEL_DETAIL_SAVE } from 'src/app/app.type';
 import Handsontable from 'handsontable';
 import { ProformService } from '../../shared/service/proform.service';
 import { Router } from '@angular/router';
@@ -47,6 +47,7 @@ export class ProformEditComponent implements OnInit {
   public data: any[];
   public dataOfBank: any[] = [];
   public dataset: any[] = [];
+  public datasetSummary: PROFORM_SUMMARY ;
   public dataTransform: any[];
   public dataTransformTempo: any[];
   public gridColumns = COLUMNS_DETAIL_PROFORM;
@@ -74,7 +75,7 @@ export class ProformEditComponent implements OnInit {
     private router: Router,
     private cd : ChangeDetectorRef,
     private utilsService: UtilsService,
-    private loaderService: NgxUiLoaderService,
+    private loaderService: NgxUiLoaderService,    
   ) { 
     const self = this;
 
@@ -281,32 +282,33 @@ export class ProformEditComponent implements OnInit {
     this.proformId = this.route.snapshot.paramMap.get("id");
 
     this.columnsGrid = [
-      { data: ProformDetail.ID.prop, readOnly: true },
-      { type: 'text', data: ProformDetail.DEGREE.prop,  },
+      { data: ProformDetail.ID.prop, readOnly: true, headerName: ProformDetail.ID.name, field: ProformDetail.ID.prop },
+      { type: 'text', data: ProformDetail.DEGREE.prop, headerName: ProformDetail.DEGREE.name, field: ProformDetail.DEGREE.prop },
       { type: 'autocomplete', 
         data: 'codigo', 
         renderer: 'currency', 
         source:  this.productCod, 
         strict: true, 
-        filter: false},
+        filter: false, headerName: 'Código', field: 'codigo'},
       { type: 'autocomplete', 
         data: ProformDetail.PRODUCT_ID.prop, 
         renderer: 'currency', 
         source:  this.productDescription, 
         strict: true, 
-        filter: false},
-      { type: 'numeric', data: ProformDetail.QUANTITY.prop, renderer: 'currency' },
-      { type: 'numeric', data: ProformDetail.PRICE.prop, renderer: 'currency' },
-      { type: 'numeric', data: ProformDetail.SUB_TOTAL.prop, renderer: 'currency' , readOnly: true  },
-      { type: 'numeric', data: ProformDetail.SALE_DIRECT.prop, renderer: 'currency' },
-      { type: 'numeric', data: ProformDetail.SALE_EXTERNAL_LIBRARY.prop, renderer: 'currency' },
-      { type: 'numeric', data: ProformDetail.SALE_EVENT.prop, renderer: 'currency' },
-      { type: 'numeric', data: ProformDetail.SALE_TEACHER.prop, renderer: 'currency' },
-      { type: 'numeric', data: ProformDetail.SALE_INFRASTRUCTURE.prop, renderer: 'currency' },
-      { type: 'numeric', data: ProformDetail.SALE_SCHOLARSHIPS.prop, renderer: 'currency' },
-      { type: 'numeric', data: ProformDetail.SALE_STAFF.prop, renderer: 'currency' },
-      { type: 'numeric', data: ProformDetail.SALE_TRAINING.prop, renderer: 'currency' },
-      { type: 'numeric', data: ProformDetail.TOTAL.prop, renderer: 'currency' , readOnly: true  },
+        filter: false, headerName: ProformDetail.PRODUCT_ID.name, field: ProformDetail.PRODUCT_ID.prop, },
+      { type: 'numeric', data: ProformDetail.QUANTITY.prop, renderer: 'currency', headerName: ProformDetail.QUANTITY.name, field: ProformDetail.QUANTITY.prop },
+      { type: 'numeric', data: ProformDetail.PRICE.prop, renderer: 'currency', headerName: ProformDetail.PRICE.name, field: ProformDetail.PRICE.prop },
+      { type: 'numeric', data: ProformDetail.SUB_TOTAL.prop, renderer: 'currency' , readOnly: true , headerName: ProformDetail.SUB_TOTAL.name, field: ProformDetail.SUB_TOTAL.prop },
+      { type: 'numeric', data: ProformDetail.SALE_DIRECT.prop, renderer: 'currency', headerName: ProformDetail.SALE_DIRECT.name, field: ProformDetail.SALE_DIRECT.prop },
+      { type: 'numeric', data: ProformDetail.SALE_EXTERNAL_LIBRARY.prop, renderer: 'currency', headerName: ProformDetail.SALE_EXTERNAL_LIBRARY.name, field: ProformDetail.SALE_EXTERNAL_LIBRARY.prop },
+      { type: 'numeric', data: ProformDetail.SALE_EVENT.prop, renderer: 'currency', headerName: ProformDetail.SALE_EVENT.name, field: ProformDetail.SALE_EVENT.prop },
+      { type: 'numeric', data: ProformDetail.SALE_TEACHER.prop, renderer: 'currency', headerName: ProformDetail.SALE_TEACHER.name, field: ProformDetail.SALE_TEACHER.prop },
+      { type: 'numeric', data: ProformDetail.SALE_INFRASTRUCTURE.prop, renderer: 'currency', headerName: ProformDetail.SALE_INFRASTRUCTURE.name, field: ProformDetail.SALE_INFRASTRUCTURE.prop },
+      { type: 'numeric', data: ProformDetail.SALE_SCHOLARSHIPS.prop, renderer: 'currency', headerName: ProformDetail.SALE_SCHOLARSHIPS.name, field: ProformDetail.SALE_SCHOLARSHIPS.prop },
+      { type: 'numeric', data: ProformDetail.SALE_STAFF.prop, renderer: 'currency', headerName: ProformDetail.SALE_STAFF.name, field: ProformDetail.SALE_STAFF.prop },
+      { type: 'numeric', data: ProformDetail.SALE_TRAINING.prop, renderer: 'currency', headerName: ProformDetail.SALE_TRAINING.name, field: ProformDetail.SALE_TRAINING.prop },
+      { type: 'numeric', data: ProformDetail.CAPEX.prop, renderer: 'currency', headerName: ProformDetail.CAPEX.name, field: ProformDetail.CAPEX.prop },
+      { type: 'numeric', data: ProformDetail.TOTAL.prop, renderer: 'currency' , readOnly: true, headerName: ProformDetail.TOTAL.name, field: ProformDetail.TOTAL.prop  },
     ]
     
     if (!this.enableEdit){
@@ -340,8 +342,8 @@ export class ProformEditComponent implements OnInit {
             "user_id":data['user']['userName'],
             "college_id": data['college']['codSantillana'] + ' - ' + data['college']['name'],
             "client_id":data['client_id'],
-            "date_proform": new Date(data['date_proform']).getFullYear() + '-0' + new Date(data['date_proform']).getMonth() + '-' + new Date(data['date_proform']).getDate(),
-            "date_delivery": new Date(data['date_delivery']).getFullYear() + '-0' + new Date(data['date_delivery']).getMonth() + '-' + new Date(data['date_delivery']).getDate(),
+            "date_proform": new Date(data['date_proform']).getFullYear() + '-' + _.padStart(new Date(data['date_proform']).getMonth().toString(), 2, '0') + '-' + _.padStart(new Date(data['date_proform']).getDate().toString(), 2, '0'),
+            "date_delivery": new Date(data['date_delivery']).getFullYear() + '-' + _.padStart(new Date(data['date_delivery']).getMonth().toString(), 2, '0') + '-' + _.padStart(new Date(data['date_delivery']).getDate().toString(), 2, '0'),
             "type_client_sale": data['type_client_sale'],
             "agreement": data['agreement']
         };
@@ -353,7 +355,7 @@ export class ProformEditComponent implements OnInit {
               let row = _.pick(this.dataTransform[value], _.keys(MODEL_DETAIL) );
               
               let rowId = row['product_id'];
-              let descount = Number(row['sale_direct']) + Number(row['sale_external_library']) + Number(row['sale_event']) + Number(row['sale_teacher']) + Number(row['sale_infrastructure']) + Number(row['sale_scholarships']) + Number(row['sale_staff']) + Number(row['sale_training']);
+              let descount = Number(row['sale_direct']) + Number(row['sale_external_library']) + Number(row['sale_event']) + Number(row['sale_teacher']) + Number(row['sale_infrastructure']) + Number(row['sale_scholarships']) + Number(row['sale_staff']) + Number(row['sale_training'])+ Number(row['capex']);
               row['codigo'] = self.matchProductCodById(rowId,  data);
               row['product_id'] = self.matchProductDescriptionById(rowId,  data);
               row['subtotal'] = Number(row['quantity']) * Number(row['price'])
@@ -362,6 +364,7 @@ export class ProformEditComponent implements OnInit {
               self.dataset.push(row);            
             };
           }
+          this.refreshData();
         });
         
         
@@ -372,11 +375,11 @@ export class ProformEditComponent implements OnInit {
     this.form.enable();
     setTimeout(() => {
       this.loaderService.stopLoader('loader-list-proform');
-    }, 2000);
+    }, 2500);
 
 
     
-    this.cd.detectChanges();
+    this.cd.detectChanges();    
     
   }
   
@@ -399,50 +402,135 @@ export class ProformEditComponent implements OnInit {
     }
   }
 
-  public save() {
-      alert('Se ha guardado la Proforma');
-      this.router.navigate(['/']);
-    /*
+  public save() {      
     if (this.form.valid) {
+      this.model['id'] = Number(this.model['id']);
       this.model['date_delivery'] = new Date(this.model['date_delivery']).toISOString();
       this.model['date_proform'] = new Date(this.model['date_proform']).toISOString();
       this.model['user_id'] = Number(this.model['user_id']);
       this.model['college_id'] = Number(this.model['college_id']);
       this.model['client_id'] = Number(this.model['client_id']);
       this.model['state_number'] = 0;
-      this.model['status'] = AppStatusForm.active;
-
-      //Detail
-      this.proformService.createProform(this.model).subscribe(response => {
-        this.dataProformId = Number(response.id);
-        for (const row of this.dataset) {
-          row['product_id'] = this.matchProduct(row['product_id'], this.dataProduct);
-        }
-        this.proformService.createProformDetail(this.dataProformId.toString(), JSON.stringify(this.dataset)).subscribe();
-        alert('Se ha guardado la Proforma correctamente ');
-        this.router.navigate(['/']);
-      });      
-    }
-    */
+      this.model['status'] = AppStatusForm.active; 
     
+    }
+
+    if (!this.validateFields()) {
+      return;
+    }
+    
+    for (const row of this.dataset) {
+      row['product_id'] = this.matchProduct(row['codigo'], this.dataProduct);
+    }
+
+    let grid = _.cloneDeep(this.dataset);
+    let objTemp =[];
+    
+    for( let obj of grid  ) {
+      objTemp.push(_.pick(obj, _.keys(MODEL_DETAIL_SAVE) ));
+    }
+
+    this.proformService.updateProformDetail(this.model['id'].toString(), _.replace(JSON.stringify(objTemp), '\r\n', 0)).subscribe();
+    alert('Se ha guardado la Proforma ' + this.model['id'].toString() + ' correctamente ');
+    this.router.navigate(['/']);
+    
+  }
+
+  public validateFields (): any {
+
+    let grid = _.cloneDeep(this.dataset);
+
+    if ( _.size(grid) <= 0 ) {
+      alert('Antes de guardar debe ingresar el detalle de los productos');
+      return false;
+    }
+
+    if ( _.isNil(this.model['client_id']) || _.isNaN(this.model['client_id']) ) {
+      this.model['client_id'] = null;
+    }
+
+    for (const row of grid) {
+      if ( !_.isNil(row['codigo'])) {
+        if( _.isNil(this.matchProduct(row['codigo'], this.dataProduct)) ) {
+          alert('No existe el producto ' + row['product_id']);
+          return false;
+        }
+      } else {
+        alert('No existe el código del producto ' + row['cod']);
+        return false;
+      }
+
+      if ( Number(row['quantity']) <= 0 ) {
+        alert('No puede tener valor 0 el producto ' + row['product_id']);
+        return false;
+      }
+
+      if ( Number(row['price']) <= 0 ) {
+        alert('No puede tener valor 0 el producto ' + row['product_id']);
+        return false;
+      }
+      
+      if ( Number(row['total']) <= 0 ) {
+        alert('No puede tener el valor total menor a 0 en el producto ' + row['product_id']);
+        return false;
+      }
+       
+    }
+
+    return true;
+  }
+
+  public refreshData(){
+    const self = this;
+    self.datasetSummary = {    
+      quantity: 0,
+      subtotal:0,
+      sale_direct: 0,
+      sale_external_library: 0,
+      sale_event: 0,
+      sale_teacher: 0,
+      sale_infrastructure: 0,
+      sale_scholarships: 0,
+      sale_staff: 0,
+      sale_training: 0,
+      capex: 0,
+      total:0,
+    };
+
+    _.forEach(this.dataset, function(value, key) {     
+      self.datasetSummary.quantity = Number(self.datasetSummary.quantity) +  value['quantity'];
+      self.datasetSummary.subtotal = Number(self.datasetSummary.subtotal) +  value['subtotal'];
+      self.datasetSummary.total = Number(self.datasetSummary.total) +  value['total'];
+      self.datasetSummary.sale_direct = (Number(self.datasetSummary.subtotal) *  value['sale_direct'] / 100) as any;
+   });
   }
 
   public onChange(data: GridRecord[]): void {
-
+    this.refreshData();
   }
 
   public close() {
-    
+    this.router.navigate(['/']);
   }
 
-  public matchProduct(description: string, product: any[]): number | undefined {
-    let productObj = _.find(product, (x) => x.description === description);
+  public exportExcel() {    
+    this.excelExportService.generateExcelFromJson(      
+      "Proforma",
+      this.columnsGrid,
+      this.dataset
+    );
+  }
+
+  public matchProduct(codigo: string, product: any[]): number | undefined {
+
+    let productObj = _.find(product, (x) => x.cod === codigo);
     if (_.isNil(productObj)) {
       return null;
     }
     return productObj.id;
 
   }
+
 
   public matchProductCodById(id: any, product: any[]): number | undefined {
     let productObj = _.find(product, (x) => x.id === Number(id));

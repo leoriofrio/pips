@@ -9,13 +9,13 @@ import { ExcelExportService } from 'src/app/shared/service/export-excel.service'
 import * as _ from 'lodash';
 import { of as observableOf } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
-import { GridRecord, IProform, IProformDetail, MODEL_DETAIL, DataType, MODEL_DETAIL_SAVE } from 'src/app/app.type';
+import { GridRecord, PROFORM_SUMMARY, MODEL_DETAIL_SAVE } from 'src/app/app.type';
 import Handsontable from 'handsontable';
 import { ProformService } from '../../shared/service/proform.service';
 import { Router } from '@angular/router';
 import { ProductService } from 'src/app/shared/service/product.service';
 import { UtilsService  } from 'src/app/shared/service/utils.service';
-import { map, switchMap } from 'rxjs/operators';
+import { map, switchMap, tap, startWith } from 'rxjs/operators';
 
 
 
@@ -40,6 +40,7 @@ export class ProformAddComponent implements OnInit {
   public data: any;
   public dataOfBank: any[] = [];
   public dataset: any[] = [];
+  public datasetSummary: PROFORM_SUMMARY ;
   public gridColumns = COLUMNS_DETAIL_PROFORM;
   public columnsGrid: any;  // = COLUMNS_DETAIL;
   public columnsHeader = COLUMNS_HEADER;
@@ -93,6 +94,7 @@ export class ProformAddComponent implements OnInit {
     
   }
 
+  
   ngOnInit() {
     const self = this;
     this.enabledTitle = false;
@@ -124,6 +126,7 @@ export class ProformAddComponent implements OnInit {
       { type: 'numeric', data: ProformDetail.SALE_SCHOLARSHIPS.prop, renderer: 'currency' },
       { type: 'numeric', data: ProformDetail.SALE_STAFF.prop, renderer: 'currency' },
       { type: 'numeric', data: ProformDetail.SALE_TRAINING.prop, renderer: 'currency' },
+      { type: 'numeric', data: ProformDetail.CAPEX.prop, renderer: 'currency' },
       { type: 'numeric', data: ProformDetail.TOTAL.prop, renderer: 'currency' , readOnly: true  },
     ]
 
@@ -143,7 +146,15 @@ export class ProformAddComponent implements OnInit {
       resizable: true
     };
 
+    let date_now = new Date();
     
+    self.model =  {
+      "date_proform": date_now.getFullYear() + '-' + _.padStart(date_now.getMonth().toString(), 2, '0') + '-' + _.padStart(date_now.getDate().toString(), 2, '0'),
+      "date_delivery": date_now.getFullYear() + '-' + _.padStart(date_now.getMonth().toString(), 2, '0') + '-' + _.padStart(date_now.getDate().toString(), 2, '0'),
+    
+    };
+
+    this.refreshData();
 
   }
 
@@ -206,7 +217,7 @@ export class ProformAddComponent implements OnInit {
             label: Proform.USER_ID.name,
             required: true,
             valueProp: 'id',
-            labelProp: 'userName',
+            labelProp: 'name',
             //options: vendedores,
           },
           lifecycle: {
@@ -215,10 +226,27 @@ export class ProformAddComponent implements OnInit {
                 .getUsers()
                 .pipe()
                 .subscribe(data => {
-                  field.templateOptions.options = _.sortBy(data, "userName");
+                  //field.templateOptions.options = _.sortBy(data, "userName");
+                  let dataUser: any[] = [];
+                  _.forEach(data, function(value, key) {
+                    dataUser.push({'id': value['id'], 'name': value['userName'] + ' - ' + value['codUser'], 'codUser': Number(value['codUser'])});
+                  });
+                  field.templateOptions.options = _.sortBy(dataUser, "name");
                   this.userData = data;
                 });
-              
+                const numberProform = this.form.get(Proform.NUMBER_PROFORM.prop);
+                form
+                .get(Proform.USER_ID.prop)
+                .valueChanges.pipe(
+                  tap(value => {
+                    if (value) {
+                      //field.formControl.setValue(' ');
+                      console.log(this.userData);
+                      numberProform.setValue('2020-1-' + this.userData['codUser'].value);
+                    }
+                  })
+                )
+                .subscribe();
             }
           },
           expressionProperties: {
@@ -228,7 +256,7 @@ export class ProformAddComponent implements OnInit {
         {
           type: 'input',
           key: Proform.DATE_PROFORM.prop,
-          className: 'col-sm-2',
+          className: 'col-m-1',
           defaultValue: this.currentDate,
           templateOptions: {
             type: 'date',
@@ -242,7 +270,7 @@ export class ProformAddComponent implements OnInit {
         {
           type: 'input',
           key: Proform.DATE_DELIVERY.prop,
-          className: 'col-sm-2',
+          className: 'col-m-1',
           defaultValue: new Date(),
           templateOptions: {
             type: 'date',
@@ -283,7 +311,7 @@ export class ProformAddComponent implements OnInit {
                   _.forEach(data, function(value, key) {
                     dataCollege.push({'id': value['id'], 'name': value['codSantillana'] + ' - ' + value['name'], 'codSantillana': Number(value['codSantillana'])});
                   });
-                  field.templateOptions.options = _.sortBy(dataCollege, "codSantillana");                  
+                  field.templateOptions.options = _.sortBy(dataCollege, "codSantillana");
                 });
               }
           },
@@ -454,7 +482,7 @@ export class ProformAddComponent implements OnInit {
       this.model['client_id'] = null;
     }
 
-    console.log(JSON.stringify(this.dataProduct));
+    
     for (const row of grid) {
       if ( !_.isNil(row['codigo'])) {
         if( _.isNil(this.matchProduct(row['codigo'], this.dataProduct)) ) {
@@ -486,12 +514,38 @@ export class ProformAddComponent implements OnInit {
     return true;
   }
 
+  public refreshData(){
+    const self = this;
+    self.datasetSummary = {    
+      quantity: 0,
+      subtotal:0,
+      sale_direct: 0,
+      sale_external_library: 0,
+      sale_event: 0,
+      sale_teacher: 0,
+      sale_infrastructure: 0,
+      sale_scholarships: 0,
+      sale_staff: 0,
+      sale_training: 0,
+      capex: 0,
+      total:0,
+    };
+
+    _.forEach(this.dataset, function(value, key) {     
+      self.datasetSummary.quantity = Number(self.datasetSummary.quantity) +  value['quantity'];
+      self.datasetSummary.subtotal = Number(self.datasetSummary.subtotal) +  value['subtotal'];
+      self.datasetSummary.total = Number(self.datasetSummary.total) +  value['total'];
+      self.datasetSummary.sale_direct = (Number(self.datasetSummary.subtotal) *  value['sale_direct'] / 100) as any;
+   });
+  }
+
   public onChange(data: GridRecord[]): void {
+    this.refreshData();
    
   }
 
   public close() {
-    
+    this.router.navigate(['/']);
   }
 
   public getDataProduct() {
