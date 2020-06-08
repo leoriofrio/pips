@@ -25,4 +25,10 @@ export class ProductService {
     const url = this.baseUrl+`product/`+region.toString();
     return this.http.get<any>(url);
   }
+
+  public createProduct(id: string, product: any): Observable<any> {
+    debugger;
+    const url = this.baseUrl+`product/Sierra`;
+    return this.http.post<any>(url, product, httpOptions);
+  }
 }
