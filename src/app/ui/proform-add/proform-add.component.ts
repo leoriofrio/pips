@@ -459,7 +459,7 @@ export class ProformAddComponent implements OnInit {
         }
 
         this.proformService.createProformDetail(this.dataProformId.toString(), _.replace(JSON.stringify(objTemp), '\r\n', 0)).subscribe();
-        alert('Se ha guardado la Proforma correctamente ');
+        alert('Se ha guardado la Proforma ' + this.dataProformId.toString() + ' correctamente ');
         this.router.navigate(['/']);
       });
       
