@@ -75,7 +75,7 @@ export class ProformEditComponent implements OnInit {
     private router: Router,
     private cd : ChangeDetectorRef,
     private utilsService: UtilsService,
-    private loaderService: NgxUiLoaderService,
+    private loaderService: NgxUiLoaderService,    
   ) { 
     const self = this;
 
@@ -282,32 +282,32 @@ export class ProformEditComponent implements OnInit {
     this.proformId = this.route.snapshot.paramMap.get("id");
 
     this.columnsGrid = [
-      { data: ProformDetail.ID.prop, readOnly: true },
-      { type: 'text', data: ProformDetail.DEGREE.prop,  },
+      { data: ProformDetail.ID.prop, readOnly: true, headerName: ProformDetail.ID.name, field: ProformDetail.ID.prop },
+      { type: 'text', data: ProformDetail.DEGREE.prop, headerName: ProformDetail.DEGREE.name, field: ProformDetail.DEGREE.prop },
       { type: 'autocomplete', 
         data: 'codigo', 
         renderer: 'currency', 
         source:  this.productCod, 
         strict: true, 
-        filter: false},
+        filter: false, headerName: 'Código', field: 'codigo'},
       { type: 'autocomplete', 
         data: ProformDetail.PRODUCT_ID.prop, 
         renderer: 'currency', 
         source:  this.productDescription, 
         strict: true, 
-        filter: false},
-      { type: 'numeric', data: ProformDetail.QUANTITY.prop, renderer: 'currency' },
-      { type: 'numeric', data: ProformDetail.PRICE.prop, renderer: 'currency' },
-      { type: 'numeric', data: ProformDetail.SUB_TOTAL.prop, renderer: 'currency' , readOnly: true  },
-      { type: 'numeric', data: ProformDetail.SALE_DIRECT.prop, renderer: 'currency' },
-      { type: 'numeric', data: ProformDetail.SALE_EXTERNAL_LIBRARY.prop, renderer: 'currency' },
-      { type: 'numeric', data: ProformDetail.SALE_EVENT.prop, renderer: 'currency' },
-      { type: 'numeric', data: ProformDetail.SALE_TEACHER.prop, renderer: 'currency' },
-      { type: 'numeric', data: ProformDetail.SALE_INFRASTRUCTURE.prop, renderer: 'currency' },
-      { type: 'numeric', data: ProformDetail.SALE_SCHOLARSHIPS.prop, renderer: 'currency' },
-      { type: 'numeric', data: ProformDetail.SALE_STAFF.prop, renderer: 'currency' },
-      { type: 'numeric', data: ProformDetail.SALE_TRAINING.prop, renderer: 'currency' },
-      { type: 'numeric', data: ProformDetail.TOTAL.prop, renderer: 'currency' , readOnly: true  },
+        filter: false, headerName: ProformDetail.PRODUCT_ID.name, field: ProformDetail.PRODUCT_ID.prop, },
+      { type: 'numeric', data: ProformDetail.QUANTITY.prop, renderer: 'currency', headerName: ProformDetail.QUANTITY.name, field: ProformDetail.QUANTITY.prop },
+      { type: 'numeric', data: ProformDetail.PRICE.prop, renderer: 'currency', headerName: ProformDetail.PRICE.name, field: ProformDetail.PRICE.prop },
+      { type: 'numeric', data: ProformDetail.SUB_TOTAL.prop, renderer: 'currency' , readOnly: true , headerName: ProformDetail.SUB_TOTAL.name, field: ProformDetail.SUB_TOTAL.prop },
+      { type: 'numeric', data: ProformDetail.SALE_DIRECT.prop, renderer: 'currency', headerName: ProformDetail.SALE_DIRECT.name, field: ProformDetail.SALE_DIRECT.prop },
+      { type: 'numeric', data: ProformDetail.SALE_EXTERNAL_LIBRARY.prop, renderer: 'currency', headerName: ProformDetail.SALE_EXTERNAL_LIBRARY.name, field: ProformDetail.SALE_EXTERNAL_LIBRARY.prop },
+      { type: 'numeric', data: ProformDetail.SALE_EVENT.prop, renderer: 'currency', headerName: ProformDetail.SALE_EVENT.name, field: ProformDetail.SALE_EVENT.prop },
+      { type: 'numeric', data: ProformDetail.SALE_TEACHER.prop, renderer: 'currency', headerName: ProformDetail.SALE_TEACHER.name, field: ProformDetail.SALE_TEACHER.prop },
+      { type: 'numeric', data: ProformDetail.SALE_INFRASTRUCTURE.prop, renderer: 'currency', headerName: ProformDetail.SALE_INFRASTRUCTURE.name, field: ProformDetail.SALE_INFRASTRUCTURE.prop },
+      { type: 'numeric', data: ProformDetail.SALE_SCHOLARSHIPS.prop, renderer: 'currency', headerName: ProformDetail.SALE_SCHOLARSHIPS.name, field: ProformDetail.SALE_SCHOLARSHIPS.prop },
+      { type: 'numeric', data: ProformDetail.SALE_STAFF.prop, renderer: 'currency', headerName: ProformDetail.SALE_STAFF.name, field: ProformDetail.SALE_STAFF.prop },
+      { type: 'numeric', data: ProformDetail.SALE_TRAINING.prop, renderer: 'currency', headerName: ProformDetail.SALE_TRAINING.name, field: ProformDetail.SALE_TRAINING.prop },
+      { type: 'numeric', data: ProformDetail.TOTAL.prop, renderer: 'currency' , readOnly: true, headerName: ProformDetail.TOTAL.name, field: ProformDetail.TOTAL.prop  },
     ]
     
     if (!this.enableEdit){
@@ -458,7 +458,16 @@ export class ProformEditComponent implements OnInit {
   }
 
   public close() {
-    
+    this.router.navigate(['/']);
+  }
+
+  public exportExcel() {    
+    debugger;
+    this.excelExportService.generateExcelFromJson(      
+      "Proforma",
+      this.columnsGrid,
+      this.dataset
+    );
   }
 
   public matchProduct(description: string, product: any[]): number | undefined {

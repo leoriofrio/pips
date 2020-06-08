@@ -15,7 +15,7 @@ import { ProformService } from '../../shared/service/proform.service';
 import { Router } from '@angular/router';
 import { ProductService } from 'src/app/shared/service/product.service';
 import { UtilsService  } from 'src/app/shared/service/utils.service';
-import { map, switchMap } from 'rxjs/operators';
+import { map, switchMap, tap, startWith } from 'rxjs/operators';
 
 
 
@@ -228,7 +228,17 @@ export class ProformAddComponent implements OnInit {
                   field.templateOptions.options = _.sortBy(data, "userName");
                   this.userData = data;
                 });
-              
+                const numberProform = this.form.get(Proform.NUMBER_PROFORM.prop);
+                form
+                .get(Proform.NUMBER_PROFORM.prop)
+                .valueChanges.pipe(
+                  tap(value => {
+                    if (value) {
+                      field.formControl.setValue(' ');
+                    }
+                  })
+                )
+                .subscribe();
             }
           },
           expressionProperties: {
@@ -526,7 +536,7 @@ export class ProformAddComponent implements OnInit {
   }
 
   public close() {
-    
+    this.router.navigate(['/']);
   }
 
   public getDataProduct() {

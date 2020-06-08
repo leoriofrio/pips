@@ -34,7 +34,7 @@ export namespace ExcelKeys {
   export const EXCEL_TITLE_SIZE = 16;
   export const EXCEL_TITLE_UNDERLINE = 'none';
   export const EXCEL_HEADER_FGCOLOR = '';
-  export const EXCEL_HEADER_BGCOLOR = '';
+  export const EXCEL_HEADER_BGCOLOR = '#FFFFFF';
   export const EXCEL_DETAIL_CELL = 'cell';
   export const EXCEL_DETAIL_METADATA = 'metadata';
   export const EXCEL_DETAIL_FIELD = 'field';
