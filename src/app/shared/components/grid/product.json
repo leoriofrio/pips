@@ -11864,5 +11864,137 @@
             "description": "PLURIEL 4 CAHIER D'EXERCICES",
             "businessLine": "INGLÉS",
             "region": "Sierra"
-        }
+        },
+        {
+            "cod": "STER-EC010010",
+            "subline": "Preescolar",
+            "description": "PACK DINO AND ME 1 (SB+CD+RB)",
+            "serie": "ALTO RENDIMIENTO",
+            "nivel": "Preescolar",
+            "degree": "K1",
+            "businessLine": "INGLES",
+            "isbn": "9920190100001",
+            "region": "Sierra"
+          },
+          {
+            "cod": "STER-EC010011",
+            "subline": "Preescolar",
+            "description": "PACK DINO AND ME 2 (SB+CD+RB)",
+            "serie": "ALTO RENDIMIENTO",
+            "nivel": "Preescolar",
+            "degree": "K1",
+            "businessLine": "INGLES",
+            "isbn": "9920190100001",
+            "region": "Sierra"
+          },
+          {
+            "cod": "STER-EC010294",
+            "subline": "Preescolar",
+            "description": "PACK DINO AND ME 3 (SB+CD+RB)",
+            "serie": "ALTO RENDIMIENTO",
+            "nivel": "Preescolar",
+            "degree": "K1",
+            "businessLine": "INGLES",
+            "isbn": "9920190100001",
+            "region": "Sierra"
+          },
+          {
+            "cod": "STER-EC010012",
+            "subline": "Preescolar",
+            "description": "Activity Book 1 Dino and Me",
+            "serie": "ALTO RENDIMIENTO",
+            "nivel": "Preescolar",
+            "degree": "K1",
+            "businessLine": "INGLES",
+            "isbn": "9920190100001",
+            "region": "Sierra"
+          },
+          {
+            "cod": "STER-EC010013",
+            "subline": "Preescolar",
+            "description": "Activity Book 2 Dino and Me",
+            "serie": "ALTO RENDIMIENTO",
+            "nivel": "Preescolar",
+            "degree": "K1",
+            "businessLine": "INGLES",
+            "isbn": "9920190100001",
+            "region": "Sierra"
+          },
+          {
+            "cod": "STER-EC010014",
+            "subline": "Preescolar",
+            "description": "Activity Book 3 Dino and Me",
+            "serie": "ALTO RENDIMIENTO",
+            "nivel": "Preescolar",
+            "degree": "K1",
+            "businessLine": "INGLES",
+            "isbn": "9920190100001",
+            "region": "Sierra"
+          },
+          {
+            "cod": "108001011",
+            "subline": "Preescolar",
+            "description": "SKYROCKET STUDENT´S BOOK # 1",
+            "serie": "ALTO RENDIMIENTO",
+            "nivel": "Preescolar",
+            "degree": "K1",
+            "businessLine": "INGLES",
+            "isbn": "9920190100001",
+            "region": "Sierra"
+          },
+          {
+            "cod": "108001012",
+            "subline": "Preescolar",
+            "description": "SKYROCKET STUDENT´S BOOK # 2",
+            "serie": "ALTO RENDIMIENTO",
+            "nivel": "Preescolar",
+            "degree": "K1",
+            "businessLine": "INGLES",
+            "isbn": "9920190100001",
+            "region": "Sierra"
+          },
+          {
+            "cod": "108001013",
+            "subline": "Preescolar",
+            "description": "SKYROCKET STUDENT´S BOOK # 3",
+            "serie": "ALTO RENDIMIENTO",
+            "nivel": "Preescolar",
+            "degree": "K1",
+            "businessLine": "INGLES",
+            "isbn": "9920190100001",
+            "region": "Sierra"
+          },
+          {
+            "cod": "108001014",
+            "subline": "Preescolar",
+            "description": "SKYROCKET STUDENT´S BOOK # 4",
+            "serie": "ALTO RENDIMIENTO",
+            "nivel": "Preescolar",
+            "degree": "K1",
+            "businessLine": "INGLES",
+            "isbn": "9920190100001",
+            "region": "Sierra"
+          },
+          {
+            "cod": "108001015",
+            "subline": "Preescolar",
+            "description": "SKYROCKET STUDENT´S BOOK # 5",
+            "serie": "ALTO RENDIMIENTO",
+            "nivel": "Preescolar",
+            "degree": "K1",
+            "businessLine": "INGLES",
+            "isbn": "9920190100001",
+            "region": "Sierra"
+          },
+          {
+            "cod": "108001016",
+            "subline": "Preescolar",
+            "description": "SKYROCKET STUDENT´S BOOK # 6",
+            "serie": "ALTO RENDIMIENTO",
+            "nivel": "Preescolar",
+            "degree": "K1",
+            "businessLine": "INGLES",
+            "isbn": "9920190100001",
+            "region": "Sierra"
+          }
     ]
