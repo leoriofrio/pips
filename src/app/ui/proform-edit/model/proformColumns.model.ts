@@ -21,6 +21,7 @@ export const COLUMNS_DETAIL_PROFORM = [
     {field: ProformDetail.SALE_SCHOLARSHIPS.prop, headerName: ProformDetail.SALE_SCHOLARSHIPS.name, resizable: true, width: 100},
     {field: ProformDetail.SALE_STAFF.prop, headerName: ProformDetail.SALE_STAFF.name, resizable: true, width: 100},
     {field: ProformDetail.SALE_TRAINING.prop, headerName: ProformDetail.SALE_TRAINING.name, resizable: true, width: 100},
+    {field: ProformDetail.CAPEX.prop, headerName: ProformDetail.CAPEX.name, resizable: true, width: 100},
     {field: ProformDetail.TOTAL.prop, headerName: ProformDetail.TOTAL.name, resizable: true, width: 100}
   ];
 
@@ -58,7 +59,7 @@ export const COLUMNS_HEADER = [
   ProformDetail.PRICE.name, ProformDetail.SUB_TOTAL.name, ProformDetail.SALE_DIRECT.name, 
   ProformDetail.SALE_EXTERNAL_LIBRARY.name, ProformDetail.SALE_EVENT.name, ProformDetail.SALE_TEACHER.name, 
   ProformDetail.SALE_INFRASTRUCTURE.name, ProformDetail.SALE_SCHOLARSHIPS.name, 
-  ProformDetail.SALE_STAFF.name, ProformDetail.SALE_TRAINING.name, ProformDetail.TOTAL.name
+  ProformDetail.SALE_STAFF.name, ProformDetail.SALE_TRAINING.name, ProformDetail.CAPEX.name, ProformDetail.TOTAL.name
 ];
 
 

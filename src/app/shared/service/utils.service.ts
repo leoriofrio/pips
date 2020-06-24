@@ -12,7 +12,7 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
+export class UtilsService {
   private baseUrl: string;
 
   constructor(
@@ -26,9 +26,18 @@ export class ProductService {
     return this.http.get<any>(url);
   }
 
-  public createProduct(id: string, product: any): Observable<any> {
-    debugger;
-    const url = this.baseUrl+`product/Sierra`;
-    return this.http.post<any>(url, product, httpOptions);
+  public getUsers() {
+    const url = this.baseUrl+`users`;
+    return this.http.get<any>(url);
+  }
+
+  public getCollegesByRegion(region: string) {
+    const url = this.baseUrl+`college/`+region.toString();
+    return this.http.get<any>(url);
+  }
+
+  public getClientsAll() {
+    const url = this.baseUrl+`client/all`;
+    return this.http.get<any>(url);
   }
 }

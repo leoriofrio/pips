@@ -20,7 +20,7 @@ export class selectionRenderComponent implements ICellRendererAngularComp {
   buttonClick(event)
   {
     event.preventDefault();  // prevent page reloading.
-    //console.log ("Button clicked");
+
     const target = event.target;
   }
   
@@ -33,7 +33,7 @@ export class selectionRenderComponent implements ICellRendererAngularComp {
     const target = event.target;
     this.showMenu = !this.showMenu
 
-    //console.log ("Button clicked  this.showMenu = " +  this.showMenu );
+    
   }
 
   mouseleave(event)
@@ -43,7 +43,7 @@ export class selectionRenderComponent implements ICellRendererAngularComp {
     const target = event.target;
     this.showMenu = false;
 
-    //console.log ("mouseleave this.showMenu = " +  this.showMenu );
+
   }
 
 

@@ -44,4 +44,8 @@ export class CollegesComponent implements OnInit {
     }
   }
 
+  public onJsonData(jsonData){
+    console.log('data de Colleges es', jsonData);
+  }
+
 }

@@ -24,20 +24,23 @@ export class GridComponent implements OnInit, OnDestroy {
   @Output()
   public addRow = new  EventEmitter<any>();
   
-  private hot: Handsontable;
+  public hot: Handsontable;
 
   private  setter = false;
+  public addProform: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
+
+
     (Handsontable.renderers as any).registerRenderer('currency', this.currencyRenderer);
 
     const et = this;
     let varField: any;
     let varRow: any;
 
-    const containerVal = this.container.nativeElement;
+    //const containerVal = this.container.nativeElement;
     var container = document.getElementById('example');
 
     this.hot = new Handsontable(container, {
@@ -48,8 +51,7 @@ export class GridComponent implements OnInit, OnDestroy {
         if( !changes ) {
           return;
         }
-        debugger;
-        console.log(changes, src);
+
         
         if (!this.setter) { 
           for(const row of changes) {
@@ -65,12 +67,21 @@ export class GridComponent implements OnInit, OnDestroy {
             if ( row[1] === 'quantity' || row[1] === 'price' ) {
               this.setDataAtCell(row[0], 6, Number(this.getDataAtCell(row[0],4)) * Number(this.getDataAtCell(row[0],5))  );
             }
-
-            if ( row[1] === 'product_id' && !_.isNil(row[2]) ) {
+            
+            if ( row[1] === 'product_id' ) {
               varField = et.matchProductByName(row[3],dataVal);
-              if ( varField !== this.getDataAtCell(row[0],2) ) {
-                this.setDataAtCell(row[0], 2, et.matchProductByName(row[3],dataVal)  );
-              }              
+              if ( _.isNil(varField)  ) {
+                if (  this.getDataAtCell(row[0],3) === 'undefined' && !_.isNil(row[2]) ) {
+                  this.setDataAtCell(row[0], 3, row[2]  );
+                } else if ( !_.isNil(row[3])) {
+                  this.setDataAtCell(row[0], 3, null  );
+                }                
+              } else {
+                if ( varField !== this.getDataAtCell(row[0],2)  ) {
+                  this.setDataAtCell(row[0], 2, et.matchProductByName(row[3],dataVal)  );
+                }  
+              }
+              
             }
             
             switch(row[1]) { 
@@ -84,12 +95,14 @@ export class GridComponent implements OnInit, OnDestroy {
               case 'sale_infrastructure':
               case 'sale_scholarships':
               case 'sale_staff':
-              case 'sale_training':{      
+              case 'sale_training':
+              case 'capex':{
                 
                 varRow = 0;
 
                 if (_.includes(row[3], '%')) {
                   varField = _.replace(row[3], '%', '');
+                  varField = _.replace(varField, ',', '.');
                   varRow = (row[1] === 'sale_direct' && varRow === 0 ) ? varRow = 7 : varRow = varRow;
                   varRow = (row[1] === 'sale_external_library' && varRow === 0 ) ? varRow = 8 : varRow = varRow;
                   varRow = (row[1] === 'sale_event' && varRow === 0 ) ? varRow = 9 : varRow = varRow;
@@ -98,6 +111,7 @@ export class GridComponent implements OnInit, OnDestroy {
                   varRow = (row[1] === 'sale_scholarships' && varRow === 0 ) ? varRow = 12 : varRow = varRow;
                   varRow = (row[1] === 'sale_staff' && varRow === 0 ) ? varRow = 13 : varRow = varRow;
                   varRow = (row[1] === 'sale_training' && varRow === 0 ) ? varRow = 14 : varRow = varRow;
+                  varRow = (row[1] === 'capex' && varRow === 0 ) ? varRow = 15 : varRow = varRow;
 
                   this.setDataAtCell(row[0], varRow, Number(varField)  );
 
@@ -112,6 +126,7 @@ export class GridComponent implements OnInit, OnDestroy {
                 let sale_scholarships;
                 let sale_staff;
                 let sale_training;
+                let capex;
 
                 sale_direct = _.isNil(this.getDataAtCell(row[0],7)) ? sale_direct = 0 : sale_direct = Number(this.getDataAtCell(row[0],7));
                 sale_external_library = _.isNil(this.getDataAtCell(row[0],8)) ? sale_external_library = 0 : sale_external_library = Number(this.getDataAtCell(row[0],8));
@@ -121,12 +136,13 @@ export class GridComponent implements OnInit, OnDestroy {
                 sale_scholarships = _.isNil(this.getDataAtCell(row[0],12)) ? sale_scholarships = 0 : sale_scholarships = Number(this.getDataAtCell(row[0],12));
                 sale_staff = _.isNil(this.getDataAtCell(row[0],13)) ? sale_staff = 0 : sale_staff = Number(this.getDataAtCell(row[0],13));
                 sale_training = _.isNil(this.getDataAtCell(row[0],14)) ? sale_training = 0 : sale_training = Number(this.getDataAtCell(row[0],14));
+                capex = _.isNil(this.getDataAtCell(row[0],15)) ? capex = 0 : capex = Number(this.getDataAtCell(row[0],15));
 
-                let total_descount = sale_direct + sale_external_library + sale_event + sale_teacher + sale_infrastructure + sale_scholarships + sale_staff + sale_training;
+                let total_descount = sale_direct + sale_external_library + sale_event + sale_teacher + sale_infrastructure + sale_scholarships + sale_staff + sale_training + capex;
                 let total = Number(this.getDataAtCell(row[0],6)) -  ( Number(this.getDataAtCell(row[0],6)) * total_descount / 100 );
                 
                 
-                this.setDataAtCell(row[0], 15, total  );
+                this.setDataAtCell(row[0], 16, total  );
                 break; 
              } 
             }
@@ -148,12 +164,12 @@ export class GridComponent implements OnInit, OnDestroy {
           this.setter = false;
         }
         */
-
       },
       rowHeaders: true,
       stretchH: 'all',
       width: 950,
       height: 400,
+      colWidths: [45, 75, 120, 330, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
       autoWrapRow: true,
       manualRowResize: true,
       manualColumnResize: true,
@@ -161,21 +177,40 @@ export class GridComponent implements OnInit, OnDestroy {
       manualColumnMove: true,
       filters: true,
       dropdownMenu: true,
+      renderAllRows: false,
       outsideClickDeselects: true,
       licenseKey: 'non-commercial-and-evaluation',
       columns: this.columnsGrid,
-      viewportRowRenderingOffset: "auto",
+      viewportRowRenderingOffset: "auto"
     });
+
+    //this.addCalc();
     
   }
 
-  
+  public addCalc() {
+    //adding row and pushing new data
+    this.hot.setDataAtCell(this.hot.countRows(), 0, '');
+    //changing header to AVE for the last row  
+    this.hot.updateSettings({
+      afterGetRowHeader: function(row, TH) {
+        if (row === this.hot.countRows() - 1) {
+          TH.textContent = 'SUM';       
+        }
+      }
+    })
+    
+    let lastRow = this.hot.countRows() - 1;
+    this.hot.setDataAtCell(this.hot.countRows() - 1, 0, '=SUM(E1:E'+lastRow+')');
+  }
 
   ngOnDestroy(): void {
     this.hot.destroy();
   }
 
   public add() {
+    this.addProform = false;
+    this.addProform = true;
     this.hot.alter('insert_row', 0);
   }
 
@@ -200,7 +235,7 @@ export class GridComponent implements OnInit, OnDestroy {
  public matchProduct(cod: string, product: any[]): string | undefined {
   let productObj = _.find(product, (x) => x.cod === cod);
   if (_.isNil(productObj)) {
-    productObj.description = null;
+    return null;
   }
   return productObj.description;
 
@@ -209,7 +244,7 @@ export class GridComponent implements OnInit, OnDestroy {
 public matchProductByName(description: string, product: any[]): string | undefined {
   let productObj = _.find(product, (x) => x.description === description);
   if (_.isNil(productObj)) {
-    productObj.cod = null;
+    return null;
   }
   return productObj.cod;
 
@@ -218,17 +253,17 @@ public matchProductByName(description: string, product: any[]): string | undefin
 public matchDegreeByProduct(cod: string, product: any[]): string | undefined {
   let productObj = _.find(product, (x) => x.cod === cod);
   if (_.isNil(productObj)) {
-    productObj.degree = null;
+    return null;
   }
   return productObj.degree;
 
 }
 
 
-public matchPrice(cod: string, product: any[]): string | undefined {
+public matchPrice(cod: string, product: any[]): any | undefined {
   let productObj = _.find(product, (x) => x.cod === cod);
   if (_.isNil(productObj)) {
-    productObj.price = null;
+    return 0;
   }
   return productObj.price;
 

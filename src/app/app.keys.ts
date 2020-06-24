@@ -34,7 +34,7 @@ export namespace ExcelKeys {
   export const EXCEL_TITLE_SIZE = 16;
   export const EXCEL_TITLE_UNDERLINE = 'none';
   export const EXCEL_HEADER_FGCOLOR = '';
-  export const EXCEL_HEADER_BGCOLOR = '';
+  export const EXCEL_HEADER_BGCOLOR = '#FFFFFF';
   export const EXCEL_DETAIL_CELL = 'cell';
   export const EXCEL_DETAIL_METADATA = 'metadata';
   export const EXCEL_DETAIL_FIELD = 'field';
@@ -47,8 +47,8 @@ export namespace ExcelKeys {
 
 
 export namespace Proform {
-  export const ID = {prop: 'id', name: 'Id Proforma Interna'};
-  export const NUMBER_PROFORM = {prop: 'number_proform', name: 'Número Proforma'};
+  export const ID = {prop: 'id', name: 'Id'};
+  export const NUMBER_PROFORM = {prop: 'number_proform', name: 'Número'};
   export const USER_ID = {prop: 'user_id', name: 'Vendedor'};
   export const COLLEGE_ID = {prop: 'college_id', name: 'Colegios'};
   export const CLIENT_ID = {prop: 'client_id', name: 'Clientes'};
@@ -77,6 +77,7 @@ export namespace ProformDetail {
   export const SALE_SCHOLARSHIPS = {prop: 'sale_scholarships', name: 'Becas PLANTEL'};
   export const SALE_STAFF = {prop: 'sale_staff', name: 'Equipos PLANTEL'};
   export const SALE_TRAINING = {prop: 'sale_training', name: 'Capacitación PLANTEL'};
+  export const CAPEX = {prop: 'capex', name: 'Beneficio'};
   export const TOTAL = {prop: 'total', name: 'Total'};
 }
 

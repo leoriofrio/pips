@@ -1,40 +1,32 @@
-<div >
+<div>
     <span class="title" *ngIf="enabledTitle">Titulo</span>
-        
+
     <div class="pr-4">
-        <button id="btnExportExcel" [disabled]="!uploadFile" *ngIf="allowExcelExport" class="button-title" (click)="exportAsXLSX()">
+        <button id="btnExportExcel" [disabled]="!uploadFile" *ngIf="allowExcelExport" class="button-title"
+            (click)="exportAsXLSX()">
             Exportar a Excel
         </button>
-        <button id="btnUploadFile"  class="button-title" (click)="changeView()">
+        <button id="btnUploadFile" *ngIf="allowExcelExport" class="button-title" (click)="changeView()">
             Cargar Archivo
         </button>
+
+        <div *ngIf="!uploadFile" class="complete-zone zone">            
+            <input #inputUploadFile type="file" (change)="changeFile($event)" placeholder="Upload file" accept=".xlsx">
+            <br>
+            <input type="button" value="upload" (click)='upload()' [disabled]="!file">
+        </div>
     </div>
 </div>
 
-
 <content>
-<app-data-import *ngIf="!uploadFile" [multiple]="true" [complete]="false" ></app-data-import>  
-    <ag-grid-angular *ngIf="uploadFile"
-        #agGrid
-        style="width: 100%; height: 670px;  box-sizing: border-box;" 
-        id="myGrid"
-        class="ag-theme-alpine px-4 pt-4 height-70"
-        [rowData]="data" 
-        [columnDefs]="gridColumns"
-        [enableSorting]="true"
-        [enableFilter]="true"
-        [enableCellChangeFlash]="true"
-        [enableCellTextSelection]="true"
-        [defaultColDef]="defaultColDef"
-        [pinnedTopRowData]="pinnedTopRowData"
-        [pinnedBottomRowData]="pinnedBottomRowData"
-        [enterMovesDown]="true"
-        [enterMovesDownAfterEdit]="true"
-        [enableRangeSelection]="true"
-        [frameworkComponents]="frameworkComponents"
-        [processDataFromClipboard]="processDataFromClipboard"
-        (gridReady)="onGridReady($event)"
-         >
+    <!-- <app-data-import *ngIf="!uploadFile" [multiple]="true" [complete]="false"></app-data-import> -->
+    <ag-grid-angular *ngIf="uploadFile" #agGrid style="width: 100%; height: 670px;  box-sizing: border-box;" id="myGrid"
+        class="ag-theme-alpine px-4 pt-4 height-70" [rowData]="data" [context]="context" [columnDefs]="gridColumns"
+        [enableSorting]="true" [enableFilter]="true" [enableCellChangeFlash]="true" [enableCellTextSelection]="true"
+        [defaultColDef]="defaultColDef" [pinnedTopRowData]="pinnedTopRowData"
+        [pinnedBottomRowData]="pinnedBottomRowData" [enterMovesDown]="true" [enterMovesDownAfterEdit]="true"
+        [enableRangeSelection]="true" [frameworkComponents]="frameworkComponents"
+        [processDataFromClipboard]="processDataFromClipboard" (gridReady)="onGridReady($event)">
     </ag-grid-angular>
 
 </content>

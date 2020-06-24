@@ -15,8 +15,8 @@ const dataVal = require('./client.json');
   styleUrls: ['./client.component.scss']
 })
 export class ClientComponent implements OnInit {
-  @ViewChild(ProjectComponent, {static: true}) child: ProjectComponent;
-  
+  @ViewChild(ProjectComponent, { static: true }) child: ProjectComponent;
+
   public data = dataVal;
   public gridColumns = COLUMNS_CLIENT;
   public enabledTitle: boolean;
@@ -24,18 +24,14 @@ export class ClientComponent implements OnInit {
 
   constructor(private excelExportService: ExcelExportService) {
 
-   }
+  }
 
   ngOnInit(): void {
     this.enabledTitle = true;
     this.allowExcelExport = true;
   }
 
-  /**
-   * Export Excel
-   * @param {name, gridColumns, data}
-   *
-   */
+  
   public onExportExcel(excelData): any {
     if (!_.isNil(excelData.data) && !_.isEmpty(excelData.data)) {
       this.excelExportService.generateExcelFromJson(
@@ -46,5 +42,8 @@ export class ClientComponent implements OnInit {
     }
   }
 
+  public onJsonData(jsonData) {
+    console.log('data de Cliente es', jsonData);
+  }
 
 }

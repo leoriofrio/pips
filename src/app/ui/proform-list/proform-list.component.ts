@@ -16,30 +16,38 @@ import { Router } from '@angular/router';
 export class ProformListComponent implements OnInit {
   @ViewChild(ProjectComponent, {static: true}) child: ProjectComponent;
   
+  
   public data: any ;
   public gridColumns = COLUMNS_PROFORM;
   public enabledTitle: boolean;
   public allowExcelExport: boolean;
+  public proformId: any;
 
   constructor(
     private excelExportService: ExcelExportService,
     private proformService: ProformService,
-    private router: Router,
+    private router: Router,    
     ) {
 
    }
 
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
     this.enabledTitle = false;
     this.allowExcelExport = false;
     this.getProform();
   }
 
-  public getProform(): void {
+  public getProform(): void {    
     this.proformService.getProform().subscribe( proform => {
+      _.forEach(proform, function(value, key) {
+        value['number_proform'] = value['number_proform'] + ' - ' + value['state_number'];
+        value['user_id'] = value['user']['codUser'] + ' - ' + value['user']['userName'];
+        value['college_id'] = value['college']['codSantillana'] + ' - ' + value['college']['name'];
+        value['client_id'] = value['client']['codClient'] + ' - ' + value['client']['name'];
+      });
       this.data = proform;
-    });
+    });    
   }
 
   /**
@@ -57,8 +65,13 @@ export class ProformListComponent implements OnInit {
     }
   }
 
+  public selectProject(row): any {
+    this.router.navigate(['proform-edit',row['data']['id']]) ;
+  }
+
   public edit() {
-    this.router.navigate(['proform-edit',45]) ;
+    const idProform = (<HTMLInputElement>document.getElementById("txtProforma")).value;
+    this.router.navigate(['proform-edit',idProform]) ;
   }
 
 }

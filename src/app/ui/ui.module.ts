@@ -10,6 +10,7 @@ import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 import { MatInputModule } from '@angular/material/input';
 import { ProformListComponent } from './proform-list/proform-list.component';
 import { ProformEditComponent } from './proform-edit/proform-edit.component';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { ProformEditComponent } from './proform-edit/proform-edit.component';
     AppRoutingModule,
     FormlyBootstrapModule,
     MatInputModule,
+    NgxUiLoaderModule,
     FormlyModule.forRoot({
       types: [],
       validationMessages: [        

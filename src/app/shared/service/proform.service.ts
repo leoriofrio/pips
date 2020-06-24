@@ -44,6 +44,11 @@ export class ProformService {
     return this.http.post<any>(url, proformDetail, httpOptions);
   }
 
+  public updateProformDetail(id: string, proformDetail: any): Observable<any> {
+    const url = this.baseUrl+`proform/`+id.toString()+`/proformDetail/edit`;
+    return this.http.patch<any>(url, proformDetail, httpOptions);
+  }
+
   
 
 }
