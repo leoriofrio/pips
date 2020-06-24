@@ -31,11 +31,7 @@ export class ClientComponent implements OnInit {
     this.allowExcelExport = true;
   }
 
-  /**
-   * Export Excel
-   * @param {name, gridColumns, data}
-   *
-   */
+  
   public onExportExcel(excelData): any {
     if (!_.isNil(excelData.data) && !_.isEmpty(excelData.data)) {
       this.excelExportService.generateExcelFromJson(
