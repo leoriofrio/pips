@@ -2,9 +2,11 @@ import { Component, Output, EventEmitter, OnDestroy, ViewChild, ElementRef, OnIn
 import Handsontable from 'handsontable';
 import { GridRecord } from '../../../app.type';
 import * as _ from 'lodash';
+import { ProductService } from '../../service/product.service';
+import { AppKeys, TypeRegion } from 'src/app/app.keys';
+import { forkJoin } from 'rxjs';
+import { PriceService } from '../../service/price.service';
 
-const dataVal = require('./product.json');
-const dataPrices = require('./prices.json');
 
 @Component({
   selector: 'app-grid',
@@ -28,19 +30,47 @@ export class GridComponent implements OnInit, OnDestroy {
 
   private  setter = false;
   public addProform: boolean = false;
+  public dataVal;
+  public dataPrices;
 
-  constructor() { }
+  constructor(
+    private productService: ProductService,
+    private priceService: PriceService) {    
+   }
 
   ngOnInit(): void {
 
+    const self = this;
+    forkJoin(
+      this.getDataProduct(),
+      this.getDataPrice()
+    ).subscribe( ([data, price ]) => {
+      self.dataVal = data;
+      self.dataPrices = price;
+      setTimeout(() => {}, 1000);
+      self.loadGridData();
+    });  
+    
+
+    //this.addCalc();
+    
+  }
+
+  public getDataProduct() {
+    return this.productService.getProductByRegion(TypeRegion.SIERRA);
+  }
+
+  public getDataPrice() {
+    return this.priceService.getPriceByPromotion('20201');
+  }
+
+  public loadGridData(){
 
     (Handsontable.renderers as any).registerRenderer('currency', this.currencyRenderer);
-
     const et = this;
     let varField: any;
     let varRow: any;
 
-    //const containerVal = this.container.nativeElement;
     var container = document.getElementById('example');
 
     this.hot = new Handsontable(container, {
@@ -57,11 +87,11 @@ export class GridComponent implements OnInit, OnDestroy {
           for(const row of changes) {
             if ( row[1] === 'codigo' ) {
               this.setter = true;
-            this.setDataAtCell(row[0], 1, et.matchDegreeByProduct(row[3],dataVal)  );
-            this.setDataAtCell(row[0], 3, et.matchProduct(row[3],dataVal)  );
+            this.setDataAtCell(row[0], 1, et.matchDegreeByProduct(row[3])  );
+            this.setDataAtCell(row[0], 3, et.matchProduct(row[3])  );
             this.setDataAtCell(row[0], 4, 1  );
-            this.setDataAtCell(row[0], 5, et.matchPrice(row[3],dataPrices)  );
-            this.setDataAtCell(row[0], 6, et.matchPrice(row[3],dataPrices)  );
+            this.setDataAtCell(row[0], 5, et.matchPrice(row[3])  );
+            this.setDataAtCell(row[0], 6, et.matchPrice(row[3]) );
             }
 
             if ( row[1] === 'quantity' || row[1] === 'price' ) {
@@ -69,7 +99,7 @@ export class GridComponent implements OnInit, OnDestroy {
             }
             
             if ( row[1] === 'product_id' ) {
-              varField = et.matchProductByName(row[3],dataVal);
+              varField = et.matchProductByName(row[3]);
               if ( _.isNil(varField)  ) {
                 if (  this.getDataAtCell(row[0],3) === 'undefined' && !_.isNil(row[2]) ) {
                   this.setDataAtCell(row[0], 3, row[2]  );
@@ -78,7 +108,7 @@ export class GridComponent implements OnInit, OnDestroy {
                 }                
               } else {
                 if ( varField !== this.getDataAtCell(row[0],2)  ) {
-                  this.setDataAtCell(row[0], 2, et.matchProductByName(row[3],dataVal)  );
+                  this.setDataAtCell(row[0], 2, et.matchProductByName(row[3])  );
                 }  
               }
               
@@ -183,9 +213,6 @@ export class GridComponent implements OnInit, OnDestroy {
       columns: this.columnsGrid,
       viewportRowRenderingOffset: "auto"
     });
-
-    //this.addCalc();
-    
   }
 
   public addCalc() {
@@ -232,8 +259,8 @@ export class GridComponent implements OnInit, OnDestroy {
  }
 
 
- public matchProduct(cod: string, product: any[]): string | undefined {
-  let productObj = _.find(product, (x) => x.cod === cod);
+ public matchProduct(cod: string): string | undefined {
+  let productObj = _.find(this.dataVal, (x) => x.cod === cod);
   if (_.isNil(productObj)) {
     return null;
   }
@@ -241,8 +268,8 @@ export class GridComponent implements OnInit, OnDestroy {
 
 }
 
-public matchProductByName(description: string, product: any[]): string | undefined {
-  let productObj = _.find(product, (x) => x.description === description);
+public matchProductByName(description: string): string | undefined {
+  let productObj = _.find(this.dataVal, (x) => x.description === description);
   if (_.isNil(productObj)) {
     return null;
   }
@@ -250,8 +277,8 @@ public matchProductByName(description: string, product: any[]): string | undefin
 
 }
 
-public matchDegreeByProduct(cod: string, product: any[]): string | undefined {
-  let productObj = _.find(product, (x) => x.cod === cod);
+public matchDegreeByProduct(cod: string): string | undefined {
+  let productObj = _.find(this.dataVal, (x) => x.cod === cod);
   if (_.isNil(productObj)) {
     return null;
   }
@@ -260,8 +287,8 @@ public matchDegreeByProduct(cod: string, product: any[]): string | undefined {
 }
 
 
-public matchPrice(cod: string, product: any[]): any | undefined {
-  let productObj = _.find(product, (x) => x.cod === cod);
+public matchPrice(cod: string): any | undefined {
+  let productObj = _.find(this.dataPrices, (x) => x.cod === cod);
   if (_.isNil(productObj)) {
     return 0;
   }
