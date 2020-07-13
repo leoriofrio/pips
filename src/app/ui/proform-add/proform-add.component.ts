@@ -241,7 +241,7 @@ export class ProformAddComponent implements OnInit {
                   tap(value => {
                     if (value) {
                       //field.formControl.setValue(' ');
-                      console.log(this.userData);
+                      //console.log(this.userData);
                       numberProform.setValue('2020-1-' + this.userData['codUser'].value);
                     }
                   })

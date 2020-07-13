@@ -44,7 +44,7 @@ export class ProformEditComponent implements OnInit {
   public productCod: any[] = [];
   public productDescription: any[] = [];
   
-  public data: any[];
+  public data: any;
   public dataOfBank: any[] = [];
   public dataset: any[] = [];
   public datasetSummary: PROFORM_SUMMARY ;
@@ -336,6 +336,7 @@ export class ProformEditComponent implements OnInit {
 */
     if( _.size(self.dataset) === 0 ) {
       this.getDataById(Number(this.proformId)).subscribe( data => {
+        self.data = data;
         self.model =  {
             "id":data['id'],
             "number_proform": data['number_proform'],
@@ -482,6 +483,7 @@ export class ProformEditComponent implements OnInit {
 
   public refreshData(){
     const self = this;
+    let count: number = 0;
     self.datasetSummary = {    
       quantity: 0,
       subtotal:0,
@@ -497,12 +499,32 @@ export class ProformEditComponent implements OnInit {
       total:0,
     };
 
-    _.forEach(this.dataset, function(value, key) {     
+    _.forEach(this.dataset, function(value, key) {  
+      count++;   
       self.datasetSummary.quantity = Number(self.datasetSummary.quantity) +  value['quantity'];
       self.datasetSummary.subtotal = Number(self.datasetSummary.subtotal) +  value['subtotal'];
       self.datasetSummary.total = Number(self.datasetSummary.total) +  value['total'];
-      self.datasetSummary.sale_direct = (Number(self.datasetSummary.subtotal) *  value['sale_direct'] / 100) as any;
+      self.datasetSummary.sale_direct = Number(self.datasetSummary.sale_direct) +  value['sale_direct'];
+      self.datasetSummary.sale_external_library = Number(self.datasetSummary.sale_external_library) +  value['sale_external_library'];
+      self.datasetSummary.sale_event = Number(self.datasetSummary.sale_event) +  value['sale_event'];
+      self.datasetSummary.sale_teacher = Number(self.datasetSummary.sale_teacher) +  value['sale_teacher'];
+      self.datasetSummary.sale_infrastructure = Number(self.datasetSummary.sale_infrastructure) +  value['sale_infrastructure'];
+      self.datasetSummary.sale_scholarships = Number(self.datasetSummary.sale_scholarships) +  value['sale_scholarships'];
+      self.datasetSummary.sale_staff = Number(self.datasetSummary.sale_staff) +  value['sale_staff'];
+      self.datasetSummary.sale_training = Number(self.datasetSummary.sale_training) +  value['sale_training'];
+      self.datasetSummary.capex = Number(self.datasetSummary.capex) +  value['capex'];
    });
+   
+   self.datasetSummary.sale_direct = (Number(self.datasetSummary.sale_direct) / count);
+      self.datasetSummary.sale_external_library = Number(self.datasetSummary.sale_external_library) / count;
+      self.datasetSummary.sale_event = Number(self.datasetSummary.sale_event) / count;
+      self.datasetSummary.sale_teacher = Number(self.datasetSummary.sale_teacher)  / count;
+      self.datasetSummary.sale_infrastructure = Number(self.datasetSummary.sale_infrastructure)  / count;
+      self.datasetSummary.sale_scholarships = Number(self.datasetSummary.sale_scholarships)  / count;
+      self.datasetSummary.sale_staff = Number(self.datasetSummary.sale_staff)  / count;
+      self.datasetSummary.sale_training = Number(self.datasetSummary.sale_training)  / count;
+      self.datasetSummary.capex = Number(self.datasetSummary.capex)  / count;
+
   }
 
   public onChange(data: GridRecord[]): void {
@@ -514,10 +536,13 @@ export class ProformEditComponent implements OnInit {
   }
 
   public exportExcel() {    
-    this.excelExportService.generateExcelFromJson(      
+    this.excelExportService.generateExcelWithFormat(      
       "Proforma",
+      "PROFORMA DE VENTAS",
+      this.data,
       this.columnsGrid,
-      this.dataset
+      this.dataset,
+      this.datasetSummary
     );
   }
 
