@@ -71,7 +71,7 @@ export class ExcelExportService {
     }
   }
 
-  public generateExcelFromJson(fileName: string, headers: any, data: any) {
+  public generateExcelFromJson(fileName: string, headers: any, data: any) {    
     // Create workbook and worksheet by the params from the Function
     let workbook = new Workbook();
     workbook = this.generateWorkBookFromJson(fileName, headers, data);
@@ -120,11 +120,11 @@ export class ExcelExportService {
       };
       cell.border = {top: {style: 'thin'}, left: {style: 'thin'}, bottom: {style: 'thin'}, right: {style: 'thin'}};
     });
-
+/*
     worksheet.columns.forEach(column => {
       column.width = column.header.length < 12 ? 12 : column.header.length
     })
-
+*/
     // Add Detail Row Value from Json File
     for (const item of Object.keys(data)) {
       dataDetail = [];

@@ -19,13 +19,6 @@ import { UtilsService  } from 'src/app/shared/service/utils.service';
 import { map, switchMap } from 'rxjs/operators';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 
-
-//const dataVal = require('./proformList.json');
-//const vendedores = require('./vendedores.json');
-//const clientes = require('./clientes.json');
-//const colegios = require('./colegios.json');
-const cabecera = require('./cabecera.json');
-
 @Component({
   selector: 'app-proform-edit',
   templateUrl: './proform-edit.component.html',
