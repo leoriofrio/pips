@@ -213,3 +213,8 @@ export const FilesType = {
 export const ValidatesPattern = {
   alphanumeric: "[a-zA-Z0-9\\s]+"
 }
+
+export declare interface TransformColumns { 
+  
+  namesToProps(json): any;
+}
