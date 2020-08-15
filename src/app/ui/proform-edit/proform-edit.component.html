@@ -26,24 +26,38 @@
                                             <button type="submit" class="btn btn-primary submit-button" (click)="save()">Guardar Edición</button>
                                             <span></span>
                                             <button type="submit" class="btn btn-primary submit-button" (click)="close()">Cancelar</button>
+                                            <button type="submit" class="btn btn-primary submit-button" (click)="exportExcel()">Export Excel</button>
                                         </div>
                                     </div>
                             </div>
                         </div>
                         <div class="col-xl-12 ">
                             <div class="content-body" *ngIf="editProform">
-                                
-                                <!--                            
-                                <app-project  [gridColumns]="gridColumns" [data]="data" [enabledTitleOp] = "enabledTitle"
-                                [allowExcelExportOp] = "allowExcelExport" [defaultColDef] = "defaultColDefVal" 
-                                (exportExcel)= "onExportExcel($event)"></app-project>
-
-                                
-                                -->
                                 <app-grid [budgetRecords]="dataset" [columnsGrid]="columnsGrid" [columnsHeader] = "columnsHeader" 
                                 (change)="onChange($event)"></app-grid>
-
-                                
+                            </div>
+                            <div class="content-body" *ngIf="editProform">
+                                <button type="submit" class="btn btn-primary submit-button" (click)="refreshData()">Actualizar Resumen Proforma</button>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Unidades</th>
+                                            <th>Subtotal</th>
+                                            <th>% Descuento</th>
+                                            <th>Descuento</th>
+                                            <th>Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>{{ datasetSummary.quantity }}</td>
+                                            <td>{{ datasetSummary.subtotal.toFixed(2) }}</td>
+                                            <td>{{ ( ( 1 -datasetSummary.total / datasetSummary.subtotal) * 100 ).toFixed(2) }} %</td>
+                                            <td>{{ (datasetSummary.subtotal - datasetSummary.total).toFixed(2) }}</td>
+                                            <td>{{ datasetSummary.total.toFixed(2) }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                         <ngx-ui-loader [loaderId]="loaderProjectForm" ></ngx-ui-loader>

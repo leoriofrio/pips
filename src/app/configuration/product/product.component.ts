@@ -1,25 +1,25 @@
 'use strict';
 
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ProductColumns } from '../../app.keys';
+import { ProductColumns, TypeRegion, TransformColumns } from '../../app.keys';
 import { ProjectComponent } from '../../shared/components/project/project.component';
 import { COLUMNS_PRODUCT, COLUMNS_PINNED_TOP_DATA } from './productColumns';
 import { ExcelExportService } from '../../shared/service/export-excel.service';
 import * as _ from 'lodash';
+import { ProductService } from 'src/app/shared/service/product.service';
 
-
-const dataVal = require('./product.json');
+//const dataVal = require('./product.json');
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css']
+  styleUrls: ['./product.component.scss']
 })
-export class ProductComponent implements OnInit {
+export class ProductComponent implements OnInit, TransformColumns {
   @ViewChild(ProjectComponent, {static: true}) child: ProjectComponent;
   
   
-  public data = dataVal;
+  public data: any;  //dataVal;
   public gridColumns = COLUMNS_PRODUCT;
   public enabledTitle: boolean;
   public allowExcelExport: boolean;
@@ -27,9 +27,16 @@ export class ProductComponent implements OnInit {
   public pinnedTopRowDataVal: any;
   public pinnedBottomRowDataVal: any;
   public defaultColDefVal: any;
+  
 
-  constructor(private excelExportService: ExcelExportService) {
-
+  constructor(
+    private excelExportService: ExcelExportService, 
+    private productService: ProductService,
+    ) {
+      const self = this;
+      this.getDataProduct().subscribe(data => {
+        self.data = data;        
+       });
   }
 
   ngOnInit() {
@@ -71,8 +78,32 @@ export class ProductComponent implements OnInit {
     }
   }
 
-  public onJsonData(jsonData){
-    console.log('data de Producto es', jsonData);
+  public onJsonData(jsonData){    
+    console.log('data de Producto es', JSON.stringify(jsonData));    
+    let jsonFinal = this.namesToProps(jsonData);  
+    console.log('jsonFinal', jsonFinal);  
+    return this.productService.createProduct('1', JSON.stringify(jsonFinal));
+  }
+
+  public getDataProduct() {
+    return this.productService.getProductByRegion(TypeRegion.SIERRA);
+  }
+
+  public namesToProps(json){
+    return json.map(key => {      
+      let res = {};
+      res[`${ProductColumns.ID.prop}`] = key[ProductColumns.ID.name];
+      res[`${ProductColumns.COD.prop}`] = key[ProductColumns.COD.name];
+      res[`${ProductColumns.SUBLINE.prop}`] = key[ProductColumns.SUBLINE.name];
+      res[`${ProductColumns.DESCRIPTION.prop}`] = key[ProductColumns.DESCRIPTION.name];
+      res[`${ProductColumns.SERIE.prop}`] = key[ProductColumns.SERIE.name];
+      res[`${ProductColumns.NIVEL.prop}`] = key[ProductColumns.NIVEL.name];
+      res[`${ProductColumns.DEGREE.prop}`] = key[ProductColumns.DEGREE.name];
+      res[`${ProductColumns.BUSINESS_LINE.prop}`] = key[ProductColumns.BUSINESS_LINE.name];
+      res[`${ProductColumns.ISBN.prop}`] = key[ProductColumns.ISBN.name];
+      res[`${ProductColumns.REGION.prop}`] = key[ProductColumns.REGION.name];
+      return res;
+    });
   }
 
 }

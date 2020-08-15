@@ -1,7 +1,7 @@
 'use strict';
 
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ClientColumns } from '../../app.keys';
+import { ClientColumns, TransformColumns } from '../../app.keys';
 import { COLUMNS_CLIENT } from './clientColumns';
 import { ProjectComponent } from '../../shared/components/project/project.component';
 import { ExcelExportService } from '../../shared/service/export-excel.service';
@@ -14,7 +14,7 @@ const dataVal = require('./client.json');
   templateUrl: './client.component.html',
   styleUrls: ['./client.component.scss']
 })
-export class ClientComponent implements OnInit {
+export class ClientComponent implements OnInit, TransformColumns {
   @ViewChild(ProjectComponent, { static: true }) child: ProjectComponent;
 
   public data = dataVal;
@@ -48,6 +48,23 @@ export class ClientComponent implements OnInit {
 
   public onJsonData(jsonData) {
     console.log('data de Cliente es', jsonData);
+    let jsonFinal = this.namesToProps(jsonData);
+    console.log('jsonFinal', jsonFinal);
+  }
+
+  public namesToProps(json){
+    return json.map(key => {      
+      let res = {};
+      res[`${ClientColumns.ID.prop}`] = key[ClientColumns.ID.name];
+      res[`${ClientColumns.COD_CLIENT.prop}`] = key[ClientColumns.COD_CLIENT.name];
+      res[`${ClientColumns.PROVINCE.prop}`] = key[ClientColumns.PROVINCE.name];
+      res[`${ClientColumns.CITY.prop}`] = key[ClientColumns.CITY.name];
+      res[`${ClientColumns.NAME.prop}`] = key[ClientColumns.NAME.name];
+      res[`${ClientColumns.NICKNAME.prop}`] = key[ClientColumns.NICKNAME.name];
+      res[`${ClientColumns.TYPE.prop}`] = key[ClientColumns.TYPE.name];
+      res[`${ClientColumns.STATUS.prop}`] = key[ClientColumns.STATUS.name];      
+      return res;
+    });
   }
 
 }
