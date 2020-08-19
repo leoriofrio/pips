@@ -12,8 +12,8 @@ export enum AppStatusForm {
 }
 
 export namespace ApiKeys {
-  export const API_URL = "http://104.210.146.134:3000/";
-  //export const API_URL = "http://localhost:3000/";
+  //export const API_URL = "http://104.210.146.134:3000/";
+  export const API_URL = "http://localhost:3000/";
 }
 
 export namespace TitleNames {
@@ -153,6 +153,13 @@ export namespace UserColumns {
   export const MAIL = {prop: 'mail', name: 'Correo'};
   export const POSITION = {prop: 'position', name: 'Cargo'};
   export const STATUS = {prop: 'status', name: 'Estado'};
+}
+
+export namespace PriceColumns {
+  export const ID = {prop: 'id', name: 'Id'};
+  export const TYPE_PROMOTION = {prop: 'typePromotion', name: 'Promoción'};
+  export const CODE = {prop: 'cod', name: 'Código del Producto'};
+  export const PRICE = {prop: 'price', name: 'Precio Unitario'};
 }
 
 
