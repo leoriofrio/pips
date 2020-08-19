@@ -6,8 +6,11 @@ import { COLUMNS_CLIENT } from './clientColumns';
 import { ProjectComponent } from '../../shared/components/project/project.component';
 import { ExcelExportService } from '../../shared/service/export-excel.service';
 import * as _ from 'lodash';
+import { ClientService } from 'src/app/shared/service/client.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { forkJoin } from 'rxjs';
 
-const dataVal = require('./client.json');
+//const dataVal = require('./client.json');
 
 @Component({
   selector: 'app-client',
@@ -17,18 +20,29 @@ const dataVal = require('./client.json');
 export class ClientComponent implements OnInit, TransformColumns {
   @ViewChild(ProjectComponent, { static: true }) child: ProjectComponent;
 
-  public data = dataVal;
+  public data: any;
   public gridColumns = COLUMNS_CLIENT;
   public enabledTitle: boolean;
   public allowExcelExport: boolean;
 
-  constructor(private excelExportService: ExcelExportService) {
+  constructor(
+    private excelExportService: ExcelExportService,
+    private clientService: ClientService,
+    private router: Router,
+    private route: ActivatedRoute,
+    ) {
 
   }
 
   ngOnInit(): void {
+    const self = this;  
+
     this.enabledTitle = true;
     this.allowExcelExport = true;
+
+    this.getDataClient().subscribe(data => {
+      self.data = data;        
+     });
   }
 
   
@@ -43,9 +57,31 @@ export class ClientComponent implements OnInit, TransformColumns {
   }
 
   public onJsonData(jsonData) {
-    console.log('data de Cliente es', jsonData);
+    let jsonEditClient: any[] = [];
+    let jsonAddClient: any[] = [];
     let jsonFinal = this.namesToProps(jsonData);
-    console.log('jsonFinal', jsonFinal);
+    for ( const row of jsonFinal ){
+      if( !_.isNil(row['id']) ){
+        jsonEditClient.push(row);
+      } else {
+        jsonAddClient.push(row);
+      }
+    }
+
+    for ( const row of jsonAddClient )
+      delete row['id'];
+
+      const self = this;
+      forkJoin(
+        this.clientService.createClient(JSON.stringify(jsonAddClient)),
+        this.clientService.updateClient(JSON.stringify(jsonEditClient))
+      ).subscribe( ([addClient, editClient ]) => {
+        alert('Se ha guardado correctamente los clientes');
+        this.router.navigateByUrl('/client', { skipLocationChange: true }).then(() => {
+          this.router.navigate(['/client']);
+      }); 
+        setTimeout(() => {}, 1000);        
+      });  
   }
 
   public namesToProps(json){
@@ -61,6 +97,10 @@ export class ClientComponent implements OnInit, TransformColumns {
       res[`${ClientColumns.STATUS.prop}`] = key[ClientColumns.STATUS.name];      
       return res;
     });
+  }
+
+  public getDataClient() {
+    return this.clientService.getClientActive();
   }
 
 }

@@ -39,9 +39,13 @@ export class ProductService {
     return this.http.get<any>(url);
   }
 
-  public createProduct(id: string, product: any): Observable<any> {
-    debugger;
+  public createProduct(id: string, product: any): Observable<any> {    
     const url = this.baseUrl+`product/Sierra`;
     return this.http.post<any>(url, product, httpOptions);
+  }
+
+  public updateProduct(id: string, product: any): Observable<any> {    
+    const url = this.baseUrl+`product/`+id+`/edit`;
+    return this.http.patch<any>(url, product, httpOptions);
   }
 }

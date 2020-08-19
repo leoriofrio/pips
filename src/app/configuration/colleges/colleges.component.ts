@@ -1,13 +1,16 @@
 'use strict';
 
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ClientColumns, CollegesColumns } from '../../app.keys';
+import { ClientColumns, CollegesColumns, TransformColumns, TypeRegion } from '../../app.keys';
 import { COLUMNS_COLLEGES } from './collegesColumns';
 import { ProjectComponent } from '../../shared/components/project/project.component';
 import { ExcelExportService } from '../../shared/service/export-excel.service';
 import * as _ from 'lodash';
+import { forkJoin } from 'rxjs';
+import { CollegeService } from 'src/app/shared/service/college.service';
+import { Router } from '@angular/router';
 
-const dataVal = require('./colleges.json');
+//const dataVal = require('./colleges.json');
 
 @Component({
   selector: 'app-colleges',
@@ -17,16 +20,25 @@ const dataVal = require('./colleges.json');
 export class CollegesComponent implements OnInit, TransformColumns {
   @ViewChild(ProjectComponent, {static: true}) child: ProjectComponent;
   
-  public data = dataVal;
+  public data: any;
   public gridColumns = COLUMNS_COLLEGES;
   public enabledTitle: boolean;
   public allowExcelExport: boolean;
 
-  constructor(private excelExportService: ExcelExportService) { }
+  constructor(
+    private excelExportService: ExcelExportService,
+    private collegeService: CollegeService,
+    private router: Router,
+    ) { }
 
   ngOnInit(): void {
+    const self = this; 
     this.enabledTitle = true;
     this.allowExcelExport = true;
+
+    this.getDataCollege().subscribe(data => {
+      self.data = data;        
+     });
   }
 
   /**
@@ -45,9 +57,33 @@ export class CollegesComponent implements OnInit, TransformColumns {
   }
 
   public onJsonData(jsonData){
-    console.log('data de Colleges es', jsonData);
+    let jsonEditCollege: any[] = [];
+    let jsonAddCollege: any[] = [];
+    //console.log('data de Colleges es', jsonData);
     let jsonFinal = this.namesToProps(jsonData);
-    console.log('jsonFinal', jsonFinal);
+    //console.log('jsonFinal', jsonFinal);
+    for ( const row of jsonFinal ){
+      if( !_.isNil(row['id']) ){
+        jsonEditCollege.push(row);
+      } else {
+        jsonAddCollege.push(row);
+      }
+    }
+
+    for ( const row of jsonAddCollege )
+      delete row['id'];
+
+      const self = this;
+      forkJoin(
+        this.collegeService.createCollege(JSON.stringify(jsonAddCollege)),
+        this.collegeService.updateCollege(JSON.stringify(jsonEditCollege))
+      ).subscribe( ([addCollege, editCollege ]) => {
+        alert('Se ha guardado correctamente los colegios');
+        this.router.navigateByUrl('/college', { skipLocationChange: true }).then(() => {
+          this.router.navigate(['/college']);
+      }); 
+        setTimeout(() => {}, 1000);        
+      });
   }
 
   public namesToProps(json){
@@ -74,6 +110,10 @@ export class CollegesComponent implements OnInit, TransformColumns {
       res[`${CollegesColumns.REGION_ID.prop}`] = key[CollegesColumns.REGION_ID.name];
       return res;
     });
+  }
+
+  public getDataCollege() {
+    return this.collegeService.getCollegeByRegion(TypeRegion.SIERRA);
   }
 
 }
