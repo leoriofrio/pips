@@ -27,7 +27,7 @@ export class ProductService {
   }
 
   public createProduct(id: string, product: any): Observable<any> {
-    debugger;
+    //debugger;
     const url = this.baseUrl+`product/Sierra`;
     return this.http.post<any>(url, product, httpOptions);
   }

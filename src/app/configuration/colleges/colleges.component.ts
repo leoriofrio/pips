@@ -1,7 +1,7 @@
 'use strict';
 
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ClientColumns, CollegesColumns } from '../../app.keys';
+import { ClientColumns, CollegesColumns, TransformColumns } from '../../app.keys';
 import { COLUMNS_COLLEGES } from './collegesColumns';
 import { ProjectComponent } from '../../shared/components/project/project.component';
 import { ExcelExportService } from '../../shared/service/export-excel.service';

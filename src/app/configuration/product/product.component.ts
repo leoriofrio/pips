@@ -7,6 +7,7 @@ import { COLUMNS_PRODUCT, COLUMNS_PINNED_TOP_DATA } from './productColumns';
 import { ExcelExportService } from '../../shared/service/export-excel.service';
 import * as _ from 'lodash';
 import { ProductService } from 'src/app/shared/service/product.service';
+import { ExcelImportService } from 'src/app/shared/service/import-excel.service';
 
 //const dataVal = require('./product.json');
 
@@ -31,6 +32,7 @@ export class ProductComponent implements OnInit, TransformColumns {
 
   constructor(
     private excelExportService: ExcelExportService, 
+    private excelImportService: ExcelImportService,
     private productService: ProductService,
     ) {
       const self = this;
@@ -78,11 +80,13 @@ export class ProductComponent implements OnInit, TransformColumns {
     }
   }
 
-  public onJsonData(jsonData){    
-    console.log('data de Producto es', JSON.stringify(jsonData));    
-    let jsonFinal = this.namesToProps(jsonData);  
-    console.log('jsonFinal', jsonFinal);  
-    return this.productService.createProduct('1', JSON.stringify(jsonFinal));
+  public onJsonData(jsonData){
+    //console.log('data de Producto es', JSON.stringify(jsonData));
+    const jsonFinal = this.namesToProps(jsonData);    
+    const postPatch = this.excelImportService.setDataToPostOrPatch(jsonFinal);
+    console.log('POST', postPatch.POST);
+    console.log('PATCH', postPatch.PATCH);
+    //return this.productService.createProduct('1', JSON.stringify(jsonFinal));
   }
 
   public getDataProduct() {
