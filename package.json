@@ -21,6 +21,7 @@
     "@angular/platform-browser": "~9.0.7",
     "@angular/platform-browser-dynamic": "~9.0.7",
     "@angular/router": "~9.0.7",
+    "@auth0/auth0-spa-js": "^1.11.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@handsontable/angular": "^5.1.1",
     "@ng-select/ng-select": "^4.0.0",

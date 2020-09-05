@@ -8,6 +8,9 @@ import { ExcelExportService } from '../../shared/service/export-excel.service';
 import * as _ from 'lodash';
 import { ProductService } from 'src/app/shared/service/product.service';
 import { ExcelImportService } from 'src/app/shared/service/import-excel.service';
+import { forkJoin, pipe } from 'rxjs';
+import { Router, NavigationStart, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 //const dataVal = require('./product.json');
 
@@ -34,14 +37,14 @@ export class ProductComponent implements OnInit, TransformColumns {
     private excelExportService: ExcelExportService, 
     private excelImportService: ExcelImportService,
     private productService: ProductService,
+    private router: Router,
+    private route: ActivatedRoute,
     ) {
-      const self = this;
-      this.getDataProduct().subscribe(data => {
-        self.data = data;        
-       });
+      
   }
 
   ngOnInit() {
+    const self = this;      
     this.enabledTitle = true;
     this.allowExcelExport = true;
     this.pinnedTopRowDataVal = [
@@ -50,7 +53,7 @@ export class ProductComponent implements OnInit, TransformColumns {
     this.pinnedBottomRowDataVal = [
       COLUMNS_PINNED_TOP_DATA
     ];
-
+/*
     this.defaultColDefVal = {
       editable: true,
       resizable: true,
@@ -63,6 +66,10 @@ export class ProductComponent implements OnInit, TransformColumns {
         'cell-grey': 'value.startsWith("Grey")',
       },
     };
+*/
+    this.getDataProduct().subscribe(data => {
+      self.data = data;        
+     });
   }
   
   /**
@@ -81,12 +88,39 @@ export class ProductComponent implements OnInit, TransformColumns {
   }
 
   public onJsonData(jsonData){
-    //console.log('data de Producto es', JSON.stringify(jsonData));
-    const jsonFinal = this.namesToProps(jsonData);    
-    const postPatch = this.excelImportService.setDataToPostOrPatch(jsonFinal);
-    console.log('POST', postPatch.POST);
-    console.log('PATCH', postPatch.PATCH);
-    //return this.productService.createProduct('1', JSON.stringify(jsonFinal));
+    let jsonEditProduct: any[] = [];
+    let jsonAddProduct: any[] = [];
+    let jsonFinal = this.namesToProps(jsonData);
+    for ( const row of jsonFinal ){
+      if( !_.isNil(row['id']) ){
+        jsonEditProduct.push(row);
+      } else {
+        jsonAddProduct.push(row);
+      }
+    }
+
+    for ( const row of jsonAddProduct )
+      delete row['id'];
+
+      const self = this;
+      forkJoin(
+        this.productService.createProduct('1', JSON.stringify(jsonAddProduct)),
+        this.productService.updateProduct('1', JSON.stringify(jsonEditProduct))
+      ).subscribe( ([addProduct, editProduct ]) => {
+        alert('Se ha guardado correctamente los productos');
+        this.router.navigateByUrl('/product', { skipLocationChange: true }).then(() => {
+          this.router.navigate(['/product']);
+      }); 
+        setTimeout(() => {}, 1000);        
+      });  
+      //console.log(JSON.stringify(jsonEditProduct));
+      //console.log(JSON.stringify(jsonAddProduct));
+      /*
+    return this.productService.createProduct('1', JSON.stringify(jsonAddProduct)).subscribe(response => { 
+      alert('Se ha guardado correctamente los productos');
+      }    
+    );
+      */
   }
 
   public getDataProduct() {

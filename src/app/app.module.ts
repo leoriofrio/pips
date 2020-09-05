@@ -17,12 +17,14 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { UploadDirective } from './directives/upload.directive';
 import { FormlyFieldNgbDatePicker } from './shared/components/form/ngb-date-picker.type.component';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
+import { PriceComponent } from './configuration/price/price.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UploadDirective
+    UploadDirective,
+    PriceComponent
   ],
   imports: [
     BrowserModule,
