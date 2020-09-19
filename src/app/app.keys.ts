@@ -225,3 +225,7 @@ export declare interface TransformColumns {
   
   namesToProps(json): any;
 }
+
+export namespace LoaderIds {
+  export const LOADER_PROJECT = 'loader-project';  
+}

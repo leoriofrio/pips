@@ -1,7 +1,7 @@
 'use strict';
 import { Component, OnInit, Input, ViewChild, Output, EventEmitter, ElementRef } from '@angular/core';
 import { ExcelExportService } from '../../service/export-excel.service';
-import { AppKeys, ExcelKeys } from 'src/app/app.keys';
+import { AppKeys, ExcelKeys, LoaderIds } from 'src/app/app.keys';
 import { Module } from 'ag-grid-community';
 
 
@@ -9,6 +9,7 @@ import * as _ from 'lodash';
 import { selectionRenderComponent } from '../../render/selection-render.component';
 import { SelectProjectRendererComponent } from './select-project-renderer.component';
 import { ExcelImportService } from '../../service/import-excel.service';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-project',
@@ -25,6 +26,7 @@ export class ProjectComponent implements OnInit {
   public context; // ag-grid's parent context
   public frameworkComponents; // framework component
   public uploadFile: boolean = true;
+  public loaderProject: string;
 
   @Input()
   public gridColumns;
@@ -51,12 +53,16 @@ export class ProjectComponent implements OnInit {
 
   public file: File;
 
-  constructor(private excelExportService: ExcelExportService, private excelImportService: ExcelImportService) {
+  constructor(
+    private excelExportService: ExcelExportService,
+    private excelImportService: ExcelImportService,
+    private loaderService: NgxUiLoaderService) {
     this.context = { componentParent: this };
     this.frameworkComponents = {
       selectionRender: selectionRenderComponent,
       selectProjectRenderer: SelectProjectRendererComponent,
     };
+    this.loaderProject = LoaderIds.LOADER_PROJECT;
   }
 
   ngOnInit() {
@@ -112,7 +118,7 @@ export class ProjectComponent implements OnInit {
 
   public onGridReady(params) {
     this.gridApi = params.api;
-    this.gridColumnApi = params.columnApi;    
+    this.gridColumnApi = params.columnApi;
   }
 
 
@@ -120,10 +126,11 @@ export class ProjectComponent implements OnInit {
     this.file = event.target.files[0];
   }
 
-  upload() {        
-    this.excelImportService.excelToJson(this.file).subscribe((jsonData: any[]): void => {            
+  upload() {    
+    this.loaderService.startLoader(this.loaderProject);
+    this.excelImportService.excelToJson(this.file).subscribe((jsonData: any[]): void => {
       this.emitJsonData.emit(jsonData);
-      this.changeView();
+      this.changeView();      
     });
   }
 }

@@ -1,7 +1,7 @@
 'use strict';
 
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ClientColumns, TransformColumns } from '../../app.keys';
+import { ClientColumns, LoaderIds, TransformColumns } from '../../app.keys';
 import { COLUMNS_CLIENT } from './clientColumns';
 import { ProjectComponent } from '../../shared/components/project/project.component';
 import { ExcelExportService } from '../../shared/service/export-excel.service';
@@ -9,6 +9,7 @@ import * as _ from 'lodash';
 import { ClientService } from 'src/app/shared/service/client.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { forkJoin } from 'rxjs';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 //const dataVal = require('./client.json');
 
@@ -24,14 +25,16 @@ export class ClientComponent implements OnInit, TransformColumns {
   public gridColumns = COLUMNS_CLIENT;
   public enabledTitle: boolean;
   public allowExcelExport: boolean;
+  public loaderProject: string;
 
   constructor(
     private excelExportService: ExcelExportService,
     private clientService: ClientService,
     private router: Router,
     private route: ActivatedRoute,
+    private loaderService: NgxUiLoaderService
     ) {
-
+      this.loaderProject = LoaderIds.LOADER_PROJECT;
   }
 
   ngOnInit(): void {
@@ -77,6 +80,7 @@ export class ClientComponent implements OnInit, TransformColumns {
         this.clientService.updateClient(JSON.stringify(jsonEditClient))
       ).subscribe( ([addClient, editClient ]) => {
         alert('Se ha guardado correctamente los clientes');
+        this.loaderService.stopLoader(this.loaderProject);
         this.router.navigateByUrl('/client', { skipLocationChange: true }).then(() => {
           this.router.navigate(['/client']);
       }); 
