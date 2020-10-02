@@ -1,7 +1,7 @@
 'use strict';
 
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ProductColumns, TypeRegion, TransformColumns } from '../../app.keys';
+import { ProductColumns, TypeRegion, TransformColumns, LoaderIds } from '../../app.keys';
 import { ProjectComponent } from '../../shared/components/project/project.component';
 import { COLUMNS_PRODUCT, COLUMNS_PINNED_TOP_DATA } from './productColumns';
 import { ExcelExportService } from '../../shared/service/export-excel.service';
@@ -11,6 +11,7 @@ import { ExcelImportService } from 'src/app/shared/service/import-excel.service'
 import { forkJoin, pipe } from 'rxjs';
 import { Router, NavigationStart, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 //const dataVal = require('./product.json');
 
@@ -31,6 +32,7 @@ export class ProductComponent implements OnInit, TransformColumns {
   public pinnedTopRowDataVal: any;
   public pinnedBottomRowDataVal: any;
   public defaultColDefVal: any;
+
   
 
   constructor(
@@ -39,8 +41,8 @@ export class ProductComponent implements OnInit, TransformColumns {
     private productService: ProductService,
     private router: Router,
     private route: ActivatedRoute,
+    private loaderService: NgxUiLoaderService
     ) {
-      
   }
 
   ngOnInit() {
@@ -108,6 +110,7 @@ export class ProductComponent implements OnInit, TransformColumns {
         this.productService.updateProduct('1', JSON.stringify(jsonEditProduct))
       ).subscribe( ([addProduct, editProduct ]) => {
         alert('Se ha guardado correctamente los productos');
+        this.loaderService.stopLoader(LoaderIds.LOADER_PROJECT);
         this.router.navigateByUrl('/product', { skipLocationChange: true }).then(() => {
           this.router.navigate(['/product']);
       }); 

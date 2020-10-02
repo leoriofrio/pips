@@ -10,6 +10,7 @@ import { selectionRenderComponent } from '../../render/selection-render.componen
 import { SelectProjectRendererComponent } from './select-project-renderer.component';
 import { ExcelImportService } from '../../service/import-excel.service';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
+import { ProformOptionsStateComponent } from 'src/app/ui/proform-state/proform-options-state/proform-options-state.component';
 
 @Component({
   selector: 'app-project',
@@ -61,6 +62,8 @@ export class ProjectComponent implements OnInit {
     this.frameworkComponents = {
       selectionRender: selectionRenderComponent,
       selectProjectRenderer: SelectProjectRendererComponent,
+      proformOptionsStateRenderer: ProformOptionsStateComponent
+
     };
     this.loaderProject = LoaderIds.LOADER_PROJECT;
   }
@@ -126,12 +129,16 @@ export class ProjectComponent implements OnInit {
     this.file = event.target.files[0];
   }
 
-  upload() {    
+  upload() {
     this.loaderService.startLoader(this.loaderProject);
     this.excelImportService.excelToJson(this.file).subscribe((jsonData: any[]): void => {
       this.emitJsonData.emit(jsonData);
-      this.changeView();      
+      this.changeView();
     });
+  }
+
+  getProformState(valueState) {
+    alert(valueState);
   }
 }
 //  https://www.ag-grid.com/javascript-grid-clipboard/

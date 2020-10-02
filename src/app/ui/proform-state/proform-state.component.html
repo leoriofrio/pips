@@ -1,0 +1,22 @@
+<content >
+
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">Estado de Proformas x
+                
+            </div>
+            <div class="content-body">
+                <div class="edit">
+                    <input id="txtProforma" name="txtProforma" value="{{proformId}}" type="text"><button type="button" class="btn btn-primary submit-button" (click)="edit()">Buscar</button> 
+                </div>
+                <app-project [gridColumns]="gridColumns" [data]="data" [enabledTitleOp] = "enabledTitle"
+                [allowExcelExportOp] = "allowExcelExport"
+                (exportExcel)= "onExportExcel($event)" (projectSelected)= "selectProject($event)"></app-project>
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+</content>

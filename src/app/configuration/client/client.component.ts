@@ -25,7 +25,6 @@ export class ClientComponent implements OnInit, TransformColumns {
   public gridColumns = COLUMNS_CLIENT;
   public enabledTitle: boolean;
   public allowExcelExport: boolean;
-  public loaderProject: string;
 
   constructor(
     private excelExportService: ExcelExportService,
@@ -33,22 +32,21 @@ export class ClientComponent implements OnInit, TransformColumns {
     private router: Router,
     private route: ActivatedRoute,
     private loaderService: NgxUiLoaderService
-    ) {
-      this.loaderProject = LoaderIds.LOADER_PROJECT;
+  ) {
   }
 
   ngOnInit(): void {
-    const self = this;  
+    const self = this;
 
     this.enabledTitle = true;
     this.allowExcelExport = true;
 
     this.getDataClient().subscribe(data => {
-      self.data = data;        
-     });
+      self.data = data;
+    });
   }
 
-  
+
   public onExportExcel(excelData): any {
     if (!_.isNil(excelData.data) && !_.isEmpty(excelData.data)) {
       this.excelExportService.generateExcelFromJson(
@@ -63,33 +61,36 @@ export class ClientComponent implements OnInit, TransformColumns {
     let jsonEditClient: any[] = [];
     let jsonAddClient: any[] = [];
     let jsonFinal = this.namesToProps(jsonData);
-    for ( const row of jsonFinal ){
-      if( !_.isNil(row['id']) ){
+    for (const row of jsonFinal) {
+      if (!_.isNil(row['id'])) {
         jsonEditClient.push(row);
       } else {
         jsonAddClient.push(row);
       }
     }
 
-    for ( const row of jsonAddClient )
+    for (const row of jsonAddClient)
       delete row['id'];
 
-      const self = this;
-      forkJoin(
-        this.clientService.createClient(JSON.stringify(jsonAddClient)),
-        this.clientService.updateClient(JSON.stringify(jsonEditClient))
-      ).subscribe( ([addClient, editClient ]) => {
-        alert('Se ha guardado correctamente los clientes');
-        this.loaderService.stopLoader(this.loaderProject);
-        this.router.navigateByUrl('/client', { skipLocationChange: true }).then(() => {
-          this.router.navigate(['/client']);
-      }); 
-        setTimeout(() => {}, 1000);        
-      });  
+    const self = this;
+    forkJoin(
+      this.clientService.createClient(JSON.stringify(jsonAddClient)),
+      this.clientService.updateClient(JSON.stringify(jsonEditClient))
+    ).subscribe(([addClient, editClient]) => {
+      alert('Se ha guardado correctamente los clientes');
+      this.loaderService.stopLoader(LoaderIds.LOADER_PROJECT);
+      this.router.navigateByUrl('/client', { skipLocationChange: true }).then(() => {
+        this.router.navigate(['/client']);
+      });
+      setTimeout(() => { }, 1000);
+    }, err => {
+      alert('Ha ocurrido un error al guardar los clientes');
+      this.loaderService.stopLoader(LoaderIds.LOADER_PROJECT);
+    });
   }
 
-  public namesToProps(json){
-    return json.map(key => {      
+  public namesToProps(json) {
+    return json.map(key => {
       let res = {};
       res[`${ClientColumns.ID.prop}`] = key[ClientColumns.ID.name];
       res[`${ClientColumns.COD_CLIENT.prop}`] = key[ClientColumns.COD_CLIENT.name];
@@ -98,7 +99,7 @@ export class ClientComponent implements OnInit, TransformColumns {
       res[`${ClientColumns.NAME.prop}`] = key[ClientColumns.NAME.name];
       res[`${ClientColumns.NICKNAME.prop}`] = key[ClientColumns.NICKNAME.name];
       res[`${ClientColumns.TYPE.prop}`] = key[ClientColumns.TYPE.name];
-      res[`${ClientColumns.STATUS.prop}`] = key[ClientColumns.STATUS.name];      
+      res[`${ClientColumns.STATUS.prop}`] = key[ClientColumns.STATUS.name];
       return res;
     });
   }

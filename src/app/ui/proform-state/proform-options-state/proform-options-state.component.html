@@ -1,0 +1,11 @@
+<div ngbDropdown container="body" class="custom-container">
+    <button class="btn btn-sm" ngbDropdownToggle> Estado </button>
+    <div ngbDropdownMenu>
+        <button (click)="invokeParentMethod(options.EnCurso.id)" ngbDropdownItem>{{options.EnCurso.label}}</button>
+        <button (click)="invokeParentMethod(options.PorEditar.id)"
+            ngbDropdownItem>{{options.PorEditar.label}}</button>
+        <button (click)="invokeParentMethod(options.Anulado.id)" ngbDropdownItem>{{options.Anulado.label}}</button>
+        <button (click)="invokeParentMethod(options.Aprobado.id)"
+            ngbDropdownItem>{{options.Aprobado.label}}</button>
+    </div>
+</div>
