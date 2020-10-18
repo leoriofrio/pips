@@ -1,7 +1,7 @@
 'use strict';
 
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ClientColumns, CollegesColumns, TransformColumns, TypeRegion } from '../../app.keys';
+import { ClientColumns, CollegesColumns, LoaderIds, TransformColumns, TypeRegion } from '../../app.keys';
 import { COLUMNS_COLLEGES } from './collegesColumns';
 import { ProjectComponent } from '../../shared/components/project/project.component';
 import { ExcelExportService } from '../../shared/service/export-excel.service';
@@ -9,6 +9,7 @@ import * as _ from 'lodash';
 import { forkJoin } from 'rxjs';
 import { CollegeService } from 'src/app/shared/service/college.service';
 import { Router } from '@angular/router';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 //const dataVal = require('./colleges.json');
 
@@ -29,6 +30,7 @@ export class CollegesComponent implements OnInit, TransformColumns {
     private excelExportService: ExcelExportService,
     private collegeService: CollegeService,
     private router: Router,
+    private loaderService: NgxUiLoaderService
     ) { }
 
   ngOnInit(): void {
@@ -79,6 +81,7 @@ export class CollegesComponent implements OnInit, TransformColumns {
         this.collegeService.updateCollege(JSON.stringify(jsonEditCollege))
       ).subscribe( ([addCollege, editCollege ]) => {
         alert('Se ha guardado correctamente los colegios');
+        this.loaderService.stopLoader(LoaderIds.LOADER_PROJECT);
         this.router.navigateByUrl('/college', { skipLocationChange: true }).then(() => {
           this.router.navigate(['/college']);
       }); 

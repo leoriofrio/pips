@@ -40,4 +40,15 @@ export class ExcelImportService {
     });
   }
 
+  public setDataToPostOrPatch(json){
+    /*const a = json.filter( j => j.id );
+    const b = json.filter( j => !j.id );
+    console.log('a es', a);
+    console.log('b es', b);*/
+    return {
+      POST: json.filter( j => !j.id ),
+      PATCH: json.filter( j => j.id )
+    }
+  }
+
 }
