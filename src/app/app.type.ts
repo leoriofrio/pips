@@ -51,6 +51,7 @@ export type GridRecord = {
     quantity: 0,
     price: 0,
     sale_direct: 0,
+    sale_donation: 0,
     sale_external_library: 0,
     sale_event: 0,
     sale_teacher: 0,
@@ -67,6 +68,7 @@ export type GridRecord = {
     quantity: 0,
     subtotal:0,
     sale_direct: number,
+    sale_donation: number,
     sale_external_library: number,
     sale_event: number,
     sale_teacher: number,
@@ -88,6 +90,7 @@ export type GridRecord = {
     "subtotal":0,
     "total":0,
     "sale_direct": 0,
+    "sale_donation": 0,
     "sale_external_library": 0,
     "sale_event": 0,
     "sale_teacher": 0,
@@ -95,7 +98,8 @@ export type GridRecord = {
     "sale_scholarships": 0,
     "sale_staff": 0,
     "sale_training": 0,
-    "capex": 0
+    "capex": 0,
+    "quantity_check": 0,
   };
 
 
@@ -105,6 +109,7 @@ export type GridRecord = {
     "quantity": 0,
     "price": 0,
     "sale_direct": 0,
+    "sale_donation": 0,
     "sale_external_library": 0,
     "sale_event": 0,
     "sale_teacher": 0,
@@ -114,7 +119,8 @@ export type GridRecord = {
     "sale_training": 0,
     "capex": 0,
     "proform_id": 0,
-    "product_id": 0
+    "product_id": 0,
+    "quantity_check": 0,
   };
   
 

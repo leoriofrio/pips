@@ -8,6 +8,7 @@ import { Module } from 'ag-grid-community';
 import * as _ from 'lodash';
 import { selectionRenderComponent } from '../../render/selection-render.component';
 import { SelectProjectRendererComponent } from './select-project-renderer.component';
+import { CheckProjectRendererComponent } from './check-project-renderer.component';
 import { ExcelImportService } from '../../service/import-excel.service';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { ProformOptionsStateComponent } from 'src/app/ui/proform-state/proform-options-state/proform-options-state.component';
@@ -48,6 +49,8 @@ export class ProjectComponent implements OnInit {
   @Output()
   public exportExcel = new EventEmitter<any>();
   @Output()
+  public checkSelected = new EventEmitter<any>();
+  @Output()
   public projectSelected = new EventEmitter<any>();
   @Output()
   public emitJsonData = new EventEmitter<any>();
@@ -61,6 +64,7 @@ export class ProjectComponent implements OnInit {
     this.context = { componentParent: this };
     this.frameworkComponents = {
       selectionRender: selectionRenderComponent,
+      checkProjectRenderer: CheckProjectRendererComponent,
       selectProjectRenderer: SelectProjectRendererComponent,
       proformOptionsStateRenderer: ProformOptionsStateComponent
 
@@ -87,6 +91,9 @@ export class ProjectComponent implements OnInit {
     this.projectSelected.emit(row);
   }
 
+  public checkProject(row) {
+    this.checkSelected.emit(row);
+  }
 
   public changeView() {
     this.uploadFile = !this.uploadFile;

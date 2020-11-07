@@ -17,6 +17,7 @@ import { SelectProjectRendererComponent } from './components/project/select-proj
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { NgbDropdownModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProformOptionsStateComponent } from '../ui/proform-state/proform-options-state/proform-options-state.component';
+import { CheckProjectRendererComponent } from './components/project/check-project-renderer.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,11 @@ import { ProformOptionsStateComponent } from '../ui/proform-state/proform-option
     FormsModule,
     ReactiveFormsModule,
     NgxUiLoaderModule,
-    AgGridModule.withComponents([selectionRenderComponent, SelectProjectRendererComponent, ProformOptionsStateComponent]),
+    AgGridModule.withComponents([
+      selectionRenderComponent, 
+      SelectProjectRendererComponent, 
+      CheckProjectRendererComponent,
+      ProformOptionsStateComponent]),
     HotTableModule.forRoot(),
     FormlyModule.forRoot({
       types: [
@@ -47,7 +52,8 @@ import { ProformOptionsStateComponent } from '../ui/proform-state/proform-option
     HotableComponent,
     FormlyFieldNgbDatePicker,
     FormlyFieldNgbTimePicker,
-    SelectProjectRendererComponent  
+    SelectProjectRendererComponent,
+    CheckProjectRendererComponent
   ],
   providers: [],
   exports: [

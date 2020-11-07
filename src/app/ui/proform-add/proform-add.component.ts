@@ -119,6 +119,7 @@ export class ProformAddComponent implements OnInit {
       { type: 'numeric', data: ProformDetail.PRICE.prop, renderer: 'currency' },
       { type: 'numeric', data: ProformDetail.SUB_TOTAL.prop, renderer: 'currency' , readOnly: true  },
       { type: 'numeric', data: ProformDetail.SALE_DIRECT.prop, renderer: 'currency' },
+      { type: 'numeric', data: ProformDetail.SALE_DONATION.prop, renderer: 'currency' },
       { type: 'numeric', data: ProformDetail.SALE_EXTERNAL_LIBRARY.prop, renderer: 'currency' },
       { type: 'numeric', data: ProformDetail.SALE_EVENT.prop, renderer: 'currency' },
       { type: 'numeric', data: ProformDetail.SALE_TEACHER.prop, renderer: 'currency' },
@@ -520,6 +521,7 @@ export class ProformAddComponent implements OnInit {
       quantity: 0,
       subtotal:0,
       sale_direct: 0,
+      sale_donation: 0,
       sale_external_library: 0,
       sale_event: 0,
       sale_teacher: 0,
@@ -536,6 +538,7 @@ export class ProformAddComponent implements OnInit {
       self.datasetSummary.subtotal = Number(self.datasetSummary.subtotal) +  value['subtotal'];
       self.datasetSummary.total = Number(self.datasetSummary.total) +  value['total'];
       self.datasetSummary.sale_direct = (Number(self.datasetSummary.subtotal) *  value['sale_direct'] / 100) as any;
+      self.datasetSummary.sale_donation = (Number(self.datasetSummary.subtotal) *  value['sale_donation'] / 100) as any;
    });
   }
 

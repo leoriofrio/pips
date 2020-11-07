@@ -119,6 +119,7 @@ export class GridComponent implements OnInit, OnDestroy {
               case 'price':
               case 'subtotal':
               case 'sale_direct':
+              case 'sale_donation':
               case 'sale_external_library': 
               case 'sale_event':
               case 'sale_teacher':
@@ -134,14 +135,15 @@ export class GridComponent implements OnInit, OnDestroy {
                   varField = _.replace(row[3], '%', '');
                   varField = _.replace(varField, ',', '.');
                   varRow = (row[1] === 'sale_direct' && varRow === 0 ) ? varRow = 7 : varRow = varRow;
-                  varRow = (row[1] === 'sale_external_library' && varRow === 0 ) ? varRow = 8 : varRow = varRow;
-                  varRow = (row[1] === 'sale_event' && varRow === 0 ) ? varRow = 9 : varRow = varRow;
-                  varRow = (row[1] === 'sale_teacher' && varRow === 0 ) ? varRow = 10 : varRow = varRow;
-                  varRow = (row[1] === 'sale_infrastructure' && varRow === 0 ) ? varRow = 11 : varRow = varRow;
-                  varRow = (row[1] === 'sale_scholarships' && varRow === 0 ) ? varRow = 12 : varRow = varRow;
-                  varRow = (row[1] === 'sale_staff' && varRow === 0 ) ? varRow = 13 : varRow = varRow;
-                  varRow = (row[1] === 'sale_training' && varRow === 0 ) ? varRow = 14 : varRow = varRow;
-                  varRow = (row[1] === 'capex' && varRow === 0 ) ? varRow = 15 : varRow = varRow;
+                  varRow = (row[1] === 'sale_donation' && varRow === 0 ) ? varRow = 8 : varRow = varRow;
+                  varRow = (row[1] === 'sale_external_library' && varRow === 0 ) ? varRow = 9 : varRow = varRow;
+                  varRow = (row[1] === 'sale_event' && varRow === 0 ) ? varRow = 10 : varRow = varRow;
+                  varRow = (row[1] === 'sale_teacher' && varRow === 0 ) ? varRow = 11 : varRow = varRow;
+                  varRow = (row[1] === 'sale_infrastructure' && varRow === 0 ) ? varRow = 12 : varRow = varRow;
+                  varRow = (row[1] === 'sale_scholarships' && varRow === 0 ) ? varRow = 13 : varRow = varRow;
+                  varRow = (row[1] === 'sale_staff' && varRow === 0 ) ? varRow = 14 : varRow = varRow;
+                  varRow = (row[1] === 'sale_training' && varRow === 0 ) ? varRow = 15 : varRow = varRow;
+                  varRow = (row[1] === 'capex' && varRow === 0 ) ? varRow = 16 : varRow = varRow;
 
                   this.setDataAtCell(row[0], varRow, Number(varField)  );
 
@@ -149,6 +151,7 @@ export class GridComponent implements OnInit, OnDestroy {
                 
                 //statements;
                 let sale_direct;
+                let sale_donation;
                 let sale_external_library;
                 let sale_event;
                 let sale_teacher;
@@ -159,20 +162,21 @@ export class GridComponent implements OnInit, OnDestroy {
                 let capex;
 
                 sale_direct = _.isNil(this.getDataAtCell(row[0],7)) ? sale_direct = 0 : sale_direct = Number(this.getDataAtCell(row[0],7));
-                sale_external_library = _.isNil(this.getDataAtCell(row[0],8)) ? sale_external_library = 0 : sale_external_library = Number(this.getDataAtCell(row[0],8));
-                sale_event = _.isNil(this.getDataAtCell(row[0],9)) ? sale_event = 0 : sale_event = Number(this.getDataAtCell(row[0],9));
-                sale_teacher = _.isNil(this.getDataAtCell(row[0],10)) ? sale_teacher = 0 : sale_teacher = Number(this.getDataAtCell(row[0],10));
-                sale_infrastructure = _.isNil(this.getDataAtCell(row[0],11)) ? sale_infrastructure = 0 : sale_infrastructure = Number(this.getDataAtCell(row[0],11));
-                sale_scholarships = _.isNil(this.getDataAtCell(row[0],12)) ? sale_scholarships = 0 : sale_scholarships = Number(this.getDataAtCell(row[0],12));
-                sale_staff = _.isNil(this.getDataAtCell(row[0],13)) ? sale_staff = 0 : sale_staff = Number(this.getDataAtCell(row[0],13));
-                sale_training = _.isNil(this.getDataAtCell(row[0],14)) ? sale_training = 0 : sale_training = Number(this.getDataAtCell(row[0],14));
-                capex = _.isNil(this.getDataAtCell(row[0],15)) ? capex = 0 : capex = Number(this.getDataAtCell(row[0],15));
+                sale_donation = _.isNil(this.getDataAtCell(row[0],8)) ? sale_donation = 0 : sale_donation = Number(this.getDataAtCell(row[0],8));
+                sale_external_library = _.isNil(this.getDataAtCell(row[0],9)) ? sale_external_library = 0 : sale_external_library = Number(this.getDataAtCell(row[0],9));
+                sale_event = _.isNil(this.getDataAtCell(row[0],10)) ? sale_event = 0 : sale_event = Number(this.getDataAtCell(row[0],10));
+                sale_teacher = _.isNil(this.getDataAtCell(row[0],11)) ? sale_teacher = 0 : sale_teacher = Number(this.getDataAtCell(row[0],11));
+                sale_infrastructure = _.isNil(this.getDataAtCell(row[0],12)) ? sale_infrastructure = 0 : sale_infrastructure = Number(this.getDataAtCell(row[0],12));
+                sale_scholarships = _.isNil(this.getDataAtCell(row[0],13)) ? sale_scholarships = 0 : sale_scholarships = Number(this.getDataAtCell(row[0],13));
+                sale_staff = _.isNil(this.getDataAtCell(row[0],14)) ? sale_staff = 0 : sale_staff = Number(this.getDataAtCell(row[0],14));
+                sale_training = _.isNil(this.getDataAtCell(row[0],15)) ? sale_training = 0 : sale_training = Number(this.getDataAtCell(row[0],15));
+                capex = _.isNil(this.getDataAtCell(row[0],16)) ? capex = 0 : capex = Number(this.getDataAtCell(row[0],16));
 
-                let total_descount = sale_direct + sale_external_library + sale_event + sale_teacher + sale_infrastructure + sale_scholarships + sale_staff + sale_training + capex;
+                let total_descount = sale_direct + sale_donation + sale_external_library + sale_event + sale_teacher + sale_infrastructure + sale_scholarships + sale_staff + sale_training + capex;
                 let total = Number(this.getDataAtCell(row[0],6)) -  ( Number(this.getDataAtCell(row[0],6)) * total_descount / 100 );
                 
                 
-                this.setDataAtCell(row[0], 16, total  );
+                this.setDataAtCell(row[0], 17, total  );
                 break; 
              } 
             }

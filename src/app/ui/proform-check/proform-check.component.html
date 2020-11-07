@@ -1,0 +1,48 @@
+<!-- BEGIN: Content-->
+
+<div class="app-content content">
+    <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+        <div class="content-body">
+            <!-- app invoice View Page -->
+            <section class="">                
+                <div class="row">
+                    <div ngxUiLoaderBlurred [loaderId]="loaderProjectForm" blur="5">
+                        <!-- invoice view page -->
+                        <div class="col-xl-12 ">
+                            <div class="card">
+                                    <div class="card-body">                                    
+                                        <!-- header section -->
+                                        <div class="edit">
+                                            <input id="txtProforma" name="txtProforma" value="{{proformId}}" disabled type="text"><button type="button" class="btn btn-primary submit-button" (click)="edit()">Revisión de Entrega de Productos</button> 
+                                        </div>
+                                        <div class="" *ngIf="editProform" >
+                                            <form [formGroup]="form">
+                                                <formly-form [model]="model" [fields]="formFields" [options]="options" [form]="form"></formly-form>
+                                            </form>
+                                        </div>
+                                        <div class="col-xl-4" *ngIf="editProform">
+                                            <button type="submit" class="btn btn-primary submit-button" (click)="save()">Guardar Edición</button>
+                                            <span></span>
+                                            <button type="submit" class="btn btn-primary submit-button" (click)="close()">Cancelar</button>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 ">
+                            <div class="content-body" *ngIf="editProform">
+                                <app-grid [budgetRecords]="dataset" [columnsGrid]="columnsGrid" [columnsHeader] = "columnsHeader" 
+                                (change)="onChange($event)"></app-grid>
+                            </div>                            
+                        </div>
+                        <ngx-ui-loader [loaderId]="loaderProjectForm" ></ngx-ui-loader>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</div>
+<!-- END: Content-->
+

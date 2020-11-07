@@ -7,8 +7,10 @@ import { UserComponent } from './user/user.component';
 import { CollegesComponent } from './colleges/colleges.component';
 import { CampaignComponent } from './campaign/campaign.component';
 import { PriceComponent } from './price/price.component';
+import { KitComponent } from './kit/kit.component';
 
 const configurationRoutes: Routes = [
+  { path: 'kit', component: KitComponent  },
   { path: 'product', component: ProductComponent  },
   { path: 'client', component: ClientComponent  },
   { path: 'user', component: UserComponent},
