@@ -11,6 +11,7 @@ import { ClientComponent } from './client/client.component';
 import { UserComponent } from './user/user.component';
 import { CollegesComponent } from './colleges/colleges.component';
 import { CampaignComponent } from './campaign/campaign.component';
+import { KitComponent } from './kit/kit.component';
 
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import { CampaignComponent } from './campaign/campaign.component';
     ClientComponent, 
     UserComponent, 
     CollegesComponent,
-    CampaignComponent
+    CampaignComponent,
+    KitComponent
   ],
   providers: [],
   exports: [],

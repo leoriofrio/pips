@@ -65,20 +65,22 @@ export namespace ProformDetail {
   export const ID = {prop: 'id', name: 'Id'};
   export const PROFORM_ID = {prop: 'proform_id', name: 'proform_id'};
   export const DEGREE = {prop: 'degree', name: 'Grado'};
-  export const PRODUCT_ID = {prop: 'product_id', name: 'product_Id'};
+  export const PRODUCT_ID = {prop: 'product_id', name: 'Producto'};
   export const QUANTITY = {prop: 'quantity', name: 'Cantidad'};
   export const PRICE = {prop: 'price', name: 'Precio'};
   export const SUB_TOTAL = {prop: 'subtotal', name: 'Subtotal'};
-  export const SALE_DIRECT = {prop: 'sale_direct', name: 'DIRECTO'};
-  export const SALE_EXTERNAL_LIBRARY = {prop: 'sale_external_library', name: 'LIBRERÍA EXTERNA'};
-  export const SALE_EVENT = {prop: 'sale_event', name: 'Material Promocional Premios para eventos'};
-  export const SALE_TEACHER = {prop: 'sale_teacher', name: 'Material Promocional para profesores'};
-  export const SALE_INFRASTRUCTURE = {prop: 'sale_infrastructure', name: 'Infraestructura PLANTEL'};
-  export const SALE_SCHOLARSHIPS = {prop: 'sale_scholarships', name: 'Becas PLANTEL'};
-  export const SALE_STAFF = {prop: 'sale_staff', name: 'Equipos PLANTEL'};
-  export const SALE_TRAINING = {prop: 'sale_training', name: 'Capacitación PLANTEL'};
-  export const CAPEX = {prop: 'capex', name: 'Beneficio'};
+  export const SALE_DIRECT = {prop: 'sale_direct', name: 'Directo'};
+  export const SALE_DONATION = {prop: 'sale_donation', name: 'Donación'};
+  export const SALE_EXTERNAL_LIBRARY = {prop: 'sale_external_library', name: 'Librería'};
+  export const SALE_EVENT = {prop: 'sale_event', name: 'Premios'};
+  export const SALE_TEACHER = {prop: 'sale_teacher', name: 'Profesores'};
+  export const SALE_INFRASTRUCTURE = {prop: 'sale_infrastructure', name: 'Infraestructura'};
+  export const SALE_SCHOLARSHIPS = {prop: 'sale_scholarships', name: 'Becas'};
+  export const SALE_STAFF = {prop: 'sale_staff', name: 'Equipos'};
+  export const SALE_TRAINING = {prop: 'sale_training', name: 'Capacitación'};
+  export const CAPEX = {prop: 'capex', name: 'Capex'};
   export const TOTAL = {prop: 'total', name: 'Total'};
+  export const QUANTITY_CHECK = {prop: 'quantity_check', name: 'Entregado'};
 }
 
 export namespace TypeClientSale {
@@ -104,7 +106,7 @@ export namespace ProductColumns {
   export const NIVEL = {prop: 'nivel', name: 'Nivel Educación'};
   export const DEGREE = {prop: 'degree', name: 'Grado'};  
   export const BUSINESS_LINE = {prop: 'businessLine', name: 'Linea Negocios'};
-  export const ISBN = {prop: 'isbn', name: 'ISBN'};
+  export const ISBN = {prop: 'isbn', name: 'EAN'};
   export const REGION = {prop: 'region', name: 'Región'};
   
 }

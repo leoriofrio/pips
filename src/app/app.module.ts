@@ -24,7 +24,7 @@ import { PriceComponent } from './configuration/price/price.component';
   declarations: [
     AppComponent,
     UploadDirective,
-    PriceComponent
+    PriceComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,13 @@ export const COLUMNS_PROFORM = [
     colId: 'params',
     width: 85
   },
+  {
+    headerName: ' Entregado',
+    field: 'value',
+    cellRenderer: 'checkProjectRenderer',
+    colId: 'params',
+    width: 120
+  },
   { field: Proform.ID.prop, headerName: Proform.ID.name, resizable: true, width: 90 },
   { field: Proform.NUMBER_PROFORM.prop, headerName: Proform.NUMBER_PROFORM.name, resizable: true, width: 150 },
   { field: Proform.DATE_PROFORM.prop, headerName: Proform.DATE_PROFORM.name, resizable: true, width: 120 },

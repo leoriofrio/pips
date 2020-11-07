@@ -14,6 +14,7 @@ import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { ProformStateComponent } from './proform-state/proform-state.component';
 import { ProformOptionsStateComponent } from './proform-state/proform-options-state/proform-options-state.component';
 import { NgbDropdownModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProformCheckComponent } from './proform-check/proform-check.component';
 
 
 @NgModule({
@@ -36,7 +37,7 @@ import { NgbDropdownModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbModule,
     NgbDropdownModule          
   ],
-  declarations: [ProformAddComponent, ProformListComponent, ProformEditComponent, ProformStateComponent, ProformOptionsStateComponent],
+  declarations: [ProformAddComponent, ProformListComponent, ProformEditComponent, ProformStateComponent, ProformOptionsStateComponent, ProformCheckComponent],
   providers: [],
   exports: [ProformAddComponent]
 })

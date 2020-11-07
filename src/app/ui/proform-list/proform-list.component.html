@@ -14,7 +14,8 @@
                 </div>
                 <app-project [gridColumns]="gridColumns" [data]="data" [enabledTitleOp] = "enabledTitle"
                 [allowExcelExportOp] = "allowExcelExport"
-                (exportExcel)= "onExportExcel($event)" (projectSelected)= "selectProject($event)"></app-project>
+                (exportExcel)= "onExportExcel($event)" 
+                (projectSelected)= "selectProject($event)"></app-project>
             </div>
         </div>
     </div>

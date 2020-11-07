@@ -20,13 +20,13 @@ import { map, switchMap } from 'rxjs/operators';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
-  selector: 'app-proform-edit',
-  templateUrl: './proform-edit.component.html',
-  styleUrls: ['./proform-edit.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-proform-check',
+  templateUrl: './proform-check.component.html',
+  styleUrls: ['./proform-check.component.scss']
 })
-export class ProformEditComponent implements OnInit {
+export class ProformCheckComponent implements OnInit {
 
+  
   @ViewChild(ProjectComponent, {static: true}) child: ProjectComponent;
   @ViewChild('container') container: ElementRef;
 
@@ -229,8 +229,8 @@ export class ProformEditComponent implements OnInit {
               }
           },
           expressionProperties: {
-            'templateOptions.disabled': this.validation,
-            }
+            'templateOptions.disabled': '!model.text',
+          }
         },
         {
           className: 'col-2',
@@ -276,33 +276,23 @@ export class ProformEditComponent implements OnInit {
 
     this.columnsGrid = [
       { data: ProformDetail.ID.prop, readOnly: true, headerName: ProformDetail.ID.name, field: ProformDetail.ID.prop },
-      { type: 'text', data: ProformDetail.DEGREE.prop, headerName: ProformDetail.DEGREE.name, field: ProformDetail.DEGREE.prop },
+      { type: 'text', data: ProformDetail.DEGREE.prop, readOnly: true, headerName: ProformDetail.DEGREE.name, field: ProformDetail.DEGREE.prop },
       { type: 'autocomplete', 
-        data: 'codigo', 
+        data: 'codigo',
+        readOnly: true, 
         renderer: 'currency', 
         source:  this.productCod, 
         strict: true, 
         filter: false, headerName: 'Código', field: 'codigo'},
       { type: 'autocomplete', 
         data: ProformDetail.PRODUCT_ID.prop, 
+        readOnly: true,
         renderer: 'currency', 
         source:  this.productDescription, 
         strict: true, 
         filter: false, headerName: ProformDetail.PRODUCT_ID.name, field: ProformDetail.PRODUCT_ID.prop, },
-      { type: 'numeric', data: ProformDetail.QUANTITY.prop, renderer: 'currency', headerName: ProformDetail.QUANTITY.name, field: ProformDetail.QUANTITY.prop },
-      { type: 'numeric', data: ProformDetail.PRICE.prop, renderer: 'currency', headerName: ProformDetail.PRICE.name, field: ProformDetail.PRICE.prop },
-      { type: 'numeric', data: ProformDetail.SUB_TOTAL.prop, renderer: 'currency' , readOnly: true , headerName: ProformDetail.SUB_TOTAL.name, field: ProformDetail.SUB_TOTAL.prop },
-      { type: 'numeric', data: ProformDetail.SALE_DIRECT.prop, renderer: 'currency', headerName: ProformDetail.SALE_DIRECT.name, field: ProformDetail.SALE_DIRECT.prop },
-      { type: 'numeric', data: ProformDetail.SALE_DONATION.prop, renderer: 'currency', headerName: ProformDetail.SALE_DONATION.name, field: ProformDetail.SALE_DONATION.prop },
-      { type: 'numeric', data: ProformDetail.SALE_EXTERNAL_LIBRARY.prop, renderer: 'currency', headerName: ProformDetail.SALE_EXTERNAL_LIBRARY.name, field: ProformDetail.SALE_EXTERNAL_LIBRARY.prop },
-      { type: 'numeric', data: ProformDetail.SALE_EVENT.prop, renderer: 'currency', headerName: ProformDetail.SALE_EVENT.name, field: ProformDetail.SALE_EVENT.prop },
-      { type: 'numeric', data: ProformDetail.SALE_TEACHER.prop, renderer: 'currency', headerName: ProformDetail.SALE_TEACHER.name, field: ProformDetail.SALE_TEACHER.prop },
-      { type: 'numeric', data: ProformDetail.SALE_INFRASTRUCTURE.prop, renderer: 'currency', headerName: ProformDetail.SALE_INFRASTRUCTURE.name, field: ProformDetail.SALE_INFRASTRUCTURE.prop },
-      { type: 'numeric', data: ProformDetail.SALE_SCHOLARSHIPS.prop, renderer: 'currency', headerName: ProformDetail.SALE_SCHOLARSHIPS.name, field: ProformDetail.SALE_SCHOLARSHIPS.prop },
-      { type: 'numeric', data: ProformDetail.SALE_STAFF.prop, renderer: 'currency', headerName: ProformDetail.SALE_STAFF.name, field: ProformDetail.SALE_STAFF.prop },
-      { type: 'numeric', data: ProformDetail.SALE_TRAINING.prop, renderer: 'currency', headerName: ProformDetail.SALE_TRAINING.name, field: ProformDetail.SALE_TRAINING.prop },
-      { type: 'numeric', data: ProformDetail.CAPEX.prop, renderer: 'currency', headerName: ProformDetail.CAPEX.name, field: ProformDetail.CAPEX.prop },
-      { type: 'numeric', data: ProformDetail.TOTAL.prop, renderer: 'currency' , readOnly: true, headerName: ProformDetail.TOTAL.name, field: ProformDetail.TOTAL.prop  },
+      { type: 'numeric', data: ProformDetail.QUANTITY.prop, renderer: 'currency', readOnly: true, headerName: ProformDetail.QUANTITY.name, field: ProformDetail.QUANTITY.prop },
+      { type: 'numeric', data: ProformDetail.QUANTITY_CHECK.prop, renderer: 'currency' , headerName: ProformDetail.QUANTITY_CHECK.name, field: ProformDetail.QUANTITY_CHECK.prop  },
     ]
     
     if (!this.enableEdit){
@@ -359,7 +349,7 @@ export class ProformEditComponent implements OnInit {
               self.dataset.push(row);            
             };
           }
-          this.refreshData();
+
         });
         
         
@@ -455,77 +445,26 @@ export class ProformEditComponent implements OnInit {
         return false;
       }
 
-      if ( Number(row['quantity']) <= 0 ) {
-        alert('No puede tener valor 0 el producto ' + row['product_id']);
+      if ( Number(row['quantity_check']) < 0 ) {
+        alert('El producto ' + row['product_id'] + ' no puede sere menor a 0');
         return false;
       }
 
-      if ( Number(row['price']) <= 0 ) {
-        alert('No puede tener valor 0 el producto ' + row['product_id']);
+      if ( Number(row['quantity_check']) > Number(row['quantity']) ) {
+        alert('El producto ' + row['product_id'] + ' no puede sere mayor que el producto proformado');
         return false;
       }
-      
-      if ( Number(row['total']) <= 0 ) {
-        alert('No puede tener el valor total menor a 0 en el producto ' + row['product_id']);
-        return false;
-      }
+
        
     }
 
     return true;
   }
 
-  public refreshData(){
-    const self = this;
-    let count: number = 0;
-    self.datasetSummary = {    
-      quantity: 0,
-      subtotal:0,
-      sale_direct: 0,
-      sale_donation: 0,
-      sale_external_library: 0,
-      sale_event: 0,
-      sale_teacher: 0,
-      sale_infrastructure: 0,
-      sale_scholarships: 0,
-      sale_staff: 0,
-      sale_training: 0,
-      capex: 0,
-      total:0,
-    };
-
-    _.forEach(this.dataset, function(value, key) {  
-      count++;   
-      self.datasetSummary.quantity = Number(self.datasetSummary.quantity) +  value['quantity'];
-      self.datasetSummary.subtotal = Number(self.datasetSummary.subtotal) +  value['subtotal'];
-      self.datasetSummary.total = Number(self.datasetSummary.total) +  value['total'];
-      self.datasetSummary.sale_direct = Number(self.datasetSummary.sale_direct) +  value['sale_direct'];
-      self.datasetSummary.sale_donation = Number(self.datasetSummary.sale_donation) +  value['sale_donation'];
-      self.datasetSummary.sale_external_library = Number(self.datasetSummary.sale_external_library) +  value['sale_external_library'];
-      self.datasetSummary.sale_event = Number(self.datasetSummary.sale_event) +  value['sale_event'];
-      self.datasetSummary.sale_teacher = Number(self.datasetSummary.sale_teacher) +  value['sale_teacher'];
-      self.datasetSummary.sale_infrastructure = Number(self.datasetSummary.sale_infrastructure) +  value['sale_infrastructure'];
-      self.datasetSummary.sale_scholarships = Number(self.datasetSummary.sale_scholarships) +  value['sale_scholarships'];
-      self.datasetSummary.sale_staff = Number(self.datasetSummary.sale_staff) +  value['sale_staff'];
-      self.datasetSummary.sale_training = Number(self.datasetSummary.sale_training) +  value['sale_training'];
-      self.datasetSummary.capex = Number(self.datasetSummary.capex) +  value['capex'];
-   });
-   
-    self.datasetSummary.sale_direct = (Number(self.datasetSummary.sale_direct) / count);
-    self.datasetSummary.sale_donation = (Number(self.datasetSummary.sale_donation) / count);
-    self.datasetSummary.sale_external_library = Number(self.datasetSummary.sale_external_library) / count;
-    self.datasetSummary.sale_event = Number(self.datasetSummary.sale_event) / count;
-    self.datasetSummary.sale_teacher = Number(self.datasetSummary.sale_teacher)  / count;
-    self.datasetSummary.sale_infrastructure = Number(self.datasetSummary.sale_infrastructure)  / count;
-    self.datasetSummary.sale_scholarships = Number(self.datasetSummary.sale_scholarships)  / count;
-    self.datasetSummary.sale_staff = Number(self.datasetSummary.sale_staff)  / count;
-    self.datasetSummary.sale_training = Number(self.datasetSummary.sale_training)  / count;
-    self.datasetSummary.capex = Number(self.datasetSummary.capex)  / count;
-
-  }
+  
 
   public onChange(data: GridRecord[]): void {
-    this.refreshData();
+
   }
 
   public close() {

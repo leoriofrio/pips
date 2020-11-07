@@ -361,6 +361,7 @@ export class ExcelExportService {
     let row;
     const rowBlank = null;
     const totalDescount = ( footer['sale_direct'] +
+    footer['sale_donation'] +
     footer['sale_external_library'] +
     footer['sale_event'] + 
     footer['sale_teacher'] + 
@@ -379,6 +380,7 @@ export class ExcelExportService {
     dataDetail.push(rowBlank);
     dataDetail.push(footer['subtotal'].toFixed(2));
     dataDetail.push(footer['sale_direct'].toFixed(2));
+    dataDetail.push(footer['sale_donation'].toFixed(2));
     dataDetail.push(footer['sale_external_library'].toFixed(2));
     dataDetail.push(footer['sale_event'].toFixed(2));
     dataDetail.push(footer['sale_teacher'].toFixed(2));
@@ -414,6 +416,17 @@ export class ExcelExportService {
     dataDetail.push(ProformDetail.SALE_DIRECT.name);
     dataDetail.push(footer['sale_direct'].toFixed(2));
     dataDetail.push( ( footer['sale_direct'] /100 * footer['subtotal'] ).toFixed(2) );
+    row = worksheet.addRow(dataDetail);
+    row.eachCell((cell, number) => {
+      cell.border = {top: {style: 'thin'}, left: {style: 'thin'}, bottom: {style: 'thin'}, right: {style: 'thin'}};            
+    });
+
+    dataDetail = [];
+    dataDetail.push(rowBlank);
+    dataDetail.push(rowBlank);
+    dataDetail.push(ProformDetail.SALE_DONATION.name);
+    dataDetail.push(footer['sale_donation'].toFixed(2));
+    dataDetail.push( ( footer['sale_donation'] /100 * footer['subtotal'] ).toFixed(2) );
     row = worksheet.addRow(dataDetail);
     row.eachCell((cell, number) => {
       cell.border = {top: {style: 'thin'}, left: {style: 'thin'}, bottom: {style: 'thin'}, right: {style: 'thin'}};            
